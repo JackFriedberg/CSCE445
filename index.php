@@ -8,6 +8,7 @@
   <title>PHP Test</title>
  </head>
  <body>
+  
  <?php
   
   $sql = "SELECT *  FROM Users;";
@@ -18,9 +19,6 @@
     while($row = my_sqli_fetch_assoc($result)){
      echo $row['email'];
     }
-  }
-  else {
-  echo 'No Results';
   }
   ?>
   
