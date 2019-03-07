@@ -13,6 +13,15 @@ include_once '../dhb.inc.php'
   <p> Hello </p>  
   
 <?php
+ 
+ $dbServerName = "csce445-project.database.windows.net";
+$dbUsername = "Team3";
+$dbPassword = "noQuizToday1";
+$dbName = "Users";
+
+$conn = mysqli_connect($dbServerName, $dbUsername, $dbPassword, $dbName);
+
+
   
   $sql = "SELECT * FROM Users;";
   $result = mysqli_query($conn, $sql);
