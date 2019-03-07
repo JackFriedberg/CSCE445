@@ -30,7 +30,7 @@ $conn = mysqli_connect($dbServerName, $dbUsername, $dbPassword, $dbName);
     }
   }
   else {
-  echo 'No Results'
+  echo 'No Results';
   }
   ?>
 
