@@ -1,5 +1,6 @@
 <?php
-include_once '../dhb.inc.php';
+ chdir('..');
+ include_once "dbh.inc.php";
 ?>
 
 
