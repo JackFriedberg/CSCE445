@@ -16,7 +16,7 @@
 $dbServerName = "csce445-project.database.windows.net";
 $dbUsername = "Team3";
 $dbPassword = "noQuizToday1";
-$dbName = "Users"
+$dbName = "Users";
 
 $conn = mysqli_connect($dbServerName, $dbUsername, $dbPassword, $dbName);
   
