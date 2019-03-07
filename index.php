@@ -26,6 +26,8 @@ if($result){
 else{
   echo (sqlsrv_errors());
 }
+
+sqlsrv_free_stmt($getResults);
 ?>
 
   
