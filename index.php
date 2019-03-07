@@ -16,6 +16,9 @@ include_once '../dhb.inc.php'
  
   $sql = "SELECT * FROM Users";
   $result = sqlsrv_query($conn, $sql);
+  $resultRows = sqlsrv_num_rows($result);
+  
+  echo ($resultRows);
 
 if($result){
  echo 'Good Query';
