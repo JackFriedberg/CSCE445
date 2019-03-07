@@ -18,7 +18,7 @@ include_once '../dhb.inc.php'
   $result = sqlsrv_query($conn, $sql);
 
 if($result){
- echo('Good Query');
+ echo 'Good Query';
  while ($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)) {
      echo ($row['email']);
     }
