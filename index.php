@@ -15,24 +15,15 @@ include_once '../dhb.inc.php'
 <?php
  
   $sql = "SELECT * FROM Users";
-  $result = mysqli_query($conn, $sql);
-  $resultCheck = mysqli_num_rows($result);
+  $result = sqlsrv_query($conn, $sql);
 
 if($result){
- 
- echo 'Good Query';
- 
-  if($resultCheck > 0){
-    while($row = mysqli_fetch_assoc($result)){
-     echo $row['email'] . "<br>";
+ while ($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)) {
+     echo ($row['email'] . " " . $row['pass'] . PHP_EOL);
     }
-  }
-  else {
-  echo 'No Results';
-  }
 }
 else{
-echo 'Bad Query';
+  echo (sqlsrv_errors());
 }
 ?>
 
