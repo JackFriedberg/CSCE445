@@ -17,7 +17,7 @@ $connectionOptions = array(
 "PWD" => "noQuizToday1"
     );
 
-$conn = mysqlsrv_connect($ServerName, $connectionOptions);
+$conn = sqlsrv_connect($ServerName, $connectionOptions);
 
 if($conn){
     echo 'Good Connection';
