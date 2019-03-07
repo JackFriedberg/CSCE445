@@ -1,5 +1,5 @@
 <?php
-include_once './dhb.inc.php'
+include_once '../dhb.inc.php';
 ?>
 
 
