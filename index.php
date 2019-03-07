@@ -14,7 +14,7 @@ include_once '../dhb.inc.php'
   
 <?php
  
-  $sql = "SELECT * FROM Users";
+  $sql = "SELECT * FROM Users;";
   $result = sqlsrv_query($conn, $sql);
   #$resultRows = sqlsrv_num_rows($result);
   
