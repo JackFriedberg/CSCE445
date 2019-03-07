@@ -14,9 +14,11 @@ include_once '../dhb.inc.php'
   
 <?php
   
-  $sql = "SELECT * FROM Users";
+  $sql = "SELECT * FROM Users;";
   $result = mysqli_query($conn, $sql);
   $resultCheck = mysqli_num_rows($result);
+
+  echo $resultCheck;
    
   if($resultCheck > 0){
     while($row = mysqli_fetch_assoc($result)){
@@ -26,7 +28,7 @@ include_once '../dhb.inc.php'
   else {
   echo 'No Results';
   }
-  ?>
+?>
 
   
  </body>
