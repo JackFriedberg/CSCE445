@@ -13,6 +13,16 @@ include_once '../dhb.inc.php'
   
 <?php
  
+ $ServerName = "csce445-project.database.windows.net";
+$connectionOptions = array(
+"Database" => "Users",
+"Uid" => "Team3",
+"PWD" => "noQuizToday1"
+    );
+
+$conn = sqlsrv_connect($ServerName, $connectionOptions);
+ 
+ 
   $sql = "SELECT * FROM Users;";
   $result = sqlsrv_query($conn, $sql);
 
