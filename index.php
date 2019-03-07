@@ -24,6 +24,7 @@ if($result){
     }
 }
 else{
+ echo 'Bad Query';
   echo (sqlsrv_errors());
 }
 
