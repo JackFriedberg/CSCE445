@@ -25,7 +25,7 @@ $conn = mysqli_connect($dbServerName, $dbUsername, $dbPassword, $dbName);
   $resultCheck = mysqli_num_rows($result);
    
   if($resultCheck > 0){
-    while($row = my_sqli_fetch_assoc($result)){
+    while($row = mysqli_fetch_assoc($result)){
      echo $row['email'] . "<br>";
     }
   }
