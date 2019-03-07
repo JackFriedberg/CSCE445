@@ -1,7 +1,4 @@
 
-<?php
-include_once '../dhb.inc.php'
-?>
 
 
 <html>
@@ -13,6 +10,22 @@ include_once '../dhb.inc.php'
   <p> Hello </p>  
   
 <?php
+ $ServerName = "csce445-project.database.windows.net";
+$connectionOptions = array(
+"Database" => "Users",
+"Uid" => "Team3",
+"PWD" => "noQuizToday1"
+    );
+
+$conn = mysqlsrv_connect($ServerName, $connectionOptions);
+
+if($conn){
+    echo 'Good Connection';
+}
+else{
+    echo 'Bad Connection';
+}
+ 
  
   $sql = "SELECT * FROM Users;";
   $result = sqlsrv_query($conn, $sql);
