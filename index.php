@@ -28,7 +28,13 @@ if($result){
 }
 else{
  echo 'Bad Query';
-  echo (sqlsrv_errors());
+  if( ($errors = sqlsrv_errors() ) != null) {
+        foreach( $errors as $error ) {
+            echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
+            echo "code: ".$error[ 'code']."<br />";
+            echo "message: ".$error[ 'message']."<br />";
+        }
+    }
 }
 
 sqlsrv_free_stmt($getResults);
