@@ -20,7 +20,7 @@ include_once '../dhb.inc.php'
 if($result){
  echo 'Good Query';
  while ($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)) {
-     echo ($row['email']);
+     echo $row['email'].", ".$row['pass']."<br />";
     }
 }
 else{
