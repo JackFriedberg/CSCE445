@@ -18,8 +18,7 @@ include_once '../dhb.inc.php'
   $result = mysqli_query($conn, $sql);
   $resultCheck = mysqli_num_rows($result);
 
-  echo $resultCheck;
-   
+if($result){   
   if($resultCheck > 0){
     while($row = mysqli_fetch_assoc($result)){
      echo $row['email'] . "<br>";
@@ -28,6 +27,10 @@ include_once '../dhb.inc.php'
   else {
   echo 'No Results';
   }
+}
+else{
+echo 'Bad Query';
+}
 ?>
 
   
