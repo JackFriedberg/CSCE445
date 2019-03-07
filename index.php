@@ -10,7 +10,7 @@
   
   <p> Hello </p>  
   
-  <?php
+<?php
   
   
 $dbServerName = "csce445-project.database.windows.net";
@@ -28,6 +28,9 @@ $conn = mysqli_connect($dbServerName, $dbUsername, $dbPassword, $dbName);
     while($row = my_sqli_fetch_assoc($result)){
      echo $row['email'];
     }
+  }
+  else {
+  echo 'No Results'
   }
   ?>
 
