@@ -1,4 +1,6 @@
-
+<?php
+include_once '../dhb.inc.php'
+?>
 
 
 <html>
@@ -10,22 +12,6 @@
   <p> Hello </p>  
   
 <?php
- $ServerName = "csce445-project.database.windows.net";
-$connectionOptions = array(
-"Database" => "Users",
-"Uid" => "Team3",
-"PWD" => "noQuizToday1"
-    );
-
-$conn = sqlsrv_connect($ServerName, $connectionOptions);
-
-if($conn){
-    echo 'Good Connection';
-}
-else{
-    echo 'Bad Connection';
-}
- 
  
   $sql = "SELECT * FROM Users;";
   $result = sqlsrv_query($conn, $sql);
