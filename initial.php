@@ -1,0 +1,44 @@
+<?php
+ chdir('..');
+ include_once "dbh.inc.php";
+?>
+
+
+<html>
+ <head>
+  <title>First php Question</title>
+ </head>
+ <body>
+  
+  <p> SQL Query with Q1 </p>  
+  
+<?php
+ 
+ $sql = "SELECT * FROM Questions;";
+ $test = sqlsrv_query($conn, $sql);
+
+if($test){
+ while ($row = sqlsrv_fetch_array($test, SQLSRV_FETCH_ASSOC)) {
+    echo $row['qText1']."<br />";
+    echo $row['qText2']."<br />";
+    echo $row['answers1']."<br />";
+    echo $row['answers2']."<br />";
+    echo $row['context1_1']."<br />";
+    }
+}
+else{
+ echo 'SQL Error:';
+  if( ($errors = sqlsrv_errors() ) != null) {
+        foreach( $errors as $error ) {
+            echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
+            echo "code: ".$error[ 'code']."<br />";
+            echo "message: ".$error[ 'message']."<br />";
+        }
+    }
+}
+sqlsrv_free_stmt($getResults);
+?>
+
+  
+ </body>
+</html>
