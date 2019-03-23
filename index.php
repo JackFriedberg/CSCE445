@@ -1,6 +1,8 @@
 <?php
  chdir('..');
  include_once "dbh.inc.php";
+ session_start();
+$_SESSION['qIndex'] = 1;
 ?>
 
 
@@ -11,32 +13,14 @@
  <body>
   
   <p> SQL Query with list of user emails: </p>  
-  
-<?php
- 
- $sql = "SELECT * FROM Users;";
- $result = sqlsrv_query($conn, $sql);
 
 
-if($result){
- while ($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)) {
-     echo $row['email']."<br />";
-    }
-}
-else{
- echo 'SQL Error:';
-  if( ($errors = sqlsrv_errors() ) != null) {
-        foreach( $errors as $error ) {
-            echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
-            echo "code: ".$error[ 'code']."<br />";
-            echo "message: ".$error[ 'message']."<br />";
-        }
-    }
-}
 
 
-sqlsrv_free_stmt($getResults);
-?>
+<form method="GET">
+    <input type="hidden" name="name">  
+    <button type="submit"> PRESS me to start the quiz! </button>
+</form>
 
   
  </body>

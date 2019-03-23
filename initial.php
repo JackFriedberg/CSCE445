@@ -1,6 +1,7 @@
 <?php
  chdir('..');
  include_once "dbh.inc.php";
+
 ?>
 
 
@@ -11,14 +12,11 @@
  <body>
   
   <p> SQL Query with Q1 </p>  
-  <form action="http://445-termproject.azurewebsites.net/initial.php" method="get">
-  <button type="submit">Submit</button>
-  </form>
+
 
 <?php
- $qIndex = "1";
- $sql = "SELECT * FROM Questions WHERE qIndex = " . $qIndex;
- $test = sqlsrv_query($conn, $sql);
+$sql = "SELECT * FROM Questions WHERE qIndex = ". $_SESSION['qIndex'];
+$test = sqlsrv_query($conn, $sql);
 
 if($test){
  while ($row = sqlsrv_fetch_array($test, SQLSRV_FETCH_ASSOC)) {
@@ -40,7 +38,16 @@ else{
     }
 }
 sqlsrv_free_stmt($getResults);
+
+$_SESSION['qIndex'] = 1;
 ?>
+
+
+<form action="http://445-termproject.azurewebsites.net/initial.php" method="get">
+  <button type="submit">Submit</button>
+  </form>
+
+
 
   
  </body>
