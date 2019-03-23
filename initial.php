@@ -2,7 +2,6 @@
     chdir('..');
     include_once "dbh.inc.php";
     session_start();
-    /* http://445dev1.azurewebsites.net/initial.php*/
 ?>
 
 <html>
@@ -12,29 +11,77 @@
     <body>  
 
         <?php
-            $sql = "SELECT * FROM Questions WHERE qIndex = " . strval($_SESSION["question"]);
-            $test = sqlsrv_query($conn, $sql);
-            if($test){
-                
-                $row = sqlsrv_fetch_array($test, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
-                            
-                echo "Question 1 text: " . $row['qText1']."<br />";
-                echo "Question 2 text: " . $row['qText2']."<br />";    
-                
-                $question1Answers = explode(";", $row['answers1']); /* delimts the string into an array */
-                $question2Answers = explode(";", $row['answers2']);
-                
-                echo "Answers for Question 1: <br />";
-                foreach ($question1Answers as &$value1) { /* for loop goes length of array, stores curr value in $value1 */
-                    echo "----". $value1 . "<br />"; 
-                }     
-        
-                echo "Answers for Question 2: <br />";
-                foreach ($question2Answers as &$value2) {
-                    echo "----". $value2 . "<br />";
+            $sql = "SELECT * FROM amrev_questions WHERE qIndex = " . strval($_SESSION["question"]);
+            $questions = sqlsrv_query($conn, $sql);
+            $sql = "SELECT * FROM amrev_options WHERE qIndex = " . strval($_SESSION["question"]);
+            $options = sqlsrv_query($conn, $sql);
+            $sql = "SELECT * FROM amrev_context WHERE qIndex = " . strval($_SESSION["question"]);
+            $context = sqlsrv_query($conn, $sql);
+            if($questions){
+                $row = sqlsrv_fetch_array($questions, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
+                $questionText = $row['QText'];
+                echo $questionText . "<br />";
+            }    
+            else{
+                echo 'SQL Error:';
+                if( ($errors = sqlsrv_errors() ) != null) {
+                    foreach( $errors as $error ) {
+                        echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
+                        echo "code: ".$error[ 'code']."<br />";
+                        echo "message: ".$error[ 'message']."<br />";
+                    }
                 }
-                
-                echo "Context 1 text: " . $row['context1_1']."<br />";
+            }
+            if($options){
+                $row = sqlsrv_fetch_array($options, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
+                $option1 = $row['Option1'];
+                $option2 = $row['Option2'];
+                $option3 = $row['Option3'];
+                $option4 = $row['Option4'];
+                echo'
+                    <form action="http://445dev3.azurewebsites.net/initial.php" method="post">
+                        <button type="submit">' . $option1 . '</button>
+                    </form>
+                    <form action="http://445dev3.azurewebsites.net/initial.php" method="post">
+                        <button type="submit">' . $option2 . '</button>
+                    </form>
+                    <form action="http://445dev3.azurewebsites.net/initial.php" method="post">
+                        <button type="submit">' . $option3 . '</button>
+                    </form>
+                    <form action="http://445dev3.azurewebsites.net/initial.php" method="post">
+                        <button type="submit">' . $option4 . '</button>
+                    </form>
+                ';
+            }
+            else{
+                echo 'SQL Error:';
+                if( ($errors = sqlsrv_errors() ) != null) {
+                    foreach( $errors as $error ) {
+                        echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
+                        echo "code: ".$error[ 'code']."<br />";
+                        echo "message: ".$error[ 'message']."<br />";
+                    }
+                }
+            }
+            if($context){
+                $counter = 1;
+                while($row = sqlsrv_fetch_array($context)){
+                    $contextContent = $row['Embed'];
+                    $contextSrc =  $row['Link'];
+                    echo '
+                        <div id="Context1">
+                            <h3> Historical Information #'. strval($counter) .':</h3>
+                            <div>
+                                <p>' . $contextContent . '</p>    
+                            </div>
+                            <div>
+                                <p>' . $contextSrc . '</p>
+                            </div>
+                        </div>
+                    ';
+                    
+                $counter++;
+                }
             }
             else{
                 echo 'SQL Error:';
@@ -58,9 +105,18 @@
         hidden, Question 2 stuff shown).
         -->
 
-        <form action="http://445dev1.azurewebsites.net/initial.php" method="post">
+        <form action="http://445dev3.azurewebsites.net/initial.php" method="post">
             <button type="submit">Next Question</button>
         </form>
+
+        <?php 
+            
+            $context2Content = '<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/gzALIXcY4pg?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+                
+            $context2Src = "YouTube";
+       ?>
+
+
 
     </body>
 </html>
