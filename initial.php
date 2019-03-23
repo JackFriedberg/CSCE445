@@ -135,7 +135,7 @@
             $qty=$_POST['qty']; 
             if (is_array($qty))
                 {
-                    for ($i=0;$i<size($qty);$i++)
+                    for ($i=0;$i<count($qty);$i++)
                         {
                             print ($qty[$i]);
                         }
