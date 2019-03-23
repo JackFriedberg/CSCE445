@@ -58,11 +58,11 @@
                     }
                     echo "----". $value1 . "<br />";
                 }
-                echo "Answers for Question 2: <br />";
+                /*echo "Answers for Question 2: <br />";
                 foreach ($question2Answers as &$value2) {
                     echo "----". $value2 . "<br />";
                 }
-                
+                */
                 echo "Context 1 text: " . $row['context1_1']."<br />";
             }
             if($_SESSION["questionState"]==2){
@@ -75,15 +75,15 @@
                 $question1Answers = explode(";", $row['answers1']); /* delimts the string into an array */
                 $question2Answers = explode(";", $row['answers2']);
                 
-                echo "Answers for Question 1: <br />";
+                /*echo "Answers for Question 1: <br />";
                 foreach ($question1Answers as &$value1) { /* for loop goes length of array, stores curr value in $value1 */
                     if($_SESSION["iterator"]==1){
                         $_SESSION["answer1"]=$value1;
                         //todo: either change the schema for the database to have a certain number of answers only
                         // or finish rest of this to be able to add query answer choices to buttons
-                    }
+                    /*}
                     echo "----". $value1 . "<br />";
-                }
+            }*/
                 echo "Answers for Question 2: <br />";
                 foreach ($question2Answers as &$value2) {
                     echo "----". $value2 . "<br />";
