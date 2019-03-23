@@ -11,7 +11,7 @@
     </head>
     <body>
   
-        <p> SQL Query with list of user emails: </p>  
+        <p> upQuiz Home with list of topics: </p>  
 
         
         <?php

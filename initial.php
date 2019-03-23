@@ -13,15 +13,14 @@
 
         <?php
             $sql = "SELECT * FROM Questions WHERE qIndex = " . strval($_SESSION["question"]);
-            $test = sqlsrv_query($conn, $sql);
+            $returned = sqlsrv_query($conn, $sql);
 
-            if($test){
-                while ($row = sqlsrv_fetch_array($test, SQLSRV_FETCH_ASSOC)) {
-                    echo $row['qText1']."<br />";
-                    echo $row['qText2']."<br />";
-                    echo $row['answers1']."<br />";
-                    echo $row['answers2']."<br />";
-                    echo $row['context1_1']."<br />";
+            if($returned){
+                    echo $returned['qText1']."<br />";
+                    echo $returned['qText2']."<br />";
+                    echo $returned['answers1']."<br />";
+                    echo $returned['answers2']."<br />";
+                    echo $returned['context1_1']."<br />";
                 }
             }
             else{
