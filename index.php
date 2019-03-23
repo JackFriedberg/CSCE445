@@ -15,7 +15,7 @@
 
         <?php
         $_SESSION['question'] = 1;
-        $_SESSION['questionState'] = 1;
+        $_SESSION['questionState'] = 2;
         $_SESSION['answer1']="butt";
         $_SESSION['answer2']="booty";
         $_SESSION['answer3']="ass";

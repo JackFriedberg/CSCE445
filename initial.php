@@ -126,12 +126,20 @@
             ALSO ADD ONCLICK TO BUTTONS FOR PHP FUNCTIONS USING AJAX
             -->
         <form action="" method="post">
-            <input type="submit" name="answer1" id="answer1"><?php echo $_SESSION["answer1"] ?></button>
+            <input type="submit" name="answer1[]" id="answer1"><?php echo $_SESSION["answer1"] ?></button>
         </form>
         <form action="" method="post">
-            <input type="submit" name="answer2" id="answer2">morning</button>
+            <input type="submit" name="answer2[]" id="answer2">morning</button>
         </form>
-        <?php 
+        <?php
+            $qty=$_POST['qty']; 
+            if (is_array($qty))
+                {
+                    for ($i=0;$i<size($qty);$i++)
+                        {
+                            print ($qty[$i]);
+                        }
+                }
             function rightAnswer(){
                 if($_SESSION["question"]%2==1){//if question is odd(2nd QText) and you got right answer
                     $_SESSION["question"]++;
