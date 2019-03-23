@@ -28,6 +28,10 @@
                 foreach ($question1Answers as &$value1) { /* for loop goes length of array, stores curr value in $value1 */
                     echo "----". $value1 . "<br />"; 
                 }
+                ?>
+                <form action="http://445dev1.azurewebsites.net/initial.php" method="post">
+                <button type="submit">Next Question</button>
+                </form>        
         
                 echo "Answers for Question 2: <br />";
                 foreach ($question2Answers as &$value2) {
