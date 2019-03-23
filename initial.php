@@ -16,8 +16,10 @@
   </form>
 
 <?php
+
+$indexnumber = "2";
  
- $sql = "SELECT * FROM Questions WHERE qIndex = " . "2";
+ $sql = "SELECT * FROM Questions WHERE qIndex = " . $indexnumber;
  $test = sqlsrv_query($conn, $sql);
 
 if($test){
