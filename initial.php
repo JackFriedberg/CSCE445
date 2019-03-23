@@ -25,8 +25,13 @@
                 $question2Answers = explode(";", $row['answers2']);
                 
                 echo "Answers for Question 1: <br />";
-                foreach ($question1Answers as &$value1) { /* for loop goes length of array, stores curr value in $value1 */
+                /*foreach ($question1Answers as &$value1) { /* for loop goes length of array, stores curr value in $value1 */
                     echo "----". $value1 . "<br />"; 
+                }*/
+                for ($i = 1; $i < count($question1Answers); $i++) {
+                ?>
+                <input type="radio" name="<?php echo $i; ?>"><?php echo $options[$i]?><br>
+                <?php
                 }
                 echo "Answers for Question 2: <br />";
                 foreach ($question2Answers as &$value2) {
