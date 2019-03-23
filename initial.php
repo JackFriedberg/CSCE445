@@ -50,7 +50,7 @@
                     }
                 }
             }
-
+/*
             if($context){
                 $counter = 1;
                 while($row = SQLSRV_FETCH_ASSOC($context)){
@@ -81,6 +81,7 @@
                     }
                 }
             }
+            */
             sqlsrv_free_stmt($getResults); /* idk what this does */
             $_SESSION['question']++; /* Increments the session variable after the query*/
         ?>
