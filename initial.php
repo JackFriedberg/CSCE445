@@ -16,7 +16,7 @@
             $test = sqlsrv_query($conn, $sql);
 
             if($test){
-                $row = sqlsrv_fetch_array($test, SQLSRV_FETCH_ASSOC)
+                $row = sqlsrv_fetch_array($test, SQLSRV_FETCH_ASSOC);
                 echo $row['qText1']."<br />";
                 echo $row['qText2']."<br />";
                 echo $row['answers1']."<br />";
