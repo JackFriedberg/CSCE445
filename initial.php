@@ -18,7 +18,7 @@
 <?php
 
 $questionIndex = 2;
-echo "Question Variable: " . strval($_SESSION["question"]) . "\n";
+echo "Question Variable: " . strval($_SESSION["question"]) . "<br/>";
 $sql = "SELECT * FROM Questions WHERE qIndex = " . strval($questionIndex);
 $test = sqlsrv_query($conn, $sql);
 
