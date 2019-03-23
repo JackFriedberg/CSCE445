@@ -95,7 +95,7 @@
         <div id="Context1">
             <h3>Historical Information #1:</h3>
             <div>
-                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/gzALIXcY4pg?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/gzALIXcY4pg?controls=0" frameborder="0" allow="accelerometer; gyroscope;"></iframe>
             </div>
             <div>
                 <p> <?php echo "php text test" ?>  </p>
