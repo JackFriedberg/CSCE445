@@ -97,6 +97,8 @@
 
         <form action="" method="post">
             <button class="button" name="button1"><?php echo $_SESSION["answer1"] ?></button>
+        </form>
+        <form action="" method="post">
             <button class="button" name="button2">wrong answer</button>
         </form>
 
