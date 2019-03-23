@@ -43,18 +43,24 @@
   </form>
 
 <?php
-
  $sql = "SELECT * FROM Questions WHERE qIndex = 1";
+ $sql .= "SELECT * FROM Questions WHERE qIndex = 2";
  $test = sqlsrv_query($conn, $sql);
 
-if($test){
+if(mysqli_multi_query($con,$sql)){
+    do{
+        if($result=mysqli_store_result($con)){
  while ($row = sqlsrv_fetch_array($test, SQLSRV_FETCH_ASSOC)) {
     echo $row['qText1']."<br />";
     echo $row['qText2']."<br />";
     echo $row['answers1']."<br />";
     echo $row['answers2']."<br />";
     echo $row['context1_1']."<br />";
+ }
+ mysqli_free_result($result);
     }
+}
+while (mysqli_next_result($con));
 }
 else{
  echo 'SQL Error:';
@@ -66,7 +72,6 @@ else{
         }
     }
 }
-sqlsrv_free_stmt($getResults);
 ?>
 
   
