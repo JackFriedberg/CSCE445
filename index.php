@@ -15,7 +15,7 @@
 
 
 
-<form action="http://445-termproject.azurewebsites.net/initial.php" method="POST">
+<form action="http://445dev3.azurewebsites.net/initial.php" method="POST">
     <button type="submit"> PRESS me to start the quiz! </button>
 </form>
 

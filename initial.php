@@ -1,7 +1,6 @@
 <?php
  chdir('..');
  include_once "dbh.inc.php";
-
 ?>
 
 
@@ -41,7 +40,7 @@ sqlsrv_free_stmt($getResults);
 ?>
 
 <!--
-<form action="http://445-termproject.azurewebsites.net/initial.php" method="POST">
+<form action="http://445dev3.azurewebsites.net/initial.php" method="GET">
   <button type="submit">Submit</button>
   </form>
 -->
