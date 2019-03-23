@@ -110,7 +110,7 @@
             <div>
                 <p> 
                     <?php 
-                        if($context2Src != "Youtube"){
+                        if($context2Src != "YouTube"){
                             echo $context2Src;
                         } 
                     ?>
