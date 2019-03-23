@@ -37,9 +37,11 @@
     <body>  
 
         <?php
+
             $sql = "SELECT * FROM amrev_questions WHERE qIndex = " . strval($_SESSION["question"]);
             $questions = sqlsrv_query($conn, $sql);
             
+
             $sql = "SELECT * FROM amrev_options WHERE qIndex = " . strval($_SESSION["question"]);
             $options = sqlsrv_query($conn, $sql);
             
@@ -98,7 +100,7 @@
                     }
                 }
             }
-            
+
             sqlsrv_free_stmt($getResults); /* idk what this does */
             echo $_SESSION['questionState'];
             /*if($_SESSION['questionState']==1){
@@ -131,11 +133,20 @@
         </form>
         <?php 
             function rightAnswer(){
-                $_SESSION["question"]++;
-                $_SESSION["questionState"]=1;
+                if($_SESSION["question"]%2==1){//if question is odd(2nd QText) and you got right answer
+                    $_SESSION["question"]++;
+                }
+                else{
+                    $_SESSION["question"]+2;
+                }
             }
             function wrongAnswer(){
-                $_SESSION["questionState"]++;
+                if($_SESSION["question"]==1){
+                    $_SESSION["question"]++;
+                }
+                else{
+                    $_SESSION["question"]+2;
+                }
             }
             if(array_key_exists('answer1',$_POST)){
                 rightAnswer();
