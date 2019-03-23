@@ -16,6 +16,11 @@
         <?php
         $_SESSION['question'] = 1;
         $_SESSION['questionState'] = 1;
+        $_SESSION['answer1']="butt";
+        $_SESSION['answer2']="booty";
+        $_SESSION['answer3']="ass";
+        $_SESSION['answer4']="derriere";
+        $_SESSION['answer5']="posterior region";
         ?>
 
         <form action="/initial.php" method="POST">

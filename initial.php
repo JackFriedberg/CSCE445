@@ -53,6 +53,7 @@
                 
                 echo "Answers for Question 1: <br />";
                 foreach ($question1Answers as &$value1) { /* for loop goes length of array, stores curr value in $value1 */
+                    
                     echo "----". $value1 . "<br />";
                 }
                 echo "Answers for Question 2: <br />";
@@ -92,7 +93,7 @@
         -->
 
         <form action="" method="post">
-            <button class="button">Next Question</button>
+            <button class="button"></button>
         </form>
 
     </body>
