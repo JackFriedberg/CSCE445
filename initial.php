@@ -60,7 +60,8 @@
             if($context){
                 $counter = 1;
                 echo $counter;
-                echo sqlsrv_num_rows($context);
+                $num_rows = sqlsrv_num_rows($context); 
+                echo $num_rows;
                 while($row = SQLSRV_FETCH_ASSOC($context)){
                     echo $counter;
                     echo $row['Embed'] . "<br />";
