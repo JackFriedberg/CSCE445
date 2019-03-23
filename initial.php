@@ -102,7 +102,7 @@
             }
 
             sqlsrv_free_stmt($getResults); /* idk what this does */
-            echo $_SESSION['questionState'];
+            echo $_SESSION['question'];
             /*if($_SESSION['questionState']==1){
                 $_SESSION['questionState']++;
             }
