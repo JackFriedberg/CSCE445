@@ -12,14 +12,12 @@
   
   <p> SQL Query with Q1 </p>  
   <form action="http://445-termproject.azurewebsites.net/initial.php" method="get">
-  First name: <input type="text" name="fname"><br>
-  Last name: <input type="text" name="lname"><br>
   <button type="submit">Submit</button>
   </form>
 
 <?php
  
- $sql = "SELECT FROM Questions;";
+ $sql = "SELECT * FROM Questions WHERE qIndex = 1";
  $test = sqlsrv_query($conn, $sql);
 
 if($test){
