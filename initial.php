@@ -53,7 +53,13 @@
                     }
                 }
             }
-/*
+
+            echo $questionText . "<br />";
+            echo $option1 . "<br />";
+            echo $option2 . "<br />";
+            echo $option3 . "<br />";
+            echo $option4 . "<br />";
+
             if($context){
                 $counter = 1;
                 while($row = SQLSRV_FETCH_ASSOC($context)){
