@@ -12,7 +12,7 @@ Question <br><br>
     $test = sqlsrv_query($conn, $sql);
     
     if($test){
-        $row = sqlsrv_fetch_array($test, SQLSRV_FETCH_ASSOC);
+        //$row = sqlsrv_fetch_array($test, SQLSRV_FETCH_ASSOC);
 
         while ($row = mysql_fetch_assoc($query)) {
             echo $row['Option1'] . '<input type="radio" name="option_1" value="option1"><br>';   
