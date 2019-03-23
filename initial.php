@@ -19,7 +19,7 @@
             $options = sqlsrv_query($conn, $sql);
 
             
-            $sql = "SELECT * FROM amrev_contect WHERE qIndex = " . strval($_SESSION["question"]);
+            $sql = "SELECT * FROM amrev_context WHERE qIndex = " . strval($_SESSION["question"]);
             $context = sqlsrv_query($conn, $sql);
 
             if($questions){
