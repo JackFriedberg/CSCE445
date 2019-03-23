@@ -155,7 +155,7 @@
         $.ajax({
             url:"initial.php",
             type: "POST", //request type
-            success:function(result){
+            success:rightAnswer(result){
        }
         });
     }
