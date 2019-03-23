@@ -4,6 +4,15 @@
     session_start();
 ?>
 
+<?php
+header("Content-type: text/css; charset: UTF-8");
+$body_bg = "blue";
+?>
+
+body{
+    background-color: <?php echo $body_bg; ?>;
+}
+
 <html>
     <head>
         <title>UpQuiz</title>
@@ -17,6 +26,7 @@
             $options = sqlsrv_query($conn, $sql);
             $sql = "SELECT * FROM amrev_context WHERE qIndex = " . strval($_SESSION["question"]);
             $context = sqlsrv_query($conn, $sql);
+            
             if($questions){
                 $row = sqlsrv_fetch_array($questions, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
                 $questionText = $row['QText'];
@@ -97,13 +107,6 @@
             $_SESSION['question']++; /* Increments the session variable after the query*/
         ?>
 
-        <!--
-        This is where answer selection needs to be validated.
-        If the correct answer is chosen, the below button action should be 
-        triggered, most likely with javascript (the user shouldnt have to push a button).
-        If incorrect, the show/hide functionality needs to be implemented(Question 1 stuff 
-        hidden, Question 2 stuff shown).
-        -->
 
         <form action="http://445dev3.azurewebsites.net/initial.php" method="post">
             <button type="submit">Next Question</button>
