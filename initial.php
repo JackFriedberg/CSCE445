@@ -141,7 +141,7 @@
             ALSO ADD ONCLICK TO BUTTONS FOR PHP FUNCTIONS USING AJAX
             -->
         <form action="" method="post">
-            <button class="button" name="button1" onclick=<?php $_SESSION["questionState"]++?><?php echo $_SESSION["answer1"] ?>></button>
+            <button class="button" name="button1" onclick=<?php $_SESSION["questionState"]++?>><?php echo $_SESSION["answer1"] ?></button>
         </form>
         <form action="" method="post">
             <button class="button" name="button2">wrong answer</button>
@@ -150,14 +150,3 @@
 
     </body>
 </html>
-
-<script type="text/javascript">
-    function callPHPFunction(){
-        $.ajax({
-            url:"initial.php",
-            type: "POST", //request type
-            success:rightAnswer(result){
-       }
-        });
-    }
-</script>
