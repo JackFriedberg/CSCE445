@@ -13,7 +13,7 @@
         
         <?php 
             $query = "SELECT * FROM Questions ";
-            $conn = sqlsrv_query($conn, $sql);
+            $conn = sqlsrv_query($conn, $query);
 
             while ($row = $query ->fetch_assoc()):
                 $question = $row['qIndex'];
