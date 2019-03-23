@@ -2,7 +2,6 @@
  chdir('..');
  include_once "dbh.inc.php";
 
- $_SESSION['qIndex'] = 1;
 ?>
 
 
@@ -17,7 +16,7 @@
 
 <?php
 
-$sql = "SELECT * FROM Questions WHERE qIndex = " . $_SESSION['qIndex'];
+$sql = "SELECT * FROM Questions WHERE qIndex = " . 1;
 
 echo $sql; 
 
