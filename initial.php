@@ -16,7 +16,7 @@
 
 <?php
 
-$sql = "SELECT * FROM Questions WHERE qIndex = " . 1;
+$sql = "SELECT * FROM Questions WHERE qIndex = ";
 
 echo $sql; 
 
