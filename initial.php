@@ -80,7 +80,7 @@
                 $_SESSION['questionState']++;
             }
             else{
-                $_SESSION['questionState']==1;
+                $_SESSION['questionState']=1;
                 $_SESSION['question']++; /* Increments the session variable after the query*/
             }
             echo $_SESSION['questionState'];
