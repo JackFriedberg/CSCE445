@@ -2,6 +2,7 @@
  chdir('..');
  include_once "dbh.inc.php";
 
+ $_SESSION['qIndex'] = 1;
 ?>
 
 
@@ -15,6 +16,7 @@
 
 
 <?php
+
 $sql = "SELECT * FROM Questions WHERE qIndex = " . $_SESSION['qIndex'];
 
 echo $sql; 
@@ -34,7 +36,7 @@ else{
  echo 'SQL Error:';
   if( ($errors = sqlsrv_errors() ) != null) {
         foreach( $errors as $error ) {
-            echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
+            echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";.
             echo "code: ".$error[ 'code']."<br />";
             echo "message: ".$error[ 'message']."<br />";
         }
