@@ -52,9 +52,24 @@
             }
 
             if($context){
-                $row = sqlsrv_fetch_array($context, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
-                $context1Content = $row['Embed'];
-                $context1Src =  $row['Link'];    
+                $counter = 1;
+                while($row = SQLSRV_FETCH_ASSOC($context)){
+                    $contextContent = $row['Embed'];
+                    $contextSrc =  $row['Link'];
+
+                    echo '
+                        <div id="Context1">
+                            <h3>Historical Information #'. $counter .':</h3>
+                            <div>
+                                <p>' . $context1Content . '</p>    
+                            </div>
+                            <div>
+                                <p>' . $context1Src . '</p>
+                            </div>
+                        </div>
+                    '
+                $counter++;
+                }
             }
             else{
                 echo 'SQL Error:';
@@ -87,36 +102,7 @@
             $context2Content = '<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/gzALIXcY4pg?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
                 
             $context2Src = "YouTube";
-        ?>
-
-
-
-        <div id="Context1">
-            <h3>Historical Information #1:</h3>
-            <div>
-                <p> <?php echo $context1Content ?></p>    
-            </div>
-            <div>
-                <p> <?php echo $context1Src ?></p>
-            </div>
-        </div>
-
-
-        <div id="Context2">
-            <h3>Historical Information #2:</h3>
-            <div>
-                <p> <?php echo $context2Content ?></p>    
-            </div>
-            <div>
-                <p> 
-                    <?php 
-                        if($context2Src != "YouTube"){
-                            echo $context2Src;
-                        } 
-                    ?>
-                </p>
-            </div>
-        </div>
+       ?>
 
 
 
