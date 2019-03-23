@@ -13,12 +13,16 @@
         
         <?php 
             $query = "SELECT * FROM Questions ";
-            $conn = sqlsrv_query($conn, $query);
+            //$conn = sqlsrv_query($conn, $query);
+            $result = mqsql_query($query);
 
-            while ($row = $query ->fetch_assoc()):
+            echo "<table>";
+
+            while ($row = mqsql_fetch_array($result)) {
                 $question = $row['qIndex'];
-                echo $question . "<br />";
-            endwhile;
+                echo "<tr><td>" . $row[qIndex] . "<br />";
+            }
+                
         ?>
 
         <form action="http://445dev1.azurewebsites.net/test.php" method="post">
