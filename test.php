@@ -8,18 +8,15 @@
 Question <br><br>
 
 <?php 
-    $sql = mysql_query("SELECT * FROM amrev_options");
-    $test = sqlsrv_query($conn, $sql);
+    $sql = "SELECT * FROM amrev_options WHERE qIndex = " . strval($_SESSION["question"]);
+    $options = sqlsrv_query($conn, $sql);
     
-    if($test){
-        //$row = sqlsrv_fetch_array($test, SQLSRV_FETCH_ASSOC);
+    if($options){
+        $row = sqlsrv_fetch_array($test, SQLSRV_FETCH_ASSOC);
 
-        while ($row = mysql_fetch_assoc($query)) {
-            echo $row['Option1'] . '<input type="radio" name="option_1" value="option1"><br>';   
-            echo $row['Option2'] . '<input type="radio" name="option_1" value="option2"><br>';  
-            echo $row['Option3'] . '<input type="radio" name="option_1" value="option3"><br>';  
-            echo $row['Option4'] . '<input type="radio" name="option_1" value="option4"><br>';      
-        }
+        echo "Answer 1 text: " . $row['Option1']."<br />";
+        echo "Answer 2 text: " . $row['Option2']."<br />"; 
+        
     }
 
     else{
