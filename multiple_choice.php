@@ -17,13 +17,12 @@
         
         if($options){
             while($row = sqlsrv_fetch_array($options, SQLSRV_FETCH_ASSOC)) {
-                echo $row['Option1'];// . '<input type="radio" name="option_1" value="option1"><br>';   
-                //echo $row['Option2'] . '<input type="radio" name="option_1" value="option2"><br>';  
-                //echo $row['Option3'] . '<input type="radio" name="option_1" value="option3"><br>';  
-                //echo $row['Option4'] . '<input type="radio" name="option_1" value="option4"><br>';       
+                echo $row['Option1'] . '<input type="radio" name="option_1" value="option1"><br>';   
+                echo $row['Option2'] . '<input type="radio" name="option_1" value="option2"><br>';  
+                echo $row['Option3'] . '<input type="radio" name="option_1" value="option3"><br>';  
+                echo $row['Option4'] . '<input type="radio" name="option_1" value="option4"><br>';       
             }
         }
-
         else{
             echo 'SQL Error:';
             if( ($errors = sqlsrv_errors() ) != null) {
