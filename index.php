@@ -2,7 +2,7 @@
  chdir('..');
  include_once "dbh.inc.php";
 session_start();
-$_SESSION["question"] = 1;
+$_SESSION['question'] = 1;
 ?>
 
 
@@ -14,7 +14,11 @@ $_SESSION["question"] = 1;
   
   <p> SQL Query with list of user emails: </p>  
 
+<?php
 
+echo $_SESSION['question'];
+
+?>
 
 
 <form action="http://445dev3.azurewebsites.net/initial.php" method="POST">
