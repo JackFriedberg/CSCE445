@@ -53,7 +53,7 @@
                 
                 echo "Answers for Question 1: <br />";
                 foreach ($question1Answers as &$value1) { /* for loop goes length of array, stores curr value in $value1 */
-                    
+
                     echo "----". $value1 . "<br />";
                 }
                 echo "Answers for Question 2: <br />";
@@ -75,13 +75,13 @@
             }
             sqlsrv_free_stmt($getResults); /* idk what this does */
             echo $_SESSION['questionState'];
-            if($_SESSION['questionState']==1){
+            /*if($_SESSION['questionState']==1){
                 $_SESSION['questionState']++;
             }
             else{
-                $_SESSION['questionState']=1;
+                $_SESSION['questionState']=1;*/
                 $_SESSION['question']++; /* Increments the session variable after the query*/
-            }
+           // }
         ?>
 
         <!--
