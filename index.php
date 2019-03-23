@@ -1,43 +1,32 @@
 <?php
- chdir('..');
- include_once "dbh.inc.php";
+    chdir('..');
+    include_once "dbh.inc.php";
+    session_start();
 ?>
 
 
 <html>
- <head>
-  <title>PHP Test</title>
- </head>
- <body>
+    <head>
+        <title>UpQuiz Home</title>
+    </head>
+    <body>
   
-  <p> SQL Query with list of user emails: </p>  
-  
-<?php
- 
- $sql = "SELECT * FROM Users;";
- $result = sqlsrv_query($conn, $sql);
+        <p> upQuiz Home with list of topics: </p>  
 
+        <?php
+        $_SESSION['question'] = 1;
+        $_SESSION['questionState'] = 1;
+        $_SESSION['answer1']="butt";
+        $_SESSION['answer2']="booty";
+        $_SESSION['answer3']="ass";
+        $_SESSION['answer4']="derriere";
+        $_SESSION['answer5']="posterior region";
+        $_SESSION['iterator']=1;
+        ?>
 
-if($result){
- while ($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)) {
-     echo $row['email']."<br />";
-    }
-}
-else{
- echo 'SQL Error:';
-  if( ($errors = sqlsrv_errors() ) != null) {
-        foreach( $errors as $error ) {
-            echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
-            echo "code: ".$error[ 'code']."<br />";
-            echo "message: ".$error[ 'message']."<br />";
-        }
-    }
-}
+        <form action="/initial.php" method="POST">
+            <button type="submit"> Press me to start the quiz! </button>
+        </form>
 
-
-sqlsrv_free_stmt($getResults);
-?>
-
-  
- </body>
+    </body>
 </html>
