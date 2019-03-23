@@ -18,9 +18,6 @@
             $sql = "SELECT * FROM amrev_context WHERE qIndex = " . strval($_SESSION["question"]);
             $context = sqlsrv_query($conn, $sql);
 
-
-            echo 'Hello!';
-
             if($questions){
                 $row = sqlsrv_fetch_array($questions, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
                 $questionText = $row['QText'];
@@ -70,13 +67,15 @@
                         <div id="Context1">
                             <h3>Historical Information #'. strval($counter) .':</h3>
                             <div>
-                                <p>' . $context1Content . '</p>    
+                                <p>' . $contextContent . '</p>    
                             </div>
                             <div>
-                                <p>' . $context1Src . '</p>
+                                <p>' . $contextSrc . '</p>
                             </div>
                         </div>
                     ';
+
+                
                 $counter++;
                 }
             }
