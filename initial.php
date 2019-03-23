@@ -11,11 +11,14 @@
  <body>
   
   <p> SQL Query with Q1 </p>  
-
+  <form action="http://445-termproject.azurewebsites.net/initial.php" method="get">
+  <button type="submit">Submit</button>
+  </form>
 
 <?php
-$sql = "SELECT * FROM Questions WHERE qIndex = 1";
-$test = sqlsrv_query($conn, $sql);
+ 
+ $sql = "SELECT * FROM Questions WHERE qIndex = 1";
+ $test = sqlsrv_query($conn, $sql);
 
 if($test){
  while ($row = sqlsrv_fetch_array($test, SQLSRV_FETCH_ASSOC)) {
@@ -30,7 +33,7 @@ else{
  echo 'SQL Error:';
   if( ($errors = sqlsrv_errors() ) != null) {
         foreach( $errors as $error ) {
-            echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";.
+            echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
             echo "code: ".$error[ 'code']."<br />";
             echo "message: ".$error[ 'message']."<br />";
         }
@@ -38,13 +41,6 @@ else{
 }
 sqlsrv_free_stmt($getResults);
 ?>
-
-<!--
-<form action="http://445dev3.azurewebsites.net/initial.php" method="GET">
-  <button type="submit">Submit</button>
-  </form>
--->
-
 
   
  </body>
