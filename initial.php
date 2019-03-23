@@ -37,7 +37,7 @@
 
         <?php
             $sql = "SELECT * FROM Questions WHERE qIndex = " . strval($_SESSION["question"]);
-            $test = sqlsrv_query($conn, $sql);
+            if($_session['questionState']==1){$test = sqlsrv_query($conn, $sql);}
             if($test){
                 
                 $row = sqlsrv_fetch_array($test, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
