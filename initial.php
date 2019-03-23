@@ -131,6 +131,7 @@
         
         <!--
             TODO: MAKE BUTTONS SHOW ALL OF THE ANSWER CHOICES
+            ALSO ADD ONCLICK TO BUTTONS FOR PHP FUNCTIONS USING AJAX
             -->
         <form action="" method="post">
             <button class="button" name="button1"><?php echo $_SESSION["answer1"] ?></button>
