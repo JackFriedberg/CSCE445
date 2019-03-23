@@ -21,6 +21,7 @@
         $_SESSION['answer3']="ass";
         $_SESSION['answer4']="derriere";
         $_SESSION['answer5']="posterior region";
+        $_SESSION['iterator']=1;
         ?>
 
         <form action="/initial.php" method="POST">

@@ -53,7 +53,9 @@
                 
                 echo "Answers for Question 1: <br />";
                 foreach ($question1Answers as &$value1) { /* for loop goes length of array, stores curr value in $value1 */
-
+                    if($_SESSION["iterator"]==1){
+                        $_SESSION["answer1"]=$value1;
+                    }
                     echo "----". $value1 . "<br />";
                 }
                 echo "Answers for Question 2: <br />";
@@ -82,6 +84,7 @@
                 $_SESSION['questionState']=1;
                 $_SESSION['question']++; /* Increments the session variable after the query*/
             }
+            
         ?>
 
         <!--
@@ -93,7 +96,7 @@
         -->
 
         <form action="" method="post">
-            <button class="button"></button>
+            <button class="button"><?php echo $_SESSION["answer1"] ?></button>
         </form>
 
     </body>
