@@ -82,7 +82,14 @@
             <button type="submit">Next Question</button>
         </form>
 
-            <?php $context1Content = '<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/gzALIXcY4pg?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'?>
+        <?php 
+            
+            $context2Content = '<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/gzALIXcY4pg?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+                
+            $context2Src = 'wikipedia.com'
+        ?>
+
+
 
         <div id="Context1">
             <h3>Historical Information #1:</h3>
@@ -92,7 +99,17 @@
             <div>
                 <p> <?php echo $context1Src ?></p>
             </div>
-            
+        </div>
+
+
+        <div id="Context2">
+            <h3>Historical Information #2:</h3>
+            <div>
+                <p> <?php echo $context2Content ?></p>    
+            </div>
+            <div>
+                <p> <?php echo $context2Src ?></p>
+            </div>
         </div>
 
 
