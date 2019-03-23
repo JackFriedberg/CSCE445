@@ -16,8 +16,8 @@
   </form>
 
 <?php
- 
- $sql = "SELECT * FROM Questions WHERE qIndex = 1";
+ $qIndex = "1";
+ $sql = "SELECT * FROM Questions WHERE qIndex = " . $qIndex;
  $test = sqlsrv_query($conn, $sql);
 
 if($test){
