@@ -58,6 +58,14 @@
             echo $option4 . "<br />";
 
             if($context){
+
+                $rows = sqlsrv_has_rows( $context );
+                if ($rows === true)
+                    echo "There are rows. <br />";
+                else 
+                    echo "There are no rows. <br />";
+
+
                 $counter = 1;
                 echo $counter;
                 $num_rows = sqlsrv_num_rows($context); 
