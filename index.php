@@ -14,7 +14,7 @@
         <p> upQuiz Home with list of topics: </p>  
 
         <?php
-        $_SESSION['question'] = 1; /*sets session variable to 1 for when the next page comes */
+        $_SESSION['question'] = 1;
         $_SESSION['questionState'] = 1;
         ?>
 
