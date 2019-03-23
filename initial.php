@@ -33,13 +33,13 @@
 
 <html>
  <head>
-  <title>UpQuizfdf</title>
+  <title>UpQuiz</title>
  </head>
  <body>
   
   <p> SQL Query with Q1 </p>  
   <form action="http://445-termproject.azurewebsites.net/initial.php" method="get">
-  <button type="submit">Submit</button>
+  <button class="button">Submit</button>
   </form>
 
 <?php
