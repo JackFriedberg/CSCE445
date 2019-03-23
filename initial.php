@@ -21,7 +21,7 @@ $indexnumber = "2";
 $questionIndex = 2;
 $newNum = strval($questionIndex);
  
- $sql = "SELECT * FROM Questions WHERE qIndex = " . $indexnumber;
+ $sql = "SELECT * FROM Questions WHERE qIndex = " . $newNum;
  $test = sqlsrv_query($conn, $sql);
 
 if($test){
