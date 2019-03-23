@@ -6,9 +6,7 @@
 <style>
     .button {
 	  display: block;
-	  left: 100px;
-	  top: 100px;
-	  position: absolute;
+	  position: relative;
 	  padding: 15px 25px;
 	  font-size: 24px;
 	  cursor: pointer;
