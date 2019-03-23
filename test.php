@@ -5,28 +5,23 @@
     /* http://445dev1.azurewebsites.net/initial.php*/
 ?>
 
-<html>
-    <head>
-        <title>UpQuiz</title>
-    </head>
-    <body>  
-        
-        <?php 
-            $query = "SELECT * FROM Questions ";
-            //$conn = sqlsrv_query($conn, $query);
-            $result = mqsql_query($query);
+Question <br><br>
 
-            echo "<table>";
+<?php 
+    $query = mysql_query("SELECT * FROM Questions WHERE qIndex = 1");
 
-            while ($row = mqsql_fetch_array($result)) {
-                $question = $row['qIndex'];
-                echo "<tr><td>" . $row[qIndex] . "<br />";
-            }
-                
-        ?>
-
-        <form action="http://445dev1.azurewebsites.net/test.php" method="post">
-            <button type="submit">Random Button</button>
-        </form>
-    </body>
-</html>
+    while ($row = mysql_fetch_assoc($query)) {
+        echo $row['qText1'] . '<input type="radio" name="option_1" value="option1"><br>';   
+        echo $row['qText2'] . '<input type="radio" name="option_1" value="option2"><br>';  
+        //echo $row['option3'] . '<input type="radio" name="option_1" value="option3"><br>';  
+        //echo $row['option4'] . '<input type="radio" name="option_1" value="option4"><br>';      
+    }
+    
+    $var = "select from answer questions where answer ='4'";
+    
+    if (isset($var)) {
+        echo 'correct answer';
+    } else {
+        echo 'wrong answer';
+    }
+    ?>
