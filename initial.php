@@ -134,7 +134,9 @@
         <form action="" method="post">
             <input type="submit" name="answer1" id="answer1"><?php echo $_SESSION["answer1"] ?></button>
         </form>
-        
+        <form action="" method="post">
+            <input type="submit" name="answer2" id="answer2">morning</button>
+        </form>
         <?php 
             function rightAnswer(){
                 $_SESSION["question"]++;
