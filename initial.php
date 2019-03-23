@@ -117,10 +117,10 @@
             function wrongAnswer(){
                 $_SESSION['questionState']++;
             }
-            echo $_SESSION['questionState'];
+            /*echo $_SESSION['questionState'];
             if($_SESSION['questionState']==1){
                 $_SESSION['questionState']++;
-            }
+            }*/
             else{
                 $_SESSION['questionState']=1;
                 $_SESSION['question']++; /* Increments the session variable after the query*/
@@ -141,10 +141,10 @@
             ALSO ADD ONCLICK TO BUTTONS FOR PHP FUNCTIONS USING AJAX
             -->
         <form action="" method="post">
-            <button class="button" name="button1" onclick=<?php $_SESSION["questionState"]++?>><?php echo $_SESSION["answer1"] ?></button>
+            <button class="button" name="button1" onclick=<?php $_SESSION ["question"]++;$_SESSION["questionState"]=1?>><?php echo $_SESSION["answer1"] ?></button>
         </form>
         <form action="" method="post">
-            <button class="button" name="button2">wrong answer</button>
+            <button class="button" name="button1" onclick=<?php $_SESSION ["questionState"]++?>>gay</button>
         </form>
 
 
