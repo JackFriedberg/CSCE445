@@ -17,8 +17,7 @@ $_SESSION['qIndex'] = 1;
 
 
 
-<form action="http://445-termproject.azurewebsites.net/initial.php">
-    <input type="hidden" name="name">  
+<form action="http://445-termproject.azurewebsites.net/initial.php" method="POST">
     <button type="submit"> PRESS me to start the quiz! </button>
 </form>
 
