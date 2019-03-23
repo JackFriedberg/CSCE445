@@ -84,7 +84,7 @@
         -->
 
         <form action="http://445dev3.azurewebsites.net/initial.php" method="post">
-            <button type="submit">Next Question</button>
+            <button class="button">Next Question</button>
         </form>
 
     </body>
