@@ -37,13 +37,13 @@
 
         <?php
             $sql = "SELECT * FROM Questions WHERE qIndex = " . strval($_SESSION["question"]);
-            //if($_SESSION['questionState']==1){
+            if($_SESSION['questionState']==1){
                 $test1 = sqlsrv_query($conn, $sql);
-            //}
+            }
             
             if($test1){
                 
-                $row = sqlsrv_fetch_array($test, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
+                $row = sqlsrv_fetch_array($test1, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
                             
                 echo "Question 1 text: " . $row['qText1']."<br />";
                 echo "Question 2 text: " . $row['qText2']."<br />";    
@@ -75,13 +75,13 @@
             }
             sqlsrv_free_stmt($getResults); /* idk what this does */
             echo $_SESSION['questionState'];
-            /*if($_SESSION['questionState']==1){
+            if($_SESSION['questionState']==1){
                 $_SESSION['questionState']++;
             }
             else{
-                $_SESSION['questionState']=1;*/
+                $_SESSION['questionState']=1;
                 $_SESSION['question']++; /* Increments the session variable after the query*/
-           // }
+            }
         ?>
 
         <!--
