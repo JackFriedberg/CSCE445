@@ -4,7 +4,7 @@
 ?>
 
 <style>
-    .button {
+    /*.button {
 	  display: block;
 	  left: 1100px;
 	  top: 100px;
@@ -28,7 +28,7 @@
 	  background-color: #3e8e41;
 	  box-shadow: 0 5px #666;
 	  transform: translateY(4px);
-	}
+	}*/
 </style>
 
 <html>
@@ -39,7 +39,7 @@
   
   <p> SQL Query with Q1 </p>  
   <form action="http://445-termproject.azurewebsites.net/initial.php" method="get">
-  <button class="button">Submit</button>
+  <button type="button" class = "btn btn-primary">Submit</button>
   </form>
 
 <?php
