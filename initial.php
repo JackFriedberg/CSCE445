@@ -18,7 +18,7 @@
 
 $indexNum = 2;
 
-$sql = "SELECT * FROM Questions WHERE qIndex = " . strval($indexNum);
+$sql = "SELECT * FROM Questions WHERE qIndex = 1";
 
 echo $sql; 
 
