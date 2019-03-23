@@ -69,8 +69,8 @@
                 
                 $row = sqlsrv_fetch_array($test1, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
                             
-                echo "Question 1 text: " . $row['qText1']."<br />";
-                //echo "Question 2 text: " . $row['qText2']."<br />";    
+                //echo "Question 1 text: " . $row['qText1']."<br />";
+                echo "Question 2 text: " . $row['qText2']."<br />";    
                 
                 $question1Answers = explode(";", $row['answers1']); /* delimts the string into an array */
                 $question2Answers = explode(";", $row['answers2']);
