@@ -13,20 +13,14 @@
         <?php
             $sql = "SELECT * FROM amrev_questions WHERE qIndex = " . strval($_SESSION["question"]);
             $questions = sqlsrv_query($conn, $sql);
-
-            
             $sql = "SELECT * FROM amrev_options WHERE qIndex = " . strval($_SESSION["question"]);
             $options = sqlsrv_query($conn, $sql);
-
-            
             $sql = "SELECT * FROM amrev_context WHERE qIndex = " . strval($_SESSION["question"]);
             $context = sqlsrv_query($conn, $sql);
 
             if($questions){
-                
                 $row = sqlsrv_fetch_array($questions, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
-            
-                echo "Question 1 text: " . $row['QText']."<br />";    
+                $questionText = $row['QText'];
             }    
             else{
                 echo 'SQL Error:';
@@ -40,11 +34,11 @@
             }
 
             if($options){
-                
                 $row = sqlsrv_fetch_array($options, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
-            
-                echo "Answer 1 text: " . $row['Option1']."<br />";
-                echo "Answer 2 text: " . $row['Option2']."<br />";    
+                $option1 = $row['Option1'];
+                $option2 = $row['Option2'];
+                $option3 = $row['Option3'];
+                $option4 = $row['Option4'];
             }
             else{
                 echo 'SQL Error:';
@@ -58,10 +52,8 @@
             }
 
             if($context){
-           
                 $row = sqlsrv_fetch_array($context, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
-            
-                echo "Answer 1 text: " . $row['Embed']."<br />";
+                $context1Content = $row['Embed'];
                 $context1Src =  $row['Link'];    
             }
             else{
@@ -74,9 +66,7 @@
                     }
                 }
             }
-
             sqlsrv_free_stmt($getResults); /* idk what this does */
-
             $_SESSION['question']++; /* Increments the session variable after the query*/
         ?>
 
@@ -95,10 +85,10 @@
         <div id="Context1">
             <h3>Historical Information #1:</h3>
             <div>
-                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/gzALIXcY4pg?controls=0" frameborder="0" allow="accelerometer; gyroscope;"></iframe>
+                <p> <?php echo $context1Content ?></p>    
             </div>
             <div>
-                <p> <?php echo $context1Src ?>  </p>
+                <p> <?php echo $context1Src ?></p>
             </div>
             
         </div>
