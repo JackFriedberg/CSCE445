@@ -35,10 +35,11 @@
                 
                 echo "Context 1 text: " . $row['context1_1']."<br />";
                 */
-                while($row = $test->fetch_assoc()) {
-                    echo "<br>Question: " . $q1Text. "<br>";
-                    echo htmlspecialchars_decode(stripslashes($q1Ans));
-                }
+                //while($row = $test->fetch_assoc()) {
+                  //  echo "<br>Question: " . $q1Text. "<br>";
+                  //  echo htmlspecialchars_decode(stripslashes($q1Ans));
+                //}
+                echo $q1Ans;
             }
             else{
                 echo 'SQL Error:';
