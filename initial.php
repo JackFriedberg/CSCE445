@@ -11,7 +11,7 @@
  <body>
   
   <p> SQL Query with Q1 </p>  
-  <form action="http://445-termproject.azurewebsites.net/initial.php" method="get">
+  <form action="http://445dev3.azurewebsites.net/initial.php" method="get">
   <button type="submit">Submit</button>
   </form>
 
