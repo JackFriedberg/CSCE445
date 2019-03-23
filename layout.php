@@ -8,7 +8,6 @@
 <html>
     <head>
     <title> UpQuiz </title>
-    <span class="crayon-o"><</span><span class="crayon-e">link </span><span class="crayon-v">rel</span><span class="crayon-o">=</span><span class="crayon-s">"stylesheet"</span> <span class="crayon-v">href</span><span class="crayon-o">=</span><span class="crayon-s">"index.css"</span><span class="crayon-o">></span>
     </head>
     <body>
     <center>
@@ -27,7 +26,6 @@
             $questionText = $row['QText'];
 
             echo "<br>";
-            echo $row['QText'];
         }
         else{
             echo 'SQL Error:';
