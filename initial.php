@@ -156,8 +156,6 @@
             url:"initial.php",
             type: "POST", //request type
             success:function(result){
-            alert(result);
-            $("p").text(data);
        }
         });
     }
