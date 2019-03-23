@@ -108,15 +108,6 @@
                 }
             }
             sqlsrv_free_stmt($getResults); /* idk what this does */
-
-            function rightAnswer(){
-
-                $_SESSION['questionState']=1;
-                $_SESSION['question']++; /* Increments the session variable after the query*/
-            }
-            function wrongAnswer(){
-                $_SESSION['questionState']++;
-            }
             echo $_SESSION['questionState'];
             /*if($_SESSION['questionState']==1){
                 $_SESSION['questionState']++;
@@ -149,15 +140,15 @@
                 $_SESSION["question"]++;
                 $_SESSION["questionState"]=1;
             }
-            /*function wrongAnswer(){
+            function wrongAnswer(){
                 $_SESSION["questionState"]++;
-            }*/
+            }
             if(array_key_exists('answer1',$_POST)){
                 rightAnswer();
              }
-            /*if(array_key_exists('answer2',$_POST)){
+            if(array_key_exists('answer2',$_POST)){
                 wrongAnswer();
-            }*/
+            }
 
         ?>
 
