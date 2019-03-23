@@ -120,11 +120,11 @@
             /*echo $_SESSION['questionState'];
             if($_SESSION['questionState']==1){
                 $_SESSION['questionState']++;
-            }*/
+            }
             else{
                 $_SESSION['questionState']=1;
                 $_SESSION['question']++; /* Increments the session variable after the query*/
-            }
+            //}
             
         ?>
 
