@@ -83,7 +83,7 @@
         hidden, Question 2 stuff shown).
         -->
 
-        <form action="http://445dev3.azurewebsites.net/initial.php" method="post">
+        <form action="http://445dev2.azurewebsites.net/initial.php" method="post">
             <button class="button">Next Question</button>
         </form>
 
