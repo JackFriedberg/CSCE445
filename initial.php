@@ -17,11 +17,10 @@
 
 <?php
 
-$indexnumber = "2";
 $questionIndex = 2;
 $newNum = strval($questionIndex);
  
- $sql = "SELECT * FROM Questions WHERE qIndex = " . $newNum;
+ $sql = "SELECT * FROM Questions WHERE qIndex = " . strval($questionIndex);
  $test = sqlsrv_query($conn, $sql);
 
 if($test){
