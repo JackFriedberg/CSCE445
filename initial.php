@@ -141,12 +141,20 @@
             ALSO ADD ONCLICK TO BUTTONS FOR PHP FUNCTIONS USING AJAX
             -->
         <form action="" method="post">
-            <input type="submit" name="button1"><?php echo $_SESSION["answer1"] ?></button>
+            <input type="submit" name="answer1" id="answer1"><?php echo $_SESSION["answer1"] ?></button>
         </form>
         <form action="" method="post">
             <button class="button" name="button2" onclick=<?php $_SESSION ["questionState"]++?>>gay</button>
         </form>
+        <?php 
+            function testFUN(){
+                echo "IT WORKS!";
+            }
+            if(array_key_exists('answer1',$_POST)){
+                testfun();
+             }
 
+        ?>
 
     </body>
 </html>
