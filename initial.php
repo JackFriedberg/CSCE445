@@ -44,8 +44,6 @@ else{
     }
 }
 sqlsrv_free_stmt($getResults);
-
-$_SESSION['qIndex'] = 1;
 ?>
 
 
