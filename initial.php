@@ -25,12 +25,12 @@
                 $question1Answers = explode(";", $row['answers1']);
                 $question2Answers = explode(";", $row['answers2']);
                 
-                echo "Answers for Question 1: <br />"
+                echo "Answers for Question 1: <br />";
                 foreach ($question1Answers as &$value1) {
                     echo "     ". $value1 . "<br />";
                 }
 
-                echo "Answers for Question 2: <br />"
+                echo "Answers for Question 2: <br />";
                 foreach ($question2Answers as &$value2) {
                     echo "     ". $value2 . "<br />";
                 }
