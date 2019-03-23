@@ -37,14 +37,16 @@
 
         <?php
             $sql = "SELECT * FROM Questions WHERE qIndex = " . strval($_SESSION["question"]);
+            if($_SESSION['questionState']==1){
                 $test1 = sqlsrv_query($conn, $sql);
+            }
             
-            if($test1){
+            if($_SESSION["questionState"]==1){
                 
                 $row = sqlsrv_fetch_array($test1, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
                             
                 echo "Question 1 text: " . $row['qText1']."<br />";
-                echo "Question 2 text: " . $row['qText2']."<br />";    
+                //echo "Question 2 text: " . $row['qText2']."<br />";    
                 
                 $question1Answers = explode(";", $row['answers1']); /* delimts the string into an array */
                 $question2Answers = explode(";", $row['answers2']);
@@ -53,6 +55,34 @@
                 foreach ($question1Answers as &$value1) { /* for loop goes length of array, stores curr value in $value1 */
                     if($_SESSION["iterator"]==1){
                         $_SESSION["answer1"]=$value1;
+                        //todo: either change the schema for the database to have a certain number of answers only
+                        // or finish rest of this to be able to add query answer choices to buttons
+                    }
+                    echo "----". $value1 . "<br />";
+                }
+                echo "Answers for Question 2: <br />";
+                foreach ($question2Answers as &$value2) {
+                    echo "----". $value2 . "<br />";
+                }
+                
+                echo "Context 1 text: " . $row['context1_1']."<br />";
+            }
+            if($_SESSION["questionState"]==2){
+                
+                $row = sqlsrv_fetch_array($test1, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
+                            
+                echo "Question 1 text: " . $row['qText1']."<br />";
+                //echo "Question 2 text: " . $row['qText2']."<br />";    
+                
+                $question1Answers = explode(";", $row['answers1']); /* delimts the string into an array */
+                $question2Answers = explode(";", $row['answers2']);
+                
+                echo "Answers for Question 1: <br />";
+                foreach ($question1Answers as &$value1) { /* for loop goes length of array, stores curr value in $value1 */
+                    if($_SESSION["iterator"]==1){
+                        $_SESSION["answer1"]=$value1;
+                        //todo: either change the schema for the database to have a certain number of answers only
+                        // or finish rest of this to be able to add query answer choices to buttons
                     }
                     echo "----". $value1 . "<br />";
                 }
@@ -74,6 +104,14 @@
                 }
             }
             sqlsrv_free_stmt($getResults); /* idk what this does */
+
+            function rightAnswer(){
+                $_SESSION['questionState']=1;
+                $_SESSION['question']++; /* Increments the session variable after the query*/
+            }
+            function wrongAnswer(){
+                $_SESSION['questionState']++;
+            }
             echo $_SESSION['questionState'];
             if($_SESSION['questionState']==1){
                 $_SESSION['questionState']++;
