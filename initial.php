@@ -7,6 +7,11 @@
 <html>
     <head>
         <title>UpQuiz</title>
+        <style>
+            body{
+                font-family: "Lato", sans-serif;
+            }
+        </style>
     </head>
     <body>  
 
