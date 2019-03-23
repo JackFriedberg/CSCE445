@@ -11,30 +11,58 @@
     <body>  
 
         <?php
-            $sql = "SELECT * FROM Questions WHERE qIndex = " . strval($_SESSION["question"]);
-            $test = sqlsrv_query($conn, $sql);
+            $sql = "SELECT * FROM amrev_questions WHERE qIndex = " . strval($_SESSION["question"]);
+            $questions = sqlsrv_query($conn, $sql);
 
-            if($test){
-                
-                $row = sqlsrv_fetch_array($test, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
-                            
-                echo "Question 1 text: " . $row['qText1']."<br />";
-                echo "Question 2 text: " . $row['qText2']."<br />";    
-                
-                $question1Answers = explode(";", $row['answers1']); /* delimts the string into an array */
-                $question2Answers = explode(";", $row['answers2']);
-                
-                echo "Answers for Question 1: <br />";
-                foreach ($question1Answers as &$value1) { /* for loop goes length of array, stores curr value in $value1 */
-                    echo "----". $value1 . "<br />";
-                }
+            
+            $sql = "SELECT * FROM amrev_options WHERE qIndex = " . strval($_SESSION["question"]);
+            $options = sqlsrv_query($conn, $sql);
 
-                echo "Answers for Question 2: <br />";
-                foreach ($question2Answers as &$value2) {
-                    echo "----". $value2 . "<br />";
-                }
+            
+            $sql = "SELECT * FROM amrev_contect WHERE qIndex = " . strval($_SESSION["question"]);
+            $context = sqlsrv_query($conn, $sql);
+
+            if($questions){
                 
-                echo "Context 1 text: " . $row['context1_1']."<br />";
+                $row = sqlsrv_fetch_array($questions, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
+            
+                echo "Question 1 text: " . $row['QText']."<br />";    
+            }    
+            else{
+                echo 'SQL Error:';
+                if( ($errors = sqlsrv_errors() ) != null) {
+                    foreach( $errors as $error ) {
+                        echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
+                        echo "code: ".$error[ 'code']."<br />";
+                        echo "message: ".$error[ 'message']."<br />";
+                    }
+                }
+            }
+
+            if($options){
+                
+                $row = sqlsrv_fetch_array($options, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
+            
+                echo "Answer 1 text: " . $row['Option1']."<br />";
+                echo "Answer 2 text: " . $row['Option2']."<br />";    
+            }
+            else{
+                echo 'SQL Error:';
+                if( ($errors = sqlsrv_errors() ) != null) {
+                    foreach( $errors as $error ) {
+                        echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
+                        echo "code: ".$error[ 'code']."<br />";
+                        echo "message: ".$error[ 'message']."<br />";
+                    }
+                }
+            }
+
+            if($context){
+           
+                $row = sqlsrv_fetch_array($context, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
+            
+                echo "Answer 1 text: " . $row['Embed']."<br />";
+                echo "Answer 2 text: " . $row['Link']."<br />";    
             }
             else{
                 echo 'SQL Error:';
@@ -64,12 +92,15 @@
             <button type="submit">Next Question</button>
         </form>
 
-        <div>
-            <h3>Historical Information:</h3>
+        <div id="Context1">
+            <h3>Historical Information #1:</h3>
             <div>
                 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/gzALIXcY4pg?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-            <p> <?php echo "php text test" ?>  </p>
+            <div>
+                <p> <?php echo "php text test" ?>  </p>
+            </div>
+            
         </div>
 
 
