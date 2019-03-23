@@ -19,7 +19,7 @@
 
 <?php
  
- $sql = "SELECT * FROM Questions;";
+ $sql = "SELECT FROM Questions;";
  $test = sqlsrv_query($conn, $sql);
 
 if($test){
