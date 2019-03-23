@@ -68,7 +68,7 @@
 
                     echo '
                         <div id="Context1">
-                            <h3>Historical Information #'. $counter .':</h3>
+                            <h3>Historical Information #'. strval($counter) .':</h3>
                             <div>
                                 <p>' . $context1Content . '</p>    
                             </div>
@@ -90,7 +90,8 @@
                     }
                 }
             }
-            */
+
+
             sqlsrv_free_stmt($getResults); /* idk what this does */
             $_SESSION['question']++; /* Increments the session variable after the query*/
         ?>
