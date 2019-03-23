@@ -16,12 +16,26 @@
             $test = sqlsrv_query($conn, $sql);
 
             if($test){
+                
                 $row = sqlsrv_fetch_array($test, SQLSRV_FETCH_ASSOC);
-                echo $row['qText1']."<br />";
-                echo $row['qText2']."<br />";
-                echo $row['answers1']."<br />";
-                echo $row['answers2']."<br />";
-                echo $row['context1_1']."<br />";
+                            
+                echo "Question 1 text: " . $row['qText1']."<br />";
+                echo "Question 2 text: " . $row['qText2']."<br />";    
+                
+                $question1Answers = explode(";", $row['answers1']);
+                $question2Answers = explode(";", $row['answers2']);
+                
+                echo "Answers for Question 1: <br />"
+                foreach ($question1Answers as &$value1) {
+                    echo "     ". $value1 . "<br />";
+                }
+
+                echo "Answers for Question 2: <br />"
+                foreach ($question2Answers as &$value2) {
+                    echo "     ". $value2 . "<br />";
+                }
+                
+                echo "Context 1 text: " . $row['contect1_1']."<br />";
             }
             else{
                 echo 'SQL Error:';
