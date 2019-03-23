@@ -13,18 +13,11 @@ session_start();
  <body>
   
   <p> SQL Query with Q1 </p>  
-  <form action="http://445dev3.azurewebsites.net/initial.php" method="get">
-  <button type="submit">Submit</button>
-  </form>
+  
 
 <?php
 
-$questionIndex = 2;
-
-echo $_SESSION['question'] . "<br/>";
-
-echo "Question Variable: " . strval($_SESSION["question"]) . "<br/>";
-$sql = "SELECT * FROM Questions WHERE qIndex = " . strval($questionIndex);
+$sql = "SELECT * FROM Questions WHERE qIndex = " . strval($_SESSION["question"]);
 $test = sqlsrv_query($conn, $sql);
 
 if($test){
@@ -47,8 +40,15 @@ else{
     }
 }
 sqlsrv_free_stmt($getResults);
+
+$_SESSION['question']++;
+
 ?>
 
-  
+
+<form action="http://445dev3.azurewebsites.net/initial.php" method="get">
+  <button type="submit">Submit</button>
+  </form>
+
  </body>
 </html>
