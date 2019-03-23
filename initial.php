@@ -110,8 +110,8 @@
             sqlsrv_free_stmt($getResults); /* idk what this does */
 
             function rightAnswer(){
-                echo "REEEEEEEEEEEEEE!";
-                $_SESSION['questionState']=1;
+
+                $_SESSION['questionState']=12;
                 $_SESSION['question']++; /* Increments the session variable after the query*/
             }
             function wrongAnswer(){
