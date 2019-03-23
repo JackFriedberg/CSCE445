@@ -17,10 +17,11 @@
         
         if($options){
             //$row = sqlsrv_fetch_array($test, SQLSRV_FETCH_ASSOC);
-            echo $row['Option1'] . '<input type="radio" name="option_1" value="option1"><br>';   
-            echo $row['Option2'] . '<input type="radio" name="option_1" value="option2"><br>';  
-            echo $row['Option3'] . '<input type="radio" name="option_1" value="option3"><br>';  
-            echo $row['Option4'] . '<input type="radio" name="option_1" value="option4"><br>';      
+            while($row = mysql_fetch_assoc($options))
+            echo $row['Option1'] . '<input type="radio" name="option1" value="1"><br>';   
+            echo $row['Option2'] . '<input type="radio" name="option2" value="2"><br>';  
+            echo $row['Option3'] . '<input type="radio" name="option3" value="3"><br>';  
+            echo $row['Option4'] . '<input type="radio" name="option4" value="4"><br>';      
             
         }
 
