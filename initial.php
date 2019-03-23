@@ -37,9 +37,7 @@
 
         <?php
             $sql = "SELECT * FROM Questions WHERE qIndex = " . strval($_SESSION["question"]);
-            if($_SESSION['questionState']==1){
                 $test1 = sqlsrv_query($conn, $sql);
-            }
             
             if($_SESSION["questionState"]==1){
                 
@@ -130,7 +128,10 @@
         If incorrect, the show/hide functionality needs to be implemented(Question 1 stuff 
         hidden, Question 2 stuff shown).
         -->
-
+        
+        <!--
+            TODO: MAKE BUTTONS SHOW ALL OF THE ANSWER CHOICES
+            -->
         <form action="" method="post">
             <button class="button" name="button1"><?php echo $_SESSION["answer1"] ?></button>
         </form>
