@@ -21,6 +21,7 @@
             if($questions){
                 $row = sqlsrv_fetch_array($questions, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
                 $questionText = $row['QText'];
+                echo $questionText . "<br />";
             }    
             else{
                 echo 'SQL Error:';
@@ -46,15 +47,15 @@
                     </form>
 
                     <form action="http://445dev3.azurewebsites.net/initial.php" method="post">
-                        <button type="submit">' . $option1 . '</button>
+                        <button type="submit">' . $option2 . '</button>
                     </form>
 
                     <form action="http://445dev3.azurewebsites.net/initial.php" method="post">
-                        <button type="submit">' . $option1 . '</button>
+                        <button type="submit">' . $option3 . '</button>
                     </form>
 
                     <form action="http://445dev3.azurewebsites.net/initial.php" method="post">
-                        <button type="submit">' . $option1 . '</button>
+                        <button type="submit">' . $option4 . '</button>
                     </form>
                 ';
 
@@ -69,12 +70,6 @@
                     }
                 }
             }
-
-            echo $questionText . "<br />";
-            echo $option1 . "<br />";
-            echo $option2 . "<br />";
-            echo $option3 . "<br />";
-            echo $option4 . "<br />";
 
             if($context){
                 $counter = 1;
