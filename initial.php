@@ -144,15 +144,22 @@
             <input type="submit" name="answer1" id="answer1"><?php echo $_SESSION["answer1"] ?></button>
         </form>
         <form action="" method="post">
-            <button class="button" name="button2" onclick=<?php $_SESSION ["questionState"]++?>>gay</button>
+            <input type="submit" name="answer2" id="answer2">WRONG ANSWER</button>
         </form>
         <?php 
-            function testFUN(){
-                echo "IT WORKS!";
+            function rightAnswer(){
+                $_SESSION["question"]++;
+                $_SESSION["questionState"]=1;
+            }
+            function wrongAnswer(){
+                $_SESSION["questionState"]++;
             }
             if(array_key_exists('answer1',$_POST)){
-                testfun();
+                rightAnswer();
              }
+            if(array_key_exists('answer2',$_POST)){
+                wrongAnswer();
+            }
 
         ?>
 
