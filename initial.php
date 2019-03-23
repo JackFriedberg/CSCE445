@@ -76,7 +76,7 @@
             else{
                 $_SESSION['question']++; /* Increments the session variable after the query*/
             }
-            echo $_SESSION['question'];
+            echo $_SESSION['questionState'];
         ?>
 
         <!--
