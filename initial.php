@@ -18,10 +18,9 @@
 <?php
 
 $questionIndex = 2;
-$newNum = strval($questionIndex);
- 
- $sql = "SELECT * FROM Questions WHERE qIndex = " . strval($questionIndex);
- $test = sqlsrv_query($conn, $sql);
+echo $_SESSION["question"];
+$sql = "SELECT * FROM Questions WHERE qIndex = " . strval($questionIndex);
+$test = sqlsrv_query($conn, $sql);
 
 if($test){
  while ($row = sqlsrv_fetch_array($test, SQLSRV_FETCH_ASSOC)) {
