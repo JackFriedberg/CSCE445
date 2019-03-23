@@ -61,6 +61,7 @@ if(mysqli_multi_query($con,$sql)){
          mysqli_free_result($result);
             }
         }
+        while (mysqli_next_result($con));
 }
 else{
  echo 'SQL Error:';
