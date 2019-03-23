@@ -15,13 +15,7 @@
 
 
 <?php
-
-$indexNum = 2;
-
 $sql = "SELECT * FROM Questions WHERE qIndex = 1";
-
-echo $sql; 
-
 $test = sqlsrv_query($conn, $sql);
 
 if($test){
@@ -46,11 +40,11 @@ else{
 sqlsrv_free_stmt($getResults);
 ?>
 
-
+<!--
 <form action="http://445-termproject.azurewebsites.net/initial.php" method="POST">
   <button type="submit">Submit</button>
   </form>
-
+-->
 
 
   
