@@ -1,3 +1,4 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <?php
     chdir('..');
     include_once "dbh.inc.php";
@@ -139,7 +140,7 @@
             ALSO ADD ONCLICK TO BUTTONS FOR PHP FUNCTIONS USING AJAX
             -->
         <form action="" method="post">
-            <button class="button" name="button1"><?php echo $_SESSION["answer1"] ?></button>
+            <button class="button" name="button1" onclick=callPHPFunction()><?php echo $_SESSION["answer1"] ?></button>
         </form>
         <form action="" method="post">
             <button class="button" name="button2">wrong answer</button>
@@ -148,3 +149,16 @@
 
     </body>
 </html>
+
+<script type="text/javascript">
+    function callPHPFunction(){
+        $.ajax({
+            url:"initial.php",
+            type: "POST", //request type
+            success:function(result){
+            alert(result);
+            $("p").text(data);
+       }
+        });
+    }
+</script>
