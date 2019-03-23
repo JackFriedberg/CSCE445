@@ -12,7 +12,7 @@
     <body>  
         
         <?php 
-            $query = "SELECT * FROM Questions"
+            $query = "SELECT * FROM Questions ";
             $conn = sqlsrv_query($conn, $sql);
 
             while ($row = $query ->fetch_assoc()):
