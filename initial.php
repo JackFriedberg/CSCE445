@@ -60,6 +60,8 @@
             if($context){
                 $counter = 1;
                 while($row = SQLSRV_FETCH_ASSOC($context)){
+                    echo $row['Embed'] . "<br />";
+                    echo $row['Link'] . "<br />";
                     $contextContent = $row['Embed'];
                     $contextSrc =  $row['Link'];
 
