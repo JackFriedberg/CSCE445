@@ -62,6 +62,7 @@
                 echo $counter;
                 echo mysqlsrv_nuum_rows($context);
                 while($row = SQLSRV_FETCH_ASSOC($context)){
+                    echo $counter;
                     echo $row['Embed'] . "<br />";
                     echo $row['Link'] . "<br />";
                     $contextContent = $row['Embed'];
