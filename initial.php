@@ -62,7 +62,7 @@
                 $row = sqlsrv_fetch_array($context, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
             
                 echo "Answer 1 text: " . $row['Embed']."<br />";
-                echo "Answer 2 text: " . $row['Link']."<br />";    
+                $context1Src =  $row['Link'];    
             }
             else{
                 echo 'SQL Error:';
@@ -98,7 +98,7 @@
                 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/gzALIXcY4pg?controls=0" frameborder="0" allow="accelerometer; gyroscope;"></iframe>
             </div>
             <div>
-                <p> <?php echo "php text test" ?>  </p>
+                <p> <?php echo $context1Src ?>  </p>
             </div>
             
         </div>
