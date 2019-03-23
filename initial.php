@@ -16,7 +16,9 @@
 
 <?php
 
-$sql = "SELECT * FROM Questions WHERE qIndex = ";
+$indexNum = 2;
+
+$sql = "SELECT * FROM Questions WHERE qIndex = " . strval($indexNum);
 
 echo $sql; 
 
@@ -47,7 +49,7 @@ $_SESSION['qIndex'] = 1;
 ?>
 
 
-<form action="http://445-termproject.azurewebsites.net/initial.php" method="get">
+<form action="http://445-termproject.azurewebsites.net/initial.php" method="POST">
   <button type="submit">Submit</button>
   </form>
 
