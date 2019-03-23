@@ -15,7 +15,10 @@
 
 
 <?php
-$sql = "SELECT * FROM Questions WHERE qIndex = ". $_SESSION['qIndex'];
+$sql = "SELECT * FROM Questions WHERE qIndex = " . $_SESSION['qIndex'];
+
+echo $sql; 
+
 $test = sqlsrv_query($conn, $sql);
 
 if($test){
