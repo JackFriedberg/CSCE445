@@ -10,7 +10,6 @@
     <title> UpQuiz </title>
     </head>
     <body>
-    <center>
 
     <?php 
         $sql = "SELECT * FROM amrev_questions WHERE qIndex = " . strval($_SESSION["question"]);
@@ -39,6 +38,6 @@
         }
     ?>
 
-    </center>
+   
     </body>
 </html>
