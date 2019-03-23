@@ -9,7 +9,7 @@
         <title>UpQuiz</title>
         <style>
             body{
-                font-family: "Lato", sans-serif;
+                background-color: blue;
             }
         </style>
     </head>
