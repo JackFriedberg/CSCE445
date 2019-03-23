@@ -67,7 +67,7 @@
                                 <p>' . $context1Src . '</p>
                             </div>
                         </div>
-                    '
+                    ';
                 $counter++;
                 }
             }
