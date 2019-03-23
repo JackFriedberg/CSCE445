@@ -61,7 +61,7 @@
                 $counter = 1;
                 echo $counter;
                 $num_rows = sqlsrv_num_rows($context); 
-                echo $num_rows;
+                echo "Num rows: " . $num_rows;
                 while($row = SQLSRV_FETCH_ASSOC($context)){
                     echo $counter;
                     echo $row['Embed'] . "<br />";
