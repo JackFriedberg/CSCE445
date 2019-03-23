@@ -16,12 +16,4 @@ Question <br><br>
         //echo $row['option3'] . '<input type="radio" name="option_1" value="option3"><br>';  
         //echo $row['option4'] . '<input type="radio" name="option_1" value="option4"><br>';      
     }
-    
-    $var = "select from answer questions where answer ='4'";
-    
-    if (isset($var)) {
-        echo 'correct answer';
-    } else {
-        echo 'wrong answer';
-    }
-    ?>
+?>
