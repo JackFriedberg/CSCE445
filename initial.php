@@ -25,20 +25,9 @@
                 $question2Answers = explode(";", $row['answers2']);
                 
                 echo "Answers for Question 1: <br />";
-                /*foreach ($question1Answers as &$value1) { /* for loop goes length of array, stores curr value in $value1 */
-                    /*echo "----". $value1 . "<br />";*/ 
-                }*/
-                ?>
-                <br>
-                <form method="post" action="http://445dev1.azurewebsites.net/initial.php">
-                <?php 
-                foreach($question1Answers as &$value1) {
-                ?>
-                <input type="radio" name="<?= $question1Answers; ?>"><?php echo $value1?><br>
-
-                <?php }?>
-                <input name= "q" type="submit" value="Vasta">
-                </form>
+                foreach ($question1Answers as &$value1) { /* for loop goes length of array, stores curr value in $value1 */
+                    echo "----". $value1 . "<br />"; 
+                }
         
                 echo "Answers for Question 2: <br />";
                 foreach ($question2Answers as &$value2) {
