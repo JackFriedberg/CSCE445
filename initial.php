@@ -86,7 +86,7 @@
             
             $context2Content = '<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/gzALIXcY4pg?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
                 
-            $context2Src = 'wikipedia.com'
+            $context2Src = 'YouTube';
         ?>
 
 
@@ -108,7 +108,13 @@
                 <p> <?php echo $context2Content ?></p>    
             </div>
             <div>
-                <p> <?php echo $context2Src ?></p>
+                <p> 
+                    <?php 
+                        if($context2Src != "Youtube"){
+                            echo $context2Src;
+                        } 
+                    ?>
+                </p>
             </div>
         </div>
 
