@@ -21,7 +21,7 @@
             endwhile;
         ?>
 
-        <form action="http://445dev1.azurewebsites.net/initial.php" method="post">
+        <form action="http://445dev1.azurewebsites.net/test.php" method="post">
             <button type="submit">Random Button</button>
         </form>
     </body>
