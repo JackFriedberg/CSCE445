@@ -59,19 +59,13 @@
 
             if($context){
                 $counter = 1;
-                echo $counter;
-                $num_rows = sqlsrv_num_rows($context); 
-                echo "Num rows: " . $num_rows;
                 while($row = sqlsrv_fetch_array($context)){
-                    echo $counter;
-                    echo $row['Embed'] . "<br />";
-                    echo $row['Link'] . "<br />";
                     $contextContent = $row['Embed'];
                     $contextSrc =  $row['Link'];
 
                     echo '
                         <div id="Context1">
-                            <h3>Historical Information #'. strval($counter) .':</h3>
+                            <h3> Historical Information #'. strval($counter) .':</h3>
                             <div>
                                 <p>' . $contextContent . '</p>    
                             </div>
@@ -80,8 +74,6 @@
                             </div>
                         </div>
                     ';
-
-                
                 $counter++;
                 }
             }
