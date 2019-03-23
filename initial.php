@@ -37,9 +37,9 @@
 
         <?php
             $sql = "SELECT * FROM Questions WHERE qIndex = " . strval($_SESSION["question"]);
-            if($_SESSION['questionState']==1){
+            //if($_SESSION['questionState']==1){
                 $test1 = sqlsrv_query($conn, $sql);
-            }
+            //}
             
             if($test1){
                 
