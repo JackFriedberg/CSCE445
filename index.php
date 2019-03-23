@@ -15,6 +15,7 @@
 
         <?php
         $_SESSION['question'] = 1; /*sets session variable to 1 for when the next page comes */
+        $_SESSION['questionState'] = 1;
         ?>
 
         <form action="/initial.php" method="POST">

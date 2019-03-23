@@ -72,7 +72,12 @@
                 }
             }
             sqlsrv_free_stmt($getResults); /* idk what this does */
-            $_SESSION['question']++; /* Increments the session variable after the query*/
+            if($_SESSION['questionState']==1){
+                $_SESSION['questionState']++;
+            }
+            else{
+                $_SESSION['question']++; /* Increments the session variable after the query*/
+            }
         ?>
 
         <!--
