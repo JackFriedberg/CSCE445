@@ -40,15 +40,13 @@
             if($_SESSION['questionState']==1){
                 $test1 = sqlsrv_query($conn, $sql);
             }
-            else{
-                $test2 = sqlsrv_query($conn, $sql);
-            }
-            if($test2){
+            
+            if($test1){
                 
                 $row = sqlsrv_fetch_array($test, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
                             
                 echo "Question 1 text: " . $row['qText1']."<br />";
-                //echo "Question 2 text: " . $row['qText2']."<br />";    
+                echo "Question 2 text: " . $row['qText2']."<br />";    
                 
                 $question1Answers = explode(";", $row['answers1']); /* delimts the string into an array */
                 $question2Answers = explode(";", $row['answers2']);
@@ -75,7 +73,7 @@
                 }
             }
             sqlsrv_free_stmt($getResults); /* idk what this does */
-            
+            echo $_SESSION['questionState'];
             if($_SESSION['questionState']==1){
                 $_SESSION['questionState']++;
             }
@@ -83,7 +81,6 @@
                 $_SESSION['questionState']=1;
                 $_SESSION['question']++; /* Increments the session variable after the query*/
             }
-            echo $_SESSION['questionState'];
         ?>
 
         <!--
