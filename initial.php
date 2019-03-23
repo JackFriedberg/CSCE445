@@ -43,7 +43,7 @@
             else{
                 $test2 = sqlsrv_query($conn, $sql);
             }
-            if($test1){
+            if($test2){
                 
                 $row = sqlsrv_fetch_array($test, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
                             
