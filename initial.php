@@ -26,7 +26,7 @@
                 
                 echo "Answers for Question 1: <br />";
                 foreach ($question1Answers as &$value1) { /* for loop goes length of array, stores curr value in $value1 */
-                    <input type="button" echo "----". $value1 . "<br />"; />
+                    echo "----". $value1 . "<br />"; 
                 }
                 echo "Answers for Question 2: <br />";
                 foreach ($question2Answers as &$value2) {
