@@ -1,8 +1,8 @@
 <?php
  chdir('..');
  include_once "dbh.inc.php";
+
 session_start();
-$_SESSION['question'] = 1;
 ?>
 
 
@@ -16,6 +16,7 @@ $_SESSION['question'] = 1;
 
 <?php
 
+$_SESSION['question'] = 1;
 echo $_SESSION['question'];
 
 ?>

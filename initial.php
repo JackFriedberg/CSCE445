@@ -1,6 +1,8 @@
 <?php
  chdir('..');
  include_once "dbh.inc.php";
+ 
+session_start();
 ?>
 
 
@@ -18,7 +20,8 @@
 <?php
 
 $questionIndex = 2;
-echo $_SESSION["question"] . "<br/>";
+
+echo $_SESSION['question'] . "<br/>";
 
 echo "Question Variable: " . strval($_SESSION["question"]) . "<br/>";
 $sql = "SELECT * FROM Questions WHERE qIndex = " . strval($questionIndex);
