@@ -9,8 +9,9 @@
         <title>UpQuiz</title>
         <style>
             body{
-                background-color: blue;
+                background-color: #00BFFF;
             }
+            
         </style>
     </head>
     <body>  
@@ -25,7 +26,7 @@
             if($questions){
                 $row = sqlsrv_fetch_array($questions, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
                 $questionText = $row['QText'];
-                echo $questionText . "<br />";
+                echo "< p style='color:red;'>" $questionText . "<br />""</p>";
             }    
             else{
                 echo 'SQL Error:';
