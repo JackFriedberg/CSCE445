@@ -10,6 +10,7 @@
     <title> UpQuiz </title>
     </head>
     <body>
+    <center>
 
     <?php 
         $sql = "SELECT * FROM amrev_questions WHERE qIndex = " . strval($_SESSION["question"]);
@@ -24,7 +25,6 @@
             $row = sqlsrv_fetch_array($questions, SQLSRV_FETCH_ASSOC); 
             $questionText = $row['QText'];
 
-            echo "<br>";
         }
         else{
             echo 'SQL Error:';
@@ -38,6 +38,6 @@
         }
     ?>
 
-   
+    </center>
     </body>
 </html>
