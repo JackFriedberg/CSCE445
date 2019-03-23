@@ -44,7 +44,7 @@
 
 <?php
 
- $sql = "SELECT * FROM Questions WHERE qIndex = 1"+qindex;
+ $sql = "SELECT * FROM Questions WHERE qIndex = 1"
  $test = sqlsrv_query($conn, $sql);
 
 if($test){
