@@ -151,15 +151,15 @@
                 $_SESSION["question"]++;
                 $_SESSION["questionState"]=1;
             }
-            function wrongAnswer(){
+            /*function wrongAnswer(){
                 $_SESSION["questionState"]++;
-            }
+            }*/
             if(array_key_exists('answer1',$_POST)){
                 rightAnswer();
              }
-            if(array_key_exists('answer2',$_POST)){
+            /*if(array_key_exists('answer2',$_POST)){
                 wrongAnswer();
-            }
+            }*/
 
         ?>
 
