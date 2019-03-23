@@ -39,6 +39,25 @@
                 $option2 = $row['Option2'];
                 $option3 = $row['Option3'];
                 $option4 = $row['Option4'];
+
+                echo'
+                    <form action="http://445dev3.azurewebsites.net/initial.php" method="post">
+                        <button type="submit">' . $option1 . '</button>
+                    </form>
+
+                    <form action="http://445dev3.azurewebsites.net/initial.php" method="post">
+                        <button type="submit">' . $option1 . '</button>
+                    </form>
+
+                    <form action="http://445dev3.azurewebsites.net/initial.php" method="post">
+                        <button type="submit">' . $option1 . '</button>
+                    </form>
+
+                    <form action="http://445dev3.azurewebsites.net/initial.php" method="post">
+                        <button type="submit">' . $option1 . '</button>
+                    </form>
+                ';
+
             }
             else{
                 echo 'SQL Error:';
