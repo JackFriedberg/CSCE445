@@ -39,7 +39,7 @@
                   //  echo "<br>Question: " . $q1Text. "<br>";
                   //  echo htmlspecialchars_decode(stripslashes($q1Ans));
                 //}
-                echo $q1Ans;
+                echo $row;
             }
             else{
                 echo 'SQL Error:';
