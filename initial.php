@@ -58,10 +58,10 @@
                     }
                     echo "----". $value1 . "<br />";
                 }
-                echo "Answers for Question 2: <br />";
+                /*echo "Answers for Question 2: <br />";
                 foreach ($question2Answers as &$value2) {
                     echo "----". $value2 . "<br />";
-                }
+                }*/
                 
                 echo "Context 1 text: " . $row['context1_1']."<br />";
             }
