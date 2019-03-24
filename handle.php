@@ -8,7 +8,7 @@ session_start();
 
 <?php
 
-$_SESSION['question']++
+$_SESSION['question']++;
 
 
 header("Location: initial.php");
