@@ -8,7 +8,7 @@ session_start();
 
 <?php
 
-if(isset($_POST['correctorrect'])){
+if(isset($_POST['correct'])){
 
     $_SESSION['question']++;
 
