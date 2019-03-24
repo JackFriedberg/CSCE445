@@ -16,8 +16,8 @@
                 font-size: 40px;
                 text-align: center;
             }
-            .Context1{
-                width:400px;
+            .myBox{
+                width:500px;
                 border: 25 px #ff5100;
                 padding: 25 px;
                 margin: 25px;
@@ -104,7 +104,7 @@
                     $contextContent = $row['Embed'];
                     $contextSrc =  $row['Link'];
                     echo '
-                        <div id="Context1">
+                        <div class= "myBox" id="Context1">
                             <h3> Historical Information #'. strval($counter) .':</h3>
                             <div>
                                 <p>' . $contextContent . '</p>    
