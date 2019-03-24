@@ -119,7 +119,7 @@
                                 <p>' . $contextContent . '</p>    
                             </div>
                     ';
-                    if(!$videoBool){
+                    if($videoBool == false){
                         echo ' 
                             <div>
                                 <p class="srcText">' . $contextSrc . '</p>
