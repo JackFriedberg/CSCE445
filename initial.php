@@ -61,7 +61,7 @@
                     </form>
 
                     <form action="http://445dev3.azurewebsites.net/initial.php" method="post">
-                        <button class="button1" type="submit">' . $option2 . '</button>
+                        <button class="button1" style = "float:left" type="submit">' . $option2 . '</button>
                     </form>
 
                     <form action="http://445dev3.azurewebsites.net/initial.php" method="post">
