@@ -80,7 +80,7 @@
                 echo'
                     <div style="margin:0 auto;">
                         <form id= "theForm" action="http://445dev3.azurewebsites.net/handle.php" method="post" style="margin:auto">
-                            <div class="btn-group btn-group-vertical btn-group-justified">
+                            <div class="btn-group btn-group-vertical btn-group-justified" style="margin:auto">
                                 <button type="submit" class="btn btn-primary" name="correct">' . $correct . ' </button>
                                 <button type="submit" class= "btn btn-primary" name="incorrect1">' . $incorrect1 . '</button>
                                 <button type="submit" class= "btn btn-primary" name="incorrect2">' . $incorrect2 . '</button>
