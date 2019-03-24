@@ -86,7 +86,7 @@
 
                 echo'
                     <form action="http://445dev3.azurewebsites.net/handle.php" method="post">
-                        <ul>
+                        <ul id = "answerList">
                             <li><button type="submit" name="correct">' . $correct . ' (Right Answer) </button></li>
                             <li><button type="submit" name="incorrect1">' . $incorrect1 . '</button></li>
                             <li><button type="submit" name="incorrect2">' . $incorrect2 . '</button></li>
@@ -161,7 +161,7 @@
     </body>
 
     <script>
-        var ul = document.querySelector('ul');
+        var ul = document.getElementById("answerList");
         for (var i = ul.children.length; i >= 0; i--) {
             ul.appendChild(ul.children[Math.random() * i | 0]);
         }
