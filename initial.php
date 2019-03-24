@@ -120,7 +120,7 @@
                     if(strpos($contextSrc, "youtube") !== false){
                         echo ' 
                             <div>
-                                <p class="srcText">' . $contextSrc . '</p>
+                                <p>' . $contextSrc . '</p>
                             </div>
                         </div>
                         ';
