@@ -110,18 +110,25 @@
                     $contextContent = $row['Embed'];
                     $contextSrc =  $row['Link'];
 
+                    $videoBool = strpos($contextSrc, 'youtube');
+
                     echo '
                         <div class= "card card-body bg-light">
                             <h3> Historical Information #'. strval($counter) .':</h3>
                             <div>
                                 <p>' . $contextContent . '</p>    
                             </div>
+                    ';
+                    if(!$videoBool){
+                        echo ' 
                             <div>
-                                <p class="src">' . $contextSrc . '</p>
+                                <p class="srcText">' . $contextSrc . '</p>
                             </div>
                         </div>
-                    ';
-
+                        ';
+                    else {
+                        echo '</div>';
+                    }
                 $counter++;
                 }
             }
