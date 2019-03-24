@@ -78,16 +78,14 @@
                 }
 
                 echo'
-                    <form action="http://445dev3.azurewebsites.net/handle.php" method="post">
-                        <ul id = "answerList">
-                        <div class="btn-group-vertical">
-                            <li><button type="submit" class="btn btn-primary" name="correct">' . $correct . '</button></li>
-                            <li><button type="submit" class= "btn btn-primary" name="incorrect1">' . $incorrect1 . '</button></li>
-                            <li><button type="submit" class= "btn btn-primary" name="incorrect2">' . $incorrect2 . '</button></li>
-                            <li><button type="submit" class= "btn btn-primary" name="incorrect3">' . $incorrect3 . '</button></li>
-                        </div>
-                        </ul>
+                    <div>
+                    <form id= "theForm" action="http://445dev3.azurewebsites.net/handle.php" method="post">
+                            <button type="submit" class="btn btn-primary" name="correct">' . $correct . '</button>
+                            <button type="submit" class= "btn btn-primary" name="incorrect1">' . $incorrect1 . '</button>
+                            <button type="submit" class= "btn btn-primary" name="incorrect2">' . $incorrect2 . '</button>
+                            <button type="submit" class= "btn btn-primary" name="incorrect3">' . $incorrect3 . '</button>
                     </form>
+                    </div>
                 ';
             }
             else{
@@ -138,7 +136,7 @@
     </body>
 
     <script>
-        var ul = document.getElementById("answerList");
+        var ul = document.getElementById("theForm");
         for (var i = ul.children.length; i >= 0; i--) {
             ul.appendChild(ul.children[Math.random() * i | 0]);
         }
