@@ -43,11 +43,11 @@
 
                 echo'
                     <form action="http://445dev3.azurewebsites.net/initial.php" method="post">
-                        <button type="submit">' . $option1 . '</button>
+                        <button type="submit">' . $option1 . ' (Right Answer) </button>
                     </form>
 
                     <form action="http://445dev3.azurewebsites.net/initial.php" method="post">
-                        <button type="submit">' . $option2 . '</button>
+                        <button style = "background-color:#4CAF50" type="submit">' . $option2 . '</button>
                     </form>
 
                     <form action="http://445dev3.azurewebsites.net/initial.php" method="post">
@@ -88,7 +88,7 @@
                             </div>
                         </div>
                     ';
-                    
+
                 $counter++;
                 }
             }
