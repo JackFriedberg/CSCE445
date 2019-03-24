@@ -16,6 +16,19 @@
                 font-size: 40px;
                 text-align: center;
             }
+
+            .button1 {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
         </style>
     </head>
     <body>  
@@ -54,16 +67,16 @@
                 $option4 = $row['Option4'];
                 echo'
                     <form action="http://445dev2.azurewebsites.net/initial.php" method="post">
-                        <button type="submit">' . $option1 . '</button>
+                        <button class = button1 type="submit">' . $option1 . '</button>
                     </form>
                     <form action="http://445dev2.azurewebsites.net/initial.php" method="post">
-                        <button type="submit">' . $option2 . '</button>
+                        <button class = button1 type="submit">' . $option2 . '</button>
                     </form>
                     <form action="http://445dev2.azurewebsites.net/initial.php" method="post">
-                        <button type="submit">' . $option3 . '</button>
+                        <button class = button1 type="submit">' . $option3 . '</button>
                     </form>
                     <form action="http://445dev2.azurewebsites.net/initial.php" method="post">
-                        <button type="submit">' . $option4 . '</button>
+                        <button class = button1 type="submit">' . $option4 . '</button>
                     </form>
                 ';
             }
