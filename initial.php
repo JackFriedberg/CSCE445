@@ -5,6 +5,11 @@
 ?>
 
 <html>
+    test{
+        text-align:center;
+        font-weight:bold;
+    }
+
     <head>
         <title>UpQuiz</title>
     </head>
@@ -20,9 +25,9 @@
             if($questions){
                 $row = sqlsrv_fetch_array($questions, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
                 $questionText = $row['QText'];
-                '<div align=center>'
-                echo $questionText . "<br />";
-                '</div>'
+                
+                '<p class="test">'echo $questionText . "<br />"'</p>';
+
             }    
             else{
                 echo 'SQL Error:';
