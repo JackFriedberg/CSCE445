@@ -7,7 +7,8 @@
 <html>
     <head>
         <title>UpQuiz</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">"
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -25,7 +26,6 @@
             if($questions){
                 $row = sqlsrv_fetch_array($questions, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
                 $questionText = $row['QText'];
-                echo "Question Number: " . $row['QIndex'] . "<br />"; 
                 echo $questionText . "<br />";
             }    
             else{
@@ -76,9 +76,9 @@
                     <form action="http://445dev3.azurewebsites.net/handle.php" method="post">
                         <ul id = "answerList" class="btn-group-vertical">
                             <li><button type="submit" class="btn btn-primary" name="correct">' . $correct . '</button></li>
-                            <li><button type="submit" class= "" name="incorrect1">' . $incorrect1 . '</button></li>
-                            <li><button type="submit" name="incorrect2">' . $incorrect2 . '</button></li>
-                            <li><button type="submit" name="incorrect3">' . $incorrect3 . '</button></li>
+                            <li><button type="submit" class= "btn btn-primary" name="incorrect1">' . $incorrect1 . '</button></li>
+                            <li><button type="submit" class= "btn btn-primary" name="incorrect2">' . $incorrect2 . '</button></li>
+                            <li><button type="submit" class= "btn btn-primary" name="incorrect3">' . $incorrect3 . '</button></li>
                         </ul>
                     </form>
                 ';
