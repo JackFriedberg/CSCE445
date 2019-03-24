@@ -74,11 +74,13 @@
 
                 echo'
                     <form action="http://445dev3.azurewebsites.net/handle.php" method="post">
-                        <ul id = "answerList" class="btn-group-vertical">
+                        <ul id = "answerList">
+                        <div class="btn-group-vertical">
                             <li><button type="submit" class="btn btn-primary" name="correct">' . $correct . '</button></li>
                             <li><button type="submit" class= "btn btn-primary" name="incorrect1">' . $incorrect1 . '</button></li>
                             <li><button type="submit" class= "btn btn-primary" name="incorrect2">' . $incorrect2 . '</button></li>
                             <li><button type="submit" class= "btn btn-primary" name="incorrect3">' . $incorrect3 . '</button></li>
+                        </div>
                         </ul>
                     </form>
                 ';
