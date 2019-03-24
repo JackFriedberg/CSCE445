@@ -13,7 +13,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
-    <body>  
+    <body style="height:100%">  
         <div class="container">
         <?php
             $sql = "SELECT * FROM amrev_questions WHERE qIndex = " . strval($_SESSION["question"]);
@@ -102,7 +102,7 @@
             }
         ?>
 
-        <div id="historicalContainer" class="row">
+        <div id="historicalContainer" class="row" style="height:100%">
         <?php
             if($context){
                 $counter = 1;
@@ -111,7 +111,7 @@
                     $contextSrc =  $row['Link'];
 
                     echo '
-                        <blockquote class= "quote-card card-body bg-light">
+                        <blockquote class= "quote-card  bg-light">
                             <h3> Historical Information #'. strval($counter) .':</h3>
                             <div>
                                 <p>' . $contextContent . '</p>    
