@@ -110,7 +110,7 @@
                     $contextContent = $row['Embed'];
                     $contextSrc =  $row['Link'];
 
-                    $videoBool = strpos($contextSrc, 'youtube');
+                    $videoBool = strpos($contextSrc, "youtube");
 
                     echo '
                         <div class= "card card-body bg-light">
