@@ -28,7 +28,7 @@
                 $questionText = $row['QText'];
 
                 echo'
-                <div class="jumbotron center-text">
+                <div class="jumbotron text-center">
                     <h1>' . $questionText . '</h1>
                 </div>
                 ';
