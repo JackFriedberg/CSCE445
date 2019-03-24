@@ -100,7 +100,10 @@
                     }
                 }
             }
+        ?>
 
+        <div id="historicalContainer">
+        <?php
             if($context){
                 $counter = 1;
                 while($row = sqlsrv_fetch_array($context)){
@@ -132,9 +135,9 @@
                     }
                 }
             }
-
             sqlsrv_free_stmt($getResults); /* idk what this does */
         ?>
+        </div>
     </body>
 
     <script>
