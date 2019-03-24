@@ -128,8 +128,8 @@
                         echo '</div>';
                     }
                 $counter++;
+*/
                 }
-  */
             }
             else{
                 echo 'SQL Error:';
