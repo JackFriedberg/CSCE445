@@ -108,7 +108,7 @@
                     $contextSrc =  $row['Link'];
 
                     echo '
-                        <div id="Context1">
+                        <div id="Context1" class="well well-lg">
                             <h3> Historical Information #'. strval($counter) .':</h3>
                             <div>
                                 <p>' . $contextContent . '</p>    
