@@ -9,13 +9,12 @@
         <title>UpQuiz</title>
         <style>
             body{
-                background-color: #00FFFF;
+                background-color: #00BFFF;
             }
-            
         </style>
     </head>
     <body>  
-
+        <center>
         <?php
             $sql = "SELECT * FROM amrev_questions WHERE qIndex = " . strval($_SESSION["question"]);
             $questions = sqlsrv_query($conn, $sql);
@@ -26,7 +25,7 @@
             if($questions){
                 $row = sqlsrv_fetch_array($questions, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
                 $questionText = $row['QText'];
-                echo "< p style='color:red;'>" .$questionText . "<br />"."</p>";
+                echo '<span style>$questionText . "<br />"';
             }    
             else{
                 echo 'SQL Error:';
@@ -121,7 +120,7 @@
                 
             $context2Src = "YouTube";
        ?>
-
+    </center>
 
 
     </body>
