@@ -117,18 +117,18 @@
                                 <p>' . $contextContent . '</p>    
                             </div>
                     ';
-  /*
-                    if(strpos($contextSrc, "youtube") !== false){
+  
+//                    if(strpos($contextSrc, "youtube") !== false){
                         echo ' 
                             <div>
                                 <p>' . $contextSrc . '</p>
                             </div>
                         </div>
                         ';
-                    else {
-                        echo '</div>';
-                    }
-*/
+//                  else {
+//                      echo '</div>';
+//                    }
+
                     $counter++;
                 }
             }
