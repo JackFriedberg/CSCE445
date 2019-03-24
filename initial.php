@@ -9,7 +9,6 @@
         <title>UpQuiz</title>
     </head>
     <body>  
-    <center>
 
         <?php
             $sql = "SELECT * FROM amrev_questions WHERE qIndex = " . strval($_SESSION["question"]);
@@ -23,7 +22,7 @@
                 $questionText = $row['QText'];
                 '<div><b>'
                 echo $questionText . "<br />";
-                '<b></div>'
+                '</b></div>'
             }    
             else{
                 echo 'SQL Error:';
@@ -119,7 +118,5 @@
             $context2Src = "YouTube";
        ?>
 
-
-    </center>
     </body>
 </html>
