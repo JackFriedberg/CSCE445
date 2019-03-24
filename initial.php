@@ -102,7 +102,7 @@
             }
         ?>
 
-        <div id="historicalContainer">
+        <div id="historicalContainer" class="row">
         <?php
             if($context){
                 $counter = 1;
@@ -111,7 +111,7 @@
                     $contextSrc =  $row['Link'];
 
                     echo '
-                        <div class= "quote-card card-body bg-light">
+                        <blockquote class= "quote-card card-body bg-light">
                             <h3> Historical Information #'. strval($counter) .':</h3>
                             <div>
                                 <p>' . $contextContent . '</p>    
@@ -123,11 +123,11 @@
                             <div>
                                 <p>' . $contextSrc . '</p>
                             </div>
-                        </div>
+                        </blockquote>
                         ';
                     }
                     else {
-                        echo '</div>';
+                        echo '</blockquote>';
                     }
 
                     $counter++;
