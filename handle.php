@@ -4,24 +4,20 @@ chdir('..');
 include_once "dbh.inc.php";
 session_start();
 
-?>
-
-<?php
-
 if(isset($_POST['correct'])){
-
-    $_SESSION['question']++;
-    $_SESSION['question']++;
+    if($_SESSION['question'] % 2 == 1){
+        $_SESSION['question']++;
+    }
+    else {
+        $_SESSION['question']++;
+        $_SESSION['question']++;
+    }
 }
 else {
-
     $_SESSION['question']++;
-
 }
 
-
-
-header("Location: initial.php");
+header("Location: /initial.php");
 exit();
 
 ?>
