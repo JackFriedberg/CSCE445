@@ -8,20 +8,6 @@
     <head>
         <title>UpQuiz</title>
     </head>
-    <style>
-    .button1 {
-        background-color: #4CAF50; /* Green */
-        border: none;
-        color: white;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-    }
-    </style>
     <body>  
 
         <?php
@@ -57,8 +43,6 @@
                 $option4 = $row['Option4'];
                 $answer = $row['Answer'];
                 
-
-
                 if($option1 == $answer){
                     $correct = $option1;
                     $incorrect1 = $option2;
@@ -87,7 +71,7 @@
                 echo'
                     <form action="http://445dev3.azurewebsites.net/handle.php" method="post">
                         <ul id = "answerList">
-                            <li><button type="submit" name="correct">' . $correct . ' (Right Answer) </button></li>
+                            <li><button type="submit" name="correct">' . $correct . '</button></li>
                             <li><button type="submit" name="incorrect1">' . $incorrect1 . '</button></li>
                             <li><button type="submit" name="incorrect2">' . $incorrect2 . '</button></li>
                             <li><button type="submit" name="incorrect3">' . $incorrect3 . '</button></li>
@@ -138,26 +122,8 @@
                 }
             }
 
-
             sqlsrv_free_stmt($getResults); /* idk what this does */
         ?>
-
-        <!--
-        This is where answer selection needs to be validated.
-        If the correct answer is chosen, the below button action should be 
-        triggered, most likely with javascript (the user shouldnt have to push a button).
-        If incorrect, the show/hide functionality needs to be implemented(Question 1 stuff 
-        hidden, Question 2 stuff shown).
-        -->
-        <?php 
-            
-            $context2Content = '<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/gzALIXcY4pg?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-                
-            $context2Src = "YouTube";
-       ?>
-
-
-
     </body>
 
     <script>
