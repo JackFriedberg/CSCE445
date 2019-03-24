@@ -11,7 +11,11 @@
             body{
                 background-color: #00BFFF;
             }
-
+            
+            .ourHeader{
+                font-size: 40px;
+                text-align: center;
+            }
         </style>
     </head>
     <body>  
@@ -26,7 +30,11 @@
             if($questions){
                 $row = sqlsrv_fetch_array($questions, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
                 $questionText = $row['QText'];
-                echo "<div style ='font-size:40px;color:#ff0000';text-align: center>$questionText</div>";
+                echo '
+                <div class="ourHeader" id = "questionStuff">
+                <h1>'.$questionText. '</h1>
+                </div>
+                '
             }    
             else{
                 echo 'SQL Error:';
