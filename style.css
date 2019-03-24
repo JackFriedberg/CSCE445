@@ -5,3 +5,7 @@
 #buttonDiv {
     margin:0 auto;
 }
+
+.well {
+border-style:solid;
+}
