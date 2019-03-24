@@ -55,14 +55,41 @@
                 $option2 = $row['Option2'];
                 $option3 = $row['Option3'];
                 $option4 = $row['Option4'];
+                $answer = $row['Answer'];
+                
+
+                if($option1 == $answer){
+                    $correct = $option1;
+                    $incorrect1 = $option2;
+                    $incorrect2 = $option3;
+                    $incorrect3 = $option4;
+                }
+                else if($option2 == $answer){
+                    $correct = $option2;
+                    $incorrect1 = $option1;
+                    $incorrect2 = $option3;
+                    $incorrect3 = $option4;
+                }
+                else if($option3 == $answer){
+                    $correct = $option3;
+                    $incorrect1 = $option2;
+                    $incorrect2 = $option1;
+                    $incorrect3 = $option4;
+                }
+                else if($option4 == $answer){
+                    $correct = $option4;
+                    $incorrect1 = $option2;
+                    $incorrect2 = $option3;
+                    $incorrect3 = $option1;
+                }
 
                 echo'
                     <form action="http://445dev3.azurewebsites.net/handle.php" method="post">
                         <ul>
-                            <li><button type="submit" name="correct">' . $option1 . ' (Right Answer) </button></li>
-                            <li><button type="submit" name="incorrect1">' . $option2 . '</button></li>
-                            <li><button type="submit" name="incorrect2">' . $option3 . '</button></li>
-                            <li><button type="submit" name="incorrect3">' . $option4 . '</button></li>
+                            <li><button type="submit" name="correct">' . $correct . ' (Right Answer) </button></li>
+                            <li><button type="submit" name="incorrect1">' . $incorrect1 . '</button></li>
+                            <li><button type="submit" name="incorrect2">' . $incorrect2 . '</button></li>
+                            <li><button type="submit" name="incorrect3">' . $incorrect3 . '</button></li>
                         </ul>
                     </form>
                 ';
