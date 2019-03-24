@@ -8,6 +8,20 @@
     <head>
         <title>UpQuiz</title>
     </head>
+    <style>
+    .button1 {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+    </style>
     <body>  
 
         <?php
@@ -20,9 +34,7 @@
             if($questions){
                 $row = sqlsrv_fetch_array($questions, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
                 $questionText = $row['QText'];
-                
-                '<p class="test">'echo $questionText . "<br />"'</p>';
-
+                echo $questionText . "<br />";
             }    
             else{
                 echo 'SQL Error:';
@@ -42,10 +54,10 @@
                 $option4 = $row['Option4'];
                 echo'
                     <form action="http://445dev3.azurewebsites.net/initial.php" method="post">
-                        <button type="submit">' . $option1 . '</button>
+                        <button type="submit">' . $option1 . ' (Right Answer) </button>
                     </form>
                     <form action="http://445dev3.azurewebsites.net/initial.php" method="post">
-                        <button type="submit">' . $option2 . '</button>
+                        <button class="button1" type="submit">' . $option2 . '</button>
                     </form>
                     <form action="http://445dev3.azurewebsites.net/initial.php" method="post">
                         <button type="submit">' . $option3 . '</button>
@@ -81,7 +93,6 @@
                             </div>
                         </div>
                     ';
-                    
                 $counter++;
                 }
             }
@@ -117,6 +128,8 @@
                 
             $context2Src = "YouTube";
        ?>
+
+
 
     </body>
 </html>
