@@ -56,19 +56,19 @@
                 $option4 = $row['Option4'];
 
                 echo'
-                    <form action="http://445dev3.azurewebsites.net/initial.php" method="post">
+                    <form action="http://445dev3.azurewebsites.net/handle.php" method="post">
                         <button type="submit">' . $option1 . ' (Right Answer) </button>
                     </form>
 
-                    <form action="http://445dev3.azurewebsites.net/initial.php" method="post">
+                    <form action="http://445dev3.azurewebsites.net/handle.php" method="post">
                         <button class="button1" type="submit">' . $option2 . '</button>
                     </form>
 
-                    <form action="http://445dev3.azurewebsites.net/initial.php" method="post">
+                    <form action="http://445dev3.azurewebsites.net/handle.php" method="post">
                         <button type="submit">' . $option3 . '</button>
                     </form>
 
-                    <form action="http://445dev3.azurewebsites.net/initial.php" method="post">
+                    <form action="http://445dev3.azurewebsites.net/handle.php" method="post">
                         <button type="submit">' . $option4 . '</button>
                     </form>
                 ';
@@ -119,7 +119,6 @@
 
 
             sqlsrv_free_stmt($getResults); /* idk what this does */
-            $_SESSION['question']++; /* Increments the session variable after the query*/
         ?>
 
         <!--
@@ -129,11 +128,6 @@
         If incorrect, the show/hide functionality needs to be implemented(Question 1 stuff 
         hidden, Question 2 stuff shown).
         -->
-
-        <form action="http://445dev3.azurewebsites.net/initial.php" method="post">
-            <button type="submit">Next Question</button>
-        </form>
-
         <?php 
             
             $context2Content = '<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/gzALIXcY4pg?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
