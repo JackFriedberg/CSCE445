@@ -4,7 +4,6 @@ chdir('..');
 include_once "dbh.inc.php";
 session_start();
 
-
 ?>
 
 <?php
@@ -12,7 +11,7 @@ session_start();
 $_SESSION['question']++
 
 
-header("Location: ../initial.php");
+header("Location: initial.php");
 exit();
 
 ?>
