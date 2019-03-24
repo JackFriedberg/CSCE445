@@ -20,9 +20,9 @@
             if($questions){
                 $row = sqlsrv_fetch_array($questions, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
                 $questionText = $row['QText'];
-                '<div><b>'
+                '<div align=center>'
                 echo $questionText . "<br />";
-                '</b></div>'
+                '</div>'
             }    
             else{
                 echo 'SQL Error:';
