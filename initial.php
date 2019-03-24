@@ -16,6 +16,12 @@
                 font-size: 40px;
                 text-align: center;
             }
+            .Context1{
+                width:400px;
+                border: 25 px #ff5100;
+                padding: 25 px;
+                margin: 25px;
+            }
 
             .button1 {
         background-color: #ff5100; /* Green */
