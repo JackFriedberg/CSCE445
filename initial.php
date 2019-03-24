@@ -14,7 +14,7 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>  
-
+        <div class="container">
         <?php
             $sql = "SELECT * FROM amrev_questions WHERE qIndex = " . strval($_SESSION["question"]);
             $questions = sqlsrv_query($conn, $sql);
@@ -81,7 +81,7 @@
                     <div class="row align-items-center justify-content-center">
                         <form id= "theForm" action="http://445dev3.azurewebsites.net/handle.php" method="post">
                             <div id="buttonDiv" class="btn-group-vertical" style="margin:0 auto">
-                                <button type="submit" class="btn btn-primary" name="correct"> <h3>' . $correct . '</h3> </button>
+                                <button type="submit" class="btn btn-primary" name="correct"> <h3>' . $correct . '</h3></button>
                                 <button type="submit" class= "btn btn-primary" name="incorrect1"> <h3>' . $incorrect1 . '</h3></button>
                                 <button type="submit" class= "btn btn-primary" name="incorrect2"> <h3>' . $incorrect2 . '</h3></button>
                                 <button type="submit" class= "btn btn-primary" name="incorrect3"> <h3>' . $incorrect3 . '</h3></button>
@@ -138,6 +138,8 @@
             sqlsrv_free_stmt($getResults); /* idk what this does */
         ?>
         </div>
+        </div>
+        
     </body>
 
     <script>
