@@ -25,7 +25,7 @@
         text-align: center;
         text-decoration: none;
         display: inline-block;
-        font-size: 16px;
+        font-size: 20px;
         margin: 4px 2px;
         cursor: pointer;
     }
@@ -67,16 +67,16 @@
                 $option4 = $row['Option4'];
                 echo'
                     <form action="http://445dev2.azurewebsites.net/initial.php" method="post">
-                        <button class = button1 type="submit">' . $option1 . '</button>
+                        <button class = "button1" type="submit">' . $option1 . '</button>
                     </form>
                     <form action="http://445dev2.azurewebsites.net/initial.php" method="post">
-                        <button class = button1 type="submit">' . $option2 . '</button>
+                        <button class = "button1" type="submit">' . $option2 . '</button>
                     </form>
                     <form action="http://445dev2.azurewebsites.net/initial.php" method="post">
-                        <button class = button1 type="submit">' . $option3 . '</button>
+                        <button class = "button1" type="submit">' . $option3 . '</button>
                     </form>
                     <form action="http://445dev2.azurewebsites.net/initial.php" method="post">
-                        <button class = button1 type="submit">' . $option4 . '</button>
+                        <button class = "button1" type="submit">' . $option4 . '</button>
                     </form>
                 ';
             }
