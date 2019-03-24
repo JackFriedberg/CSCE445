@@ -110,8 +110,6 @@
                     $contextContent = $row['Embed'];
                     $contextSrc =  $row['Link'];
 
-                    $videoBool = strpos($contextSrc, "youtube");
-
                     echo '
                         <div class= "card card-body bg-light">
                             <h3> Historical Information #'. strval($counter) .':</h3>
@@ -119,7 +117,7 @@
                                 <p>' . $contextContent . '</p>    
                             </div>
                     ';
-                    if($videoBool == false){
+                    if(strpos($contextSrc, "youtube") !== false){
                         echo ' 
                             <div>
                                 <p class="srcText">' . $contextSrc . '</p>
