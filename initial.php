@@ -31,7 +31,7 @@
                 <div class="jumbotron">
                     <h1>' . $questionText . '</h1>
                 </div>
-                '
+                ';
             }    
             else{
                 echo 'SQL Error:';
