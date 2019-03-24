@@ -111,13 +111,13 @@
                     $contextSrc =  $row['Link'];
 
                     echo '
-                        <div class= "well">
+                        <div class= "card card-body bg-light">
                             <h3> Historical Information #'. strval($counter) .':</h3>
                             <div>
                                 <p>' . $contextContent . '</p>    
                             </div>
                             <div>
-                                <p>' . $contextSrc . '</p>
+                                <p class="src">' . $contextSrc . '</p>
                             </div>
                         </div>
                     ';
