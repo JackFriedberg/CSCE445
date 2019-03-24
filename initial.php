@@ -18,7 +18,7 @@
             }
 
             .button1 {
-        background-color: #4CAF50; /* Green */
+        background-color: #ff5100; /* Green */
         border: none;
         color: white;
         padding: 15px 32px;
@@ -28,6 +28,8 @@
         font-size: 20px;
         margin: 4px 2px;
         cursor: pointer;
+        width: 50px;
+        length: 100px;
     }
         </style>
     </head>
