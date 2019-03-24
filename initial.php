@@ -109,7 +109,7 @@
                 while($row = sqlsrv_fetch_array($context)){
                     $contextContent = $row['Embed'];
                     $contextSrc =  $row['Link'];
-/*
+
                     echo '
                         <div class= "card card-body bg-light">
                             <h3> Historical Information #'. strval($counter) .':</h3>
@@ -117,6 +117,7 @@
                                 <p>' . $contextContent . '</p>    
                             </div>
                     ';
+  /*
                     if(strpos($contextSrc, "youtube") !== false){
                         echo ' 
                             <div>
