@@ -26,7 +26,7 @@
             if($questions){
                 $row = sqlsrv_fetch_array($questions, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
                 $questionText = $row['QText'];
-                echo "<p style='color:red;'>$questionText</p>";
+                echo "<div style ='font:11px/21px Arial,tahoma,sans-serif;color:#ff0000'>$questionText</div>";
             }    
             else{
                 echo 'SQL Error:';
