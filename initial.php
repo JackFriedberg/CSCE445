@@ -78,7 +78,7 @@
                 }
 
                 echo'
-                    <div style="margin:0">
+                    <div class="row align-items-center justify-content-center">
                         <form id= "theForm" action="http://445dev3.azurewebsites.net/handle.php" method="post">
                             <div id="buttonDiv" class="btn-group-vertical" style="margin:0 auto">
                                 <button type="submit" class="btn btn-primary" name="correct">' . $correct . ' </button>
