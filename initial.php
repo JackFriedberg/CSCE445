@@ -58,6 +58,7 @@
                 $answer = $row['Answer'];
                 
 
+                
                 if($option1 == $answer){
                     $correct = $option1;
                     $incorrect1 = $option2;

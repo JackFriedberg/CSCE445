@@ -17,6 +17,7 @@ else {
     $_SESSION['question']++;
 }
 
+
 header("Location: /initial.php");
 exit();
 
