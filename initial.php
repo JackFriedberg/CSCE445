@@ -128,8 +128,8 @@
                     else {
                         echo '</div>';
                     }
-                $counter++;
 */
+                    $counter++;
                 }
             }
             else{
