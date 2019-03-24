@@ -35,6 +35,7 @@
             if($questions){
                 $row = sqlsrv_fetch_array($questions, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
                 $questionText = $row['QText'];
+                echo "Question Number: " . $row['QIndex'] . "<br />"; 
                 echo $questionText . "<br />";
             }    
             else{
@@ -57,19 +58,19 @@
 
                 echo'
                     <form action="http://445dev3.azurewebsites.net/handle.php" method="post">
-                        <button type="submit">' . $option1 . ' (Right Answer) </button>
+                        <button type="submit" name="correct">' . $option1 . ' (Right Answer) </button>
                     </form>
 
                     <form action="http://445dev3.azurewebsites.net/handle.php" method="post">
-                        <button class="button1" type="submit">' . $option2 . '</button>
+                        <button class="button1" type="submit" name="incorrect1">' . $option2 . '</button>
                     </form>
 
                     <form action="http://445dev3.azurewebsites.net/handle.php" method="post">
-                        <button type="submit">' . $option3 . '</button>
+                        <button type="submit" name="incorrect2">' . $option3 . '</button>
                     </form>
 
                     <form action="http://445dev3.azurewebsites.net/handle.php" method="post">
-                        <button type="submit">' . $option4 . '</button>
+                        <button type="submit" name="incorrect3">' . $option4 . '</button>
                     </form>
                 ';
 
