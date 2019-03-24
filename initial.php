@@ -5,10 +5,12 @@
 ?>
 
 <html>
-    test{
-        text-align:center;
-        font-weight:bold;
-    }
+    <style>
+        .test{
+            text-align:center;
+            font-weight:bold;
+        }
+    </style>    
 
     <head>
         <title>UpQuiz</title>
