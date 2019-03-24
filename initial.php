@@ -98,7 +98,7 @@
                     $contextContent = $row['Embed'];
                     $contextSrc =  $row['Link'];
                     echo '
-                        <div class= "myBox" id="Context1">
+                        <div id="Context1">
                             <h3> Historical Information #'. strval($counter) .':</h3>
                             <div>
                                 <p>' . $contextContent . '</p>    
