@@ -11,10 +11,11 @@
             body{
                 background-color: #00BFFF;
             }
+
         </style>
     </head>
     <body>  
-        <center>
+
         <?php
             $sql = "SELECT * FROM amrev_questions WHERE qIndex = " . strval($_SESSION["question"]);
             $questions = sqlsrv_query($conn, $sql);
@@ -25,7 +26,7 @@
             if($questions){
                 $row = sqlsrv_fetch_array($questions, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
                 $questionText = $row['QText'];
-                echo '<span style>$questionText . "<br />"';
+                echo '<p class="style">'.$questionText . "<br />";
             }    
             else{
                 echo 'SQL Error:';
@@ -33,7 +34,7 @@
                     foreach( $errors as $error ) {
                         echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
                         echo "code: ".$error[ 'code']."<br />";
-                        echo "message: ".$error[ 'message']."<br />";
+                        echo "message: ".$error[ 'message'].'</p>';
                     }
                 }
             }
@@ -120,7 +121,7 @@
                 
             $context2Src = "YouTube";
        ?>
-    </center>
+
 
 
     </body>
