@@ -26,7 +26,7 @@
             if($questions){
                 $row = sqlsrv_fetch_array($questions, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
                 $questionText = $row['QText'];
-                echo "<div style ='font-size:40px;color:#ff0000';text-align: center>$questionText</div>";
+                echo "<div style ='font-size:40px;text-align: center;font-weight: bold>$questionText</div>";
             }    
             else{
                 echo 'SQL Error:';
@@ -45,16 +45,16 @@
                 $option3 = $row['Option3'];
                 $option4 = $row['Option4'];
                 echo'
-                    <form action="http://445dev3.azurewebsites.net/initial.php" method="post">
+                    <form action="http://445dev2.azurewebsites.net/initial.php" method="post">
                         <button type="submit">' . $option1 . '</button>
                     </form>
-                    <form action="http://445dev3.azurewebsites.net/initial.php" method="post">
+                    <form action="http://445dev2.azurewebsites.net/initial.php" method="post">
                         <button type="submit">' . $option2 . '</button>
                     </form>
-                    <form action="http://445dev3.azurewebsites.net/initial.php" method="post">
+                    <form action="http://445dev2.azurewebsites.net/initial.php" method="post">
                         <button type="submit">' . $option3 . '</button>
                     </form>
-                    <form action="http://445dev3.azurewebsites.net/initial.php" method="post">
+                    <form action="http://445dev2.azurewebsites.net/initial.php" method="post">
                         <button type="submit">' . $option4 . '</button>
                     </form>
                 ';
