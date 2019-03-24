@@ -120,9 +120,7 @@
   
                     if(strpos($contextSrc, 'youtube') == false){
                         echo ' 
-                            <div>
-                                <p>' . $contextSrc . '</p>
-                            </div>
+                            <cite>' . $contextSrc . '</cite>
                         </blockquote>
                         ';
                     }
