@@ -14,14 +14,7 @@
         <p> upQuiz Home with list of topics: </p>  
 
         <?php
-        $_SESSION['question'] = 1;
-        $_SESSION['questionState'] = 1;
-        $_SESSION['answer1']="butt";
-        $_SESSION['answer2']="booty";
-        $_SESSION['answer3']="ass";
-        $_SESSION['answer4']="derriere";
-        $_SESSION['answer5']="posterior region";
-        $_SESSION['iterator']=1;
+        $_SESSION['question'] = 1; /*sets session variable to 1 for when the next page comes */
         ?>
 
         <form action="/initial.php" method="POST">

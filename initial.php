@@ -3,95 +3,135 @@
     include_once "dbh.inc.php";
     session_start();
 ?>
-<style>
-    .button {
-	  display: block;
-	  position: relative;
-	  padding: 15px 25px;
-	  font-size: 24px;
-	  cursor: pointer;
-	  text-align: center;
-	  text-decoration: none;
-	  outline: none;
-	  color: #fff;
-	  background-color: #4CAF50;
-	  border: none;
-	  border-radius: 15px;
-	  box-shadow: 0 9px #999;
-	}
-	
-	.button:hover {background-color: #3e8e41}
-	
-	.button:active {
-	  background-color: #3e8e41;
-	  box-shadow: 0 5px #666;
-	  transform: translateY(4px);
-	}
-</style>
 
 <html>
     <head>
         <title>UpQuiz</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
-    <body>  
-
+    <body style="height:100%">  
+        <div class="container">
         <?php
-            $sql = "SELECT * FROM Questions WHERE qIndex = " . strval($_SESSION["question"]);
-            if($_SESSION['questionState']==1){
-                $test1 = sqlsrv_query($conn, $sql);
-            }
-            
-            if($_SESSION["questionState"]==1){
-                
-                $row = sqlsrv_fetch_array($test1, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
-                            
-                echo "Question 1 text: " . $row['qText1']."<br />";
-                //echo "Question 2 text: " . $row['qText2']."<br />";    
-                
-                $question1Answers = explode(";", $row['answers1']); /* delimts the string into an array */
-                $question2Answers = explode(";", $row['answers2']);
-                
-                echo "Answers for Question 1: <br />";
-                foreach ($question1Answers as &$value1) { /* for loop goes length of array, stores curr value in $value1 */
-                    if($_SESSION["iterator"]==1){
-                        $_SESSION["answer1"]=$value1;
-                        //todo: either change the schema for the database to have a certain number of answers only
-                        // or finish rest of this to be able to add query answer choices to buttons
+            $sql = "SELECT * FROM amrev_questions WHERE qIndex = " . strval($_SESSION["question"]);
+            $questions = sqlsrv_query($conn, $sql);
+            $sql = "SELECT * FROM amrev_options WHERE qIndex = " . strval($_SESSION["question"]);
+            $options = sqlsrv_query($conn, $sql);
+            $sql = "SELECT * FROM amrev_context WHERE qIndex = " . strval($_SESSION["question"]);
+            $context = sqlsrv_query($conn, $sql);
+
+            if($questions){
+                $row = sqlsrv_fetch_array($questions, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
+                $questionText = $row['QText'];
+                $qIndex = $row['QIndex'];
+
+                echo'
+                <div class="jumbotron text-center">
+                    <p> ' . $qIndex . '<p>
+                    <h1>' . $questionText . '</h1>
+                </div>
+                ';
+            }    
+            else{
+                echo 'SQL Error:';
+                if( ($errors = sqlsrv_errors() ) != null) {
+                    foreach( $errors as $error ) {
+                        echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
+                        echo "code: ".$error[ 'code']."<br />";
+                        echo "message: ".$error[ 'message']."<br />";
                     }
-                    echo "----". $value1 . "<br />";
                 }
-                echo "Answers for Question 2: <br />";
-                foreach ($question2Answers as &$value2) {
-                    echo "----". $value2 . "<br />";
-                }
-                
-                echo "Context 1 text: " . $row['context1_1']."<br />";
             }
-            if($_SESSION["questionState"]==2){
+
+            if($options){
+                $row = sqlsrv_fetch_array($options, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
+                $option1 = $row['Option1'];
+                $option2 = $row['Option2'];
+                $option3 = $row['Option3'];
+                $option4 = $row['Option4'];
+                $answer = $row['Answer'];
                 
-                $row = sqlsrv_fetch_array($test1, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
-                            
-                echo "Question 1 text: " . $row['qText1']."<br />";
-                //echo "Question 2 text: " . $row['qText2']."<br />";    
-                
-                $question1Answers = explode(";", $row['answers1']); /* delimts the string into an array */
-                $question2Answers = explode(";", $row['answers2']);
-                
-                echo "Answers for Question 1: <br />";
-                foreach ($question1Answers as &$value1) { /* for loop goes length of array, stores curr value in $value1 */
-                    if($_SESSION["iterator"]==1){
-                        $_SESSION["answer1"]=$value1;
-                        //todo: either change the schema for the database to have a certain number of answers only
-                        // or finish rest of this to be able to add query answer choices to buttons
+                if($option1 == $answer){
+                    $correct = $option1;
+                    $incorrect1 = $option2;
+                    $incorrect2 = $option3;
+                    $incorrect3 = $option4;
+                }
+                else if($option2 == $answer){
+                    $correct = $option2;
+                    $incorrect1 = $option1;
+                    $incorrect2 = $option3;
+                    $incorrect3 = $option4;
+                }
+                else if($option3 == $answer){
+                    $correct = $option3;
+                    $incorrect1 = $option2;
+                    $incorrect2 = $option1;
+                    $incorrect3 = $option4;
+                }
+                else if($option4 == $answer){
+                    $correct = $option4;
+                    $incorrect1 = $option2;
+                    $incorrect2 = $option3;
+                    $incorrect3 = $option1;
+                }
+
+                echo'
+                    <div class="row align-items-center justify-content-center">
+                        <form id= "theForm" action="http://445dev3.azurewebsites.net/handle.php" method="post">
+                            <div id="buttonDiv" class="btn-group-vertical" style="margin:0 auto">
+                                <button type="submit" class="btn btn-primary" name="correct"> <h3>' . $correct . ' (correct)</h3></button>
+                                <button type="submit" class= "btn btn-primary" name="incorrect1"> <h3>' . $incorrect1 . '</h3></button>
+                                <button type="submit" class= "btn btn-primary" name="incorrect2"> <h3>' . $incorrect2 . '</h3></button>
+                                <button type="submit" class= "btn btn-primary" name="incorrect3"> <h3>' . $incorrect3 . '</h3></button>
+                            </div>
+                        </form>
+                    </div>
+                ';
+            }
+            else{
+                echo 'SQL Error:';
+                if( ($errors = sqlsrv_errors() ) != null) {
+                    foreach( $errors as $error ) {
+                        echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
+                        echo "code: ".$error[ 'code']."<br />";
+                        echo "message: ".$error[ 'message']."<br />";
                     }
-                    echo "----". $value1 . "<br />";
                 }
-                echo "Answers for Question 2: <br />";
-                foreach ($question2Answers as &$value2) {
-                    echo "----". $value2 . "<br />";
+            }
+        ?>
+
+        <div id="historicalContainer" class="row" style="height:100%">
+        <?php
+            if($context){
+                $counter = 1;
+                while($row = sqlsrv_fetch_array($context)){
+                    $contextContent = $row['Embed'];
+                    $contextSrc =  $row['Link'];
+
+                    echo '
+                        <blockquote class= "quote-card  bg-light">
+                            <h3> Historical Information #'. strval($counter) .':</h3>
+                            <div>
+                                <p>' . $contextContent . '</p>    
+                            </div>
+                    ';
+  
+                    if(strpos($contextSrc, 'youtube') == false){
+                        echo ' 
+                            <cite>' . $contextSrc . '</cite>
+                        </blockquote>
+                        ';
+                    }
+                    else {
+                        echo '</blockquote>';
+                    }
+
+                    $counter++;
                 }
-                
-                echo "Context 1 text: " . $row['context1_1']."<br />";
             }
             else{
                 echo 'SQL Error:';
@@ -104,40 +144,17 @@
                 }
             }
             sqlsrv_free_stmt($getResults); /* idk what this does */
-
-            function rightAnswer(){
-                $_SESSION['questionState']=1;
-                $_SESSION['question']++; /* Increments the session variable after the query*/
-            }
-            function wrongAnswer(){
-                $_SESSION['questionState']++;
-            }
-            echo $_SESSION['questionState'];
-            if($_SESSION['questionState']==1){
-                $_SESSION['questionState']++;
-            }
-            else{
-                $_SESSION['questionState']=1;
-                $_SESSION['question']++; /* Increments the session variable after the query*/
-            }
-            
         ?>
-
-        <!--
-        This is where answer selection needs to be validated.
-        If the correct answer is chosen, the below button action should be 
-        triggered, most likely with javascript (the user shouldnt have to push a button).
-        If incorrect, the show/hide functionality needs to be implemented(Question 1 stuff 
-        hidden, Question 2 stuff shown).
-        -->
-
-        <form action="" method="post">
-            <button class="button" name="button1"><?php echo $_SESSION["answer1"] ?></button>
-        </form>
-        <form action="" method="post">
-            <button class="button" name="button2">wrong answer</button>
-        </form>
-
-
+        </div>
+        </div>
+        
     </body>
+
+    <script>
+        var form = document.getElementById("theForm");
+        for (var i = form.children.length; i >= 0; i--) {
+            form.appendChild(form.children[Math.random() * i | 0]);
+        }
+    </script>
+
 </html>
