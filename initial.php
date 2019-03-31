@@ -26,6 +26,7 @@
             if($questions){
                 $row = sqlsrv_fetch_array($questions, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
                 $questionText = $row['QText'];
+                $qIndex = $row['QIndex'];
 
                 echo'
                 <div class="jumbotron text-center">
