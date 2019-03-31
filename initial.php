@@ -29,6 +29,7 @@
 
                 echo'
                 <div class="jumbotron text-center">
+                    <p> ' . $qIndex . '<p>
                     <h1>' . $questionText . '</h1>
                 </div>
                 ';
