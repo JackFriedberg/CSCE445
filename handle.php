@@ -8,7 +8,7 @@ if(isset($_POST['correct'])){
     if($_SESSION['question'] % 2 == 1){
         $_SESSION['question']++;
     }
-    else if ($_SESSION['question'] % 2 == 1){
+    else if ($_SESSION['question'] % 2 == 0){
         $_SESSION['question']++;
         $_SESSION['question']++;
     }
