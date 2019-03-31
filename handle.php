@@ -12,23 +12,10 @@ if(isset($_POST['correct'])){
         $_SESSION['question']++;
         $_SESSION['question']++;
     }
-    else {
-        //idk it failed
-    }
-}
-else if (isset($_POST['incorrect1'])){
-    $_SESSION['question']++;    
 }
 
-else if (isset($_POST['incorrect3'])){
-    $_SESSION['question']++;    
-}
-
-else if (isset($_POST['incorrect2'])){
-    $_SESSION['question']++;    
-}
 else {
-    //idk it failed
+    $_SESSION['question']++;
 }
 
 
