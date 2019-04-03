@@ -18,7 +18,7 @@ if(isset($_POST['signup-submit'])){
 
     if(empty($username) || empty($email) || empty($pwd) || empty($pwd2)){
         //form not filled out
-        header("Location: /index.php");
+        echo 'Something empty';
     } //more error checking
     else {
 
