@@ -36,20 +36,20 @@ if(isset($_POST['signup-submit'])){
     else { 
 
         //prepare SQL statement to see if the username already exists
-        $sql = "SELECT username FROM users WHERE username = ?";
+        $sqlCheck = "SELECT username FROM users WHERE username = ?";
         //put parameter in array
-        $params = array(&$username);
+        $paramsCheck = array(&$username);
         
         //prepare the statement
-        if(!$prepared = sqlsrv_prepare($conn, $sql, $params)){
+        if(!$preparedCheck = sqlsrv_prepare($conn, $sqlCheck, $paramsCheck, array( "Scrollable" => 'static' ))){
             //could't prepare the statement
-            sqlsrv_free_stmt($prepared);
+            sqlsrv_free_stmt($preparedCheck);
             header("Location: /index.php?error=Checkpreparation");
             exit();
         }
         else {
             //execute the statement
-            $result = sqlsrv_execute($prepared);
+            $result = sqlsrv_execute($preparedCheck);
             $rowCount = sqlsrv_num_rows($result);
             if($rowCount > 0){
                 sqlsrv_free_stmt($prepared);
