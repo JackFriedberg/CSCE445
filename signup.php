@@ -29,35 +29,31 @@ if(isset($_POST['signup-submit'])){
 
         
         if(!$prepared = sqlsrv_prepare($conn, $sql, $params)){
-            echo 'SQL Error:';
-            if( ($errors = sqlsrv_errors() ) != null) {
-                foreach( $errors as $error ) {
-                    echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
-                    echo "code: ".$error[ 'code']."<br />";
-                    echo "message: ".$error[ 'message']."<br />";
-                }
-            }
-
+            //could't prepare the statement
             sqlsrv_free_stmt($prepared);
+            header("Location: /index.php?error=preparation");
+            exit();
         }
         else {
             if(!sqlsrv_execute($prepared)){
-                echo "Statement could not be executed.\n";  
+               //couldn't execute the statement 
                 sqlsrv_free_stmt($prepared);
+                header("Location: /index.php?error=execution");
+                exit();
             }
             else {
-                echo "Statement executed.\n";
+                //SUCCESS - added a user
                 sqlsrv_free_stmt($prepared);
+                header("Location: /index.php?signup=success");
+                exit();
             }
         }
     }
-
-
-
-
 }
 else {
-    echo '<h1> HELP</h1>';
+    //didnt submit form
+    header("Location: /index.php");
+    exit();
 }
 
 ?>
