@@ -19,21 +19,13 @@ if(isset($_POST['signup-submit'])){
 
     if(empty($username) || empty($email) || empty($pwd) || empty($pwd2)){
         //form not filled out
-        echo 'Something empty';
-        echo $username;
-        echo $email;
-        echo $pwd;
-        echo $pwd2;
-    } //more error checking
+        echo 'something empty';
+    } //more error checking (pwd and pwd2 match, valid email, username already exists)
     else {
 
-        $sql = "INSERT INTO users (username, email, pwd) VALUES ('$username', '$email', '$pwd')";
-        $query = sqlsrv_query($conn, $sql);
-
-        if($query){
-            echo 'Successful Query';
-        }
-        else {
+        $sql = "INSERT INTO users (username, email, pwd) VALUES (?, ?, ?)";
+        $stmt = mysqlsrv_stmt_init($conn);
+        if(!mysqlsrv_stmt_prepare($stmt, $sql)){
             echo 'SQL Error:';
             if( ($errors = sqlsrv_errors() ) != null) {
                 foreach( $errors as $error ) {
@@ -41,7 +33,13 @@ if(isset($_POST['signup-submit'])){
                     echo "code: ".$error[ 'code']."<br />";
                     echo "message: ".$error[ 'message']."<br />";
                 }
-            }    
+            }
+        }
+        else {
+            $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
+            
+            mysqlsrv_stmt_bind_param($stmt, "sss", $username, $email, $hashedPwd);
+            mysqlsrv_stmt_execute($stmt);
         }
     }
 
