@@ -23,10 +23,15 @@ if(isset($_POST['signup-submit'])){
             echo 'Successful Query';
         }
         else {
-            echo 'Failed Query';    
+            echo 'SQL Error:';
+            if( ($errors = sqlsrv_errors() ) != null) {
+                foreach( $errors as $error ) {
+                    echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
+                    echo "code: ".$error[ 'code']."<br />";
+                    echo "message: ".$error[ 'message']."<br />";
+                }
+            }    
         }
-
-        echo '<h1> Queried</h1>';    
     }
 
 
