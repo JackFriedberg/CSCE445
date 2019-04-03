@@ -49,8 +49,8 @@ if(isset($_POST['signup-submit'])){
         }
         else {
             //execute the statement
-            $result = sqlsrv_execute($prepared)
-            $rowCount = sqlsrv_num_rows($result)
+            $result = sqlsrv_execute($prepared);
+            $rowCount = sqlsrv_num_rows($result);
             if($rowCount > 0){
                 sqlsrv_free_stmt($prepared);
                 header("Location: /index.php?error=usernameTaken&email=".$email);
