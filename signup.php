@@ -5,7 +5,7 @@ session_start();
 
 if(isset($POST['signup-submit'])){
  
-    echo '<h1> IDK</h1>'
+    echo '<h1> IDK</h1>';
 
     $username = $POST['uid'];
     $email = $POST['email'];
@@ -27,7 +27,7 @@ if(isset($POST['signup-submit'])){
 
 }
 else {
-    echo '<h1> HELP</h1>'
+    echo '<h1> HELP</h1>';
 }
 
 ?>
