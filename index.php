@@ -22,10 +22,10 @@
         </form>
 
         <h3>Sign-Up</h3>
-        <form action="/signup.php" method="POST" class="">
+        <form action="/signup.php" method="POST" >
             <div class="form-group">
                 <input type="text" name="uid" placeholder="Username">
-                <input type="text" name="mail" placeholder="E-Mail">
+                <input type="text" name="email" placeholder="E-Mail">
                 <input type="password" name="pwd" placeholder="Password">
                 <input type="password" name="pwd2" placeholder="Repeat Password">
                 <button type="submit" name="signup-submit"></button>
