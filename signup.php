@@ -12,12 +12,21 @@ if(isset($_POST['signup-submit'])){
 
     if(empty($username) || empty($email) || empty($pwd) || empty($pwd2)){
         //form not filled out
+        header("Location: /index.php");
     } //more error checking
     else {
 
         $sql = "INSERT INTO users (email, pwd) VALUES (" . $username. ", ". $email .", ". $pwd. ")";
-        sqlsrv_query($conn, $sql);
-        header("Location: /index.php");
+        $query = sqlsrv_query($conn, $sql);
+
+        if($query){
+            echo 'Successful Query';
+        }
+        else {
+            echo 'Failed Query';    
+        }
+
+        echo '<h1> Queried</h1>';    
     }
 
 
