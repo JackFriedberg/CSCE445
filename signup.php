@@ -17,6 +17,7 @@ if(isset($POST['signup-submit'])){
     } //more error checking
     else {
         $sql = "INSERT INTO users (uid, email, pwd) VALUES ($username, $email, $pwd)";
+        sqlsrv_query($conn, $sql);
         header("Location: /index.php");
         exit();
     }
