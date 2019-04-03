@@ -5,6 +5,7 @@ session_start();
 
 if(isset($_POST['signup-submit'])){
 
+
     $username = $_POST['UserUid'];
     $email = $_POST['UserEmail'];
     $pwd = $_POST['UserPwd'];
@@ -19,6 +20,10 @@ if(isset($_POST['signup-submit'])){
     if(empty($username) || empty($email) || empty($pwd) || empty($pwd2)){
         //form not filled out
         echo 'Something empty';
+        echo $username;
+        echo $email;
+        echo $pwd;
+        echo $pwd2;
     } //more error checking
     else {
 
