@@ -23,10 +23,10 @@
         <h3>Sign-Up</h3>
         <form action="/signup.php" method="POST" >
             <div class="form-group">
-                <input type="text" name="uid" placeholder="Username">
-                <input type="text" name="email" placeholder="E-Mail">
-                <input type="password" name="pwd" placeholder="Password">
-                <input type="password" name="pwd2" placeholder="Repeat Password">
+                <input type="text" name="UserUid" placeholder="Username">
+                <input type="text" name="UserEmail" placeholder="E-Mail">
+                <input type="password" name="UserPwd" placeholder="Password">
+                <input type="password" name="UserPwd2" placeholder="Repeat Password">
                 <button type="submit" name="signup-submit"></button>
             </div>
         </form>

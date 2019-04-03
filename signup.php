@@ -5,10 +5,10 @@ session_start();
 
 if(isset($_POST['signup-submit'])){
 
-    $username = $_POST['uid'];
-    $email = $_POST['email'];
-    $pwd = $_POST['pwd'];
-    $pwd2 = $_POST['pwd2'];
+    $username = $_POST['UserUid'];
+    $email = $_POST['UserEmail'];
+    $pwd = $_POST['UserPwd'];
+    $pwd2 = $_POST['UserPwd2'];
 
     if(empty($username) || empty($email) || empty($pwd) || empty($pwd2)){
         //form not filled out
@@ -16,7 +16,7 @@ if(isset($_POST['signup-submit'])){
     } //more error checking
     else {
 
-        $sql = "INSERT INTO users (email, pwd) VALUES (" . $username. ", ". $email .", ". $pwd. ")";
+        $sql = "INSERT INTO users (uid, email, pwd) VALUES (" . $username. ", ". $email .", ". $pwd. ")";
         $query = sqlsrv_query($conn, $sql);
 
         if($query){
