@@ -27,7 +27,7 @@ if(isset($_POST['signup-submit'])){
     } //more error checking
     else {
 
-        $sql = "INSERT INTO users (uid, email, pwd) VALUES ('$username', '$email', '$pwd')";
+        $sql = "INSERT INTO users (username, email, pwd) VALUES ('$username', '$email', '$pwd')";
         $query = sqlsrv_query($conn, $sql);
 
         if($query){
