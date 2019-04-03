@@ -4,7 +4,7 @@ chdir('..');
 include_once "dbh.inc.php";
 session_start();
 
-if(IssET($POST['signup-submit'])){
+if(isset($POST['signup-submit'])){
  
     $username = $POST['uid'];
     $email = $POST['email'];
@@ -13,12 +13,12 @@ if(IssET($POST['signup-submit'])){
 
     if(empty($username) || empty($email) || empty($pwd) || empty($pwd2)){
         //form not filled out
-        header("Location: /index.php")
+        header("Location: /index.php");
         exit();
     } //more error checking
     else {
-  //      $sql = "INSERT INTO users (uid, email, pwd) VALUES ($username, $email, $pwd)";
-        header("Location: /index.php")
+        $sql = "INSERT INTO users (uid, email, pwd) VALUES ($username, $email, $pwd)";
+        header("Location: /index.php");
         exit();
     }
 
