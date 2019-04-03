@@ -28,7 +28,7 @@ if(isset($_POST['signup-submit'])){
         $params = array(&$username, &$email, &$hashedPwd);
 
         
-        if($prepared = sqlsrv_prepare($conn, $sql, $params)){
+        if(!$prepared = sqlsrv_prepare($conn, $sql, $params)){
             echo 'SQL Error:';
             if( ($errors = sqlsrv_errors() ) != null) {
                 foreach( $errors as $error ) {
@@ -37,7 +37,7 @@ if(isset($_POST['signup-submit'])){
                     echo "message: ".$error[ 'message']."<br />";
                 }
             }
-            
+
             sqlsrv_free_stmt($prepared);
         }
         else {
