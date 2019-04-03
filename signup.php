@@ -3,14 +3,14 @@
 include_once "../dbh.inc.php";
 session_start();
 
-if(isset($POST['signup-submit'])){
+if(isset($_POST['signup-submit'])){
  
     echo '<h1> IDK</h1>';
 
-    $username = $POST['uid'];
-    $email = $POST['email'];
-    $pwd = $POST['pwd'];
-    $pwd2 = $POST['pwd2'];
+    $username = $_POST['uid'];
+    $email = $_POST['email'];
+    $pwd = $_POST['pwd'];
+    $pwd2 = $_POST['pwd2'];
 
     if(empty($username) || empty($email) || empty($pwd) || empty($pwd2)){
         //form not filled out
