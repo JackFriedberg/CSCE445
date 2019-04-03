@@ -5,6 +5,8 @@ session_start();
 
 if(isset($POST['signup-submit'])){
  
+    echo '<h1> IDK</h1>'
+
     $username = $POST['uid'];
     $email = $POST['email'];
     $pwd = $POST['pwd'];
