@@ -33,34 +33,59 @@ if(isset($_POST['signup-submit'])){
         header("Location: /index.php?error=passwordCheck");
         exit();
     }
-    else { //Let's add a user
-        //prepare the sql statement
-        $sql = "INSERT INTO users (username, email, pwd) VALUES (?, ?, ?)";
-        //hash the password
-        $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
-        //put paramters in array
-        $params = array(&$username, &$email, &$hashedPwd);
+    else { 
+
+        //prepare SQL statement to see if the username already exists
+        $sql = "SELECT username FROM users WHERE username = ?";
+        //put parameter in array
+        $params = array(&$username);
         
         //prepare the statement
         if(!$prepared = sqlsrv_prepare($conn, $sql, $params)){
             //could't prepare the statement
             sqlsrv_free_stmt($prepared);
-            header("Location: /index.php?error=preparation");
+            header("Location: /index.php?error=Checkpreparation");
             exit();
         }
         else {
             //execute the statement
-            if(!sqlsrv_execute($prepared)){
-               //couldn't execute the statement 
+            $result = sqlsrv_execute($prepared)
+            $rowCount = sqlsrv_num_rows($result)
+            if($rowCount > 0){
                 sqlsrv_free_stmt($prepared);
-                header("Location: /index.php?error=execution");
+                header("Location: /index.php?error=usernameTaken&email=".$email);
                 exit();
             }
-            else {
-                //SUCCESS - added a user
-                sqlsrv_free_stmt($prepared);
-                header("Location: /index.php?signup=success");
-                exit();
+            else { //All error checking done 
+                //prepare the sql statement
+                $sql = "INSERT INTO users (username, email, pwd) VALUES (?, ?, ?)";
+                //hash the password
+                $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
+                //put paramters in array
+                $params = array(&$username, &$email, &$hashedPwd);
+                
+                //prepare the statement
+                if(!$prepared = sqlsrv_prepare($conn, $sql, $params)){
+                    //could't prepare the statement
+                    sqlsrv_free_stmt($prepared);
+                    header("Location: /index.php?error=preparation");
+                    exit();
+                }
+                else {
+                    //execute the statement
+                    if(!sqlsrv_execute($prepared)){
+                    //couldn't execute the statement 
+                        sqlsrv_free_stmt($prepared);
+                        header("Location: /index.php?error=execution");
+                        exit();
+                    }
+                    else {
+                        //SUCCESS - added a user
+                        sqlsrv_free_stmt($prepared);
+                        header("Location: /index.php?signup=success");
+                        exit();
+                    }
+                }
             }
         }
     }
