@@ -1,6 +1,5 @@
 <?php
-    chdir('..');
-    include_once "dbh.inc.php";
+    include_once "../dbh.inc.php";
     session_start();
 ?>
 
