@@ -13,7 +13,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
-    <body style="height:100%">  
+    <body style="height:100%; margin:0; padding:0">  
         <div class="container">
         <?php
             $sql = "SELECT * FROM amrev_questions WHERE qIndex = " . strval($_SESSION["question"]);
@@ -102,7 +102,7 @@
             }
         ?>
 
-        <div id="historicalContainer" class="row" style="height:100%">
+        <div id="historicalContainer" class="row" style="max-height:100%">
         <?php
             if($context){
                 $counter = 1;
