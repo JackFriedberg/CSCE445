@@ -39,9 +39,10 @@ if(isset($_POST['signup-submit'])){
         $sqlCheck = "SELECT username FROM users WHERE username = ?";
         //put parameter in array
         $paramsCheck = array(&$username);
-        
         //prepare the statement
-        if(!$preparedCheck = sqlsrv_prepare($conn, $sqlCheck, $paramsCheck, array( "Scrollable" => "buffered" ))){
+        $preparedCheck = sqlsrv_prepare($conn, $sqlCheck, $paramsCheck, array( "Scrollable" => SQLSRV_CURSOR_CLIENT_BUFFERED));
+        
+        if(!$preparedCheck){
             //could't prepare the statement
             sqlsrv_free_stmt($preparedCheck);
             header("Location: /index.php?error=Checkpreparation");
