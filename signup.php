@@ -41,7 +41,7 @@ if(isset($_POST['signup-submit'])){
         $paramsCheck = array(&$username);
         
         //prepare the statement
-        if(!$preparedCheck = sqlsrv_prepare($conn, $sqlCheck, $paramsCheck, array( "Scrollable" => 'static' ))){
+        if(!$preparedCheck = sqlsrv_prepare($conn, $sqlCheck, $paramsCheck, array( "Scrollable" => SQLSRV_CURSOR_CLIENT_BUFFERED ))){
             //could't prepare the statement
             sqlsrv_free_stmt($preparedCheck);
             header("Location: /index.php?error=Checkpreparation");
@@ -82,7 +82,7 @@ if(isset($_POST['signup-submit'])){
                     else {
                         //SUCCESS - added a user
                         sqlsrv_free_stmt($prepared);
-                        header("Location: /index.php?signup=success");
+                        header("Location: /index.php?signup=success&rows=".$rowCount);
                         exit();
                     }
                 }
