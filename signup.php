@@ -12,22 +12,36 @@ if(isset($_POST['signup-submit'])){
     $pwd2 = $_POST['UserPwd2'];
 
     
-    //$username = mysql_real_escape_string($username);
-    //$email = mysql_real_escape_string($email);
-    //$pwd = mysql_real_escape_string($pwd);
-    //$pwd2 = mysql_real_escape_string($pwd2);
+    if(empty($username) || empty($email) || empty($pwd) || empty($pwd2)){ //form not filled out
 
-    if(empty($username) || empty($email) || empty($pwd) || empty($pwd2)){
-        //form not filled out
-        echo 'something empty';
-    } //more error checking (pwd and pwd2 match, valid email, username already exists)
-    else {
-
+        header("Location: /index.php?error=emptyfields&email=".$email."&uid=".$username);
+        exit();
+    }
+    else if(!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9]*$/", $username)){ //if its not a valid email AND not a valid username
+        header("Location: /index.php?error=invalidemailuid");
+        exit();
+    }
+    else if(!filter_var($email, FILTER_VALIDATE_EMAIL) ){ //if its not a valid email
+        header("Location: /index.php?error=invalidemail&uid=".$username);
+        exit();
+    }
+    else if(!preg_match("/^[a-zA-Z0-9]*$/", $username)){ //if its  not a valid username
+        header("Location: /index.php?error=invaliduid&email=".$email);
+        exit();
+    }
+    else if($pwd !== $pwd2){ //if password don't match
+        header("Location: /index.php?error=passwordCheck");
+        exit();
+    }
+    else { //Let's add a user
+        //prepare the sql statement
         $sql = "INSERT INTO users (username, email, pwd) VALUES (?, ?, ?)";
+        //hash the password
         $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
+        //put paramters in array
         $params = array(&$username, &$email, &$hashedPwd);
-
         
+        //prepare the statement
         if(!$prepared = sqlsrv_prepare($conn, $sql, $params)){
             //could't prepare the statement
             sqlsrv_free_stmt($prepared);
@@ -35,6 +49,7 @@ if(isset($_POST['signup-submit'])){
             exit();
         }
         else {
+            //execute the statement
             if(!sqlsrv_execute($prepared)){
                //couldn't execute the statement 
                 sqlsrv_free_stmt($prepared);
