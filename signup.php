@@ -41,7 +41,7 @@ if(isset($_POST['signup-submit'])){
         $paramsCheck = array(&$username);
         
         //prepare the statement
-        if(!$preparedCheck = sqlsrv_prepare($conn, $sqlCheck, $paramsCheck, array( "Scrollable" => SQLSRV_CURSOR_CLIENT_BUFFERED ))){
+        if(!$preparedCheck = sqlsrv_prepare($conn, $sqlCheck, $paramsCheck, array( "Scrollable" => "buffered" ))){
             //could't prepare the statement
             sqlsrv_free_stmt($preparedCheck);
             header("Location: /index.php?error=Checkpreparation");
