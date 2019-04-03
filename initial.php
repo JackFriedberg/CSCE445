@@ -26,9 +26,11 @@
             if($questions){
                 $row = sqlsrv_fetch_array($questions, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
                 $questionText = $row['QText'];
+                $qIndex = $row['QIndex'];
 
                 echo'
                 <div class="jumbotron text-center">
+                    <p> ' . $qIndex . '<p>
                     <h1>' . $questionText . '</h1>
                 </div>
                 ';
@@ -81,7 +83,7 @@
                     <div class="row align-items-center justify-content-center">
                         <form id= "theForm" action="http://445dev3.azurewebsites.net/handle.php" method="post">
                             <div id="buttonDiv" class="btn-group-vertical" style="margin:0 auto">
-                                <button type="submit" class="btn btn-primary" name="correct"> <h3>' . $correct . '</h3></button>
+                                <button type="submit" class="btn btn-primary" name="correct"> <h3>' . $correct . ' (correct)</h3></button>
                                 <button type="submit" class= "btn btn-primary" name="incorrect1"> <h3>' . $incorrect1 . '</h3></button>
                                 <button type="submit" class= "btn btn-primary" name="incorrect2"> <h3>' . $incorrect2 . '</h3></button>
                                 <button type="submit" class= "btn btn-primary" name="incorrect3"> <h3>' . $incorrect3 . '</h3></button>
