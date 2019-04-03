@@ -24,5 +24,8 @@ if(isset($POST['signup-submit'])){
 
 
 }
+else {
+    echo '<h1> HELP</h1>'
+}
 
 ?>
