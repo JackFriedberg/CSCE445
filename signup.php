@@ -24,8 +24,8 @@ if(isset($_POST['signup-submit'])){
     else {
 
         $sql = "INSERT INTO users (username, email, pwd) VALUES (?, ?, ?)";
-        $stmt = mysqli_stmt_init($conn);
-        if(!mysqli_stmt_prepare($stmt, $sql)){
+        $stmt = sqlsrv_stmt_init($conn);
+        if(!sqlsrv_stmt_prepare($stmt, $sql)){
             echo 'SQL Error:';
             if( ($errors = sqlsrv_errors() ) != null) {
                 foreach( $errors as $error ) {
@@ -38,8 +38,8 @@ if(isset($_POST['signup-submit'])){
         else {
             $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
             
-            mysqli_stmt_bind_param($stmt, "sss", $username, $email, $hashedPwd);
-            mysqli_stmt_execute($stmt);
+            sqlsrv_stmt_bind_param($stmt, "sss", $username, $email, $hashedPwd);
+            sqlsrv_stmt_execute($stmt);
         }
     }
 
