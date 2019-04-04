@@ -114,14 +114,12 @@
 
                     echo '
                         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#contextModal">Click for context # ' . strval($counter) . '</button>
-                        
+                        <blockquote>
                         <div id="contextModal" class="modal fade" role="dialog">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-body">
-                                        <blockquote>
-                                            <p>' . $contextContent . '</p>
-                                        </blockquote>
+                                        <p>' . $contextContent . '</p>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -129,16 +127,9 @@
                                 </div>
                             </div>
                         </div>
+                        </blockquote>
                     ';
   
-                    if(strpos($contextSrc, 'youtube') == false){
-                        echo ' 
-                        <blockquote>
-                            <cite>' . $contextSrc . '</cite>
-                        </blockquote>
-                        
-                        ';
-                    }
 
                     $counter++;
                 }
