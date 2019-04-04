@@ -113,7 +113,7 @@
                     $contextSrc =  $row['Link'];
 
                     echo '
-                        <button type="button" class="btn-group btn-group-toggle d-flex flex-column flex-md-row" data-toggle="modal" data-target="#contextModal">Click for context # ' . strval($counter) . '</button>
+                        <button type="button" class="btn-floating btn-lg blue-gradient col-md-4 center-block" data-toggle="modal" data-target="#contextModal">Click for context # ' . strval($counter) . '</button>
                         <blockquote class="blockquote">
                             <div id="contextModal" class="modal fade" role="dialog">
                                 <div class="modal-dialog">
