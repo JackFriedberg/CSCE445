@@ -119,7 +119,7 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-body">
-                                        <p> Context goes here lol</p>
+                                        <p>' . $contextContent . '</p>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
