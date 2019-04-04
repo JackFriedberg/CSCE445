@@ -6,12 +6,14 @@
 
 <html>
     <head>
-        <title>UpQuiz Home</title>
+        <div class="jumbotron text-center">
+            <title>UpQuiz Home</title>
+        </div>
     </head>
     <body>
   
         <div class="container">
-            <div align="center" class="page-header">
+            <div class="jumbotron text-center">
                 <h1>UpQuiz</h1>      
             </div>
         </div>
@@ -24,12 +26,15 @@
         <h2>List of topics</h2>
 
         <form action="/initial.php" method="POST">
-            <button type="submit" class="btn btn-primary btn-floating col-md-4 center-block" >American Revolution</button>
-            <button type="submit" class="btn btn-primary btn-floating col-md-4 center-block" >Yugioh</button>
-            <button type="submit" class="btn btn-primary btn-floating col-md-4 center-block" >CSCE 445</button>
+            <button type="button" class="btn btn-primary btn-floating col-md-4 center-block" >American Revolution</button>
+            <button type="button" class="btn btn-primary btn-floating col-md-4 center-block" >Yugioh</button>
+            <button type="button" class="btn btn-primary btn-floating col-md-4 center-block" >CSCE 445</button>
         </form>
 
-        <h2>Sign-Up</h2>
+        <div class="jumbotron text-center">
+            <h2>Sign-Up</h2>
+        </div>
+        
         <form action="/signup.php" method="POST" >
             <div class="form-group">
                 <label>Username</label>
