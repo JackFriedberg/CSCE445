@@ -17,7 +17,7 @@
         ?>
 
         <form action="/initial.php" method="POST">
-            <button type="submit" class="btn-floating btn-lg jumbotron my-auto" style="font-size:24px"> <i class="fa fa-play"></i> </button>
+            <button type="submit" class="btn-floating btn-lg" style="font-size:24px"> Press me <i class="fa fa-play"></i> </button>
         </form>
 
         <h3>Sign-Up</h3>
