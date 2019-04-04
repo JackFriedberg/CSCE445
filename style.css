@@ -17,7 +17,7 @@
 
 .modal-footer {
   padding: 2px 16px;
-  background-color: hsl(221, 76%, 69%);
+  background-color: hsl(214, 76%, 38%);
   color: rgb(244, 245, 247);
 }
 
@@ -27,7 +27,8 @@
   margin: auto;
   padding: 0;
   border: 1px solid #888;
-  width: auto;
+  height: 650;
+  width: 650;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   animation-name: animatetop;
   animation-duration: 0.4s

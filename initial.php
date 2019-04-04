@@ -83,10 +83,10 @@
                     <div class="row align-items-center justify-content-center">
                         <form id= "theForm" action="http://445dev1.azurewebsites.net/handle.php" method="post">
                             <div id="buttonDiv" class="btn-group-vertical" style="margin:0 auto">
-                                <button type="submit" class="btn btn-primary" name="correct"> <h3>' . $correct . ' (correct)</h3></button>
-                                <button type="submit" class= "btn btn-primary" name="incorrect1"> <h3>' . $incorrect1 . '</h3></button>
-                                <button type="submit" class= "btn btn-primary" name="incorrect2"> <h3>' . $incorrect2 . '</h3></button>
-                                <button type="submit" class= "btn btn-primary" name="incorrect3"> <h3>' . $incorrect3 . '</h3></button>
+                                <button type="submit" class="btn btn-outline-primary" name="correct"> <h3>' . $correct . ' (correct)</h3></button>
+                                <button type="submit" class= "btn btn-outline-primary" name="incorrect1"> <h3>' . $incorrect1 . '</h3></button>
+                                <button type="submit" class= "btn btn-outline-primary" name="incorrect2"> <h3>' . $incorrect2 . '</h3></button>
+                                <button type="submit" class= "btn btn-outline-primary" name="incorrect3"> <h3>' . $incorrect3 . '</h3></button>
                             </div>
                         </form>
                     </div>
@@ -113,7 +113,7 @@
                     $contextSrc =  $row['Link'];
 
                     echo '
-                        <button type="button" class="btn-floating btn-lg blue-gradient col-md-4 center-block" data-toggle="modal" data-target="#contextModal">Click for context # ' . strval($counter) . '</button>
+                        <button type="button" class="btn btn-floating btn-lg col-md-4 center-block" data-toggle="modal" data-target="#contextModal">Click for context # ' . strval($counter) . '</button>
                         <blockquote class="blockquote">
                             <div id="contextModal" class="modal fade" role="dialog">
                                 <div class="modal-dialog">
