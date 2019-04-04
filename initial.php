@@ -118,7 +118,7 @@
                         <div id="contextModal" class="modal fade" role="dialog">
                             <div class="modal-dialog">
                                 <div class="modal-content">
-                                    <blockquote class= "modal-body  bg-light">
+                                    <blockquote class= "quote-card  bg-light">
                                         <div class="modal-body">
                                             <p>' . $contextContent . '</p>
                                         </div>
