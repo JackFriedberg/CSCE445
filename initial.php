@@ -118,32 +118,26 @@
                         <div id="contextModal" class="modal fade" role="dialog">
                             <div class="modal-dialog">
                                 <div class="modal-content">
-                                    <blockquote class= "quote-card  bg-light">
-                                        <div class="modal-body">
+                                    <div class="modal-body">
+                                        <blockquote>
                                             <p>' . $contextContent . '</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                        </div>
-                                
-                        
-                        
+                                        </blockquote>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     ';
   
                     if(strpos($contextSrc, 'youtube') == false){
                         echo ' 
+                        <blockquote>
                             <cite>' . $contextSrc . '</cite>
                         </blockquote>
-                        </div>
-                            </div>
-                        </div>
+                        
                         ';
-                    }
-                    else {
-                        echo '</blockquote>
-                        </div>
-                            </div>
-                        </div>';
                     }
 
                     $counter++;
