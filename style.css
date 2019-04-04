@@ -6,11 +6,9 @@
   margin:0 auto;
 }
 
-.btn-context {
-  margin: 30 px;
-  max-height: 75px;
+button-width {
+	width:300px;
 }
-
 .modal-body {
   padding: 2px 16px;
   max-height: 800px;
