@@ -10,30 +10,38 @@
     </head>
     <body>
   
-        <p> upQuiz Home with list of topics: </p>  
+        <div class="container">
+            <div align="center" class="page-header">
+                <h1>UpQuiz</h1>      
+            </div>
+        </div>
+        <div></div>
 
         <?php
         $_SESSION['question'] = 1; /*sets session variable to 1 for when the next page comes */
         ?>
 
+        <h2>List of topics</h2>
+
         <form action="/initial.php" method="POST">
-            <button type="submit" class="btn-floating btn-lg" style="font-size:24px"> Press me <i class="fa fa-play"></i> </button>
+            <button type="submit" class="btn-floating btn-lg" ><i class="fa fa-play"></i> </button>
         </form>
 
-        <h3>Sign-Up</h3>
+        <h2>Sign-Up</h2>
         <form action="/signup.php" method="POST" >
             <div class="form-group">
-                <input type="text" name="UserUid" placeholder="Username">
-                <input type="text" name="UserEmail" placeholder="E-Mail">
-                <input type="password" name="UserPwd" placeholder="Password">
-                <input type="password" name="UserPwd2" placeholder="Repeat Password">
-                <button type="submit" name="signup-submit"></button>
+                <input type="text" class="form-control" name="UserUid" placeholder="Enter Username">
             </div>
+            <div class="form-group">
+                <input type="email" name="UserEmail" placeholder="Enter E-Mail">
+            </div>
+            <div class="form-group">
+                <input type="password" name="UserPwd" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <input type="password" name="UserPwd2" placeholder="Repeat Password">
+            </div>
+            <button type="submit" class="btn btn-primary" name="signup-submit"></button>
         </form>
-
-
-
-
-
     </body>
 </html>
