@@ -117,7 +117,7 @@
                         <div id="contextModal" class="modal fade" role="dialog">
                         <div class="modal-dialog">
 
-                        <blockquote class= "modal-body  bg-light">
+                        
                             <div>
                                 <p>' . $contextContent . '</p>    
                             </div>
@@ -129,7 +129,7 @@
                     if(strpos($contextSrc, 'youtube') == false){
                         echo ' 
                             <cite>' . $contextSrc . '</cite>
-                        </blockquote>
+                        
                         ';
                     }
                     else {
