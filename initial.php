@@ -118,15 +118,14 @@
                         <div id="contextModal" class="modal fade" role="dialog">
                             <div class="modal-dialog">
                                 <div class="modal-content">
-                                    <div class="modal-body">
-                                        <p>' . $contextContent . '</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                    <blockquote class= "modal-body  bg-light">
+                                        <div class="modal-body">
+                                            <p>' . $contextContent . '</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                
                         
                         
                     ';
@@ -135,10 +134,16 @@
                         echo ' 
                             <cite>' . $contextSrc . '</cite>
                         </blockquote>
+                        </div>
+                            </div>
+                        </div>
                         ';
                     }
                     else {
-                        echo '</blockquote>';
+                        echo '</blockquote>
+                        </div>
+                            </div>
+                        </div>';
                     }
 
                     $counter++;
