@@ -6,14 +6,20 @@
   margin:0 auto;
 }
 
+.btn-context {
+  margin: 30 px;
+  max-height: 75px;
+}
+
 .modal-body {
   padding: 2px 16px;
+  max-height: 800px;
 }
 
 .modal-footer {
   padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
+  background-color: hsl(221, 76%, 69%);
+  color: rgb(244, 245, 247);
 }
 
 .modal-content {
@@ -28,7 +34,6 @@
   animation-duration: 0.4s
 }
 
-/* Add Animation */
 @keyframes animatetop {
   from {top: -300px; opacity: 0}
   to {top: 0; opacity: 1}
