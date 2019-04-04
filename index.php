@@ -1,6 +1,5 @@
 <?php
-    chdir('..');
-    include_once "dbh.inc.php";
+    include_once "../dbh.inc.php";
     session_start();
 ?>
 
@@ -20,6 +19,21 @@
         <form action="/initial.php" method="POST">
             <button type="submit"> Press me to start the quiz! </button>
         </form>
+
+        <h3>Sign-Up</h3>
+        <form action="/signup.php" method="POST" >
+            <div class="form-group">
+                <input type="text" name="UserUid" placeholder="Username">
+                <input type="text" name="UserEmail" placeholder="E-Mail">
+                <input type="password" name="UserPwd" placeholder="Password">
+                <input type="password" name="UserPwd2" placeholder="Repeat Password">
+                <button type="submit" name="signup-submit"></button>
+            </div>
+        </form>
+
+
+
+
 
     </body>
 </html>

@@ -7,23 +7,14 @@
 <html>
     <head>
         <title>UpQuiz</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
-    <style>
-    .button1 {
-        background-color: #4CAF50; /* Green */
-        border: none;
-        color: white;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-    }
-    </style>
-    <body>  
-
+    <body style="height:100%; margin:0; padding:0">  
+        <div class="container">
         <?php
             $sql = "SELECT * FROM amrev_questions WHERE qIndex = " . strval($_SESSION["question"]);
             $questions = sqlsrv_query($conn, $sql);
@@ -31,10 +22,18 @@
             $options = sqlsrv_query($conn, $sql);
             $sql = "SELECT * FROM amrev_context WHERE qIndex = " . strval($_SESSION["question"]);
             $context = sqlsrv_query($conn, $sql);
+
             if($questions){
                 $row = sqlsrv_fetch_array($questions, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
                 $questionText = $row['QText'];
-                echo $questionText . "<br />";
+                $qIndex = $row['QIndex'];
+
+                echo'
+                <div class="jumbotron text-center">
+                    <p> ' . $qIndex . '<p>
+                    <h1>' . $questionText . '</h1>
+                </div>
+                ';
             }    
             else{
                 echo 'SQL Error:';
@@ -46,25 +45,51 @@
                     }
                 }
             }
+
             if($options){
                 $row = sqlsrv_fetch_array($options, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
                 $option1 = $row['Option1'];
                 $option2 = $row['Option2'];
                 $option3 = $row['Option3'];
                 $option4 = $row['Option4'];
+                $answer = $row['Answer'];
+                
+                if($option1 == $answer){
+                    $correct = $option1;
+                    $incorrect1 = $option2;
+                    $incorrect2 = $option3;
+                    $incorrect3 = $option4;
+                }
+                else if($option2 == $answer){
+                    $correct = $option2;
+                    $incorrect1 = $option1;
+                    $incorrect2 = $option3;
+                    $incorrect3 = $option4;
+                }
+                else if($option3 == $answer){
+                    $correct = $option3;
+                    $incorrect1 = $option2;
+                    $incorrect2 = $option1;
+                    $incorrect3 = $option4;
+                }
+                else if($option4 == $answer){
+                    $correct = $option4;
+                    $incorrect1 = $option2;
+                    $incorrect2 = $option3;
+                    $incorrect3 = $option1;
+                }
+
                 echo'
-                    <form action="http://445dev3.azurewebsites.net/initial.php" method="post">
-                        <button type="submit">' . $option1 . ' (Right Answer) </button>
-                    </form>
-                    <form action="http://445dev3.azurewebsites.net/initial.php" method="post">
-                        <button class="button1" type="submit">' . $option2 . '</button>
-                    </form>
-                    <form action="http://445dev3.azurewebsites.net/initial.php" method="post">
-                        <button type="submit">' . $option3 . '</button>
-                    </form>
-                    <form action="http://445dev3.azurewebsites.net/initial.php" method="post">
-                        <button type="submit">' . $option4 . '</button>
-                    </form>
+                    <div class="row align-items-center justify-content-center">
+                        <form id= "theForm" action="http://445dev3.azurewebsites.net/handle.php" method="post">
+                            <div id="buttonDiv" class="btn-group-vertical" style="margin:0 auto">
+                                <button type="submit" class="btn btn-primary" name="correct"> <h3>' . $correct . ' (correct)</h3></button>
+                                <button type="submit" class= "btn btn-primary" name="incorrect1"> <h3>' . $incorrect1 . '</h3></button>
+                                <button type="submit" class= "btn btn-primary" name="incorrect2"> <h3>' . $incorrect2 . '</h3></button>
+                                <button type="submit" class= "btn btn-primary" name="incorrect3"> <h3>' . $incorrect3 . '</h3></button>
+                            </div>
+                        </form>
+                    </div>
                 ';
             }
             else{
@@ -77,23 +102,41 @@
                     }
                 }
             }
+        ?>
+
+        <div id="historicalContainer" class="row" style="max-height:100%">
+        <?php
             if($context){
                 $counter = 1;
                 while($row = sqlsrv_fetch_array($context)){
                     $contextContent = $row['Embed'];
                     $contextSrc =  $row['Link'];
+
                     echo '
-                        <div id="Context1">
-                            <h3> Historical Information #'. strval($counter) .':</h3>
+                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Click for context # '. strval($counter)'</button>
+                        <div id="contextModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+
+                        <blockquote class= "modal-body  bg-light">
                             <div>
                                 <p>' . $contextContent . '</p>    
                             </div>
-                            <div>
-                                <p>' . $contextSrc . '</p>
-                            </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                     ';
-                $counter++;
+  
+                    if(strpos($contextSrc, 'youtube') == false){
+                        echo ' 
+                            <cite>' . $contextSrc . '</cite>
+                        </blockquote>
+                        ';
+                    }
+                    else {
+                        echo '</blockquote>';
+                    }
+
+                    $counter++;
                 }
             }
             else{
@@ -107,29 +150,17 @@
                 }
             }
             sqlsrv_free_stmt($getResults); /* idk what this does */
-            $_SESSION['question']++; /* Increments the session variable after the query*/
         ?>
-
-        <!--
-        This is where answer selection needs to be validated.
-        If the correct answer is chosen, the below button action should be 
-        triggered, most likely with javascript (the user shouldnt have to push a button).
-        If incorrect, the show/hide functionality needs to be implemented(Question 1 stuff 
-        hidden, Question 2 stuff shown).
-        -->
-
-        <form action="http://445dev3.azurewebsites.net/initial.php" method="post">
-            <button type="submit">Next Question</button>
-        </form>
-
-        <?php 
-            
-            $context2Content = '<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/gzALIXcY4pg?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-                
-            $context2Src = "YouTube";
-       ?>
-
-
-
+        </div>
+        </div>
+        
     </body>
+
+    <script>
+        var form = document.getElementById("theForm");
+        for (var i = form.children.length; i >= 0; i--) {
+            form.appendChild(form.children[Math.random() * i | 0]);
+        }
+    </script>
+
 </html>
