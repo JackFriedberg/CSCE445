@@ -149,7 +149,7 @@
         </div>
         </div>
         
-        <footer class="page-footer font-small unique-color-dark pt-4 text-center ">
+        <footer class="container-fluid bg-4 text-center">
             <button type="submit" class="btn btn-outline-white btn-rounded" name="goto-account-button"> GO BACK TO ACCOUNT </button>
         </footer>
 
