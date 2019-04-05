@@ -35,19 +35,19 @@
        <h2>Sign-Up</h2>
 
         <form action="/signup.php" method="POST" >
-            <div class="form-group mb-2">
+            <div class="form-group mblank-4">
                 <label>Username</label>
                 <input type="text" class="form-control" name="UserUid" placeholder="Enter Username">
             </div>
-            <div class="form-group mb-2">
+            <div class="form-group mblank-4">
                 <label>Email-address</label>
                 <input type="email" class="form-control" name="UserEmail" placeholder="Enter E-Mail">
             </div>
-            <div class="form-group mb-2">
+            <div class="form-group mblank-4">
                 <label>Password</label>
                 <input type="password" class="form-control" name="UserPwd" placeholder="Enter Password">
             </div>
-            <div class="form-group mb-2">
+            <div class="form-group mblank-4">
                 <input type="password" class="form-control" name="UserPwd2" placeholder="Repeat Password">
             </div>
             <button type="submit" class="btn btn-primary" name="signup-submit"> Create Account </button>
