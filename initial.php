@@ -21,7 +21,7 @@
             if($mytext=="amrev"){
                 $sql = "SELECT * FROM amrev_questions WHERE qIndex = " . strval($_SESSION["question"]);
             }
-            else{
+            else if($mytext=="poop"){
                 $sql = "SELECT * FROM poop_questions WHERE qIndex = " . strval($_SESSION["question"]);
             }
             $questions = sqlsrv_query($conn, $sql);
