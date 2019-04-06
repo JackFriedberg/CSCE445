@@ -26,6 +26,11 @@
 
        <h2>List of topics</h2>
 
+       <form  method="post" name="myform" action="php-form-code.php">
+          <input type="text" name="mytext" maxlength="80" size="30">
+          <input type="submit" value="Submit" >
+      </form>
+
         <form action="/initial.php" method="POST">
             <button type="submit" class="btn btn-primary btn-floating col-md-4 center-block" > American Revolution </button>
             <button type="submit" class="btn btn-primary btn-floating col-md-4 center-block" > Yugioh </button>
