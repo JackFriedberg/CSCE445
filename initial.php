@@ -19,10 +19,10 @@
             $mytext = $_POST['mytext'];
             echo $mytext;
             if($mytext=="amrev"){
-                $sql = "SELECT * FROM poop_questions WHERE qIndex = " . strval($_SESSION["question"]);
+                $sql = "SELECT * FROM amrev_questions WHERE qIndex = " . strval($_SESSION["question"]);
             }
             else{
-                $sql = "SELECT * FROM amrev_questions WHERE qIndex = " . strval($_SESSION["question"]);
+                $sql = "SELECT * FROM poop_questions WHERE qIndex = " . strval($_SESSION["question"]);
             }
             $questions = sqlsrv_query($conn, $sql);
             $sql = "SELECT * FROM amrev_options WHERE qIndex = " . strval($_SESSION["question"]);
