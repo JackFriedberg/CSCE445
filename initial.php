@@ -16,6 +16,7 @@
     <body style="height:100%; margin:0; padding:0">  
         <div class="container">
         <?php
+            echo $quizType;
             if(isset($_POST["Amrev"])){
                 $quizType = 1;
             }
