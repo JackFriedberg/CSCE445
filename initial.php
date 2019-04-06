@@ -19,9 +19,8 @@
             $mytext = $_POST['mytext'];
             echo $mytext;
             $sql = "SELECT * FROM "
-            if($mytext=='amrev'){
+            
                 .$mytext.;
-            }
             "WHERE qIndex = " . strval($_SESSION["question"]);
             $questions = sqlsrv_query($conn, $sql);
             $sql = "SELECT * FROM amrev_options WHERE qIndex = " . strval($_SESSION["question"]);
