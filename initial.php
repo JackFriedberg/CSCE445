@@ -20,9 +20,9 @@
             echo $mytext;
             $sql = "SELECT * FROM "
             if($mytext=='amrev'){
-                $sql+'amrev_questions';
+                .$mytext.;
             }
-            $sql+"WHERE qIndex = " . strval($_SESSION["question"]);
+            "WHERE qIndex = " . strval($_SESSION["question"]);
             $questions = sqlsrv_query($conn, $sql);
             $sql = "SELECT * FROM amrev_options WHERE qIndex = " . strval($_SESSION["question"]);
             $options = sqlsrv_query($conn, $sql);
