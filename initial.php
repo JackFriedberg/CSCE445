@@ -24,7 +24,7 @@
                 $quizType = 2;
             }
             echo $quizType;
-            if($quizType = 1){
+            if($quizType == 1){
                 $sql = "SELECT * FROM amrev_questions WHERE qIndex = " . strval($_SESSION["question"]);
             }
             else if($mytext==2){
