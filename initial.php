@@ -16,6 +16,8 @@
     <body style="height:100%; margin:0; padding:0">  
         <div class="container">
         <?php
+            $mytext = $_POST['amrev'];
+            echo $mytext;
             $sql = "SELECT * FROM amrev_questions WHERE qIndex = " . strval($_SESSION["question"]);
             $questions = sqlsrv_query($conn, $sql);
             $sql = "SELECT * FROM amrev_options WHERE qIndex = " . strval($_SESSION["question"]);
