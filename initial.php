@@ -20,7 +20,7 @@
                 $quizType = 1;
             }
             else if(isset($_POST["poop"])){
-                $quizType = 1;
+                $quizType = 2;
             }
             echo $quizType;
             if($quizType = 1){
