@@ -16,12 +16,17 @@
     <body style="height:100%; margin:0; padding:0">  
         <div class="container">
         <?php
-            $mytext = $_POST['mytext'];
-            echo $mytext;
-            if($mytext=="amrev"){
+            if(isset($_POST["Amrev"])){
+                $quizType = 1;
+            }
+            else if(isset($_POST["poop"])){
+                $quizType = 1;
+            }
+            echo $quizType;
+            if($quizType = 1){
                 $sql = "SELECT * FROM amrev_questions WHERE qIndex = " . strval($_SESSION["question"]);
             }
-            else if($mytext=="poop"){
+            else if($mytext==2){
                 $sql = "SELECT * FROM poop_questions WHERE qIndex = " . strval($_SESSION["question"]);
             }
             $questions = sqlsrv_query($conn, $sql);

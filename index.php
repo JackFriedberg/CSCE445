@@ -32,7 +32,7 @@
 
         <form action="/initial.php" method="POST">
             <button type="submit" name = "Amrev" class="btn btn-primary btn-floating col-md-4 center-block" > American Revolution </button>
-            <button type="submit" class="btn btn-primary btn-floating col-md-4 center-block" > Yugioh </button>
+            <button type="submit" name = "poop" class="btn btn-primary btn-floating col-md-4 center-block" > Yugioh </button>
             <button type="submit" class="btn btn-primary btn-floating col-md-4 center-block" > CSCE 445 </button>
         </form>
 
