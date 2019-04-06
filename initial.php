@@ -13,7 +13,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
-    <body style="height:100%">  
+    <body style="height:100%; margin:0; padding:0">  
         <div class="container">
         <?php
             $sql = "SELECT * FROM amrev_questions WHERE qIndex = " . strval($_SESSION["question"]);
@@ -25,8 +25,10 @@
             if($questions){
                 $row = sqlsrv_fetch_array($questions, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
                 $questionText = $row['QText'];
+                $qIndex = $row['QIndex'];
                 echo'
                 <div class="jumbotron text-center">
+                    <p> ' . $qIndex . '<p>
                     <h1>' . $questionText . '</h1>
                 </div>
                 ';
@@ -75,12 +77,12 @@
                 }
                 echo'
                     <div class="row align-items-center justify-content-center">
-                        <form id= "theForm" action="http://445dev3.azurewebsites.net/handle.php" method="post">
+                        <form id= "theForm" action="http://445dev1.azurewebsites.net/handle.php" method="post">
                             <div id="buttonDiv" class="btn-group-vertical" style="margin:0 auto">
-                                <button type="submit" class="btn btn-primary" name="correct"> <h3>' . $correct . '</h3></button>
-                                <button type="submit" class= "btn btn-primary" name="incorrect1"> <h3>' . $incorrect1 . '</h3></button>
-                                <button type="submit" class= "btn btn-primary" name="incorrect2"> <h3>' . $incorrect2 . '</h3></button>
-                                <button type="submit" class= "btn btn-primary" name="incorrect3"> <h3>' . $incorrect3 . '</h3></button>
+                                <button type="submit" class="btn btn-outline-primary" name="correct"> <h3>' . $correct . ' (correct)</h3></button>
+                                <button type="submit" class= "btn btn-outline-primary" name="incorrect1"> <h3>' . $incorrect1 . '</h3></button>
+                                <button type="submit" class= "btn btn-outline-primary" name="incorrect2"> <h3>' . $incorrect2 . '</h3></button>
+                                <button type="submit" class= "btn btn-outline-primary" name="incorrect3"> <h3>' . $incorrect3 . '</h3></button>
                             </div>
                         </form>
                     </div>
@@ -98,7 +100,7 @@
             }
         ?>
 
-        <div id="historicalContainer" class="row" style="height:100%">
+        <div id="historicalContainer" class="row" style="max-height:100%">
         <?php
             if($context){
                 $counter = 1;
@@ -106,22 +108,23 @@
                     $contextContent = $row['Embed'];
                     $contextSrc =  $row['Link'];
                     echo '
-                        <blockquote class= "quote-card  bg-light">
-                            <h3> Historical Information #'. strval($counter) .':</h3>
-                            <div>
-                                <p>' . $contextContent . '</p>    
+                        <button type="button" class="btn btn-primary btn-floating col-md-3 center-block" data-toggle="modal" data-target="#contextModal">Click for context # ' . strval($counter) . '</button>
+                        <blockquote class="blockquote">
+                            <div id="contextModal" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            <p>' . $contextContent . '</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-outline-white btn-rounded" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                        </blockquote>
                     ';
   
-                    if(strpos($contextSrc, 'youtube') == false){
-                        echo ' 
-                            <cite>' . $contextSrc . '</cite>
-                        </blockquote>
-                        ';
-                    }
-                    else {
-                        echo '</blockquote>';
-                    }
                     $counter++;
                 }
             }
@@ -140,6 +143,10 @@
         </div>
         </div>
         
+        <footer class="container-fluid bg-4 text-center">
+            <button type="submit" class="btn btn-outline-white btn-rounded" name="goto-account-button"> GO BACK TO ACCOUNT </button>
+        </footer>
+
     </body>
 
     <script>

@@ -1,6 +1,5 @@
 <?php
-    chdir('..');
-    include_once "dbh.inc.php";
+    include_once "../dbh.inc.php";
     session_start();
 ?>
 
@@ -8,59 +7,50 @@
 <html>
     <head>
         <title>UpQuiz Home</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
   
-        <p> upQuiz Home with list of topics: </p>  
-        <!-- The Modal -->
-<div id="id01" class="modal">
-  <span onclick="document.getElementById('id01').style.display='none'" 
-class="close" title="Close Modal">&times;</span>
+        <div class="jumbotron text-center">
+            <h1>UpQuiz</h1>      
+        </div>
+        <div></div>
 
-  <!-- Modal Content -->
-  <form class="modal-content animate" action="/action_page.php">
-    <div class="imgcontainer">
-      <img src="img_avatar2.png" alt="Avatar" class="avatar">
-    </div>
-
-    <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
-
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-
-      <button type="submit">Login</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
-    </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
-  </form>
-</div>
         <?php
         $_SESSION['question'] = 1; /*sets session variable to 1 for when the next page comes */
         ?>
 
+       <h2>List of topics</h2>
+
         <form action="/initial.php" method="POST">
-            <button type="submit"> Press me to start the quiz! </button>
+            <button type="submit" class="btn btn-primary btn-floating col-md-4 center-block" > American Revolution </button>
+            <button type="submit" class="btn btn-primary btn-floating col-md-4 center-block" > Yugioh </button>
+            <button type="submit" class="btn btn-primary btn-floating col-md-4 center-block" > CSCE 445 </button>
         </form>
 
+       <h2>Sign-Up</h2>
+
+        <form action="/signup.php" method="POST" >
+            <div class="form-group mblank-4">
+                <label>Username</label>
+                <input type="text" class="form-control" name="UserUid" placeholder="Enter Username">
+            </div>
+            <div class="form-group mblank-4">
+                <label>Email-address</label>
+                <input type="email" class="form-control" name="UserEmail" placeholder="Enter E-Mail">
+            </div>
+            <div class="form-group mblank-4">
+                <label>Password</label>
+                <input type="password" class="form-control" name="UserPwd" placeholder="Enter Password">
+            </div>
+            <div class="form-group mblank-4">
+                <input type="password" class="form-control" name="UserPwd2" placeholder="Repeat Password">
+            </div>
+            <button type="submit" class="btn btn-primary" name="signup-submit"> Create Account </button>
+        </form>
     </body>
 </html>
-
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
