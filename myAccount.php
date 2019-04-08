@@ -7,7 +7,6 @@
 ?>
 
 <html>
-
     <head>
         <title>UpQuiz Home</title>
     </head>

@@ -3,7 +3,7 @@
 include_once "../dbh.inc.php";
 session_start();
 
-if(isset($_POST['signup-submit'])){
+if(isset($_POST['login-submit'])){
 
     $username = $_POST['Username'];
     $password = $_POST['UserPwd'];
