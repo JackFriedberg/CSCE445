@@ -49,6 +49,9 @@
                 <form action="/myAccount.php" method="POST">
                     <button type="submit"> My Account </button>
                 </form>
+                <form action="/logout.php" method="POST">
+                    <button type="submit"> logout </button>
+                </form>
                 ';
             }
         ?>
