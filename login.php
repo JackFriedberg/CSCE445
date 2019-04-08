@@ -35,8 +35,7 @@ if(isset($_POST['login-submit'])){
             }
             else { //got the results
                 
-                $result = sqlsrv_fetch_array($prepared);
-                if($row = sqlsrv_fetch_array($result)){
+                if($row = sqlsrv_next_result($prepared)){
                     $pwdCheck = password_verify($password, $row['pwd']);
                     if($pwdCheck == false){
                         header("Location: /index.php?error=WrongPassword");
