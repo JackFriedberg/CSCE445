@@ -13,14 +13,14 @@ if(isset($_POST['login-submit'])){
         exit();
     }
     else{
-        $sql = "SELECT * FROM users WHERE username LIKE "."'". "?" ."'";
+        $sql = "SELECT * FROM users WHERE username LIKE "."'". $username ."'";
 
         
-        $params = array(&$username);
+        //$params = array(&$username);
 
 
          //prepare the statement
-         if(!$prepared = sqlsrv_prepare($conn, $sql, $params)){
+         if(!$prepared = sqlsrv_prepare($conn, $sql/*, $params*/)){
             //could't prepare the statement
             sqlsrv_free_stmt($prepared);
             header("Location: /index.php?error=preparation");
