@@ -32,6 +32,16 @@
         </form>
 
 
+        <h3>Sign-Up</h3>
+        <form action="/login.php" method="POST" >
+            <div class="form-group">
+                <input type="text" name="Username" placeholder="Username">
+                <input type="password" name="UserPwd" placeholder="Password">
+                <button type="submit" name="login-submit"></button>
+            </div>
+        </form>
+
+
 
 
 

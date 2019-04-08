@@ -84,7 +84,7 @@ if(isset($_POST['signup-submit'])){
                     else {
                         //SUCCESS - added a user
                         sqlsrv_free_stmt($prepared);
-                        header("Location: /index.php?signup=success&rows=".$rowCount);
+                        header("Location: /index.php?signup=success");
                         exit();
                     }
                 }
