@@ -41,7 +41,11 @@
             </div>
         </form>
 
-        <button action="/myAccount.php"> My Account </button>
+        
+
+        <form action="//myAccount.php" method="POST">
+            <button type="submit"> My Account </button>
+        </form>
 
 
 
