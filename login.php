@@ -15,12 +15,8 @@ if(isset($_POST['login-submit'])){
     else{
         $sql = "SELECT * FROM users WHERE username LIKE "."'". $username ."'";
 
-        
-        //$params = array(&$username);
-
-
          //prepare the statement
-         if(!$prepared = sqlsrv_prepare($conn, $sql/*, $params*/)){
+         if(!$prepared = sqlsrv_prepare($conn, $sql)){
             //could't prepare the statement
             sqlsrv_free_stmt($prepared);
             header("Location: /index.php?error=preparation");
