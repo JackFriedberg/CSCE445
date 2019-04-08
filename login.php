@@ -53,7 +53,7 @@ if(isset($_POST['login-submit'])){
                     }
                 }
                 else{
-                    header("Location: /index.php?error=NoUser");
+                    header("Location: /index.php?error=".$username);
                     exit();
                 }
             }
