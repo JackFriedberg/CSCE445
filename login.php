@@ -9,7 +9,7 @@ if(isset($_POST['signup-submit'])){
     $password = $_POST['UserPwd'];
 
     if(empty($username) || empty($password)){
-        header("Location: index.php?error=emptyfields&Username=".$username)
+        header("Location: index.php?error=emptyfields&Username=".$username);
         exit();
     }
     else{
@@ -34,7 +34,7 @@ if(isset($_POST['signup-submit'])){
                 exit();
             }
             else { //got the results
-                /*
+                
                 $result = sqlsrv_fetch_array($prepared);
                 if($row = sqlsrv_fetch_array($context)){
                     $pwdCheck = password_verify($password, $row['pwd']);
@@ -56,7 +56,7 @@ if(isset($_POST['signup-submit'])){
                     exit();
                 }
             }
-            */
+            
         }
     }
 }
