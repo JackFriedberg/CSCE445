@@ -67,6 +67,6 @@ if(isset($_POST['signup-submit'])){
 
 }
 else{
-    header("Location: index.php")
+    header("Location: index.php");
     exit();
 }
