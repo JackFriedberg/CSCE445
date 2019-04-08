@@ -42,12 +42,16 @@
         </form>
 
 
+        <?php
 
-        <form action="/myAccount.php" method="POST">
-            <button type="submit"> My Account </button>
-        </form>
-
-
+            if(isset($_SESSION['UserId'])){
+                echo '
+                <form action="/myAccount.php" method="POST">
+                    <button type="submit"> My Account </button>
+                </form>
+                '
+            }
+        ?>
 
 
 
