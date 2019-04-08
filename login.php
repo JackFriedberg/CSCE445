@@ -42,7 +42,6 @@ if(isset($_POST['signup-submit'])){
                         exit();    
                     }
                     else if($pwdCheck == true){
-                        session_start();
                         $_SESSION['UserId'] = $row['username'];
                         header("Location: /index.php");
                     }
