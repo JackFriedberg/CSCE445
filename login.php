@@ -44,7 +44,7 @@ if(isset($_POST['signup-submit'])){
                     else if($pwdCheck == true){
                         session_start();
                         $_SESSION['UserId'] = $row['username'];
-                        header("Location: /index.php")
+                        header("Location: /index.php");
                     }
                     else{
                         header("Location: /index.php?error=LoginSystemError");
