@@ -13,7 +13,7 @@ if(isset($_POST['login-submit'])){
         exit();
     }
     else{
-        $sql = "SELECT * FROM users WHERE username LIKE ?";
+        $sql = "SELECT * FROM users WHERE username LIKE '?'";
 
         $params = array(&$username);
 
