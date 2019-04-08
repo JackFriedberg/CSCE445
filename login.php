@@ -13,7 +13,7 @@ if(isset($_POST['login-submit'])){
         exit();
     }
     else{
-        $sql = "SELECT * FROM users WHERE username LIKE 'JackFriedberg'";
+        $sql = "SELECT * FROM users WHERE username LIKE \'". "JackFriedberg" . "'";
 
         /*
         $username = "'".$username."'";
@@ -29,6 +29,7 @@ if(isset($_POST['login-submit'])){
         }
         else {
             //execute the statement
+
 
             if(!sqlsrv_execute($prepared)){
             //couldn't execute the statement 
