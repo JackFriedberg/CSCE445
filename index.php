@@ -41,6 +41,8 @@
             </div>
         </form>
 
+        <button action="/myAccount.php"> My Account </button>
+
 
 
 
