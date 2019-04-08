@@ -15,7 +15,7 @@ if(isset($_POST['login-submit'])){
     else{
         $sql = "SELECT * FROM users WHERE username LIKE ?";
 
-        $username = "'".$username."'";
+        $username = "'".$username"'";
         $params = array(&$username);
 
 
@@ -29,16 +29,15 @@ if(isset($_POST['login-submit'])){
         else {
             //execute the statement
 
-            if(!$result = sqlsrv_execute($prepared)){
+            if(!sqlsrv_execute($prepared)){
             //couldn't execute the statement 
                 sqlsrv_free_stmt($prepared);
                 header("Location: /index.php?error=execute-".$username);
                 exit();
             }
             else { //got the results
-                
-                if(sqlsrv_has_rows($result)){
-                    $row = sqlsrv_fetch_array($result);
+                if(sqlsrv_has_rows($prepared)){
+                    $row = sqlsrv_fetch_array($prepared);
                     $pwdCheck = password_verify($password, $row['pwd']);
                     if($pwdCheck == false){
                         header("Location: /index.php?error=WrongPassword");
