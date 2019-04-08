@@ -31,7 +31,7 @@ if(isset($_POST['login-submit'])){
             if(!sqlsrv_execute($prepared)){
             //couldn't execute the statement 
                 sqlsrv_free_stmt($prepared);
-                header("Location: /index.php?error=".$username);
+                header("Location: /index.php?error=execute-".$username);
                 exit();
             }
             else { //got the results
