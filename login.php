@@ -28,7 +28,8 @@ if(isset($_POST['login-submit'])){
         }
         else {
             //execute the statement
-            if(!sqlsrv_execute($prepared)){
+
+            if(!$result = sqlsrv_execute($prepared)){
             //couldn't execute the statement 
                 sqlsrv_free_stmt($prepared);
                 header("Location: /index.php?error=execute-".$username);
@@ -36,8 +37,8 @@ if(isset($_POST['login-submit'])){
             }
             else { //got the results
                 
-                if(sqlsrv_has_rows($prepared)){
-                    $row = sqlsrv_fetch_array($prepared);
+                if(sqlsrv_has_rows($result)){
+                    $row = sqlsrv_fetch_array($result);
                     $pwdCheck = password_verify($password, $row['pwd']);
                     if($pwdCheck == false){
                         header("Location: /index.php?error=WrongPassword");
