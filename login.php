@@ -15,7 +15,7 @@ if(isset($_POST['login-submit'])){
     else{
         $sql = "SELECT * FROM users WHERE username LIKE ?";
 
-        $username = "'".$username."'";
+        $username = '\''.$username.'\'';
         $params = array(&$username);
 
 
