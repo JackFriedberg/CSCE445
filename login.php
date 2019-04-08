@@ -16,7 +16,6 @@ if(isset($_POST['login-submit'])){
         $sql = "SELECT * FROM users WHERE username LIKE "."'". "?" ."'";
 
         
-        $username = "'".$username."'";
         $params = array(&$username);
 
 
