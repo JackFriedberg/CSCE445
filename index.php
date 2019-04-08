@@ -49,7 +49,7 @@
                 <form action="/myAccount.php" method="POST">
                     <button type="submit"> My Account </button>
                 </form>
-                '
+                ';
             }
         ?>
 
