@@ -13,7 +13,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
-    <body>
+    <body style="height:100%; margin:0; padding:0">
   
         <div class="jumbotron text-center">
             <h1>UpQuiz</h1>      
@@ -27,9 +27,9 @@
        <h2>List of topics</h2>
 
         <form action="/initial.php" method="POST">
-            <button type="submit" class="btn btn-primary btn-floating col-md-4 center-block" > American Revolution </button>
-            <button type="submit" class="btn btn-primary btn-floating col-md-4 center-block" > Yugioh </button>
-            <button type="submit" class="btn btn-primary btn-floating col-md-4 center-block" > CSCE 445 </button>
+            <button type="submit" class="row align-items-center btn btn-primary btn-floating col-md-4" > American Revolution </button>
+            <button type="submit" class="row align-items-center btn btn-primary btn-floating col-md-4" > Yugioh </button>
+            <button type="submit" class="row align-items-center btn btn-primary btn-floating col-md-4" > CSCE 445 </button>
         </form>
 
        <h2>Sign-Up</h2>
