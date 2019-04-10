@@ -25,17 +25,17 @@
         ?>
 
         <div class="container pt-3">
-            <div class="row justify-content-md-left">
+            <div class="row justify-content-sm-left">
                 <div class="col-sm-10 col-md-4">
                     <div class="card border-info">
                         <div class="card-header"> Login </div>
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                 <form class="form-signin" action="/signup.php" method="POST" >
-                                        <input type="text" class="form-control mb-3" placeholder="Email">    
-                                        <input type="password" class="form-control mb-3" placeholder="Password">    
-                                        <button type="submit" class="btn btn-lg btn-primary btn-block mb-2">Sign-In</button>
+                                        <input type="text" class="form-control mb-2" placeholder="Email">    
+                                        <input type="password" class="form-control mb-2" placeholder="Password">    
+                                        <button type="submit" class="btn btn-lg btn-primary btn-block mb-1">Sign-In</button>
                                         <label class="checkbox float-left">
                                             <input type="checkbox" value="remember-me">Remember Me
                                         </label>
@@ -46,16 +46,18 @@
                 </div>
                 <a href="#" class="float-right">Create an account </a>
             </div>
-            
-            <div class="text-right">
+
+            <div class="row justify-content-sm-right">
                 <h2>List of Topics</h2>      
             </div>
 
-            <form action="/initial.php" method="POST">
-                <button type="submit" class="btn btn-primary btn-floating col-sm-4"> American Revolution </button>
-                <button type="submit" class="btn btn-primary btn-floating col-sm-4"> Yugioh </button>
-                <button type="submit" class="btn btn-primary btn-floating col-sm-4"> CSCE 445 </button>
-            </form>
+            <div class="btn-vertical">        
+                <form action="/initial.php" method="POST">
+                    <button type="submit" class="btn btn-primary btn-floating col-sm-5"> American Revolution </button>
+                    <button type="submit" class="btn btn-primary btn-floating col-sm-5"> Yugioh </button>
+                    <button type="submit" class="btn btn-primary btn-floating col-sm-5"> CSCE 445 </button>
+                </form>
+            </div>
         </div>
             
     </body>
