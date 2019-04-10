@@ -26,39 +26,37 @@
 
         <div class="container pt-3">
             <div class="row justify-content-md-left">
-                <div class="col-sm-10 col-md-3">
+                <div class="col-sm-10 col-md-4">
                     <div class="card border-info">
                         <div class="card-header"> Login </div>
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-md-2">
+                                <div class="col-md-4">
                                 <form class="form-signin" action="/signup.php" method="POST" >
-                                        <input type="text" class="form-control mb-2" placeholder="Email">    
-                                        <input type="password" class="form-control mb-2" placeholder="Password">    
-                                        <button type="submit" class="btn btn-lg btn-primary btn-block mb-1">Sign-In</button>
+                                        <input type="text" class="form-control mb-3" placeholder="Email">    
+                                        <input type="password" class="form-control mb-3" placeholder="Password">    
+                                        <button type="submit" class="btn btn-lg btn-primary btn-block mb-2">Sign-In</button>
                                         <label class="checkbox float-left">
                                             <input type="checkbox" value="remember-me">Remember Me
                                         </label>
-                                    </form>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
-                    <a href="#" class="float-right">Create an account </a>
                 </div>
+                <a href="#" class="float-right">Create an account </a>
             </div>
-        </div>
-
-        <div class="container">
-            <div class="jumbotron text-center">
+            
+            <div class="text-right">
                 <h2>List of Topics</h2>      
             </div>
-        </div>
 
-        <form action="/initial.php" method="POST">
-            <button type="submit" class="btn btn-primary btn-floating col-md-4" style="margin: 0 auto;"> American Revolution </button>
-            <button type="submit" class="btn btn-primary btn-floating col-md-4" style="margin: 0 auto;"> Yugioh </button>
-            <button type="submit" class="btn btn-primary btn-floating col-md-4" style="margin: 0 auto;"> CSCE 445 </button>
-        </form>
+            <form action="/initial.php" method="POST">
+                <button type="submit" class="btn btn-primary btn-floating col-sm-4"> American Revolution </button>
+                <button type="submit" class="btn btn-primary btn-floating col-sm-4"> Yugioh </button>
+                <button type="submit" class="btn btn-primary btn-floating col-sm-4"> CSCE 445 </button>
+            </form>
+        </div>
+            
     </body>
 </html>
