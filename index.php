@@ -14,11 +14,11 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
-  
-        <div class="jumbotron text-center">
-            <h1>UpQuiz</h1>      
+        <div class="container">
+            <div class="jumbotron text-center">
+                <h1>UpQuiz</h1>      
+            </div>
         </div>
-        <div></div>
 
         <?php
         $_SESSION['question'] = 1; /*sets session variable to 1 for when the next page comes */
