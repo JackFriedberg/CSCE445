@@ -150,7 +150,14 @@
         </div>
         
         <footer class="page-footer font-small unique-color-dark pt-4">
-            <button type="submit" class="btn btn-outline-white btn-rounded" name="goto-account-button"> GO BACK TO ACCOUNT </button>
+            <div class="container">
+
+                <ul class="list-unstyled list-inline text-center py-2">
+                <li class="list-inline-item">
+                    <a href="#!" class="btn btn-outline-white btn-rounded">Back to Account</a>
+                </li>
+                </ul>
+            </div>
         </footer>
 
     </body>
