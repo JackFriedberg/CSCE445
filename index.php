@@ -25,17 +25,17 @@
         ?>
 
         <div class="container pt-3">
-            <div class="row justify-content-md-center">
+            <div class="row justify-content-md-left">
                 <div class="col-sm-5 col-sm-5">
                     <div class="card border-info">
                         <div class="card-header"> Login </div>
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-sm-3">
+                                <div class="col-md-5">
                                 <form class="form-signin" action="/signup.php" method="POST" >
-                                        <input type="text" class="form-control sm-2" placeholder="Please enter your email">    
-                                        <input type="password" class="form-control sm-2" placeholder="Please enter your password">    
-                                        <button type="submit" class="btn btn-lg btn-primary btn-block sm-2" name="signup-submit">Sign-In</button>
+                                        <input type="text" class="form-control mb-3" placeholder="Enter your email">    
+                                        <input type="password" class="form-control mb-3" placeholder="Enter your password">    
+                                        <button type="submit" class="btn btn-lg btn-primary btn-block mb-2">Sign-In</button>
                                         <label class="checkbox float-left">
                                             <input type="checkbox" value="remember-me">Remember Me
                                         </label>
