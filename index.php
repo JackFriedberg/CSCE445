@@ -24,10 +24,36 @@
         $_SESSION['question'] = 1; /*sets session variable to 1 for when the next page comes */
         ?>
 
-        <div class="jumbotron text-center">
-            <h2>List of Topics</h2>      
+        <div class="container pt-3">
+            <div class="row justify-content-md-center">
+                <div class="col-md-10 col-md-6">
+                    <div class="card border-info">
+                        <div class="card-header"> Login </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <form class="form-signin">
+                                        <input type="text" class="form-control mb-2" placeholder="Please enter your email">    
+                                        <input type="password" class="form-control mb-2" placeholder="Please enter your password">    
+                                        <button type="submit" class="btn btn-lg btn-primary btn-block mb-1" name="signup-submit">Sign-In</button>
+                                        <label class="checkbox float-left">
+                                            <input type="checkbox" value="remember-me">Remember Me
+                                        </label>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="float-right">Create an account </a>
+                </div>
+            </div>
         </div>
-        <div></div>
+
+        <div class="container">
+            <div class="jumbotron text-center">
+                <h2>List of Topics</h2>      
+            </div>
+        </div>
 
         <form action="/initial.php" method="POST">
             <button type="submit" class="btn btn-primary btn-floating col-md-4" style="margin: 0 auto;"> American Revolution </button>
