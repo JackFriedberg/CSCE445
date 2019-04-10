@@ -26,7 +26,7 @@
 
         <div class="container pt-3">
             <div class="row justify-content-md-left">
-                <div class="col-sm-5 col-sm-3">
+                <div class="col-sm-10 col-sm-3">
                     <div class="card border-info">
                         <div class="card-header"> Login </div>
                         <div class="card-body">
