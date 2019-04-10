@@ -31,7 +31,7 @@
                         <div class="card-header"> Login </div>
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-md-5">
+                                <div class="col-md-2">
                                 <form class="form-signin" action="/signup.php" method="POST" >
                                         <input type="text" class="form-control mb-2" placeholder="Email">    
                                         <input type="password" class="form-control mb-2" placeholder="Password">    
