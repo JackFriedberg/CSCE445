@@ -31,11 +31,11 @@
                         <div class="card-header"> Login </div>
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-md-6">
-                                    <form class="form-signin">
-                                        <input type="text" class="form-control mb-2" placeholder="Please enter your email">    
-                                        <input type="password" class="form-control mb-2" placeholder="Please enter your password">    
-                                        <button type="submit" class="btn btn-mb btn-primary btn-block mb-2" name="signup-submit">Sign-In</button>
+                                <div class="col-sm-3">
+                                <form class="form-signin" action="/signup.php" method="POST" >
+                                        <input type="text" class="form-control sm-2" placeholder="Please enter your email">    
+                                        <input type="password" class="form-control sm-2" placeholder="Please enter your password">    
+                                        <button type="submit" class="btn btn-lg btn-primary btn-block sm-2" name="signup-submit">Sign-In</button>
                                         <label class="checkbox float-left">
                                             <input type="checkbox" value="remember-me">Remember Me
                                         </label>
@@ -59,25 +59,6 @@
             <button type="submit" class="btn btn-primary btn-floating col-md-4" style="margin: 0 auto;"> American Revolution </button>
             <button type="submit" class="btn btn-primary btn-floating col-md-4" style="margin: 0 auto;"> Yugioh </button>
             <button type="submit" class="btn btn-primary btn-floating col-md-4" style="margin: 0 auto;"> CSCE 445 </button>
-        </form>
-
-        <form action="/signup.php" method="POST" >
-            <div class="form-group mblank-4">
-                <label>Username</label>
-                <input type="text" class="form-control" name="UserUid" placeholder="Enter Username">
-            </div>
-            <div class="form-group mblank-4">
-                <label>Email-address</label>
-                <input type="email" class="form-control" name="UserEmail" placeholder="Enter E-Mail">
-            </div>
-            <div class="form-group mblank-4">
-                <label>Password</label>
-                <input type="password" class="form-control" name="UserPwd" placeholder="Enter Password">
-            </div>
-            <div class="form-group mblank-4">
-                <input type="password" class="form-control" name="UserPwd2" placeholder="Repeat Password">
-            </div>
-            <button type="submit" class="btn btn-primary" name="signup-submit"> Create Account </button>
         </form>
     </body>
 </html>
