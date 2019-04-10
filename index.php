@@ -15,7 +15,7 @@
     </head>
     <body>
   
-        <div class="jumbotron container text-center" style="height:100%; margin:0; padding:0">
+        <div class="jumbotron text-center">
             <h1>UpQuiz</h1>      
         </div>
         <div></div>
@@ -24,15 +24,15 @@
         $_SESSION['question'] = 1; /*sets session variable to 1 for when the next page comes */
         ?>
 
-        <div class="jumbotron text-center" style="height:100%; margin:0; padding:0">
+        <div class="jumbotron text-center">
             <h2>List of Topics</h2>      
         </div>
         <div></div>
 
         <form action="/initial.php" method="POST">
-            <button type="submit" class="btn btn-primary btn-floating col-md-4" style="display: block; margin: 0 auto;"> American Revolution </button>
-            <button type="submit" class="btn btn-primary btn-floating col-md-4" style="display: block; margin: 0 auto;"> Yugioh </button>
-            <button type="submit" class="btn btn-primary btn-floating col-md-4" style="display: block; margin: 0 auto;"> CSCE 445 </button>
+            <button type="submit" class="btn btn-primary btn-floating col-md-4" style="margin: 0 auto;"> American Revolution </button>
+            <button type="submit" class="btn btn-primary btn-floating col-md-4" style="margin: 0 auto;"> Yugioh </button>
+            <button type="submit" class="btn btn-primary btn-floating col-md-4" style="margin: 0 auto;"> CSCE 445 </button>
         </form>
 
         <form action="/signup.php" method="POST" >
