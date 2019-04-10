@@ -15,7 +15,7 @@
     </head>
     <body>
   
-        <div class="jumbotron-fluid text-center" style="height:100%; margin:0; padding:0">
+        <div class="jumbotron container text-center" style="height:100%; margin:0; padding:0">
             <h1>UpQuiz</h1>      
         </div>
         <div></div>
