@@ -24,7 +24,7 @@
         $_SESSION['question'] = 1; /*sets session variable to 1 for when the next page comes */
         ?>
 
-        <div class="container pt-4">
+        <div class="container pt-3">
             <div class="row justify-content-sm-left">
                 <div class="col-sm-10 col-md-8">
                     <div class="card border-info">
