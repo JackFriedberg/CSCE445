@@ -26,7 +26,7 @@
 
         <div class="container pt-4">
             <div class="row justify-content-sm-left">
-                <div class="col-sm-10 col-md-8">
+                <div class="col-sm-10 col-md-6">
                     <div class="card border-info">
                         <div class="card-header"> Login </div>
                         <div class="card-body">
@@ -52,13 +52,13 @@
             </div>
            
             <div class="row justify-content-sm-right">List of Topics</div>
-
-            <div class="btn-group-vertical">        
-                <form action="/initial.php" method="POST">
-                    <button type="submit" class="btn btn-primary btn-floating col-sm-5"> American Revolution </button>
-                    <button type="submit" class="btn btn-primary btn-floating col-sm-5"> Yugioh </button>
-                    <button type="submit" class="btn btn-primary btn-floating col-sm-5"> CSCE 445 </button>
-                </form>
+                <div class="btn-group-vertical">        
+                    <form action="/initial.php" method="POST">
+                        <button type="submit" class="btn btn-primary btn-floating col-sm-5"> American Revolution </button>
+                        <button type="submit" class="btn btn-primary btn-floating col-sm-5"> Yugioh </button>
+                        <button type="submit" class="btn btn-primary btn-floating col-sm-5"> CSCE 445 </button>
+                    </form>
+                </div>
             </div>
         </div>
             
