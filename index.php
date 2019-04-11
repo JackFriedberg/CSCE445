@@ -31,10 +31,10 @@
                         <div class="card-header"> Login </div>
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-md-4 text-center">
+                                <div class="col-md-3 text-center">
                                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCVQWvUj6iBFfnqigz7gp_9uv9603FyA-m-vz1mJZS-HDJw4Kk">    
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-5">
                                     <form class="form-signin" action="/signup.php" method="POST" >
                                         <input type="text" class="form-control mb-2" placeholder="Email">    
                                         <input type="password" class="form-control mb-2" placeholder="Password">    
