@@ -24,8 +24,8 @@
         $_SESSION['question'] = 1; /*sets session variable to 1 for when the next page comes */
         ?>
 
-        <div class="container pt-1">
-            <div class="row justify-content-sm-center">
+        <div class="container pt-4">
+            <div class="row justify-content-sm-left">
                 <div class="col-sm-10 col-md-9">
                     <div class="card border-info">
                         <div class="card-header"> Login </div>
@@ -38,7 +38,7 @@
                                     <form class="form-signin" action="/signup.php" method="POST" >
                                         <input type="text" class="form-control mb-2" placeholder="Email">    
                                         <input type="password" class="form-control mb-2" placeholder="Password">    
-                                        <button type="submit" class="btn btn-lg btn-primary btn-block mb-2">Sign-In</button>
+                                        <button type="submit" class="btn btn-mb btn-primary btn-block mb-2">Sign-In</button>
                                         <label class="checkbox float-left">
                                             <input type="checkbox" value="remember-me">Remember Me
                                         </label>
@@ -50,7 +50,7 @@
                     <a href="#" class="float-right">Create an account </a>
                 </div>
             </div>
-        </div>   
+           
             <div class="row justify-content-sm-right">List of Topics</div>
 
             <div class="btn-group-vertical">        
@@ -60,7 +60,7 @@
                     <button type="submit" class="btn btn-primary btn-floating col-sm-5"> CSCE 445 </button>
                 </form>
             </div>
-        
+        </div>
             
     </body>
 </html>
