@@ -37,25 +37,26 @@
             <button type="submit" class="btn btn-primary btn-floating col-md-4 center-block" > CSCE 445 </button>
         </form>
 
-       <h2>Sign-Up</h2>
-
+        <h3>Sign-Up</h3>
         <form action="/signup.php" method="POST" >
-            <div class="form-group mblank-4">
-                <label>Username</label>
-                <input type="text" class="form-control" name="UserUid" placeholder="Enter Username">
+            <div class="form-group">
+                <input type="text" name="UserUid" placeholder="Username">
+                <input type="text" name="UserEmail" placeholder="E-Mail">
+                <input type="password" name="UserPwd" placeholder="Password">
+                <input type="password" name="UserPwd2" placeholder="Repeat Password">
+                <button type="submit" name="signup-submit"></button>
             </div>
-            <div class="form-group mblank-4">
-                <label>Email-address</label>
-                <input type="email" class="form-control" name="UserEmail" placeholder="Enter E-Mail">
+        </form>
+
+
+        <h3>Login</h3>
+        <form action="/login.php" method="POST" >
+            <div class="form-group">
+
+                <input type="text" name="Username" placeholder="Username">
+                <input type="password" name="UserPwd" placeholder="Password">
+                <button type="submit" name="login-submit"></button>
             </div>
-            <div class="form-group mblank-4">
-                <label>Password</label>
-                <input type="password" class="form-control" name="UserPwd" placeholder="Enter Password">
-            </div>
-            <div class="form-group mblank-4">
-                <input type="password" class="form-control" name="UserPwd2" placeholder="Repeat Password">
-            </div>
-            <button type="submit" class="btn btn-primary" name="signup-submit"> Create Account </button>
         </form>
     </body>
 </html>
