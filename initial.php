@@ -30,6 +30,7 @@
             else if($quizType==2){
                 $sql = "SELECT * FROM poop_questions WHERE qIndex = " . strval($_SESSION["question"]);
             }
+            echo $sql;
             $questions = sqlsrv_query($conn, $sql);
             $sql = "SELECT * FROM amrev_options WHERE qIndex = " . strval($_SESSION["question"]);
             $options = sqlsrv_query($conn, $sql);
