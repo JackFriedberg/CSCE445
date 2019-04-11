@@ -25,8 +25,8 @@
         ?>
 
         <div class="container pt-3">
-            <div class="row justify-content-sm-left">
-                <div class="col-sm-10 col-md-4">
+            <div class="row justify-content-sm-center">
+                <div class="col-sm-10 col-md-6">
                     <div class="card border-info">
                         <div class="card-header"> Login </div>
                         <div class="card-body">
@@ -50,7 +50,7 @@
                     <a href="#" class="float-right">Create an account </a>
                 </div>
             </div>
-            
+        </div>   
             <div class="row justify-content-sm-right">List of Topics</div>
 
             <div class="btn-group-vertical">        
@@ -60,7 +60,7 @@
                     <button type="submit" class="btn btn-primary btn-floating col-sm-5"> CSCE 445 </button>
                 </form>
             </div>
-        </div>
+        
             
     </body>
 </html>
