@@ -7,16 +7,20 @@
 
 <html>
     <style>
-        #myProgress {
-            width: 100%;
-            background-color: #ddd;
-        }
+        #progressbar {
+            background-color: black;
+             border-radius: 13px;
+             /* (height of inner div) / 2 + padding */
+            padding: 3px;
+}
 
-        #myBar {
-            width: 40%;
-             height: 30px;
-             background-color: #4CAF50;
-        }
+#progressbar>div {
+  background-color: orange;
+  width: 40%;
+  /* Adjust with JavaScript */
+  height: 20px;
+  border-radius: 10px;
+}
     </style>
     <head>
         <title>UpQuiz Home</title>
@@ -40,7 +44,9 @@
                 $textContextCorrect = $row["TEXTCONTEXTCORRECT"];
                 $videoContextCorrect = $row["VIDEOCONTEXTCORRECT"];
                 echo '
-
+                    <div id ="progressbar">
+                        <div></div>
+                    </div>
                 ';
             }
         ?>
