@@ -14,7 +14,7 @@
         <h1> My Account Page! </h1>
 
         <h3> You are signed in as <?php  echo $_SESSION['UserId'];?></h3>
-
+    <!--
         <?php
             $sql = "SELECT * FROM quizStats WHERE username = ". strval($_SESSION["UserID"]);
             $result = sqlsrv_query($conn,$sql);
@@ -34,6 +34,7 @@
                 '
             }
         ?>
+        -->
 
     </body>
 </html>
