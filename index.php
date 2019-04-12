@@ -59,5 +59,18 @@
                 <button type="submit" name="login-submit"></button>
             </div>
         </form>
+
+        <?php
+            if(isset($_SESSION['UserId'])){
+                echo '
+                <form action="/myAccount.php" method="POST">
+                    <button type="submit"> My Account </button>
+                </form>
+                <form action="/logout.php" method="POST">
+                    <button type="submit"> logout </button>
+                </form>
+                ';
+            }
+        ?>
     </body>
 </html>
