@@ -50,6 +50,9 @@
                 ';
             }
         ?>
+        <div id ="progressbar">
+                        <div></div>
+                    </div>
 
     </body>
 </html>
