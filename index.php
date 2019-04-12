@@ -23,6 +23,7 @@
         <?php
         $_SESSION['question'] = 1; /*sets session variable to 1 for when the next page comes */
         $_SESSION['quizType'] = 10;
+        $_SESSION['correctPercentage'] = 1;
         ?>
 
        <h2>List of topics</h2>
