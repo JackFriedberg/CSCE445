@@ -6,6 +6,18 @@
 ?>
 
 <html>
+    <style>
+        #myProgress {
+            width: 100%;
+            background-color: #ddd;
+        }
+
+        #myBar {
+            width: 40%;
+             height: 30px;
+             background-color: #4CAF50;
+        }
+    </style>
     <head>
         <title>UpQuiz Home</title>
     </head>
@@ -14,6 +26,10 @@
         <h1> My Account Page! </h1>
 
         <h3> You are signed in as <?php  echo $_SESSION['UserId'];?></h3>
+        <div id="myProgress">
+            <div id="myBar"></div>
+        </div>
+
         <?php
             $sql = "SELECT * FROM quizStats WHERE username = ". strval($_SESSION["UserID"]);
             $result = sqlsrv_query($conn,$sql);
@@ -23,14 +39,9 @@
                 $correctPercentage = $row["CORRECTPERCENTAGE"];
                 $textContextCorrect = $row["TEXTCONTEXTCORRECT"];
                 $videoContextCorrect = $row["VIDEOCONTEXTCORRECT"];
-                /*echo '
-                <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70"
-                aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                  <span class="sr-only">70% Complete</span>
-                </div>
-              </div>
-                '*/
+                echo '
+
+                ';
             }
         ?>
 
