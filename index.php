@@ -52,7 +52,7 @@
             </div> 
         </div>
 
-        <div class="row justify-content-sm-right">List of Topics</div>
+        <div>List of Topics</div>
                 <div class="btn-group-vertical">        
                     <form action="/initial.php" method="POST">
                         <button type="submit" class="btn btn-primary btn-floating col-sm-5"> American Revolution </button>
