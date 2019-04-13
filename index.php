@@ -53,6 +53,7 @@
             </div> 
         </div>
 
+        <div class="container">
         <div class="card-deck">
             <div class="card mb-4" style="max-width:300px">
                 <img class="card-img-top img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg" alt="Card image cap">
@@ -74,15 +75,15 @@
                 </div>
             </form>
         
-            <div class="w-100 d-none d-sm-block d-md-none"></div>
-                <div class="card mb-4" style="max-width:300px">
-                    <img class="card-img-top img-fluid" src="https://mdbootstrap.com/img/Photos/Others/photo6.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h4 class="card-title">Topic 3</h4>
-                        <p class="card-text">Swag</p>
-                        <button type="submit" class="btn btn-primary"> Start Quiz </button>    
-                    </div>
+            <div class="card mb-4" style="max-width:300px">
+                <img class="card-img-top img-fluid" src="https://mdbootstrap.com/img/Photos/Others/photo6.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title">Topic 3</h4>
+                    <p class="card-text">Swag</p>
+                    <button type="submit" class="btn btn-primary"> Start Quiz </button>    
                 </div>
+            </div>
+        </div>
         </div>
     </body>
 </html>
