@@ -53,6 +53,7 @@
             </div> 
         </div>
 
+        <div class="card-deck">
         <div class="card card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg);">
             <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
                 <h4 class="card-title pt-2">Mathematics</h4>
@@ -62,7 +63,7 @@
         </div>
         
         <form action="/initial.php" method="POST">
-            <div class="card card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Slides/img%20(70).jpg);">
+            <div class="card card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Slides/img%20(70).jpg">
                 <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">  
                     <h4 class="card-title">History</h4>
                     <p class="card-text">Want to learn more about America's past? Go through the journey with the American Revolution quiz and learn everything in a timeline fashion.</p>
@@ -78,6 +79,6 @@
                 <button type="submit" class="btn btn-primary"> Start Quiz </button>    
             </div>
         </div>
-
+        </div>
     </body>
 </html>
