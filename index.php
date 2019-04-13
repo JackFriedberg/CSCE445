@@ -8,6 +8,7 @@
     <head>
         <title>UpQuiz Home</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -25,7 +26,7 @@
         ?>
 
         <div class="container">
-            <div class="row justify-content-sm-left">
+            <div class="row justify-content-sm-center">
                 <div class="col-sm-10 col-md-8">
                     <div class="card border-info">
                         <div class="card-header"> Login </div>
@@ -52,29 +53,37 @@
             </div> 
         </div>
 
-        <div class="card card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg);">
-            <form action="/initial.php" method="POST">
-                <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
-                    <div>
-                        <h5 class="blue-text"><i class="fas fa-calculator"></i> Mathematics</h5>
-                        <h3 class="card-title pt-2"><strong>Learn about Trigonometry</strong></h3>
-                        <p>Take the quiz on Trig and learn all the basics you need to start your college career!</p>
-                        <button type="submit" class="btn btn-primary"> Start Quiz </button>
-                    </div>
+        <div class="card-deck">
+            <div class="card">
+                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg" alt="Card image cap">
+                <div class="card-block">
+                    <h4 class="card-title">Mathematics</h4>
+                    <p class="card-text">Take the quiz on Trig and learn all the basics you need to start your college career!</p>
+                    <button type="submit" class="btn btn-primary"> Start Quiz </button>
                 </div>
-            </form>
-        </div>
-
-
-        <div>List of Topics
-            <form action="/initial.php" method="POST">
-                <div class="btn-group-vertical">      
-                    <button type="submit" class="btn btn-primary btn-floating"> American Revolution </button>
-                    <button type="submit" class="btn btn-primary btn-floating"> Yugioh </button>
-                    <button type="submit" class="btn btn-primary btn-floating"> CSCE 445 </button>
+            </div>
+            
+        <form action="/initial.php" method="POST">
+            <div class="card">
+                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Slides/img%20(70).jpg" alt="Card image cap">
+                <div class="card-block">
+                    <h4 class="card-title">History</h4>
+                    <p class="card-text">Want to learn more about America's past? Go through the journey with the American Revolution quiz and learn everything in a timeline fashion.</p>
+                    <button type="submit" class="btn btn-primary"> Start Quiz </button>
                 </div>
-            </form>
+            </div>
+        </form>
+
+        <div class="card">
+            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/photo6.jpg" alt="Card image cap">
+                <div class="card-block">
+                    <h4 class="card-title">Topic 3</h4>
+                    <p class="card-text">Swag</p>
+                    <button type="submit" class="btn btn-primary"> Start Quiz </button>    
+                </div>
+            </div>
         </div>
+        
 
     </body>
 </html>
