@@ -50,8 +50,9 @@
                     <a href="#register" class="float-right">Create an account </a>
                 </div>
             </div> 
+        </div>
 
-            <div class="row justify-content-sm-right">List of Topics</div>
+        <div class="row justify-content-sm-right">List of Topics</div>
                 <div class="btn-group-vertical">        
                     <form action="/initial.php" method="POST">
                         <button type="submit" class="btn btn-primary btn-floating col-sm-5"> American Revolution </button>
@@ -59,7 +60,6 @@
                         <button type="submit" class="btn btn-primary btn-floating col-sm-5"> CSCE 445 </button>
                     </form>
                 </div>
-            </div>
         </div>
             
     </body>
