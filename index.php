@@ -54,9 +54,9 @@
         </div>
 
         <div class="card-deck">
-            <div class="card mb-4">
-                <img class="card-img-top img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg" alt="Card image cap">
-                <div class="card-body">
+            <div class="card">
+                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg" alt="Card image cap">
+                <div class="card-block">
                     <h4 class="card-title">Mathematics</h4>
                     <p class="card-text">Take the quiz on Trig and learn all the basics you need to start your college career!</p>
                     <button type="submit" class="btn btn-primary"> Start Quiz </button>
@@ -65,8 +65,8 @@
 
             <form action="/initial.php" method="POST">
                 <div class="card mb-4">
-                    <img class="card-img-top img-fluid" src="https://mdbootstrap.com/img/Photos/Slides/img%20(70).jpg" alt="Card image cap">
-                    <div class="card-body">
+                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Slides/img%20(70).jpg" alt="Card image cap">
+                    <div class="card-block">
                         <h4 class="card-title">History</h4>
                         <p class="card-text">Want to learn more about America's past? Go through the journey with the American Revolution quiz and learn everything in a timeline fashion.</p>
                         <button type="submit" class="btn btn-primary"> Start Quiz </button>
@@ -74,15 +74,14 @@
                 </div>
             </form>
         
-            <div class="w-100 d-none d-sm-block d-md-none"></div>
-                <div class="card mb-4">
-                    <img class="card-img-top img-fluid" src="https://mdbootstrap.com/img/Photos/Others/photo6.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h4 class="card-title">Topic 3</h4>
-                        <p class="card-text">Swag</p>
-                        <button type="submit" class="btn btn-primary"> Start Quiz </button>    
-                    </div>
+            <div class="card">
+                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/photo6.jpg" alt="Card image cap">
+                <div class="card-block">
+                    <h4 class="card-title">Topic 3</h4>
+                    <p class="card-text">Swag</p>
+                    <button type="submit" class="btn btn-primary"> Start Quiz </button>    
                 </div>
+            </div>
         </div>
     </body>
 </html>
