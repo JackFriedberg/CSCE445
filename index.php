@@ -24,8 +24,7 @@
         $_SESSION['question'] = 1; /*sets session variable to 1 for when the next page comes */
         ?>
 
-        <div class="container pt-2">
-            <div class="row justify-content-sm-left">
+        <div class="ad.left">
                 <div class="col-sm-10 col-md-8">
                     <div class="card border-info">
                         <div class="card-header"> Login </div>
@@ -58,10 +57,8 @@
                         <button type="submit" class="btn btn-primary btn-floating"> CSCE 445 </button>
                     </form>
                 </div>
-            </div> 
-            
-
-        </div>
+            </div>
+        </div> 
 
         
             
