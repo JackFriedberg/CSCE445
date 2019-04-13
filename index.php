@@ -25,7 +25,7 @@
         ?>
 
         <div class="container pt-2">
-            <div style="float: left;">
+            <div class="row justify-content-sm-left">
                 <div class="col-sm-10 col-md-8">
                     <div class="card border-info">
                         <div class="card-header"> Login </div>
@@ -52,15 +52,14 @@
             </div> 
             
             <div class="float-right">List of Topics
-                <div class="btn-group-vertical">        
-                    <form action="/initial.php" method="POST">
+                <form action="/initial.php" method="POST">
+                    <div class="btn-group-vertical">      
                         <button type="submit" class="btn btn-primary btn-floating"> American Revolution </button>
                         <button type="submit" class="btn btn-primary btn-floating"> Yugioh </button>
                         <button type="submit" class="btn btn-primary btn-floating"> CSCE 445 </button>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
-        
         </div>
     </body>
 </html>
