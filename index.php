@@ -79,15 +79,6 @@
                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
             </div>
         </div>
-        <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div>
-        <div class="card mb-4">
-            <img class="card-img-top img-fluid" src="//placehold.it/500x280" alt="Card image cap">
-            <div class="card-body">
-                <h4 class="card-title">4 Card title</h4>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-        </div>
         </div>
     </body>
 </html>
