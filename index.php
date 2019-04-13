@@ -25,7 +25,7 @@
         ?>
 
         <div class="container pt-2">
-            <div class="row justify-content-sm-left" style="float: left;">
+            <div class="row justify-content-sm-left">
                 <div class="col-sm-10 col-md-8">
                     <div class="card border-info">
                         <div class="card-header"> Login </div>
@@ -51,8 +51,8 @@
                 </div>
             </div> 
             
-            <div class="float-right">List of Topics</div>
-                <div class="btn-group-vertical">        
+            <div class="float-right">
+                <div class="btn btn-primary dropdown-toggle"> List of Buttons </div>     
                     <form action="/initial.php" method="POST">
                         <button type="submit" class="btn btn-primary btn-floating"> American Revolution </button>
                         <button type="submit" class="btn btn-primary btn-floating"> Yugioh </button>
