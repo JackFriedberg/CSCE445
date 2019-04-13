@@ -1,3 +1,11 @@
+.ad-right {
+  float: right;
+}
+
+.ad-left {
+  float: left;
+}
+
 .btn-primary {
   margin: 10px;
 }

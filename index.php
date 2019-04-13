@@ -49,18 +49,21 @@
                     </div>
                     <a href="#register" class="float-right">Create an account </a>
                 </div>
-            </div> 
-        </div>
-
-        <div>List of Topics</div>
+            </div>
+            <div class="ad-right">List of Topics</div>
                 <div class="btn-group-vertical">        
                     <form action="/initial.php" method="POST">
-                        <button type="submit" class="btn btn-primary btn-floating col-sm-5"> American Revolution </button>
-                        <button type="submit" class="btn btn-primary btn-floating col-sm-5"> Yugioh </button>
-                        <button type="submit" class="btn btn-primary btn-floating col-sm-5"> CSCE 445 </button>
+                        <button type="submit" class="btn btn-primary btn-floating"> American Revolution </button>
+                        <button type="submit" class="btn btn-primary btn-floating"> Yugioh </button>
+                        <button type="submit" class="btn btn-primary btn-floating"> CSCE 445 </button>
                     </form>
                 </div>
+            </div> 
+            
+
         </div>
+
+        
             
     </body>
 </html>
