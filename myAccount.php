@@ -51,7 +51,7 @@
             }
         ?>
         <div id ="progressbar">
-                        <div aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div value = "99" max="100"></div>
                     </div>
 
     </body>
