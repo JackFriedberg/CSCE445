@@ -148,9 +148,11 @@
             ?>
         </div>
         
-        <div class="jumbotron text-center">
-            <button type="submit" class="btn btn-primary"> My Account </button>
-            <button type="submit" class="btn btn-primary"> SignUp </button>
+        <div class="container">
+            <div class="jumbotron text-center">
+                <button type="submit" class="btn btn-primary"> My Account </button>
+                <button type="submit" class="btn btn-primary"> SignUp </button>
+            </div>
         </div>
 
     </body>
