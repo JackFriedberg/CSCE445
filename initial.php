@@ -148,19 +148,15 @@
             ?>
         </div>
         
-        <div>
-            <footer class="page-footer font-small unique-color-dark pt-4">
-            <div class="footer_container">
-
+        <footer class="page-footer font-small unique-color-dark pt-4">
+            <div class="container">
                 <ul class="list-unstyled list-inline text-center py-2">
-                <li class="list-inline-item">
-                    <a href="#!" class="btn btn-outline-white btn-rounded">Back to Account</a>
-                </li>
+                    <li class="list-inline-item">
+                        <a href="#!" class="btn btn-outline-white btn-rounded">Back to Account</a>
+                    </li>
                 </ul>
             </div>
-            </footer>
-         </div>
-        
+        </footer>
 
     </body>
 
