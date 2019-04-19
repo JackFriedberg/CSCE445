@@ -47,43 +47,6 @@
                                 </div>
                             </div>
 							
-		<!-- modal body -->
-						<div class="modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Modal body text goes here.
-		                                <div class="col-md-8">
-                                    <form class="form-signin" action="/signup.php" method="POST" >
-                                        <input type="text" class="form-control mb-2" placeholder="Email">    
-                                        <input type="password" class="form-control mb-2" placeholder="Password">    
-                                        <button type="submit" class="btn btn-mb btn-primary btn-block mb-2">Sign-In</button>
-                                        <label class="checkbox float-left">
-                                            <input type="checkbox" value="remember-me">Remember Me
-                                        </label>
-                                    </form>
-                                </div>
-								</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-                    </div>
-					
-                    <a href="#register" class="float-right">Create an account </a>
-                </div>
-            </div> 
-        </div>
 		
 		<!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
@@ -101,7 +64,16 @@
         </button>
       </div>
       <div class="modal-body">
-        ...
+                                <div class="col-md-8">
+                                    <form class="form-signin" action="/signup.php" method="POST" >
+                                        <input type="text" class="form-control mb-2" placeholder="Email">    
+                                        <input type="password" class="form-control mb-2" placeholder="Password">    
+                                        <button type="submit" class="btn btn-mb btn-primary btn-block mb-2">Sign-In</button>
+                                        <label class="checkbox float-left">
+                                            <input type="checkbox" value="remember-me">Remember Me
+                                        </label>
+                                    </form>
+                                </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
