@@ -46,24 +46,8 @@
                                     </form>
                                 </div>
                             </div>
-							<div class="card-header"> Create Account </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-4 text-center">
-                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCVQWvUj6iBFfnqigz7gp_9uv9603FyA-m-vz1mJZS-HDJw4Kk">    
-                                </div>
-                                <div class="col-md-8">
-                                    <form class="form-signin" action="/signup.php" method="POST" >
-                                        <input type="text" class="form-control mb-2" placeholder="Email">    
-                                        <input type="password" class="form-control mb-2" placeholder="Password">    
-                                        <button type="submit" class="btn btn-mb btn-primary btn-block mb-2">Sign-In</button>
-                                        <label class="checkbox float-left">
-                                            <input type="checkbox" value="remember-me">Remember Me
-                                        </label>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+							
+		<!-- modal body -->
 						<div class="modal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -75,6 +59,16 @@
       </div>
       <div class="modal-body">
         <p>Modal body text goes here.</p>
+		                                <div class="col-md-8">
+                                    <form class="form-signin" action="/signup.php" method="POST" >
+                                        <input type="text" class="form-control mb-2" placeholder="Email">    
+                                        <input type="password" class="form-control mb-2" placeholder="Password">    
+                                        <button type="submit" class="btn btn-mb btn-primary btn-block mb-2">Sign-In</button>
+                                        <label class="checkbox float-left">
+                                            <input type="checkbox" value="remember-me">Remember Me
+                                        </label>
+                                    </form>
+                                </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary">Save changes</button>
@@ -92,7 +86,7 @@
 		
 		<!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
+  Create Account
 </button>
 
 <!-- Modal -->
@@ -100,7 +94,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Create Account</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -110,7 +104,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary">Create Account</button>
       </div>
     </div>
   </div>
