@@ -1,11 +1,3 @@
-.ad-right {
-  float: right;
-}
-
-.ad-left {
-  float: left;
-}
-
 .btn-primary {
   margin: 10px;
 }
@@ -45,4 +37,14 @@
 @keyframes animatetop {
   from {top: -300px; opacity: 0}
   to {top: 0; opacity: 1}
+}
+
+footer.page-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+body {
+  background-color:light-blue lighten-4
 }

@@ -122,7 +122,7 @@
                                                 <p>' . $contextContent . '</p>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-outline-white" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">Close</button>
                                             </div>
                                         </div>
                                     </div>
@@ -150,8 +150,10 @@
         
         <div class="container">
             <div class="jumbotron text-center">
-                <button type="submit" class="btn btn-outline-white"> My Account </button>
-                <button type="submit" class="btn btn-outline-white"> SignUp </button>
+            <hr class="my-2">
+                <button type="submit" class="btn blue-gradient btn-rounded"> My Account </button>
+                <button type="submit" class="btn btn-indigo btn-rounded"> SignUp </button>
+            <hr class="my-2">
             </div>
         </div>
 
