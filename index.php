@@ -58,7 +58,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <p>Modal body text goes here.</p>
+        <p>Modal body text goes here.
 		                                <div class="col-md-8">
                                     <form class="form-signin" action="/signup.php" method="POST" >
                                         <input type="text" class="form-control mb-2" placeholder="Email">    
@@ -69,6 +69,7 @@
                                         </label>
                                     </form>
                                 </div>
+								</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary">Save changes</button>
