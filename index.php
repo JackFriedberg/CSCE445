@@ -66,7 +66,7 @@
                         <div class="card-body">
                             <h4 class="card-title">Mathematics</h4>
                             <p class="card-text">Take the quiz on Trig and learn all the basics you need to start your college career!</p>
-                            <button type="submit" class="btn btn-rounded btn-blue-gradient">Start Quiz<i class="fas fas fa-play pl-1"></i></button>
+                            <button type="submit" class="btn btn-outline-info btn-rounded waves-effect">Start Quiz<i class="fas fas fa-play pl-1"></i></button>
                         </div>
                     </div>
 
@@ -76,7 +76,7 @@
                             <div class="card-body">
                                 <h4 class="card-title">History</h4>
                                 <p class="card-text">Want to learn more about America's past? Go through the journey with the American Revolution quiz and learn everything in a timeline fashion.</p>
-                                <button type="submit" class="btn btn-rounded btn-blue-gradient">Start Quiz<i class="fas fas fa-play pl-1"></i></button>
+                                <button type="submit" class="btn btn-outline-info btn-rounded waves-effect">Start Quiz<i class="fas fas fa-play pl-1"></i></button>
                             </div>
                         </div>
                     </form>
@@ -86,7 +86,7 @@
                         <div class="card-body">
                             <h4 class="card-title">Topic 3</h4>
                             <p class="card-text">Swag</p>
-                            <button type="submit" class="btn btn-rounded btn-blue-gradient">Start Quiz<i class="fas fas fa-play pl-1"></i></button>
+                            <button type="submit" class="btn btn-outline-info btn-rounded waves-effect">Start Quiz<i class="fas fas fa-play pl-1"></i></button>
                         </div>
                     </div>
                 </div>

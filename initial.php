@@ -83,10 +83,10 @@
                     <div class="row align-items-center justify-content-center">
                         <form id= "theForm" action="http://445dev1.azurewebsites.net/handle.php" method="post">
                             <div id="buttonDiv" class="btn-group-vertical" style="margin:0 auto">
-                                <button type="submit" class="btn btn-outline-primary" name="correct"> <h3>' . $correct . ' (correct)</h3></button>
-                                <button type="submit" class= "btn btn-outline-primary" name="incorrect1"> <h3>' . $incorrect1 . '</h3></button>
-                                <button type="submit" class= "btn btn-outline-primary" name="incorrect2"> <h3>' . $incorrect2 . '</h3></button>
-                                <button type="submit" class= "btn btn-outline-primary" name="incorrect3"> <h3>' . $incorrect3 . '</h3></button>
+                                <button type="submit" class="btn btn-outline-primary btn-rounded" name="correct"> <h3>' . $correct . ' (correct)</h3></button>
+                                <button type="submit" class= "btn btn-outline-primary btn-rounded" name="incorrect1"> <h3>' . $incorrect1 . '</h3></button>
+                                <button type="submit" class= "btn btn-outline-primary btn-rounded" name="incorrect2"> <h3>' . $incorrect2 . '</h3></button>
+                                <button type="submit" class= "btn btn-outline-primary btn-rounded" name="incorrect3"> <h3>' . $incorrect3 . '</h3></button>
                             </div>
                         </form>
                     </div>
@@ -113,21 +113,24 @@
                         $contextSrc =  $row['Link'];
 
                         echo '
-                            <button type="button" class="btn btn-primary btn-floating col-md-3 center-block" data-toggle="modal" data-target="#contextModal">Click for context # ' . strval($counter) . '</button>
-                            <blockquote class="blockquote">
-                                <div id="contextModal" class="modal fade" role="dialog">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-body">
-                                                <p>' . $contextContent . '</p>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-primary waves-effect" data-dismiss="modal">Close</button>
+                            <div class="container">
+                                <blockquote class="blockquote">    
+                                    <button type="button" class="btn btn-light col-md-3 center-block" data-toggle="modal" data-target="#contextModal">Click for context # ' . strval($counter) . '</button>
+                                    
+                                        <div id="contextModal" class="modal fade" role="dialog">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-body">
+                                                        <p>' . $contextContent . '</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-flat btn-lg" data-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </blockquote>
+                                </blockquote>
+                            </div>
                         ';
     
 
@@ -150,10 +153,10 @@
         
         <div class="container">
             <div class="jumbotron text-center">
-            <hr class="my-2">
-                <button type="submit" class="btn btn-outline-primary waves-effect"> My Account </button>
-                <button type="submit" class="btn btn-outline-primary waves-effect"> SignUp </button>
-            <hr class="my-2">
+                <hr class="my-2">
+                <button type="submit" class="btn btn-flat center-block">My Account<i class="fas fas fa-user-alt pl-1"></i></button>
+                <button type="submit" class="btn btn-flat center-block">SignUp<i class="fas fas fa-sign-in-alt pl-1"></i></button>
+                <hr class="my-2">
             </div>
         </div>
 
