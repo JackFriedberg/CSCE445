@@ -113,21 +113,21 @@
                         $contextSrc =  $row['Link'];
 
                         echo '
-                            <div class="container"> 
-                                <button type="button" class="btn btn-default btn-floating col-md-3 center-block" data-toggle="modal" data-target="#contextModal">Click for context # ' . strval($counter) . '</button>
-                                <div id="contextModal" class="modal fade" role="dialog">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-body">
-                                                <p>' . $contextContent . '</p>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-default btn-floating col-md-3 center-block" data-toggle="modal" data-target="#contextModal">Click for context # ' . strval($counter) . '</button>
+                                <blockquote class="blockquote">
+                                    <div id="contextModal" class="modal fade" role="dialog">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <p>' . $contextContent . '</p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
+                                </blockquote>
                         ';
     
 
