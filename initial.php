@@ -148,15 +148,10 @@
             ?>
         </div>
         
-        <footer class="page-footer font-small unique-color-dark pt-4">
-            <div class="container">
-                <ul class="list-unstyled list-inline text-center py-2">
-                    <li class="list-inline-item">
-                        <a href="#!" class="btn btn-outline-white btn-rounded">Back to Account</a>
-                    </li>
-                </ul>
-            </div>
-        </footer>
+        <div class="jumbotron text-center">
+            <button type="submit" class="btn btn-primary"> My Account </button>
+            <button type="submit" class="btn btn-primary"> SignUp </button>
+        </div>
 
     </body>
 
