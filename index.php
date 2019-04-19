@@ -76,7 +76,7 @@
                             <div class="card-body">
                                 <h4 class="card-title">History</h4>
                                 <p class="card-text">Want to learn more about America's past? Go through the journey with the American Revolution quiz and learn everything in a timeline fashion.</p>
-                                <button type="submit" class="btn btn-primary"> Start Quiz </button>
+                                <button type="submit" class="btn btn-outline-primary waves-effect"> Start Quiz </button>
                             </div>
                         </div>
                     </form>
