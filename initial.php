@@ -113,8 +113,7 @@
                         $contextSrc =  $row['Link'];
 
                         echo '
-                            <div class="container">
-                                <blockquote class="blockquote">    
+                            <blockquote class="blockquote">    
                                     <button type="button" class="btn btn-light col-md-3 center-block" data-toggle="modal" data-target="#contextModal">Click for context # ' . strval($counter) . '</button>
                                     
                                         <div id="contextModal" class="modal fade" role="dialog">
@@ -124,13 +123,12 @@
                                                         <p>' . $contextContent . '</p>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-flat btn-lg" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                 </blockquote>
-                            </div>
                         ';
     
 
@@ -154,8 +152,10 @@
         <div class="container">
             <div class="jumbotron text-center">
                 <hr class="my-2">
-                <button type="submit" class="btn btn-flat center-block">My Account<i class="fas fas fa-user-alt pl-1"></i></button>
-                <button type="submit" class="btn btn-flat center-block">SignUp<i class="fas fas fa-sign-in-alt pl-1"></i></button>
+                <hr class="my-2">
+                <button type="submit" class="btn btn-flat">My Account<i class="fas fas fa-user-alt pl-1"></i></button>
+                <button type="submit" class="btn btn-flat">SignUp<i class="fas fas fa-sign-in-alt pl-1"></i></button>
+                <hr class="my-2">
                 <hr class="my-2">
             </div>
         </div>
