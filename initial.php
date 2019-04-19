@@ -148,7 +148,8 @@
             ?>
         </div>
         
-        <footer class="page-footer font-small unique-color-dark pt-4">
+        <div>
+            <footer class="page-footer font-small unique-color-dark pt-4">
             <div class="footer_container">
 
                 <ul class="list-unstyled list-inline text-center py-2">
@@ -157,7 +158,9 @@
                 </li>
                 </ul>
             </div>
-        </footer>
+            </footer>
+         </div>
+        
 
     </body>
 
