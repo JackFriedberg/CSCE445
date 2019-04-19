@@ -93,10 +93,10 @@
                     <div class="row align-items-center justify-content-center">
                         <form id= "theForm" action="http://445dev2.azurewebsites.net/handle.php" method="post">
                             <div id="buttonDiv" class="btn-group-vertical" style="margin:0 auto">
-                                <button type="submit" class="btn btn-outline-primary" name="correct"> <h3>' . $correct . ' (correct)</h3></button>
-                                <button type="submit" class= "btn btn-outline-primary" name="incorrect1"> <h3>' . $incorrect1 . '</h3></button>
-                                <button type="submit" class= "btn btn-outline-primary" name="incorrect2"> <h3>' . $incorrect2 . '</h3></button>
-                                <button type="submit" class= "btn btn-outline-primary" name="incorrect3"> <h3>' . $incorrect3 . '</h3></button>
+                                <button type="submit" class="btn btn-outline-primary" name="click" value ="correctOne"> <h3>' . $correct . ' (correct)</h3></button>
+                                <button type="submit" class= "btn btn-outline-primary" name="click" value = "incorrectOne1"> <h3>' . $incorrect1 . '</h3></button>
+                                <button type="submit" class= "btn btn-outline-primary" name="click" value = "incorrectOne2"> <h3>' . $incorrect2 . '</h3></button>
+                                <button type="submit" class= "btn btn-outline-primary" name="click" value = "incorrectOne3"> <h3>' . $incorrect3 . '</h3></button>
                             </div>
                         </form>
                     </div>
@@ -111,6 +111,11 @@
                         echo "message: ".$error[ 'message']."<br />";
                     }
                 }
+            }
+            switch($_POST['click']){
+                case 'correctOne':
+                    $correctTotal++;
+                    echo 'total number of Questions is '.$correctTotal;
             }
         ?>
 

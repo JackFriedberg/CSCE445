@@ -51,8 +51,12 @@
             }
         ?>
         <div id ="progressbar">
-                        <div value = "99" max="100"></div>
+                        <div></div>
                     </div>
 
     </body>
 </html>
+
+<script>
+
+</script>
