@@ -70,7 +70,6 @@
                                         <input type="password" class="form-control mb-2" placeholder="User Name"> 
                                         <input type="password" class="form-control mb-2" placeholder="Password">    
                                         <input type="password" class="form-control mb-2" placeholder="Confirm Password"> 
-                                        <button type="submit" class="btn btn-mb btn-primary btn-block mb-2">Sign-In</button>
                                     </form>
                                 </div>
       </div>
