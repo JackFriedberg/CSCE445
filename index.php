@@ -47,12 +47,12 @@
                                 </div>
                             </div>
 					
-                    <a href="#register" class="float-right">Create an account </a>
+                    <a href="#register" class="float-right">
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
+  Create Account
 </button>
-
+</a>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
