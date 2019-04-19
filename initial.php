@@ -105,52 +105,51 @@
         ?>
 
         <div id="historicalContainer" class="row" style="max-height:100%">
-        <?php
-            if($context){
-                $counter = 1;
-                while($row = sqlsrv_fetch_array($context)){
-                    $contextContent = $row['Embed'];
-                    $contextSrc =  $row['Link'];
+            <?php
+                if($context){
+                    $counter = 1;
+                    while($row = sqlsrv_fetch_array($context)){
+                        $contextContent = $row['Embed'];
+                        $contextSrc =  $row['Link'];
 
-                    echo '
-                        <button type="button" class="btn btn-primary btn-floating col-md-3 center-block" data-toggle="modal" data-target="#contextModal">Click for context # ' . strval($counter) . '</button>
-                        <blockquote class="blockquote">
-                            <div id="contextModal" class="modal fade" role="dialog">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-body">
-                                            <p>' . $contextContent . '</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-outline-white btn-rounded" data-dismiss="modal">Close</button>
+                        echo '
+                            <button type="button" class="btn btn-primary btn-floating col-md-3 center-block" data-toggle="modal" data-target="#contextModal">Click for context # ' . strval($counter) . '</button>
+                            <blockquote class="blockquote">
+                                <div id="contextModal" class="modal fade" role="dialog">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <p>' . $contextContent . '</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-outline-white btn-rounded" data-dismiss="modal">Close</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </blockquote>
-                    ';
-  
+                            </blockquote>
+                        ';
+    
 
-                    $counter++;
-                }
-            }
-            else{
-                echo 'SQL Error:';
-                if( ($errors = sqlsrv_errors() ) != null) {
-                    foreach( $errors as $error ) {
-                        echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
-                        echo "code: ".$error[ 'code']."<br />";
-                        echo "message: ".$error[ 'message']."<br />";
+                        $counter++;
                     }
                 }
-            }
-            sqlsrv_free_stmt($getResults); /* idk what this does */
-        ?>
-        </div>
+                else{
+                    echo 'SQL Error:';
+                    if( ($errors = sqlsrv_errors() ) != null) {
+                        foreach( $errors as $error ) {
+                            echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
+                            echo "code: ".$error[ 'code']."<br />";
+                            echo "message: ".$error[ 'message']."<br />";
+                        }
+                    }
+                }
+                sqlsrv_free_stmt($getResults); /* idk what this does */
+            ?>
         </div>
         
         <footer class="page-footer font-small unique-color-dark pt-4">
-            <div class="container">
+            <div class="footer_container">
 
                 <ul class="list-unstyled list-inline text-center py-2">
                 <li class="list-inline-item">
