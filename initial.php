@@ -146,7 +146,9 @@
                 }
                 sqlsrv_free_stmt($getResults); /* idk what this does */
             ?>
-            <footer class="page-footer font-small unique-color-dark pt-4">
+        </div>
+        
+        <footer class="page-footer font-small unique-color-dark pt-4">
             <div class="container">
                 <ul class="list-unstyled list-inline text-center py-2">
                     <li class="list-inline-item">
@@ -155,9 +157,6 @@
                 </ul>
             </div>
         </footer>
-        </div>
-        
-        
 
     </body>
 
