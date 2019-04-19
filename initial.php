@@ -114,7 +114,7 @@
 
                         echo '
                             <div class="container"> 
-                                <button type="button" class="btn btn-default btn-rounded col-md-3 center-block" data-toggle="modal" data-target="#contextModal">Click for context # ' . strval($counter) . '</button>
+                                <button type="button" class="btn btn-default btn-floating col-md-3 center-block" data-toggle="modal" data-target="#contextModal">Click for context # ' . strval($counter) . '</button>
                                 <div id="contextModal" class="modal fade" role="dialog">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
