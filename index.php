@@ -14,9 +14,9 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
-    <body style="light-blue lighten-3">
+    <body>
         <div class="container">
-            <div class="jumbotron text-center light-blue">
+            <div class="jumbotron text-center light-blue lighten-3 white-text mx-2 mb-5">
                 <h1>UpQuiz</h1>
                 <hr class="my-2">
                 <p> Make an account and learn with us! Topics ranging from American Revoution to Trigonometry. To get the best out of this platform make an account to get performance analytics based on your past quizzes, so start learning today!</p>      
