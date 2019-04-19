@@ -58,17 +58,25 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Create Account</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        ...
+                                        <div class="col-md-8">
+                                    <form class="form-signin" action="/signup.php" method="POST" >
+                                        <input type="text" class="form-control mb-2" placeholder="Email">    
+                                        <input type="password" class="form-control mb-2" placeholder="User Name"> 
+                                        <input type="password" class="form-control mb-2" placeholder="Password">    
+                                        <input type="password" class="form-control mb-2" placeholder="Confirm Password"> 
+                                        <button type="submit" class="btn btn-mb btn-primary btn-block mb-2">Sign-In</button>
+                                    </form>
+                                </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary">Create Account</button>
       </div>
     </div>
   </div>
