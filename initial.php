@@ -170,7 +170,7 @@
         }
 
         function clickButton() {
-            if (typeof(Storage)) !== "undefined"){
+            if (typeof(Storage)) != "undefined"){
                 sessionStorage.setItem("totalNumberOfQuestions",0);
                 document.getElementById("result").innerHTML = sessionStorage.getItem("totalNumberOfQuestions");
 
