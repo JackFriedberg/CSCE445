@@ -14,6 +14,7 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body style="height:100%; margin:0; padding:0">  
+    <div id="result"></div>
         <div class="container">
         <?php
             echo $quizType;
