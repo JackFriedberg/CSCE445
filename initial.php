@@ -168,6 +168,14 @@
         for (var i = form.children.length; i >= 0; i--) {
             form.appendChild(form.children[Math.random() * i | 0]);
         }
+
+        function clickButton() {
+            if (typeof(Storage)) !== "undefined"){
+                sessionStorage.setItem("totalNumberOfQuestions",0);
+                document.getElementById("result").innerHTML = sessionStorage.getItem("totalNumberOfQuestions");
+                
+            }
+        }
     </script>
 
 </html>
