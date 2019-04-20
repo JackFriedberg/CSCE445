@@ -34,6 +34,8 @@
             <div id="myBar"></div>
         </div>
 
+
+        <h1>Here is the percentage of SQL </h1>
         <?php
             $sql = "SELECT * FROM quizStats WHERE username = ". strval($_SESSION["UserID"]);
             $result = sqlsrv_query($conn,$sql);

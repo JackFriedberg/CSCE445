@@ -112,11 +112,6 @@
                     }
                 }
             }
-            switch($_POST['click']){
-                case 'correctOne':
-                    $correctTotal++;
-                    echo 'total number of Questions is '.$correctTotal;
-            }
         ?>
 
         <div id="historicalContainer" class="row" style="max-height:100%">
