@@ -160,7 +160,7 @@
         <footer class="container-fluid bg-4 text-center">
             <button type="submit" class="btn btn-outline-white btn-rounded" name="goto-account-button"> GO BACK TO ACCOUNT </button>
         </footer>
-
+        <div id="result"></div>
     </body>
 
     <script>
