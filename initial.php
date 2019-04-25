@@ -152,8 +152,8 @@
             <div class="jumbotron text-center">
                 <hr class="my-2">
                 <hr class="my-2">
-                <button type="submit" class="btn btn-flat">Sign-in<i class="fas fas fa-user-alt pl-1"></i></button>
-                <div id="contextModal" class="modal fade" role="dialog">
+                <button type="submit" class="btn btn-flat" data-toggle="modal" data-target="#SignInModal">Sign-in<i class="fas fas fa-user-alt pl-1"></i></button>
+                <div id="SignInModal" class="modal fade" role="dialog">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-body">

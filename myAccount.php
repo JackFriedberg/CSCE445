@@ -15,7 +15,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <style>
             body {
-                background-image: url("https://www.pexels.com/photo/snow-coated-rocky-mountains-772803/");
+                background-image: url("https://img-aws.ehowcdn.com/877x500p/s3-us-west-1.amazonaws.com/contentlab.studiod/getty/f24b4a7bf9f24d1ba5f899339e6949f3");
             }
         </style>
     </head>
