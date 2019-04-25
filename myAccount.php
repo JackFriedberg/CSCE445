@@ -24,7 +24,7 @@
             $sql = "SELECT * FROM quizStats WHERE username LIKE "."'". $username ."'"; 
             $result = sqlsrv_query($conn,$sql);
             
-            if($result){                
+            if(sqlsrv_has_rows($result)){                
                 while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)){
                     
                     echo "num rows: " . sqlsrv_num_rows($result);
