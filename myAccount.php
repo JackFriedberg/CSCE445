@@ -22,6 +22,9 @@
             $sql = "SELECT * FROM quizStats WHERE username LIKE "."'". strval($_SESSION["UserID"]) ."'"; 
             $result = sqlsrv_query($conn,$sql);
             if($result){
+
+                echo '<p> Affirmative </p>';
+
                 while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)){
                     
                     $quizType= $row["QUIZTYPE"];
