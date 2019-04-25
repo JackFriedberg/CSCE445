@@ -38,12 +38,20 @@
                                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCVQWvUj6iBFfnqigz7gp_9uv9603FyA-m-vz1mJZS-HDJw4Kk">    
                                 </div>
                                 <div class="col-md-8">
-                                    <form class="form-signin" action="/myAccount.php" method="POST" >
+                                    <form class="form-signin" action="/login.php" method="POST" >
                                         <input type="text" name="Username" class="form-control mb-2" placeholder="Username">    
                                         <input type="password" name="UserPwd" class="form-control mb-2" placeholder="Password">    
-                                        <button type="submit" name="login-submit" class="btn btn-mb btn-primary btn-block mb-2">Sign-In</button>
+                                        <?php
+                                            if(isset($_SESSION['UserId'])) {
+                                                echo '
+                                                    <form action="/myAccount.php" method="POST">
+                                                        <button type="submit" name="login-submit" class="btn btn-mb btn-primary btn-block mb-2">Sign-In</button>
+                                                    </form>
+                                                ';
+                                            }
+                                        ?>
                                         <label class="checkbox float-left">
-                                            <input type="checkbox" value="remember-me">Remember Me
+                                        <input type="checkbox" value="remember-me">Remember Me
                                         </label>
                                     </form>
                                 </div>
@@ -92,18 +100,5 @@
                 </div>
             </div>
         </div>
-        
-        <?php
-            if(isset($_SESSION['UserId'])){
-                echo '
-                <form action="/myAccount.php" method="POST">
-                    <button type="submit"> My Account </button>
-                </form>
-                <form action="/logout.php" method="POST">
-                    <button type="submit"> logout </button>
-                </form>
-                ';
-            }
-        ?>
     </body>
 </html>
