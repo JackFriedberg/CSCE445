@@ -152,26 +152,30 @@
             <div class="jumbotron text-center">
                 <hr class="my-2">
                 <hr class="my-2">
-                <button type="submit" class="btn btn-flat" data-toggle="modal" data-target="#SignInModal">Sign-in<i class="fas fas fa-user-alt pl-1"></i></button>
-                <div id="SignInModal" class="modal fade" role="dialog">
-                    <div class="modal-dialog">
+                <button type="submit" class="btn btn-link" data-toggle="modal" data-target="#SignInModal">Sign-in<i class="fas fas fa-user-alt pl-1"></i></button>
+                <div id="SignInModal" class="modal fade" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
                         <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">    
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
                             <div class="modal-body">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <form class="form-signin" action="/login.php" method="POST" >
                                         <input type="text" name="Username" class="form-control mb-2" placeholder="Username"> 
                                         <input type="password" name="Userpwd" class="form-control mb-2" placeholder="Password">
                                     </form>
                                 </div>
                             </div>
-
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-light">Login</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-flat">SignUp<i class="fas fas fa-sign-in-alt pl-1"></i></button>
+                <button type="submit" class="btn btn-link">SignUp<i class="fas fas fa-sign-in-alt pl-1"></i></button>
                 <hr class="my-2">
                 <hr class="my-2">
             </div>
