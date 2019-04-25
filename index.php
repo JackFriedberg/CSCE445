@@ -41,6 +41,7 @@
                                     <form class="form-signin" action="/login.php" method="POST" >
                                         <input type="text" name="Username" class="form-control mb-2" placeholder="Username">    
                                         <input type="password" name="UserPwd" class="form-control mb-2" placeholder="Password">    
+                                        <button type="submit" name="login-submit" class="btn btn-mb btn-primary btn-block mb-2">Sign-In</button>
                                         <?php
                                             if(isset($_SESSION['UserId'])) {
                                                 echo '
