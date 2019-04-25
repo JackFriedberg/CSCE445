@@ -23,16 +23,17 @@
             $result = sqlsrv_query($conn,$sql);
             if($result){
 
-                echo '<p> Affirmative </p>';
+                echo 'Affirmative ';
 
                 while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)){
                     
+                    /*
                     $quizType= $row["QUIZTYPE"];
                     
                     $textTotal = $row["TextTotal"];
                     $textCorrect = $row["TextCorrect"];
 
-                    /*
+                    
                     $textPercentage = $textCorrect / $textTotal;
 
                     $videoTotal = $row["VideoTotal"];
