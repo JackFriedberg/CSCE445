@@ -15,7 +15,8 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
-    <body>
+    
+    <body style="background-image: url(https://www.pexels.com/photo/snow-coated-rocky-mountains-772803/)">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="#"><i class="fas fa-user"></i>My Account</a>
@@ -34,37 +35,7 @@
                 </div>
             </nav>
         </div>
-        <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
-        <!-- Position it -->
-            <div style="position: absolute; top: 0; right: 0;">
-
-                <!-- Then put toasts within -->
-                <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                    <div class="toast-header">
-                        <img src="..." class="rounded mr-2" alt="...">
-                        <strong class="mr-auto">Interactive Text</strong>
-                        <small class="text-muted">just now</small>
-                        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="toast-body"> Get to quizzing! Get Educated!</div>
-                </div>
-
-                <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                    <div class="toast-header">
-                        <img src="..." class="rounded mr-2" alt="...">
-                        <strong class="mr-auto">Interactive Text</strong>
-                        <small class="text-muted">2 seconds ago</small>
-                        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="toast-body"> You don't wanna know nothing like Jon Snow :(</div>
-                </div>
-            </div>
-        </div>
-
-
+        
+        
     </body>
 </html>
