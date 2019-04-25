@@ -31,7 +31,7 @@
 
                     $quizType= strval($row["QUIZTYPE"]);
                     
-                    $textTotal = intval($row["TextTotal"]);
+                    $textTotal = intval($row["TEXTTOTAL"]);
                     $textCorrect = intval($row["TextCorrect"]);
 
                     
