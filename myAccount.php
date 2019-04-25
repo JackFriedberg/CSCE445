@@ -74,23 +74,23 @@
                 }
             }
 
-            $universalPercentage = $universalCorrect/$universalTotal;
-            $overallVideoPercentage = $opverallVideoCorrect/$overallVideoTotal;
-            $overallTextPercentage = $overallTextCorrect/$overallTextTotal;
+            $universalPercentage = $universalCorrect/$universalTotal * 100;
+            $overallVideoPercentage = $overallVideoCorrect/$overallVideoTotal * 100;
+            $overallTextPercentage = $overallTextCorrect/$overallTextTotal * 100;
 
             echo '
                 <h3> All Quizes </h3>
-                <p> Questions answered: ' . $overallVideoTotal . '</p>
-                <p> Questions correct: ' . $overallVideoCorrect . '</p>
-                <p> Question percentage: ' . $overallVideoPercentage .'%</p>
+                <p> Questions answered: ' .  $universalTotal . '</p>
+                <p> Questions correct: ' . $universalCorrect . '</p>
+                <p> Question percentage: ' . $universalPercentage .'%</p>
                 <br>
                 <p> Text questions answered: ' . $overallTextTotal . '</p>
                 <p> Text questions correct: ' . $overallTextCorrect . '</p>
                 <p> Text question percentage: ' . $overallTextPercentage .'%</p>
                 <br>
-                <p> Video questions answered: ' . $universalTotal . '</p>
-                <p> Video questions correct: ' . $universalCorrect . '</p>
-                <p> Video question percentage: ' . $universalPercentage .'%</p>
+                <p> Video questions answered: ' . $overallVideoTotal . '</p>
+                <p> Video questions correct: ' . $overallVideoCorrect . '</p>
+                <p> Video question percentage: ' . $overallVideoPercentage .'%</p>
                 <br>
             ';
 
