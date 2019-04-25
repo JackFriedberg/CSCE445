@@ -2,6 +2,8 @@
     chdir('..');
     include_once "dbh.inc.php";
     session_start();
+
+    $_SESSION['questionType']  = "text";
 ?>
 
 <html>
