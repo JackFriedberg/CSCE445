@@ -27,7 +27,7 @@
             if($result){                
                 while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)){
                     
-                    echo 'text: ' . $row["TEXTTOTAL"];
+                    echo 'text: ' . $row['TEXTTOTAL'];
 
 
                     $quizType= strval($row["QUIZTYPE"]);
