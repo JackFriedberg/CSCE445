@@ -110,7 +110,7 @@
         <?php
             if($context){
                 $counter = 1;
-                while($row = sqlsrv_fetch_array($context)){
+                while($row = sqlsrv_fetch_array($context, SQLSRV_FETCH_ASSOC)){
                     $contextContent = $row['Embed'];
                     $contextSrc =  $row['Link'];
 
