@@ -21,12 +21,7 @@
 
         <h1>QuizStats </h1>
         <?php
-            echo $username;
-            echo $_SESSION['UserId'];
-            echo strval($_SESSION['UserId']);
-             
             $sql = "SELECT * FROM quizStats WHERE username LIKE "."'". $username ."'"; 
-            echo $sql;
             $result = sqlsrv_query($conn,$sql);
             
             if($result){                
@@ -34,10 +29,10 @@
                     
                     echo 'In while';
 
-                    $quizType= $row["QUIZTYPE"];
+                    $quizType= strval($row["QUIZTYPE"]);
                     
-                    $textTotal = $row["TextTotal"];
-                    $textCorrect = $row["TextCorrect"];
+                    $textTotal = intval($row["TextTotal"]);
+                    $textCorrect = intval($row["TextCorrect"]);
 
                     
                     $textPercentage = $textCorrect / $textTotal;
