@@ -23,9 +23,9 @@
             $result = sqlsrv_query($conn,$sql);
             if($result){
 
+                /*
                 while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)){
                     
-                    /*
                     $quizType= $row["QUIZTYPE"];
                     
                     $textTotal = $row["TextTotal"];
