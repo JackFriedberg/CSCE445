@@ -21,9 +21,10 @@
         <?php
             $sql = "SELECT * FROM quizStats WHERE username LIKE "."'". strval($_SESSION["UserID"]) ."'"; 
             $result = sqlsrv_query($conn,$sql);
-            /*         
+            
             if($result){
-
+                    echo 'im here';
+                    /*
                 
                 while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)){
                     
@@ -60,13 +61,13 @@
                         <br> </br>
                         <br> </br>
                     ';
-                    
+                    */
                 }
                 else {
                     echo 'nada';
                 }
                 
-            }*/
+            }
         ?>
        
     </body>
