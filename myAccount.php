@@ -28,7 +28,7 @@
                 while($row = sqlsrv_fetch_array($result)){
                     
                     echo sqlsrv_num_rows($result);
-                    echo 'text new: ' . $row['TEXTTOTAL'];
+                    echo 'text new new: ' . $row['TEXTTOTAL'];
 
 
                     $quizType= strval($row["QUIZTYPE"]);
