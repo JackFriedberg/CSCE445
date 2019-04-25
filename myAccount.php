@@ -48,6 +48,13 @@
                     $overallCorrect = $textCorrect + $videoCorrect;
                     $overallPercentage = $overallCorrect / $overallTotal * 100;
 
+                    $overallVideoTotal += $videoTotal;
+                    $overallVideoCorrect += $videoCorrect;
+                    $overallTextTotal += $textTotal;
+                    $overallTextCorrect += $textCorrect;
+                    $universalTotal += $overallTotal;
+                    $universalCorrect += $overallCorrect;
+
 
                     echo '
                         <h3> ' . $quizType .' Quiz </h3>
