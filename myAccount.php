@@ -25,6 +25,8 @@
             if($result){                
                 while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)){
                     
+                    echo 'In while';
+
                     $quizType= $row["QUIZTYPE"];
                     
                     $textTotal = $row["TextTotal"];
@@ -59,6 +61,8 @@
                         <br> </br>
                     ';
                 }
+
+                echo 'out of while';
             }
             else {
                 echo 'nada';
