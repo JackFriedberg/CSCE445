@@ -41,17 +41,7 @@
                                     <form class="form-signin" action="/login.php" method="POST" >
                                         <input type="text" name="Username" class="form-control mb-2" placeholder="Username">    
                                         <input type="password" name="UserPwd" class="form-control mb-2" placeholder="Password">    
-                                        <button type="submit" name="login-submit" class="btn btn-mb btn-primary btn-block mb-2">Sign-In</button>
-                                        <?php
-                                            if(isset($_SESSION['UserId'])) {
-                                                echo '
-                                                    <form action="/myAccount.php" method="POST">
-                                                        <button type="submit" name="login-submit" class="btn btn-mb btn-primary btn-block mb-2">Sign-In</button>
-                                                    </form>
-                                                ';
-                                            }
-                                        ?>
-                                        <label class="checkbox float-left">
+                                        <button type="submit" name="login-submit" class="btn btn-mb btn-primary btn-block mb-2">Sign-In</button><label class="checkbox float-left">
                                         <input type="checkbox" value="remember-me">Remember Me
                                         </label>
                                     </form>
@@ -101,5 +91,19 @@
                 </div>
             </div>
         </div>
+
+        <?php
+            if(isset($_SESSION['UserId'])){
+                echo '
+                <form action="/myAccount.php" method="POST">
+                    <button type="submit"> My Account </button>
+                </form>
+                <form action="/logout.php" method="POST">
+                    <button type="submit"> Logout </button>
+                </form>
+                ';
+            }
+        ?>
+        
     </body>
 </html>
