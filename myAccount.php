@@ -3,6 +3,8 @@
     session_start();
     if(!isset($_SESSION['UserId']))
         header("Location: Index.php");
+
+    $username = $_SESSION['UserId'];
 ?>
 
 <html>
@@ -19,7 +21,11 @@
 
         <h1>QuizStats </h1>
         <?php
-            $sql = "SELECT * FROM quizStats WHERE username LIKE "."'". $_SESSION["UserID"] ."'"; 
+            echo $username;
+            echo $_SESSION['UserId'];
+            echo strval($_SESSION['UserId']);
+             
+            $sql = "SELECT * FROM quizStats WHERE username LIKE "."'". $username ."'"; 
             echo $sql;
             $result = sqlsrv_query($conn,$sql);
             
