@@ -59,11 +59,6 @@
                         <br> </br>
                     ';
                 }
-
-                echo 'out of while';
-            }
-            else {
-                echo 'nada';
             }
         ?>
        
