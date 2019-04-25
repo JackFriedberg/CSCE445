@@ -38,7 +38,7 @@
                                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCVQWvUj6iBFfnqigz7gp_9uv9603FyA-m-vz1mJZS-HDJw4Kk">    
                                 </div>
                                 <div class="col-md-8">
-                                    <form class="form-signin" action="/login.php" method="POST" >
+                                    <form class="form-signin" action="/myAccount.php" method="POST" >
                                         <input type="text" name="Username" class="form-control mb-2" placeholder="Username">    
                                         <input type="password" name="UserPwd" class="form-control mb-2" placeholder="Password">    
                                         <button type="submit" name="login-submit" class="btn btn-mb btn-primary btn-block mb-2">Sign-In</button><label class="checkbox float-left">
