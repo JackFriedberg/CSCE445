@@ -26,23 +26,17 @@
             
             if(sqlsrv_has_rows($result)){                
                 while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)){
-                    
-                    echo sqlsrv_num_rows($result);
-                    echo 'text  ' . $row['texttotal'];
-
-
+    
                     $quizType= strval($row["quiztype"]);
                     
                     $textTotal = intval($row["texttotal"]);
-                    $textCorrect = intval($row["textcorrect"]);
-
-                    
+                    $textCorrect = intval($row["textCorrect"]);
                     $textPercentage = $textCorrect / $textTotal;
 
-                    $videoTotal = $row["VideoTotal"];
-                    $videoCorrect = $row["VideoCorrect"];
-                    $videoPercentage = $videoCorrect / $videoTotal;
-                    
+                    $textTotal = intval($row["videototal"]);
+                    $textCorrect = intval($row["videoCorrect"]);
+                    $textPercentage = $textCorrect / $textTotal;
+                
                     $overallTotal = $textTotal + $videoTotal;
                     $overallCorrect = $textCorrect + $videoCorrect;
                     $overallPercentage = $overallCorrect / $overallTotal;
