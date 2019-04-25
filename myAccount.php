@@ -31,30 +31,30 @@
                     
                     $textTotal = intval($row["texttotal"]);
                     $textCorrect = intval($row["textCorrect"]);
-                    $textPercentage = $textCorrect / $textTotal;
+                    $textPercentage = $textCorrect / $textTotal * 100;
 
-                    $textTotal = intval($row["videototal"]);
-                    $textCorrect = intval($row["videoCorrect"]);
-                    $textPercentage = $textCorrect / $textTotal;
+                    $videoTotal = intval($row["videototal"]);
+                    $videoCorrect = intval($row["videoCorrect"]);
+                    $videoPercentage = $videoCorrect / $videoTotal * 100;
                 
                     $overallTotal = $textTotal + $videoTotal;
                     $overallCorrect = $textCorrect + $videoCorrect;
-                    $overallPercentage = $overallCorrect / $overallTotal;
+                    $overallPercentage = $overallCorrect / $overallTotal * 100;
 
 
                     echo '
                         <h3> ' . $quizType .' Quiz </h3>
                         <p> Total questions answered: ' . $overallTotal . '</p>
                         <p> Total questions correct: ' . $overallCorrect . '</p>
-                        <p> Total question percentage: ' . $overallPercentage .'</p>
+                        <p> Total question percentage: ' . $overallPercentage .'%</p>
                         <br> </br>
                         <p> Text questions answered: ' . $textTotal . '</p>
                         <p> Text questions correct: ' . $textCorrect . '</p>
-                        <p> Text question percentage: ' . $textPercentage .'</p>
+                        <p> Text question percentage: ' . $textPercentage .'%</p>
                         <br> </br>
                         <p> Video questions answered: ' . $videoTotal . '</p>
                         <p> Video questions correct: ' . $videoCorrect . '</p>
-                        <p> Video question percentage: ' . $videoPercentage .'</p>
+                        <p> Video question percentage: ' . $videoPercentage .'%</p>
                         <br> </br>
                         <br> </br>
                     ';
