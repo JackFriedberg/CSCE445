@@ -19,10 +19,9 @@
 
         <h1>QuizStats </h1>
         <?php
-             $sql = "SELECT * FROM quizStats WHERE username LIKE "."'". strval($_SESSION["UserID"]) ."'"; 
-            
-            /*
+            $sql = "SELECT * FROM quizStats WHERE username LIKE "."'". strval($_SESSION["UserID"]) ."'"; 
             $result = sqlsrv_query($conn,$sql);
+            /*         
             if($result){
 
                 
