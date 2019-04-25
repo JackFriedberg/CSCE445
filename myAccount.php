@@ -31,6 +31,8 @@
                     
                     $textTotal = $row["TextTotal"];
                     $textCorrect = $row["TextCorrect"];
+
+                    /*
                     $textPercentage = $textCorrect / $textTotal;
 
                     $videoTotal = $row["VideoTotal"];
@@ -58,6 +60,7 @@
                         <br> </br>
                         <br> </br>
                     ';
+                    */
                 }
                 else {
                     echo 'nada';
