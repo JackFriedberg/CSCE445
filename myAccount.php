@@ -6,21 +6,6 @@
 ?>
 
 <html>
-    <style>
-        #progressbar {
-            background-color: black;
-             border-radius: 13px;
-             /* (height of inner div) / 2 + padding */
-            padding: 3px;
-}
-#progressbar>div {
-  background-color: orange;
-  width: 90%;
-  /* Adjust with JavaScript */
-  height: 20px;
-  border-radius: 10px;
-}
-    </style>
     <head>
         <title>UpQuiz Home</title>
     </head>
@@ -29,34 +14,54 @@
         <h1> My Account Page! </h1>
 
         <h3> You are signed in as <?php  echo $_SESSION['UserId'];?></h3>
-        <div id="myProgress">
-            <div id="myBar"></div>
-        </div>
+       
 
 
-        <h1>Here is the percentage of SQL </h1>
+        <h1>QuizStats </h1>
         <?php
             $sql = "SELECT * FROM quizStats WHERE username = ". strval($_SESSION["UserID"]);
             $result = sqlsrv_query($conn,$sql);
             if($result){
-                $row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC);
-                $quizTypeShit= $row["QUIZTYPE"];
-                $correctPercentage = $row["CORRECTPERCENTAGE"];
-                $textContextCorrect = $row["TEXTCONTEXTCORRECT"];
-                $videoContextCorrect = $row["VIDEOCONTEXTCORRECT"];
-                echo '
-                    <div id ="progressbar">
-                        <div></div>
-                    </div>
-                ';
-            }
-        ?>
-        <div id ="progressbar">
-                        <div></div>
-                    </div>
+                while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)){
+                    
+                    $quizType= $row["QUIZTYPE"];
+                    
+                    $textTotal = $row["TextTotal"];
+                    $textCorrect = $row["TextCorrect"];
+                    $textPercentage = $textCorrect / $textTotal;
 
+                    $videoTotal = $row["VideoTotal"];
+                    $videoCorrect = $row["VideoCorrect"];
+                    $videoPercentage = $videoCorrect / $videoTotal;
+                    
+                    $overallTotal = $textTotal + $videoTotal;
+                    $overallCorrect = $textCorrect + $videoCorrect;
+                    $overallPercentage = $overallCorrect / $overallTotal;
+
+
+                    echo '
+                        <h3> ' . $quizType .' Quiz </h3>
+                        <p> Total questions answered: ' . $overallTotal . '</p>
+                        <p> Total questions correct: ' . $overallCorrect . '</p>
+                        <p> Total question percentage: ' . $overallPercentage .'</p>
+                        <br> </br>
+                        <p> Text questions answered: ' . $textTotal . '</p>
+                        <p> Text questions correct: ' . $textCorrect . '</p>
+                        <p> Text question percentage: ' . $textPercentage .'</p>
+                        <br> </br>
+                        <p> Video questions answered: ' . $videoTotal . '</p>
+                        <p> Video questions correct: ' . $videoCorrect . '</p>
+                        <p> Video question percentage: ' . $videoPercentage .'</p>
+                        <br> </br>
+                        <br> </br>
+                    ';
+                }
+            }
+
+
+
+
+        ?>
+       
     </body>
 </html>
-
-<script>
-</script>

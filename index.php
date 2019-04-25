@@ -48,6 +48,8 @@
             if(isset($_SESSION['UserId'])){
                 header("Location: myAccount.php");
             }
+
+            
         ?>
 
 
