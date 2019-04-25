@@ -24,6 +24,7 @@
             
             if($result){
                     echo 'im here';
+
                     /*
                 
                 while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)){
@@ -61,12 +62,11 @@
                         <br> </br>
                         <br> </br>
                     ';
-                    */
                 }
-                else {
-                    echo 'nada';
-                }
-                
+                */
+            }
+            else {
+                echo 'nada';
             }
         ?>
        
