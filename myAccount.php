@@ -27,7 +27,6 @@
             if($result){                
                 while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)){
                     
-                    echo 'In while';
 
                     $quizType= strval($row["QUIZTYPE"]);
                     
