@@ -152,13 +152,43 @@
             <div class="jumbotron text-center">
                 <hr class="my-2">
                 <hr class="my-2">
-                <button type="submit" class="btn btn-flat">My Account<i class="fas fas fa-user-alt pl-1"></i></button>
+                <button type="submit" class="btn btn-flat">Sign-in<i class="fas fas fa-user-alt pl-1"></i></button>
+                <div id="contextModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="col-md-6">
+                                    <form class="form-signin" action="/login.php" method="POST" >
+                                        <input type="text" name="Username" class="form-control mb-2" placeholder="Username"> 
+                                        <input type="password" name="Userpwd" class="form-control mb-2" placeholder="Password">
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-light">Login</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <button type="submit" class="btn btn-flat">SignUp<i class="fas fas fa-sign-in-alt pl-1"></i></button>
                 <hr class="my-2">
                 <hr class="my-2">
             </div>
         </div>
-
+        
+        <?php
+            if(isset($_SESSION['UserId'])){
+                echo '
+                <form action="/myAccount.php" method="POST">
+                    <button type="submit"> My Account </button>
+                </form>
+                <form action="/logout.php" method="POST">
+                    <button type="submit"> Logout </button>
+                </form>
+                ';
+            }
+        ?>
     </body>
 
     <script>
