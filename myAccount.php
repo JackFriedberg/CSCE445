@@ -25,7 +25,7 @@
             $result = sqlsrv_query($conn,$sql);
             
             if(sqlsrv_has_rows($result)){                
-                while($row = sqlsrv_fetch_array($result)){
+                while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)){
                     
                     echo sqlsrv_num_rows($result);
                     echo 'text new new: ' . $row['TEXTTOTAL'];
