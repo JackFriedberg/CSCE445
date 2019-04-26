@@ -55,7 +55,7 @@
         </div>
         
         <form action="/initial.php" method="POST">
-            <div class="container" style="width: 50%;">
+            <div class="container" style="width: 40%;">
                 <div class="jumbotron text-center light-blue lighten-3 white-text mx-2 mb-5">
                     <h1>History: American Revolution</h1>
                     <button type="submit" class="btn btn-dark btn-rounded">Start<i class="fas fas fa-play pl-1"></i></button>
@@ -64,7 +64,7 @@
             </div>
         </form>
 
-        <div class="container" style="width: 50%;">
+        <div class="container" style="width: 40%;">
             <div class="jumbotron text-center light-blue lighten-3 white-text mx-2 mb-5">
                 <h1>Math: Trigonometry</h1>
                 <button type="submit" class="btn btn-dark btn-rounded">Start<i class="fas fas fa-play pl-1"></i></button>
@@ -72,7 +72,7 @@
             </div>
         </div>
 
-        <div class="container" style="width: 50%;">
+        <div class="container" style="width: 40%;">
             <div class="jumbotron text-center light-blue lighten-3 white-text mx-2 mb-5">
                 <h1>Swag: Fun Topics</h1>
                 <button type="submit" class="btn btn-dark btn-rounded">Start<i class="fas fas fa-play pl-1"></i></button>
