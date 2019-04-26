@@ -110,7 +110,7 @@
                         $contextEmbed = $row['Embed'];
                         $contextLink = $row['Link'];
                         echo '
-                            <button type="button" class="btn btn-primary btn-floating col-md-3 center-block" data-toggle="modal" data-target="#contextModal'. $counter .'">Click for context # ' . strval($i) . '</button>
+                            <button type="button" class="btn btn-primary btn-floating col-md-3 center-block" data-toggle="modal" data-target="#contextModal'. $counter .'">Click for context # ' . strval($counter) . '</button>
                                 <blockquote class="blockquote">
                                     <div id="contextModal'. $counter .'" class="modal fade" role="dialog">
                                         <div class="modal-dialog">
