@@ -57,7 +57,7 @@
         // Draw the chart and set the chart values
         function drawChart() {
             var data = google.visualization.arrayToDataTable([
-            [<?= $username>, 'Hours per Day'],
+            ['Task', 'Hours per Day'],
             ['Work', 8],
             ['Eat', 2],
             ['TV', 4],
