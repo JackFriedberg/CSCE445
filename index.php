@@ -1,12 +1,9 @@
 <?php
     include_once "../dbh.inc.php";
     session_start();
-       if(isset($_SESSION['UserId'])){
-                header("Location: myAccount.php");
-            }
-            else {
-                echo 'not set';
-            }    
+    if(isset($_SESSION['UserId'])){
+       header("Location: myAccount.php");
+    }  
 ?>
 
 
