@@ -155,10 +155,6 @@ echo '
     <p> Video question percentage: ' . $overallVideoPercentage .'%</p>
     <br>
 ';
-$dataPoints = array(
-    array("label"=> "questions with video context", "y"=> $universalCorrect),
-    array("label"=> "questions with text context", "y"=> 261),
-);
     
         ?>
         <div id="chartContainer" style="height: 370px; width: 100%;"></div>
