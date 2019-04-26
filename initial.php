@@ -13,25 +13,10 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
-    <body style="height:100%; margin:0; padding:0">  
-    <div id="result"></div>
+    <body style="height:100%">  
         <div class="container">
         <?php
-            echo $quizType;
-            if(isset($_POST["Amrev"])){
-                $quizType = 1;
-            }
-            else if(isset($_POST["poop"])){
-                $quizType = 2;
-            }
-            echo $quizType;
-            if($quizType == 1){
-                $sql = "SELECT * FROM amrev_questions WHERE qIndex = " . strval($_SESSION["question"]);
-            }
-            else if($quizType==2){
-                $sql = "SELECT * FROM poop_questions WHERE qIndex = " . strval($_SESSION["question"]);
-            }
-            echo $sql;
+            $sql = "SELECT * FROM amrev_questions WHERE qIndex = " . strval($_SESSION["question"]);
             $questions = sqlsrv_query($conn, $sql);
             $sql = "SELECT * FROM amrev_options WHERE qIndex = " . strval($_SESSION["question"]);
             $options = sqlsrv_query($conn, $sql);
@@ -92,12 +77,12 @@
                 }
                 echo'
                     <div class="row align-items-center justify-content-center">
-                        <form id= "theForm" action="http://445dev2.azurewebsites.net/handle.php" method="post">
+                        <form id= "theForm" action="http://445dev1.azurewebsites.net/handle.php" method="post">
                             <div id="buttonDiv" class="btn-group-vertical" style="margin:0 auto">
-                                <button type="submit" class="btn btn-outline-primary" name="click" value ="correctOne" onclick = "clickButton()"> <h3>' . $correct . ' (correct)</h3></button>
-                                <button type="submit" class= "btn btn-outline-primary" name="click" value = "incorrectOne1"> <h3>' . $incorrect1 . '</h3></button>
-                                <button type="submit" class= "btn btn-outline-primary" name="click" value = "incorrectOne2"> <h3>' . $incorrect2 . '</h3></button>
-                                <button type="submit" class= "btn btn-outline-primary" name="click" value = "incorrectOne3"> <h3>' . $incorrect3 . '</h3></button>
+                                <button type="submit" class="btn btn-outline-primary btn-rounded" name="correct"> <h3>' . $correct . ' (correct)</h3></button>
+                                <button type="submit" class= "btn btn-outline-primary btn-rounded" name="incorrect1"> <h3>' . $incorrect1 . '</h3></button>
+                                <button type="submit" class= "btn btn-outline-primary btn-rounded" name="incorrect2"> <h3>' . $incorrect2 . '</h3></button>
+                                <button type="submit" class= "btn btn-outline-primary btn-rounded" name="incorrect3"> <h3>' . $incorrect3 . '</h3></button>
                             </div>
                         </form>
                     </div>
@@ -116,69 +101,74 @@
         ?>
 
         <div id="historicalContainer" class="row" style="max-height:100%">
-        <?php
-            if($context){
-                $counter = 1;
-                while($row = sqlsrv_fetch_array($context)){
-                    $contextContent = $row['Embed'];
-                    $contextSrc =  $row['Link'];
-                    echo '
-                        <button type="button" class="btn btn-primary btn-floating col-md-3 center-block" data-toggle="modal" data-target="#contextModal">Click for context # ' . strval($counter) . '</button>
-                        <blockquote class="blockquote">
-                            <div id="contextModal" class="modal fade" role="dialog">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-body">
-                                            <p>' . $contextContent . '</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-outline-white btn-rounded" data-dismiss="modal">Close</button>
+            <?php
+                if($context){
+                    $counter = 1;
+                    while($row = sqlsrv_fetch_array($context, SQLSRV_FETCH_ASSOC)){
+                        $contextContent = $row['Embed'];
+                        $contextSrc =  $row['Link'];
+                        echo '
+                            <button type="button" class="btn btn-primary btn-floating col-md-3 center-block" data-toggle="modal" data-target="#contextModal">Click for context # ' . strval($counter) . '</button>
+                                <blockquote class="blockquote">
+                                    <div id="contextModal" class="modal fade" role="dialog">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <p>' . $contextContent . '</p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </blockquote>
-                    ';
-  
-                    $counter++;
-                }
-            }
-            else{
-                echo 'SQL Error:';
-                if( ($errors = sqlsrv_errors() ) != null) {
-                    foreach( $errors as $error ) {
-                        echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
-                        echo "code: ".$error[ 'code']."<br />";
-                        echo "message: ".$error[ 'message']."<br />";
+                                </blockquote>
+                        ';
+    
+                        $counter++;
                     }
                 }
-            }
-            sqlsrv_free_stmt($getResults); /* idk what this does */
-        ?>
-        </div>
+                else{
+                    echo 'SQL Error:';
+                    if( ($errors = sqlsrv_errors() ) != null) {
+                        foreach( $errors as $error ) {
+                            echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
+                            echo "code: ".$error[ 'code']."<br />";
+                            echo "message: ".$error[ 'message']."<br />";
+                        }
+                    }
+                }
+                sqlsrv_free_stmt($getResults); /* idk what this does */
+            ?>
         </div>
         
-        <footer class="container-fluid bg-4 text-center">
-            <button type="submit" class="btn btn-outline-white btn-rounded" name="goto-account-button"> GO BACK TO ACCOUNT </button>
-        </footer>
-        <div id="result"></div>
+                
+        <?php
+            if(isset($_SESSION['UserId'])){
+                echo '
+                <div class="container">
+                    <hr class="my-2">
+                    <hr class="my-2">
+                    <div class="jumbotron text-center">
+                        <form action="/myAccount.php" method="POST">
+                            <button type="submit" class="btn btn-dark">My Account<i class="fas fas fa-sign-in-alt pl-1"></i></button>
+                        </form>
+                        <form action="/logout.php" method="POST">
+                            <button type="submit" class="btn btn-dark">Logout<i class="fas fas fa-sign-in-alt pl-1"></i></button>
+                        </form>    
+                    </div>
+                    <hr class="my-2">
+                    <hr class="my-2">
+                </div>
+                ';
+            }
+        ?>
     </body>
 
     <script>
         var form = document.getElementById("theForm");
         for (var i = form.children.length; i >= 0; i--) {
             form.appendChild(form.children[Math.random() * i | 0]);
-        }
-
-        function clickButton() {
-            if (typeof(Storage) !== "undefined"){
-                sessionStorage.setItem("totalNumberOfQuestions",0);
-                document.getElementById("result").innerHTML = sessionStorage.getItem("totalNumberOfQuestions");
-
-            }
-            else{
-                document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
-            }
         }
     </script>
 
