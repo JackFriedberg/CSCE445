@@ -23,7 +23,7 @@
             }
 
             .jumbotron {
-                background-image: url("https://static1.squarespace.com/static/593edf2acd0f683cb1ef8c00/t/5a9c99c69140b7602db8cd13/1524006374262/sky-blue-white-83-351.jpg");
+                background-image: url("https://t4.ftcdn.net/jpg/01/08/25/95/240_F_108259589_cRwIo0e1RmYE4HIp2217gXXyJByB9ozb.jpg");
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
@@ -55,7 +55,7 @@
         </div>
         
         <form action="/initial.php" method="POST">
-            <div class="container" style="width: 50%">
+            <div class="container" style="width: 30%; float: left;">
                 <div class="jumbotron text-center light-blue lighten-3 white-text mx-2 mb-5">
                     <h1>History: American Revolution</h1>
                     <button type="submit" class="btn btn-dark btn-rounded">Start<i class="fas fas fa-play pl-1"></i></button>
@@ -64,7 +64,7 @@
             </div>
         </form>
 
-        <div class="container">
+        <div class="container" style="width: 30%">
             <div class="jumbotron text-center light-blue lighten-3 white-text mx-2 mb-5">
                 <h1>Math: Trigonometry</h1>
                 <button type="submit" class="btn btn-dark btn-rounded">Start<i class="fas fas fa-play pl-1"></i></button>
@@ -72,7 +72,7 @@
             </div>
         </div>
 
-        <div class="container">
+        <div class="container" style="width: 30%">
             <div class="jumbotron text-center light-blue lighten-3 white-text mx-2 mb-5">
                 <h1>Swag: Fun Topics</h1>
                 <button type="submit" class="btn btn-dark btn-rounded">Start<i class="fas fas fa-play pl-1"></i></button>
