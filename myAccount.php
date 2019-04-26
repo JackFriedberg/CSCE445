@@ -43,21 +43,21 @@
         </div>
         
         <div class="container">
-            <div class="jumbotron text-center light-blue lighten-3 white-text mx-2 mb-5">
+            <div class="jumbotron text-center light-blue lighten-3 white-text mx-1 mb-3">
                 <h1>History: American Revolution</h1>
                 <hr class="my-2">
             </div>
         </div>
 
         <div class="container">
-            <div class="jumbotron text-center light-blue lighten-3 white-text mx-2 mb-5">
+            <div class="jumbotron text-center light-blue lighten-3 white-text mx-2 mb-2">
                 <h1>Math: Trigonometry</h1>
                 <hr class="my-2">
             </div>
         </div>
 
         <div class="container">
-            <div class="jumbotron text-center light-blue lighten-3 white-text mx-2 mb-5">
+            <div class="jumbotron text-center light-blue lighten-3 white-text mx-3 mb-1">
                 <h1>Swag: Fun Topics</h1>
                 <hr class="my-2">
             </div>
