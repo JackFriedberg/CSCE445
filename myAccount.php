@@ -33,6 +33,11 @@
     </head>
         
     <body>
+
+        <?php
+            $_SESSION['question'] = 1; /*sets session variable to 1 for when the next page comes */
+        ?>
+
         <div class="container">
             <ul class="nav nav-pills nav-fill">
                 <li class="nav-item">
@@ -50,24 +55,26 @@
             </ul>
         </div>
         
-        <div class="container" style="width: 50%">
-            <div class="jumbotron text-center light-blue lighten-3 white-text">
-                <h1>History: American Revolution</h1> 
-                <form action="/initial.php" method="POST">
+        <form action="/initial.php" method="POST">
+            <div class="container" style="width: 50%">
+                <div class="jumbotron text-center light-blue lighten-3 white-text mx-2 mb-5">
+                    <h1>History: American Revolution</h1>
                     <button type="submit" class="btn btn-primary btn-rounded">Start<i class="fas fas fa-play pl-1"></i></button>
-                </form>
-                <hr class="my-2">
+                    <hr class="my-2">
+                </div>
             </div>
+        </form>
 
-            <div class="jumbotron text-center light-blue lighten-3 white-text">
+        <div class="container">
+            <div class="jumbotron text-center light-blue lighten-3 white-text mx-2 mb-5">
                 <h1>Math: Trigonometry</h1>
-                <button type="submit" class="btn btn-primary btn-rounded">Start<i class="fas fas fa-play pl-1"></i></button>
                 <hr class="my-2">
             </div>
+        </div>
 
-            <div class="jumbotron text-center light-blue lighten-3 white-text">
-                <h1>Fun Topics</h1>
-                <button type="submit" class="btn btn-primary btn-rounded">Start<i class="fas fas fa-play pl-1"></i></button>
+        <div class="container">
+            <div class="jumbotron text-center light-blue lighten-3 white-text mx-2 mb-5">
+                <h1>Swag: Fun Topics</h1>
                 <hr class="my-2">
             </div>
         </div>
