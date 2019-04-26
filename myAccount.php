@@ -150,23 +150,29 @@ chart.render();
         <h1>QuizStats </h1>
         <div id="piechart"></div>
         <?php
-        echo '
-        <h3> ' . $quizType .' Quiz </h3>
-        <p> Total questions answered: ' . $overallTotal . '</p>
-        <p> Total questions correct: ' . $overallCorrect . '</p>
-        <p> Total question percentage: ' . $overallPercentage .'%</p>
-        <br>
-        <p> Text questions answered: ' . $textTotal . '</p>
-        <p> Text questions correct: ' . $textCorrect . '</p>
-        <p> Text question percentage: ' . $textPercentage .'%</p>
-        <br>
-        <p> Video questions answered: ' . $videoTotal . '</p>
-        <p> Video questions correct: ' . $videoCorrect . '</p>
-        <p> Video question percentage: ' . $videoPercentage .'%</p>
-        <br> </br>
-    ';
 
-    echo '
+if(sqlsrv_has_rows($result)){                
+    while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)){
+
+
+        echo '
+            <h3> ' . $quizType .' Quiz </h3>
+            <p> Total questions answered: ' . $overallTotal . '</p>
+            <p> Total questions correct: ' . $overallCorrect . '</p>
+            <p> Total question percentage: ' . $overallPercentage .'%</p>
+            <br>
+            <p> Text questions answered: ' . $textTotal . '</p>
+            <p> Text questions correct: ' . $textCorrect . '</p>
+            <p> Text question percentage: ' . $textPercentage .'%</p>
+            <br>
+            <p> Video questions answered: ' . $videoTotal . '</p>
+            <p> Video questions correct: ' . $videoCorrect . '</p>
+            <p> Video question percentage: ' . $videoPercentage .'%</p>
+            <br> </br>
+        ';
+    }
+}
+echo '
     <h3> All Quizes </h3>
     <p> Questions answered: ' .  $universalTotal . '</p>
     <p> Questions correct: ' . $universalCorrect . '</p>
@@ -181,6 +187,11 @@ chart.render();
     <p> Video question percentage: ' . $overallVideoPercentage .'%</p>
     <br>
 ';
+$dataPoints = array(
+    array("label"=> "questions with video context", "y"=> $universalCorrect),
+    array("label"=> "questions with text context", "y"=> 261),
+);
+    
         ?>
         <div id="chartContainer" style="height: 370px; width: 100%;"></div>
     </div>
