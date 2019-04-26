@@ -28,7 +28,7 @@
         <div class="container">
             <ul class="nav nav-pills nav-fill">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Stats</a>
+                    <a class="navbar-brand" href="#"><i class="fas fa-user"></i>My Account</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Progress</a>
@@ -42,7 +42,7 @@
             </ul>
         </div>
         
-        
+
         
     </body>
 </html>
