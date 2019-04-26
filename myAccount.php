@@ -61,6 +61,7 @@
 window.onload = function () {
  
 var chart = new CanvasJS.Chart("chartContainer", {
+    backgroundColor: "transparent",
 	animationEnabled: true,
 	exportEnabled: true,
 	title:{
