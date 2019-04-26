@@ -56,7 +56,7 @@
         </div>
         
         <form action="/initial.php" method="POST">
-            <div class="container" style="width: 50%">
+            <div class="container">
                 <div class="jumbotron text-center light-blue lighten-3 white-text mx-2 mb-5">
                     <h1>History: American Revolution</h1>
                     <button type="submit" class="btn btn-primary btn-rounded">Start<i class="fas fas fa-play pl-1"></i></button>
