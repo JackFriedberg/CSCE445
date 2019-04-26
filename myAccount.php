@@ -21,29 +21,64 @@
                 background-repeat: no-repeat;
                 background-size: cover;
             }
+
+            .jumbotron {
+                background-image: url("https://t4.ftcdn.net/jpg/01/08/25/95/240_F_108259589_cRwIo0e1RmYE4HIp2217gXXyJByB9ozb.jpg");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
         </style>
     </head>
         
     <body>
+
+        <?php
+            $_SESSION['question'] = 1; /*sets session variable to 1 for when the next page comes */
+        ?>
+
         <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#"><i class="fas fa-user"></i>My Account</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-item nav-link" href="#">Saved Quizzes</a>
-                        <a class="nav-item nav-link" href="#">Quiz Statistics</a>
-                        <a class="nav-item nav-link disabled" href="#"><?php  echo $_SESSION['UserId'];?></a>
-                        <form action="/logout.php" method="POST">
-                            <button type="submit" class="btn btn-primary btn-rounded">Logout</button>
-                        </form>
-                    </div>  
-                </div>
-            </nav>
+            <ul class="nav nav-pills nav-fill">
+                <li class="nav-item">
+                    <a class="navbar-brand"><i class="fas fa-user"></i>My Account</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Progress</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-item nav-link disabled" href="#"><?php  echo $_SESSION['UserId'];?></a>
+                </li>
+                <form action="/logout.php" method="POST">
+                    <button type="submit" class="btn btn-primary btn-rounded">Logout</button>
+                </form>
+            </ul>
         </div>
         
+        <form action="/initial.php" method="POST">
+            <div class="container" style="width: 50%;">
+                <div class="jumbotron text-center light-blue lighten-3 white-text mx-2 mb-5">
+                    <h1>History: American Revolution</h1>
+                    <button type="submit" class="btn btn-dark btn-rounded">Start<i class="fas fas fa-play pl-1"></i></button>
+                    <hr class="my-2">
+                </div>
+            </div>
+        </form>
+
+        <div class="container" style="width: 50%;">
+            <div class="jumbotron text-center light-blue lighten-3 white-text mx-2 mb-5">
+                <h1>Math: Trigonometry</h1>
+                <button type="submit" class="btn btn-dark btn-rounded">Start<i class="fas fas fa-play pl-1"></i></button>
+                <hr class="my-2">
+            </div>
+        </div>
+
+        <div class="container" style="width: 50%;">
+            <div class="jumbotron text-center light-blue lighten-3 white-text mx-2 mb-5">
+                <h1>Swag: Fun Topics</h1>
+                <button type="submit" class="btn btn-dark btn-rounded">Start<i class="fas fas fa-play pl-1"></i></button>
+                <hr class="my-2">
+            </div>
+        </div>
         
     </body>
 </html>
