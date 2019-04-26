@@ -98,7 +98,9 @@
             if(isset($_SESSION['UserId'])){
                 header("Location: myAccount.php");
             }
-            
+            else {
+                echo 'not set';
+            }    
         ?>
         
     </body>
