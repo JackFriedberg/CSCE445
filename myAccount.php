@@ -7,7 +7,7 @@
 <?php
  
  $dataPoints = array(
-     array("label"=> "Food + Drinks", "y"=> 590),
+     array("label"=> "Food + Drinks", "y"=> $universalCorrect),
      array("label"=> "Activities and Entertainments", "y"=> 261),
      array("label"=> "Health and Fitness", "y"=> 158),
      array("label"=> "Shopping & Misc", "y"=> 72),
