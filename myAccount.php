@@ -7,8 +7,8 @@
 <?php
  
  $dataPoints = array(
-     array("label"=> "Food + Drinks", "y"=> $universalCorrect),
-     array("label"=> "Activities and Entertainments", "y"=> 261),
+     array("label"=> "questions with video context", "y"=> $universalCorrect),
+     array("label"=> "questions with text context", "y"=> 261),
  );
      
  ?>
