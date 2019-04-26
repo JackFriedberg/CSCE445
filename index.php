@@ -1,6 +1,10 @@
 <?php
     include_once "../dbh.inc.php";
     session_start();
+    
+    if(isset($_SESSION['UserId'])){
+        header("Location: myAccount.php");
+    }
 ?>
 
 
@@ -93,19 +97,5 @@
                 </div>
             </div>
         </div>
-
-        <?php
-            if(isset($_SESSION['UserId'])){
-                echo '
-                <form action="/myAccount.php" method="POST">
-                    <button type="submit"> My Account </button>
-                </form>
-                <form action="/logout.php" method="POST">
-                    <button type="submit"> Logout </button>
-                </form>
-                ';
-            }
-        ?>
-        
     </body>
 </html>

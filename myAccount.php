@@ -28,7 +28,7 @@
         <div class="container">
             <ul class="nav nav-pills nav-fill">
                 <li class="nav-item">
-                    <a class="navbar-brand" href="#"><i class="fas fa-user"></i>My Account</a>
+                    <a class="navbar-brand"><i class="fas fa-user"></i>My Account</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Progress</a>
@@ -42,7 +42,26 @@
             </ul>
         </div>
         
+        <div class="container">
+            <div class="jumbotron text-center light-blue lighten-3 white-text mx-2 mb-5">
+                <h1>History: American Revolution</h1>
+                <hr class="my-2">
+            </div>
+        </div>
 
+        <div class="container">
+            <div class="jumbotron text-center light-blue lighten-3 white-text mx-2 mb-5">
+                <h1>Math: Trigonometry</h1>
+                <hr class="my-2">
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="jumbotron text-center light-blue lighten-3 white-text mx-2 mb-5">
+                <h1>Swag: Fun Topics</h1>
+                <hr class="my-2">
+            </div>
+        </div>
         
     </body>
 </html>
