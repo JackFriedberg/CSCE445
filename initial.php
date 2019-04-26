@@ -29,7 +29,6 @@
 
                 echo'
                 <div class="jumbotron text-center">
-                    <p> ' . $qIndex . '<p>
                     <h1>' . $questionText . '</h1>
                 </div>
                 ';
@@ -112,7 +111,7 @@
                     while($row = sqlsrv_fetch_array($context, SQLSRV_FETCH_ASSOC)){
                         array_push($contextEmbedArray ,$row['Embed']);
                         array_push($contextLinkArray ,$row['Link']);
-                        $counter++
+                        $counter++;
                     }
                     
                     for ($i = 0; $i <= $counter; $i++) {
