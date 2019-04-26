@@ -13,7 +13,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
         <style>
             body {
                 background-image: url("https://img-aws.ehowcdn.com/877x500p/s3-us-west-1.amazonaws.com/contentlab.studiod/getty/f24b4a7bf9f24d1ba5f899339e6949f3");
@@ -23,6 +22,35 @@
                 background-size: cover;
             }
         </style>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        
+        function drawChart() {
+        
+            var data = google.visualization.arrayToDataTable([
+            ['Language', 'Rating'],
+            <?php
+            if($result->num_rows > 0){
+                while($row = $result->fetch_assoc()){
+                    echo "['".$row['name']."', ".$row['rating']."],";
+                }
+            }
+            ?>
+            ]);
+            
+            var options = {
+                title: 'Most Popular Social Media',
+                width: 900,
+                height: 500,
+            };
+            
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+            
+            chart.draw(data, options);
+}
+</script>
     </head>
     
     <body>
@@ -48,32 +76,7 @@
 
         <h3> You are signed in as <?php  echo $_SESSION['UserId'];?></h3>
         <h1>QuizStats </h1>
-        <script>
-        windows.onload = function(){
-            var chart = new CanvasJS.Chart("chartContainer", {
-	    theme: "light2",
-        animationEnabled: true,
-        title: {
-            text: "World Energy Consumption by Sector - 2012"
-        },
-        data: [{
-            type: "pie",
-            indexLabel: "{y}",
-            yValueFormatString: "#,##0.00\"%\"",
-            indexLabelPlacement: "inside",
-            indexLabelFontColor: "#36454F",
-            indexLabelFontSize: 18,
-            indexLabelFontWeight: "bolder",
-            showInLegend: true,
-            legendText: "{label}",
-            dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
-        }]
-    });
-        chart.render();
-
-        }
-        </script>
-}
+        <div id="piechart"></div>
         <?php
             $username = strval($_SESSION['UserId']);
             $sql = "SELECT * FROM quizStats WHERE username LIKE "."'". $username ."'"; 
