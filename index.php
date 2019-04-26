@@ -2,6 +2,8 @@
     include_once "../dbh.inc.php";
     session_start();
     
+    $_SESSION['question'] = 1; /*sets session variable to 1 for when quiz starts*/
+
     if(isset($_SESSION['UserId'])){
         header("Location: myAccount.php");
     }
@@ -27,10 +29,6 @@
                 <p> Make an account and learn with us! Topics ranging from American Revoution to Trigonometry. To get the best out of this platform make an account to get performance analytics based on your past quizzes, so start learning today!</p>      
             </div>
         </div>
-
-        <?php
-        $_SESSION['question'] = 1; /*sets session variable to 1 for when the next page comes */
-        ?>
 
         <div id="wrapper">
             <div id="SignIn" class="row justify-content-sm-center">
