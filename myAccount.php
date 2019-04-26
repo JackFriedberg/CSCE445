@@ -18,6 +18,7 @@
 window.onload = function () {
 	var chart = new CanvasJS.Chart("chartContainer",
 	{
+        backgroundColor: "transparent",
 		title:{
 			text: "Gaming Consoles Sold in 2012"
 		},
