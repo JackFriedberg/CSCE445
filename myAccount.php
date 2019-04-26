@@ -43,8 +43,8 @@
  $overallVideoPercentage = $overallVideoCorrect/$overallVideoTotal * 100;
  $overallTextPercentage = $overallTextCorrect/$overallTextTotal * 100;
  $dataPoints = array(
-     array("label"=> "questions with video context", "y"=> $universalCorrect),
-     array("label"=> "questions with text context", "y"=> 261),
+     array("label"=> "questions with video context", "y"=> $overallvideoTotal),
+     array("label"=> "questions with text context", "y"=> $overalltextTotal),
  );
      
  ?>
@@ -64,11 +64,8 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
 	exportEnabled: true,
 	title:{
-		text: "Average Expense Per Day  in Thai Baht"
+		text: "Total number of questions with text context right vs total number of questions with video context right"
 	},
-	subtitles: [{
-		text: "Currency Used: Thai Baht (฿)"
-	}],
 	data: [{
 		type: "pie",
 		showInLegend: "true",
