@@ -79,8 +79,6 @@ window.onload = function () {
     </head>
     
     <body>
-    <div id="chartContainer" style="height: 300px; width: 100%;">
-    </div>
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="#"><i class="fas fa-user"></i>My Account</a>
@@ -175,6 +173,7 @@ window.onload = function () {
                 <br>
             ';
         ?>
-        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+        <div id="chartContainer" style="height: 300px; width: 100%;">
+    </div>
     </body>
 </html>
