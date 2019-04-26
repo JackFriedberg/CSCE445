@@ -44,7 +44,7 @@
  $overallTextPercentage = $overallTextCorrect/$overallTextTotal * 100;
  $dataPoints = array(
      array("label"=> "questions with video context", "y"=> $overallvideoTotal),
-     array("label"=> "questions with text context", "y"=> $overalltextTotal),
+     array("label"=> "questions with text context", "y"=> 34),
  );
      
  ?>
