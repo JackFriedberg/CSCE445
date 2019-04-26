@@ -52,3 +52,16 @@ body {
 .jumbotron {
   background-image: url("https://mdbootstrap.com/img/Photos/Others/gradient1.jpg");
 }
+
+#wrapper {
+  width: 800px;
+  overflow: auto;
+}
+#SignIn {
+  float: left;
+  width: 350px;
+}
+
+#SignUp {
+  margin: 50 0 0 302px;
+}

@@ -21,6 +21,10 @@
                 background-repeat: no-repeat;
                 background-size: cover;
             }
+
+            .jumbotron {
+                background-image: url("https://static1.squarespace.com/static/593edf2acd0f683cb1ef8c00/t/5a9c99c69140b7602db8cd13/1524006374262/sky-blue-white-83-351.jpg");
+            }
         </style>
     </head>
         
@@ -43,22 +47,18 @@
         </div>
         
         <div class="container">
-            <div class="jumbotron text-center light-blue lighten-3 white-text mx-1 mb-3">
+            <div class="jumbotron text-center light-blue lighten-3 white-text">
                 <h1>History: American Revolution</h1>
                 <hr class="my-2">
             </div>
-        </div>
 
-        <div class="container">
-            <div class="jumbotron text-center light-blue lighten-3 white-text mx-2 mb-2">
+            <div class="jumbotron text-center light-blue lighten-3 white-text">
                 <h1>Math: Trigonometry</h1>
                 <hr class="my-2">
             </div>
-        </div>
 
-        <div class="container">
-            <div class="jumbotron text-center light-blue lighten-3 white-text mx-3 mb-1">
-                <h1>Swag: Fun Topics</h1>
+            <div class="jumbotron text-center light-blue lighten-3 white-text">
+                <h1>Fun Topics</h1>
                 <hr class="my-2">
             </div>
         </div>
