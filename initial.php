@@ -18,11 +18,11 @@
     <body style="height:100%; margin:0; padding:0">  
         <div class="container">
         <?php
-            $sql = "SELECT * FROM amrev_questions WHERE qIndex = " . strval($_SESSION["question"]);
+            $sql = "SELECT * FROM amrev_questions WHERE qIndex = " . intval($_SESSION["question"]);
             $questions = sqlsrv_query($conn, $sql);
-            $sql = "SELECT * FROM amrev_options WHERE qIndex = " . strval($_SESSION["question"]);
+            $sql = "SELECT * FROM amrev_options WHERE qIndex = " . intval($_SESSION["question"]);
             $options = sqlsrv_query($conn, $sql);
-            $sql = "SELECT * FROM amrev_context WHERE qIndex = " . strval($_SESSION["question"]);
+            $sql = "SELECT * FROM amrev_context WHERE qIndex = " . intval($_SESSION["question"]);
             $context = sqlsrv_query($conn, $sql);
 
             if($questions){
