@@ -24,6 +24,10 @@
 
             .jumbotron {
                 background-image: url("https://static1.squarespace.com/static/593edf2acd0f683cb1ef8c00/t/5a9c99c69140b7602db8cd13/1524006374262/sky-blue-white-83-351.jpg");
+                height: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
             }
         </style>
     </head>
@@ -46,9 +50,9 @@
             </ul>
         </div>
         
-        <div class="container">
+        <div style="width: 50%">
             <div class="jumbotron text-center light-blue lighten-3 white-text">
-                <h1>History: American Revolution</h1>
+                <h1>History: American Revolution</h1> <button type="submit" class="btn btn-outline-info btn-rounded waves-effect">Start<i class="fas fas fa-play pl-1"></i></button>
                 <hr class="my-2">
             </div>
 
