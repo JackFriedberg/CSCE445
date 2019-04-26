@@ -14,36 +14,30 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-        <script type="text/javascript">
+        <script>
 window.onload = function () {
-	var chart = new CanvasJS.Chart("chartContainer",
-	{
-        backgroundColor: "#F5DEB3",
-		title:{
-			text: "Gaming Consoles Sold in 2012"
-		},
-		legend: {
-			maxWidth: 350,
-			itemWidth: 120
-		},
-		data: [
-		{
-			type: "pie",
-			showInLegend: true,
-			legendText: "{indexLabel}",
-			dataPoints: [
-				{ y: 4181563, indexLabel: <? $textCorrect ?> },
-				{ y: 2175498, indexLabel: "Wii" },
-				{ y: 3125844, indexLabel: "Xbox 360" },
-				{ y: 1176121, indexLabel: "Nintendo DS"},
-				{ y: 1727161, indexLabel: "PSP" },
-				{ y: 4303364, indexLabel: "Nintendo 3DS"},
-				{ y: 1717786, indexLabel: "PS Vita"}
-			]
-		}
-		]
-	});
-	chart.render();
+ 
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	exportEnabled: true,
+	title:{
+		text: "Average Expense Per Day  in Thai Baht"
+	},
+	subtitles: [{
+		text: "Currency Used: Thai Baht (฿)"
+	}],
+	data: [{
+		type: "pie",
+		showInLegend: "true",
+		legendText: "{label}",
+		indexLabelFontSize: 16,
+		indexLabel: "{label} - #percent%",
+		yValueFormatString: "฿#,##0",
+		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+	}]
+});
+chart.render();
+ 
 }
 </script>
         <style>
@@ -152,7 +146,7 @@ window.onload = function () {
                 <br>
             ';
         ?>
-        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
     </div>
     </body>
 </html>
