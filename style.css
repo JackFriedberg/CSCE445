@@ -56,7 +56,7 @@ body {
 #wrapper {
   width: 1800px;
   overflow: auto;
-  margin: 50px;
+  margin: 30px;
 }
 #SignIn {
   float: left;
