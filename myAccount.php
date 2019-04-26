@@ -50,19 +50,24 @@
             </ul>
         </div>
         
-        <div style="width: 50%">
+        <div class="container" style="width: 50%">
             <div class="jumbotron text-center light-blue lighten-3 white-text">
-                <h1>History: American Revolution</h1> <button type="submit" class="btn btn-outline-info btn-rounded waves-effect">Start<i class="fas fas fa-play pl-1"></i></button>
+                <h1>History: American Revolution</h1> 
+                <form action="/initial.php" method="POST">
+                    <button type="submit" class="btn btn-primary btn-rounded">Start<i class="fas fas fa-play pl-1"></i></button>
+                </form>
                 <hr class="my-2">
             </div>
 
             <div class="jumbotron text-center light-blue lighten-3 white-text">
                 <h1>Math: Trigonometry</h1>
+                <button type="submit" class="btn btn-primary btn-rounded">Start<i class="fas fas fa-play pl-1"></i></button>
                 <hr class="my-2">
             </div>
 
             <div class="jumbotron text-center light-blue lighten-3 white-text">
                 <h1>Fun Topics</h1>
+                <button type="submit" class="btn btn-primary btn-rounded">Start<i class="fas fas fa-play pl-1"></i></button>
                 <hr class="my-2">
             </div>
         </div>
