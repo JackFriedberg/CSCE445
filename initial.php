@@ -114,7 +114,7 @@
                         $counter++;
                     }
                     
-                    for ($i = 1; $i <= $counter; $i++) {
+                    for ($i = 1; $i < $counter; $i++) {
                         echo '
                             <button type="button" class="btn btn-primary btn-floating col-md-3 center-block" data-toggle="modal" data-target="#contextModal">Click for context # ' . strval($i) . '</button>
                                 <blockquote class="blockquote">
