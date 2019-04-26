@@ -13,6 +13,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
         <style>
             body {
                 background-image: url("https://img-aws.ehowcdn.com/877x500p/s3-us-west-1.amazonaws.com/contentlab.studiod/getty/f24b4a7bf9f24d1ba5f899339e6949f3");
@@ -23,7 +24,7 @@
             }
         </style>
     </head>
-        
+    
     <body>
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -47,32 +48,32 @@
 
         <h3> You are signed in as <?php  echo $_SESSION['UserId'];?></h3>
         <h1>QuizStats </h1>
-        <div id ="piechart"></div>
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript">
-        // Load google charts
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
+        <script>
+        windows.onload = function(){
+            var chart = new CanvasJS.Chart("chartContainer", {
+	    theme: "light2",
+        animationEnabled: true,
+        title: {
+            text: "World Energy Consumption by Sector - 2012"
+        },
+        data: [{
+            type: "pie",
+            indexLabel: "{y}",
+            yValueFormatString: "#,##0.00\"%\"",
+            indexLabelPlacement: "inside",
+            indexLabelFontColor: "#36454F",
+            indexLabelFontSize: 18,
+            indexLabelFontWeight: "bolder",
+            showInLegend: true,
+            legendText: "{label}",
+            dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+        }]
+    });
+        chart.render();
 
-        // Draw the chart and set the chart values
-        function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-            ['Task', 'Hours per Day'],
-            ['<? $username ?>', 8],
-            ['Eat', 2],
-            ['TV', 4],
-            ['Gym', 2],
-            ['Sleep', 8]
-        ]);
-
-        // Optional; add a title and set the width and height of the chart
-        var options = {'title':'My Average Day', 'width':550, 'height':400};
-
-        // Display the chart inside the <div> element with id="piechart"
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-        chart.draw(data, options);
+        }
+        </script>
 }
-</script>
         <?php
             $username = strval($_SESSION['UserId']);
             $sql = "SELECT * FROM quizStats WHERE username LIKE "."'". $username ."'"; 
@@ -106,6 +107,11 @@
                     $overallTextCorrect += $textCorrect;
                     $universalTotal += $overallTotal;
                     $universalCorrect += $overallCorrect;
+
+                    $datapoints = array(
+                        array("label"=>"total questions correct", "y"=>overallTotal)
+                    )
+
                     echo '
                         <h3> ' . $quizType .' Quiz </h3>
                         <p> Total questions answered: ' . $overallTotal . '</p>
@@ -142,6 +148,6 @@
                 <br>
             ';
         ?>
-        
+        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
     </body>
 </html>
