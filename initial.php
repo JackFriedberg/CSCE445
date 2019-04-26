@@ -107,18 +107,23 @@
             <?php
                 if($context){
                     $counter = 1;
+                    $contextEmbedArray = array();
+                    $contextLinkArray = array();
                     while($row = sqlsrv_fetch_array($context, SQLSRV_FETCH_ASSOC)){
-                        $contextContent = $row['Embed'];
-                        $contextSrc =  $row['Link'];
-
+                        array_push($contextEmbedArray ,$row['Embed']);
+                        array_push($contextLinkArray ,$row['Link']);
+                        $counter++
+                    }
+                    
+                    for ($i = 0; $i <= $counter; $i++) {
                         echo '
-                            <button type="button" class="btn btn-primary btn-floating col-md-3 center-block" data-toggle="modal" data-target="#contextModal">Click for context # ' . strval($counter) . '</button>
+                            <button type="button" class="btn btn-primary btn-floating col-md-3 center-block" data-toggle="modal" data-target="#contextModal">Click for context # ' . strval($i) . '</button>
                                 <blockquote class="blockquote">
                                     <div id="contextModal" class="modal fade" role="dialog">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-body">
-                                                    <p>' . $contextContent . '</p>
+                                                    <p>' . $contextEmbedArray[i] . '</p>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
