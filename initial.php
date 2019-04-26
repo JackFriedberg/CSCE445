@@ -113,24 +113,29 @@
                     $contextContent = $row['Embed'];
                     $contextSrc =  $row['Link'];
 
-                    echo '
-                        <blockquote class= "quote-card  bg-light">
-                            <h3> Historical Information #'. strval($counter) .':</h3>
-                            <div>
-                                <p>' . $contextContent . '</p>    
-                            </div>
-                    ';
-  
-                    if(strpos($contextSrc, 'youtube') == false){
-                        echo ' 
-                            <cite>' . $contextSrc . '</cite>
-                        </blockquote>
+                                       
+                     echo '
+                            <button type="button" class="btn btn-primary btn-floating col-md-3 center-block" data-toggle="modal" data-target="#contextModal">Click for context # ' . strval($counter) . '</button>
+                                <blockquote class="blockquote">
+                                    <div id="contextModal" class="modal fade" role="dialog">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <p>' . $contextContent . '</p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </blockquote>
                         ';
-                    }
-                    else {
-                        echo '</blockquote>';
-                    }
-
+                    
+                    
+                    
+                    
+                    
                     $counter++;
                 }
             }
