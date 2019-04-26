@@ -15,22 +15,29 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
         <script type="text/javascript">
-
 window.onload = function () {
-	var chart = new CanvasJS.Chart("chartContainer", {
+	var chart = new CanvasJS.Chart("chartContainer",
+	{
 		title:{
-			text: "My First Chart in CanvasJS"              
+			text: "Gaming Consoles Sold in 2012"
 		},
-		data: [              
+		legend: {
+			maxWidth: 350,
+			itemWidth: 120
+		},
+		data: [
 		{
-			// Change type to "doughnut", "line", "splineArea", etc.
-			type: "column",
+			type: "pie",
+			showInLegend: true,
+			legendText: "{indexLabel}",
 			dataPoints: [
-				{ label: "apple",  y: 10  },
-				{ label: "orange", y: 15  },
-				{ label: "banana", y: 25  },
-				{ label: "mango",  y: 30  },
-				{ label: "grape",  y: 28  }
+				{ y: 4181563, indexLabel: "PlayStation 3" },
+				{ y: 2175498, indexLabel: "Wii" },
+				{ y: 3125844, indexLabel: "Xbox 360" },
+				{ y: 1176121, indexLabel: "Nintendo DS"},
+				{ y: 1727161, indexLabel: "PSP" },
+				{ y: 4303364, indexLabel: "Nintendo 3DS"},
+				{ y: 1717786, indexLabel: "PS Vita"}
 			]
 		}
 		]
@@ -173,7 +180,7 @@ window.onload = function () {
                 <br>
             ';
         ?>
-        <div id="chartContainer" style="height: 300px; width: 100%;">
+        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
     </div>
     </body>
 </html>
