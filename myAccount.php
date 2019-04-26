@@ -111,9 +111,6 @@
                     $universalTotal += $overallTotal;
                     $universalCorrect += $overallCorrect;
 
-                    $datapoints = array(
-                        array("label"=>"total questions correct", "y"=>overallTotal)
-                    )
 
                     echo '
                         <h3> ' . $quizType .' Quiz </h3>
