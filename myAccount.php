@@ -32,7 +32,7 @@ window.onload = function () {
 			showInLegend: true,
 			legendText: "{indexLabel}",
 			dataPoints: [
-				{ y: 4181563, indexLabel: "PlayStation 3" },
+				{ y: 4181563, indexLabel: <? $textCorrect ?> },
 				{ y: 2175498, indexLabel: "Wii" },
 				{ y: 3125844, indexLabel: "Xbox 360" },
 				{ y: 1176121, indexLabel: "Nintendo DS"},
