@@ -80,6 +80,7 @@ window.onload = function () {
     
     <body>
     <div id="chartContainer" style="height: 300px; width: 100%;">
+    </div>
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="#"><i class="fas fa-user"></i>My Account</a>
