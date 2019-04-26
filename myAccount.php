@@ -54,35 +54,6 @@ window.onload = function () {
                 background-size: cover;
             }
         </style>
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript">
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
-        
-        function drawChart() {
-        
-            var data = google.visualization.arrayToDataTable([
-            ['Language', 'Rating'],
-            <?php
-            if($result->num_rows > 0){
-                while($row = $result->fetch_assoc()){
-                    echo "['".$row['name']."', ".$row['rating']."],";
-                }
-            }
-            ?>
-            ]);
-            
-            var options = {
-                title: 'Most Popular Social Media',
-                width: 900,
-                height: 500,
-            };
-            
-            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-            
-            chart.draw(data, options);
-}
-</script>
     </head>
     
     <body>
