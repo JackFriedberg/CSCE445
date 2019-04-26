@@ -134,9 +134,6 @@
                                 </blockquote>
                                 </button>
                         ';
-    
-
-                        $counter++;
                     }
                 }
                 else{
