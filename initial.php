@@ -1,8 +1,6 @@
 <?php
     include_once "../dbh.inc.php";
     session_start();
-
-    $_SESSION['questionType']  = "text";
 ?>
 
 <html>
@@ -14,14 +12,14 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
-    <body style="height:100%; margin:0; padding:0">  
+    <body style="height:100%">  
         <div class="container">
         <?php
-            $sql = "SELECT * FROM amrev_questions WHERE qIndex = " . intval($_SESSION["question"]);
+            $sql = "SELECT * FROM amrev_questions WHERE qIndex = " . strval($_SESSION["question"]);
             $questions = sqlsrv_query($conn, $sql);
-            $sql = "SELECT * FROM amrev_options WHERE qIndex = " . intval($_SESSION["question"]);
+            $sql = "SELECT * FROM amrev_options WHERE qIndex = " . strval($_SESSION["question"]);
             $options = sqlsrv_query($conn, $sql);
-            $sql = "SELECT * FROM amrev_context WHERE qIndex = " . intval($_SESSION["question"]);
+            $sql = "SELECT * FROM amrev_context WHERE qIndex = " . strval($_SESSION["question"]);
             $context = sqlsrv_query($conn, $sql);
 
             if($questions){
@@ -31,7 +29,6 @@
 
                 echo'
                 <div class="jumbotron text-center">
-                    <p> ' . $qIndex . '<p>
                     <h1>' . $questionText . '</h1>
                 </div>
                 ';
@@ -82,12 +79,12 @@
 
                 echo'
                     <div class="row align-items-center justify-content-center">
-                        <form id= "theForm" action="http://445dev3.azurewebsites.net/handle.php" method="post">
+                        <form id= "theForm" action="http://445dev1.azurewebsites.net/handle.php" method="post">
                             <div id="buttonDiv" class="btn-group-vertical" style="margin:0 auto">
-                                <button type="submit" class="btn btn-primary" name="correct"> <h3>' . $correct . ' (correct)</h3></button>
-                                <button type="submit" class= "btn btn-primary" name="incorrect1"> <h3>' . $incorrect1 . '</h3></button>
-                                <button type="submit" class= "btn btn-primary" name="incorrect2"> <h3>' . $incorrect2 . '</h3></button>
-                                <button type="submit" class= "btn btn-primary" name="incorrect3"> <h3>' . $incorrect3 . '</h3></button>
+                                <button type="submit" class="btn btn-outline-primary btn-rounded" name="correct"> <h3>' . $correct . ' (correct)</h3></button>
+                                <button type="submit" class= "btn btn-outline-primary btn-rounded" name="incorrect1"> <h3>' . $incorrect1 . '</h3></button>
+                                <button type="submit" class= "btn btn-outline-primary btn-rounded" name="incorrect2"> <h3>' . $incorrect2 . '</h3></button>
+                                <button type="submit" class= "btn btn-outline-primary btn-rounded" name="incorrect3"> <h3>' . $incorrect3 . '</h3></button>
                             </div>
                         </form>
                     </div>
@@ -106,22 +103,20 @@
         ?>
 
         <div id="historicalContainer" class="row" style="max-height:100%">
-        <?php
-            if($context){
-                $counter = 1;
-                while($row = sqlsrv_fetch_array($context, SQLSRV_FETCH_ASSOC)){
-                    $contextContent = $row['Embed'];
-                    $contextSrc =  $row['Link'];
-
-                                       
-                     echo '
-                            <button type="button" class="btn btn-primary btn-floating col-md-3 center-block" data-toggle="modal" data-target="#contextModal">Click for context # ' . strval($counter) . '</button>
+            <?php
+                if($context){
+                    $counter = 1;
+                    while($row = sqlsrv_fetch_array($context, SQLSRV_FETCH_ASSOC)){
+                        $contextEmbed = $row['Embed'];
+                        $contextLink = $row['Link'];
+                        echo '
+                            <button type="button" class="btn btn-primary btn-floating col-md-3 center-block" data-toggle="modal" data-target="#contextModal'. $counter .'">Click for context # ' . strval($counter) . '</button>
                                 <blockquote class="blockquote">
-                                    <div id="contextModal" class="modal fade" role="dialog">
+                                    <div id="contextModal'. $counter .'" class="modal fade" role="dialog">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-body">
-                                                    <p>' . $contextContent . '</p>
+                                                    <p>' . $contextEmbed . '</p>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
@@ -130,30 +125,47 @@
                                         </div>
                                     </div>
                                 </blockquote>
+                                </button>
                         ';
-                    
-                    
-                    
-                    
-                    
-                    $counter++;
-                }
-            }
-            else{
-                echo 'SQL Error:';
-                if( ($errors = sqlsrv_errors() ) != null) {
-                    foreach( $errors as $error ) {
-                        echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
-                        echo "code: ".$error[ 'code']."<br />";
-                        echo "message: ".$error[ 'message']."<br />";
+                        $counter++;
                     }
                 }
-            }
-            sqlsrv_free_stmt($getResults); /* idk what this does */
-        ?>
-        </div>
+                else{
+                    echo 'SQL Error:';
+                    if( ($errors = sqlsrv_errors() ) != null) {
+                        foreach( $errors as $error ) {
+                            echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
+                            echo "code: ".$error[ 'code']."<br />";
+                            echo "message: ".$error[ 'message']."<br />";
+                        }
+                    }
+                }
+                sqlsrv_free_stmt($getResults); /* idk what this does */
+            ?>
         </div>
         
+                
+        <?php
+            if(isset($_SESSION['UserId'])){
+                echo '
+                <div class="container">
+                    <hr class="my-2">
+                    <hr class="my-2">
+                    <div class="jumbotron text-center">
+                        <form action="/myAccount.php" method="POST">
+                            <button type="submit" class="btn btn-dark">My Account<i class="fas fas fa-sign-in-alt pl-1"></i></button>
+                        </form>
+
+                        <form action="/logout.php" method="POST">
+                            <button type="submit" class="btn btn-dark">Logout<i class="fas fas fa-sign-in-alt pl-1"></i></button>
+                        </form>    
+                    </div>
+                    <hr class="my-2">
+                    <hr class="my-2">
+                </div>
+                ';
+            }
+        ?>
     </body>
 
     <script>
