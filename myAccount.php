@@ -66,6 +66,9 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	title:{
 		text: "Total number of questions with text context right vs total number of questions with video context right"
 	},
+	subtitles: [{
+		text: "Currency Used: Thai Baht (฿)"
+	}],
 	data: [{
 		type: "pie",
 		showInLegend: "true",
