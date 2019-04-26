@@ -82,7 +82,6 @@ chart.render();
 </script>
         <style>
             body {
-                background-image: url("https://img-aws.ehowcdn.com/877x500p/s3-us-west-1.amazonaws.com/contentlab.studiod/getty/f24b4a7bf9f24d1ba5f899339e6949f3");
                 height: 100%;
                 background-position: center;
                 background-repeat: no-repeat;
