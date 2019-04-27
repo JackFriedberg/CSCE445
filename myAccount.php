@@ -102,7 +102,7 @@
             <h1> Quiz Progress </h1>
             <?php
                 $sql_Amrev = "SELECT QuestionNumber FROM quizProgress WHERE username LIKE "."'". $_SESSION['UserId'] ."'". " AND  QuizType LIKE 'AmRev'";
-                $result = sqlsrv_query($conn,$sql);
+                $result = sqlsrv_query($conn,$sql_Amrev);
                 if($result){
                     $row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC);
                     echo '
@@ -111,7 +111,7 @@
                 }
 
                 $sql_Amrev = "SELECT QuestionNumber FROM quizProgress WHERE username LIKE "."'". $_SESSION['UserId'] ."'". " AND  QuizType LIKE 'math'";
-                $result = sqlsrv_query($conn,$sql);
+                $result = sqlsrv_query($conn,$sql_Math);
                 if($result){
                     $row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC);
                     echo '
