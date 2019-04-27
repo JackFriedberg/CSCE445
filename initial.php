@@ -3,9 +3,9 @@
     session_start();
 
     //FIXME - make this non-constant
-    $_SESSION["quizType"] = "amrev";
+    $_SESSION['quizType'] = "amrev";
 
-    if(!isset($_SESSION["quizType"])){
+    if(!isset($_SESSION['quizType'])){
         echo 'no quiType';
         //header("Location: index.php");
     }
@@ -23,39 +23,35 @@
 
 
     <?php
-    if(!isset($_SESSION["question"]) && isset($_SESSION['UserId'])){
-        
-        //make the menu here
-        $_SESSION["questionType"] = "test";
-        
-        $_SESSION["question"] = 1;
+    if(!isset($_SESSION['question']){
+        if(isset($_SESSION['UserId'])){
+            //show menu
+            $_SESSION['questionType'] = "random";
+        }
+        else {
+            $_SESSION['questionType'] = "random";    
+        }
+        $_SESSION['question'] = 1;
         header("Location: initial.php");
     }
-    else if(!isset($_SESSION["question"])){
-        $_SESSION["questionType"] = "random";
-        $_SESSION["question"] = 1;
-        echo 'oh yeah';
-        //header("Location: initial.php");
-    }
-    else if(!isset($_SESSION["questionType"])){
+    else if(!isset($_SESSION['questionType'])){
         //weird error
-
-        echo 'Weird error: ' . $_SESSION["question"];
+        echo 'Weird error: ' . $_SESSION['question'];
         //header("Location: index.php");
     }
     else{
 
         //set session variable to this
-        $_SESSION["tempQuestionType"] = "text";
+        $_SESSION['tempQuestionType'] = "text";
 
 
 
         //picks what table to get questions/options/etc from
-        $sqlQuizString = $_SESSION["quizType"] . "_" .   $_SESSION["tempQuestionType"] . "_";
+        $sqlQuizString = $_SESSION['quizType'] . "_" .   $_SESSION['tempQuestionType'] . "_";
 
-        $questionQuery = "SELECT * FROM ". $sqlQuizString ."questions WHERE qIndex = " . strval($_SESSION["question"]);
-        $optionsQuery =  "SELECT * FROM ". $sqlQuizString ."options WHERE qIndex = "   . strval($_SESSION["question"]);
-        $contextQuery =  "SELECT * FROM ". $sqlQuizString ."context WHERE qIndex = "   . strval($_SESSION["question"]);
+        $questionQuery = "SELECT * FROM ". $sqlQuizString ."questions WHERE qIndex = " . strval($_SESSION['question']);
+        $optionsQuery =  "SELECT * FROM ". $sqlQuizString ."options WHERE qIndex = "   . strval($_SESSION['question']);
+        $contextQuery =  "SELECT * FROM ". $sqlQuizString ."context WHERE qIndex = "   . strval($_SESSION['question']);
 
         $questions = sqlsrv_query($conn, $questionQuery);
         $options =   sqlsrv_query($conn, $optionsQuery);
@@ -123,7 +119,7 @@
             <body style="height:100%; margin:0; padding:0"> 
                 <div class="container">
                     <div class="jumbotron text-center">
-                        <h1>' . $_SESSION["questionType"] . '</h1>
+                        <h1>' . $_SESSION['questionType'] . '</h1>
                         <h1>' . $questionText . '</h1>
                     </div>
                     <div class="row align-items-center justify-content-center">
