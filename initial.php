@@ -24,7 +24,6 @@
     <?php
     if(!isset($_SESSION['question'])){
         if(isset($_SESSION['UserId'])){
-            $_SESSION['question'] = 1;
             //show menu
             echo'
             <div style="height:100%" class="align-middle">
@@ -208,14 +207,17 @@
 
         function setVideo(){
             $_SESSION['questionType'] = "video";
+            $_SESSION['question'] = 1;
             document.location.reload(true);
         }
         function setText(){
             $_SESSION['questionType'] = "text";
+            $_SESSION['question'] = 1;
             document.location.reload(true);
         }
         function setRandom(){
             $_SESSION['questionType'] = "random";
+            $_SESSION['question'] = 1;
             document.location.reload(true);
         }
     </script>
