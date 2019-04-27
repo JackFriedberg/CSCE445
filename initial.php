@@ -117,7 +117,7 @@
                     </div>
                 </div>
                 <div id="historicalContainer" class="row" style="max-height:100%">';
-        for($i = 1; $i <= $counter; $i++){
+        for($i = 1; $i < $counter; $i++){
             echo '
                     <button type="button" class="btn btn-primary btn-floating col-md-3 center-block" data-toggle="modal" data-target="#contextModal'. $i .'">Click for context # ' . strval($i) . '</button>
                         <blockquote class="blockquote">
@@ -125,7 +125,7 @@
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-body">
-                                            <p>' . $contextEmbedArray[$i] . '</p>
+                                            <p>' . $contextEmbedArray[$i - 1] . '</p>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
