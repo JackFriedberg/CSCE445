@@ -104,7 +104,7 @@
                 $sql_Amrev = "SELECT QuestionNumber FROM quizProgress WHERE username LIKE "."'". $_SESSION['UserId'] ."'". " AND  QuizType LIKE 'AmRev'";
                 $result = sqlsrv_query($conn,$sql);
                 if($result){
-                    $row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)
+                    $row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC);
                     echo '
                         <h3> Amrev Progress: ' . $row["questionNumber"]  .'
                     ';
@@ -113,7 +113,7 @@
                 $sql_Amrev = "SELECT QuestionNumber FROM quizProgress WHERE username LIKE "."'". $_SESSION['UserId'] ."'". " AND  QuizType LIKE 'math'";
                 $result = sqlsrv_query($conn,$sql);
                 if($result){
-                    $row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)
+                    $row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC);
                     echo '
                         <h3> Amrev Progress: ' . $row["questionNumber"]  .'
                     ';
