@@ -24,6 +24,7 @@
     <?php
     if(!isset($_SESSION['question'])){
         if(isset($_SESSION['UserId'])){
+            $_SESSION['question'] = 1;
             //show menu
             echo'
             <div style="height:100%" class="align-middle">
@@ -32,14 +33,6 @@
                 <button type="button" class="btn btn-primary btn-floating col-md-3 center" onclick="setRandom()"> Randomized Context </button>
             </div>
             ';
-
-
-            
-            $_SESSION['question'] = 1;
-
-
-
-
         }
         else {
             $_SESSION['questionType'] = "random";    
@@ -215,15 +208,15 @@
 
         function setVideo(){
             $_SESSION['questionType'] = "video";
-            window.location.href = "initial.php";
+            document.location.reload(true);
         }
         function setText(){
             $_SESSION['questionType'] = "text";
-            window.location.href = "initial.php";
+            document.location.reload(true);
         }
         function setRandom(){
             $_SESSION['questionType'] = "random";
-            window.location.href = "initial.php";
+            document.location.reload(true);
         }
     </script>
 </html>

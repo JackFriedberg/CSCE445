@@ -99,9 +99,9 @@
             
         ?>
 
-<form action="/logout.php" method="POST">
-                                <button type="submit" class="btn btn-dark">Logout<i class="fas fas fa-sign-in-alt pl-1"></i></button>
-                            </form> 
+        <form action="/logout.php" method="POST">
+            <button type="submit" class="btn btn-dark">Logout<i class="fas fas fa-sign-in-alt pl-1"></i></button>
+        </form> 
        
     </body>
 </html>
