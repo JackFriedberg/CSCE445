@@ -5,17 +5,17 @@ session_start();
 $corrrectness = false;
 
 
-if(isset($POST['video'])){
+if(isset($_POST['video'])){
     $_SESSION['questionType'] = "video";
     $_SESSION['question'] = 1;
     header("Location: /initial.php");
 }
-if(isset($POST['text'])){
+if(isset($_POST['text'])){
     $_SESSION['questionType'] = "text";
     $_SESSION['question'] = 1;
     header("Location: /initial.php");
 }
-if(isset($POST['random'])){
+if(isset($_POST['random'])){
     $_SESSION['questionType'] = "random";
     $_SESSION['question'] = 1;
     header("Location: /initial.php");
