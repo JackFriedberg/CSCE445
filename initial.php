@@ -28,9 +28,9 @@
             //show menu
             echo'
             <div style="height:100%" class="align-middle">
-                <button type="button" class="btn btn-primary btn-floating col-md-3 center" onclick="setVideo()"> Video Context </button>
-                <button type="button" class="btn btn-primary btn-floating col-md-3 center" onclick="setText()"> Text Context </button>
-                <button type="button" class="btn btn-primary btn-floating col-md-3 center" onclick="setRandom()"> Randomized Context </button>
+                <button type="button" class="btn btn-primary btn-floating col-md-3 center" onClick="setVideo()"> Video Context </button>
+                <button type="button" class="btn btn-primary btn-floating col-md-3 center" onClick="setText()"> Text Context </button>
+                <button type="button" class="btn btn-primary btn-floating col-md-3 center" onClick="setRandom()"> Randomized Context </button>
             </div>
             ';
         }
