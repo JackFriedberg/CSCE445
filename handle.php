@@ -4,12 +4,9 @@ include_once "../dbh.inc.php";
 session_start();
 
 
-
+$corrrectness = false;
 
 if(isset($_POST['correct'])){
-
-    echo 'Correct answer, type: ' . $_SESSION['tempQuestionType'];
-
     if($_SESSION['question'] % 2 == 0){
         $_SESSION['question']++;
     }
@@ -17,48 +14,33 @@ if(isset($_POST['correct'])){
         $_SESSION['question']++;
         $_SESSION['question']++;
     }
-
+    $correctness = true;
 }
 else {
     $_SESSION['question']++;
-
-    echo 'inCorrect answer, type: ' . $_SESSION['tempQuestionType'];
-    
-    /*
-    //update the sql database
-    
-    $sql = "UPDATE QuizStats Set ? WHERE username LIKE "."'". $_SESSION['UserId'] ."'". "AND  QuizType LIKE " ;
-
-    //put paramters in array
-    $params = array(&$username, &$email, &$hashedPwd);
-             
-    //prepare the statement
-    if(!$prepared = sqlsrv_prepare($conn, $sql, $params)){
-        //could't prepare the statement
-        sqlsrv_free_stmt($prepared);
-        header("Location: /initial.php?error=preparation");
-        exit();
-    }
-    else {
-        //execute the statement
-        if(!sqlsrv_execute($prepared)){
-            //couldn't execute the statement 
-            sqlsrv_free_stmt($prepared);
-            header("Location: /index.php?error=execution");
-            exit();
-        }
-        else {
-            //SUCCESS - added a user
-            sqlsrv_free_stmt($prepared);
-            header("Location: /index.php?signup=success");
-            exit();
-        }
-    }
-*/
 }
 
 
-//header("Location: /initial.php");
-//exit();
+
+$whereStatement = " WHERE username LIKE "."'". $_SESSION['UserId'] ."'". "AND  QuizType LIKE "."'". $_SESSION['quizType'] ."'" ;
+
+$totalString = $_SESSION['tempQuestionType'] . "Total";
+$correctString = $_SESSION['tempQuestionType'] . "Correct";
+$setStatement =  "SET " . $totalString . " = (SELECT " . $totalString . " FROM quizStats" . $whereStatement . ") + 1";
+
+if($correctness){
+    //add to setStatement
+    $setStatement = $setStatement . ", SET " . $correctString . " = (SELECT " . $correctString . " FROM quizStats" . $whereStatement . ") + 1";
+
+}
+
+$sql = "UPDATE QuizStats " . $setStatement . $whereStatement;
+
+$questions = sqlsrv_query($conn, $questionQuery);
+             
+   
+
+header("Location: /initial.php");
+exit();
 
 ?>
