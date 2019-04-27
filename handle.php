@@ -36,7 +36,7 @@ if(isset($_SESSION['UserId'])){
 
     $sql = "UPDATE QuizStats " . $setStatement . $whereStatement;
 
-    $questions = sqlsrv_query($conn, $questionQuery);
+    $questions = sqlsrv_query($conn, $sql);
 }
    
 
