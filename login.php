@@ -25,7 +25,6 @@ if(isset($_POST['login-submit'])){
         else {
             //execute the statement
 
-
             if(!sqlsrv_execute($prepared)){
             //couldn't execute the statement 
                 sqlsrv_free_stmt($prepared);
@@ -43,6 +42,7 @@ if(isset($_POST['login-submit'])){
                     else if($pwdCheck == true){
                         $_SESSION['UserId'] = $row['username'];
                         header("Location: /index.php?msg=success");
+                        exit();
                     }
                     else{
                         header("Location: /index.php?error=LoginSystemError");
@@ -54,7 +54,6 @@ if(isset($_POST['login-submit'])){
                     exit();
                 }
             }
-            
         }
     }
 }

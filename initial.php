@@ -26,6 +26,14 @@
         if(isset($_SESSION['UserId'])){
             //show menu
             $_SESSION['questionType'] = "random";
+
+
+
+
+
+
+
+            
         }
         else {
             $_SESSION['questionType'] = "random";    
@@ -51,18 +59,25 @@
             $_SESSION['tempQuestionType'] = $_SESSION['questionType'];
         }
 
+        //updates SQL database for what question the user is on
+
+
+
 
         //picks what table to get questions/options/etc from
         $sqlQuizString = $_SESSION['quizType'] . "_" .   $_SESSION['tempQuestionType'] . "_";
 
+        //creates SQL queries
         $questionQuery = "SELECT * FROM ". $sqlQuizString ."questions WHERE qIndex = " . strval($_SESSION['question']);
         $optionsQuery =  "SELECT * FROM ". $sqlQuizString ."options WHERE qIndex = "   . strval($_SESSION['question']);
         $contextQuery =  "SELECT * FROM ". $sqlQuizString ."context WHERE qIndex = "   . strval($_SESSION['question']);
 
+        //queries tavbles for question/option/context
         $questions = sqlsrv_query($conn, $questionQuery);
         $options =   sqlsrv_query($conn, $optionsQuery);
         $context =   sqlsrv_query($conn, $contextQuery);
 
+        //prints error if theres a problem
         if(!$questions || !$options || !$context){
             echo 'SQL Error:';
             if( ($errors = sqlsrv_errors() ) != null) {
@@ -74,6 +89,7 @@
             }
         }
 
+        //gets all the info the page needs
         $row = sqlsrv_fetch_array($questions, SQLSRV_FETCH_ASSOC); /*Grabs one row from fetch... removed the while loop */
         $questionText = $row['QText'];
         $qIndex = $row['QIndex'];
@@ -119,6 +135,7 @@
             $counter++;
         }
 
+        //start filling in the page w HTML
        
         echo '
             <body style="height:100%; margin:0; padding:0"> 
@@ -159,10 +176,8 @@
                         </button>
         ';
         }
-        
         echo        '</div>';
-
-        if(isset($_SESSION['UserId'])){
+        if(isset($_SESSION['UserId'])){ //add buttons to return to MyAccount or Logout if the user is logged in 
             echo '
                     <div class="container">
                         <hr class="my-2">
@@ -179,15 +194,12 @@
                         <hr class="my-2">
                     </div>';
         }
-
         echo '
                 </div>
             </body>
         ';
     }
     ?>
-                        
-        
 
     <script>
         var form = document.getElementById("theForm");
