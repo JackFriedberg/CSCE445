@@ -27,9 +27,11 @@
             //show menu
             echo'
             <div style="height:100%" class="align-middle">
-                <button type="button" class="btn btn-primary btn-floating col-md-3 center" onClick="setVideo()"> Video Context </button>
-                <button type="button" class="btn btn-primary btn-floating col-md-3 center" onClick="setText()"> Text Context </button>
-                <button type="button" class="btn btn-primary btn-floating col-md-3 center" onClick="setRandom()"> Randomized Context </button>
+                <form id= "theForm" action="handle.php" method="post">
+                    <button type="button" class="btn btn-primary btn-floating col-md-3 center" onClick="setVideo()" name="video"> Video Context </button>
+                    <button type="button" class="btn btn-primary btn-floating col-md-3 center" onClick="setText()" name="text"> Text Context </button>
+                    <button type="button" class="btn btn-primary btn-floating col-md-3 center" onClick="setRandom()" name="random"> Randomized Context </button>
+                </form>
             </div>
             ';
         }
@@ -203,22 +205,6 @@
         var form = document.getElementById("theForm");
         for (var i = form.children.length; i >= 0; i--) {
             form.appendChild(form.children[Math.random() * i | 0]);
-        }
-
-        function setVideo(){
-            $_SESSION['questionType'] = "video";
-            $_SESSION['question'] = 1;
-            document.location.reload(true);
-        }
-        function setText(){
-            $_SESSION['questionType'] = "text";
-            $_SESSION['question'] = 1;
-            document.location.reload(true);
-        }
-        function setRandom(){
-            $_SESSION['questionType'] = "random";
-            $_SESSION['question'] = 1;
-            document.location.reload(true);
         }
     </script>
 </html>

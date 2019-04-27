@@ -4,6 +4,24 @@ include_once "../dbh.inc.php";
 session_start();
 $corrrectness = false;
 
+
+if(isset($POST['video'])){
+    $_SESSION['questionType'] = "video";
+    $_SESSION['question'] = 1;
+    header("Location: /initial.php");
+}
+if(isset($POST['text'])){
+    $_SESSION['questionType'] = "text";
+    $_SESSION['question'] = 1;
+    header("Location: /initial.php");
+}
+if(isset($POST['random'])){
+    $_SESSION['questionType'] = "random";
+    $_SESSION['question'] = 1;
+    header("Location: /initial.php");
+}
+
+
 if(isset($_POST['correct'])){
     if($_SESSION['question'] % 2 == 0){
         $_SESSION['question']++;
