@@ -36,7 +36,7 @@
         $_SESSION["question"] = 1;
         header("Location: initial.php");
     }
-    else if(!isset($_SESSION["questionType"]) || !isset($_SESSION["quizType"])){
+    else if(!isset($_SESSION["questionType"])){
         //weird error
         echo 'Weird error';
         //header("Location: index.php");
