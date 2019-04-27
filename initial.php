@@ -23,7 +23,7 @@
 
 
     <?php
-    if(!isset($_SESSION['question']){
+    if(!isset($_SESSION['question'])){
         if(isset($_SESSION['UserId'])){
             //show menu
             $_SESSION['questionType'] = "random";
