@@ -26,18 +26,20 @@
         if(isset($_SESSION['UserId'])){
             //show menu
             echo'
-            <div class = "jumbotron text-center">
-                <h1> "Select what type of context you want" </h1>
-            </div>
-            <div style="height:100%" class="row align-items-center justify-content-center">
-                <form action="handle.php" method="post">
-                    <div id="buttonDiv" class="btn-group-vertical" style="margin:0 auto">
-                        <button type="submit" class="btn btn-primary btn-floating col-md-3 center" name="video"> Video Context </button>
-                        <button type="submit" class="btn btn-primary btn-floating col-md-3 center" name="text"> Text Context </button>
-                        <button type="submit" class="btn btn-primary btn-floating col-md-3 center" name="random"> Randomized Context </button>
-                    </div>
-                </form>
-            </div>
+            <body style="height:100%; margin:0; padding:0"> 
+                <div class="container">
+                <div class = "jumbotron text-center">
+                    <h1> "Select what type of context you want" </h1>
+                </div>
+                <div style="height:100%" class="row align-items-center justify-content-center">
+                    <form action="handle.php" method="post">
+                        <div id="buttonDiv" class="btn-group-vertical" style="margin:0 auto">
+                            <button type="submit" class="btn btn-primary btn-floating col-md-3 center" name="video"> Video Context </button>
+                            <button type="submit" class="btn btn-primary btn-floating col-md-3 center" name="text"> Text Context </button>
+                            <button type="submit" class="btn btn-primary btn-floating col-md-3 center" name="random"> Randomized Context </button>
+                        </div>
+                    </form>
+                </div>
             ';
         }
         else {
