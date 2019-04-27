@@ -27,10 +27,10 @@
             //show menu
             echo'
             <div style="height:100%" class="align-middle">
-                <form id= "theForm" action="handle.php" method="post">
-                    <button type="button" class="btn btn-primary btn-floating col-md-3 center" onClick="setVideo()" name="video"> Video Context </button>
-                    <button type="button" class="btn btn-primary btn-floating col-md-3 center" onClick="setText()" name="text"> Text Context </button>
-                    <button type="button" class="btn btn-primary btn-floating col-md-3 center" onClick="setRandom()" name="random"> Randomized Context </button>
+                <form action="handle.php" method="post">
+                    <button type="submit" class="btn btn-primary btn-floating col-md-3 center" name="video"> Video Context </button>
+                    <button type="submit" class="btn btn-primary btn-floating col-md-3 center" name="text"> Text Context </button>
+                    <button type="submit" class="btn btn-primary btn-floating col-md-3 center" name="random"> Randomized Context </button>
                 </form>
             </div>
             ';
