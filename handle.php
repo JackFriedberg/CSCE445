@@ -20,24 +20,24 @@ else {
     $_SESSION['question']++;
 }
 
+if(isset($_SESSION['UserId'])){
 
+    $whereStatement = " WHERE username LIKE "."'". $_SESSION['UserId'] ."'". "AND  QuizType LIKE "."'". $_SESSION['quizType'] ."'" ;
 
-$whereStatement = " WHERE username LIKE "."'". $_SESSION['UserId'] ."'". "AND  QuizType LIKE "."'". $_SESSION['quizType'] ."'" ;
+    $totalString = $_SESSION['tempQuestionType'] . "Total";
+    $correctString = $_SESSION['tempQuestionType'] . "Correct";
+    $setStatement =  "SET " . $totalString . " = (SELECT " . $totalString . " FROM quizStats" . $whereStatement . ") + 1";
 
-$totalString = $_SESSION['tempQuestionType'] . "Total";
-$correctString = $_SESSION['tempQuestionType'] . "Correct";
-$setStatement =  "SET " . $totalString . " = (SELECT " . $totalString . " FROM quizStats" . $whereStatement . ") + 1";
+    if($correctness){
+        //add to setStatement
+        $setStatement = $setStatement . ", SET " . $correctString . " = (SELECT " . $correctString . " FROM quizStats" . $whereStatement . ") + 1";
 
-if($correctness){
-    //add to setStatement
-    $setStatement = $setStatement . ", SET " . $correctString . " = (SELECT " . $correctString . " FROM quizStats" . $whereStatement . ") + 1";
+    }
 
+    $sql = "UPDATE QuizStats " . $setStatement . $whereStatement;
+
+    $questions = sqlsrv_query($conn, $questionQuery);
 }
-
-$sql = "UPDATE QuizStats " . $setStatement . $whereStatement;
-
-$questions = sqlsrv_query($conn, $questionQuery);
-             
    
 
 header("Location: /initial.php");
