@@ -30,7 +30,7 @@ if(isset($_SESSION['UserId'])){
 
     if($correctness){
         //add to setStatement
-        $setStatement = $setStatement . ", SET " . $correctString . " = (SELECT " . $correctString . " FROM quizStats" . $whereStatement . ") + 1";
+        $setStatement = $setStatement . ", " . $correctString . " = (SELECT " . $correctString . " FROM quizStats" . $whereStatement . ") + 1";
 
     }
 
