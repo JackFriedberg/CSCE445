@@ -1,6 +1,13 @@
 <?php
     include_once "../dbh.inc.php";
     session_start();
+
+    //FIXME - make this non-constant
+    $_SESSION["quizType"] = "amrev";
+
+    if(!isset($_SESSION["quizType"])){
+        header("Location: index.php");
+    }
 ?>
 
 <html>
@@ -15,49 +22,42 @@
 
 
     <?php
-    if(!isset($_SESSION["question"])){
-        header("Location: index.php");
-    }
-    else if($_SESSION["question"] == 0 && !isset($_SESSION['UserId'])){
+    if(!isset($_SESSION["question"]) && isset($_SESSION['UserId'])){
+        
+        //make the menu here
         $_SESSION["questionType"] = "test";
+        
         $_SESSION["question"] = 1;
         header("Location: initial.php");
     }
-    else if($_SESSION["question"] == 0){
+    else if(!isset($_SESSION["question"])){
         $_SESSION["questionType"] = "random";
         $_SESSION["question"] = 1;
         header("Location: initial.php");
     }
+    else if(!isset($_SESSION["questionType"]) || !isset($_SESSION["quizType"])){
+        //weird error
+        header("Location: index.php");
+    }
     else{
 
-        $sql = "SELECT * FROM amrev_questions WHERE qIndex = " . strval($_SESSION["question"]);
-        $questions = sqlsrv_query($conn, $sql);
-        $sql = "SELECT * FROM amrev_options WHERE qIndex = " . strval($_SESSION["question"]);
-        $options = sqlsrv_query($conn, $sql);
-        $sql = "SELECT * FROM amrev_context WHERE qIndex = " . strval($_SESSION["question"]);
-        $context = sqlsrv_query($conn, $sql);
+        //set session variable to this
+        $_SESSION["tempQuestionType"] = "text";
 
-        if(!$questions){
-            echo 'SQL Error:';
-            if( ($errors = sqlsrv_errors() ) != null) {
-                foreach( $errors as $error ) {
-                    echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
-                    echo "code: ".$error[ 'code']."<br />";
-                    echo "message: ".$error[ 'message']."<br />";
-                }
-            }
-        }
-        if(!$options){
-            echo 'SQL Error:';
-            if( ($errors = sqlsrv_errors() ) != null) {
-                foreach( $errors as $error ) {
-                    echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
-                    echo "code: ".$error[ 'code']."<br />";
-                    echo "message: ".$error[ 'message']."<br />";
-                }
-            }
-        }
-        if(!$context){
+
+
+        //picks what table to get questions/options/etc from
+        $sqlQuizString = $_SESSION["quizType"] . "_" .   $_SESSION["tempQuestionType"] . "_";
+
+        $questionQuery = "SELECT * FROM ". $sqlQuizString ."questions WHERE qIndex = " . strval($_SESSION["question"]);
+        $optionsQuery =  "SELECT * FROM ". $sqlQuizString ."options WHERE qIndex = "   . strval($_SESSION["question"]);
+        $contextQuery =  "SELECT * FROM ". $sqlQuizString ."context WHERE qIndex = "   . strval($_SESSION["question"]);
+
+        $questions = sqlsrv_query($conn, $questionQuery);
+        $options =   sqlsrv_query($conn, $optionsQuery);
+        $context =   sqlsrv_query($conn, $contextQuery);
+
+        if(!$questions || !$options || !$context){
             echo 'SQL Error:';
             if( ($errors = sqlsrv_errors() ) != null) {
                 foreach( $errors as $error ) {

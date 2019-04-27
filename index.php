@@ -1,8 +1,6 @@
 <?php
     include_once "../dbh.inc.php";
     session_start();
-    
-    $_SESSION['question'] = 0; /*sets session variable to 1 for when quiz starts*/
     if(isset($_SESSION['UserId'])){
         header("Location: myAccount.php");
     }
