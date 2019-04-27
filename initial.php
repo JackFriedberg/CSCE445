@@ -21,6 +21,7 @@
     else if($_SESSION["question"] == 0){
         $_SESSION["question"] = 1;
         $_SESSION["questionType"] = "random";
+        header("Location: initial.php");
     }
     else{
 
