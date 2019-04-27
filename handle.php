@@ -24,7 +24,7 @@ if(isset($_SESSION['UserId'])){
 
     $whereStatement = " WHERE username LIKE "."'". $_SESSION['UserId'] ."'". "AND  QuizType LIKE "."'". $_SESSION['quizType'] ."'" ;
 
-    $totalString = $_SESSION['tempQuestionType'] . "Total";
+    $totalString = $_SESSION['tempQuestionType'] . "total";
     $correctString = $_SESSION['tempQuestionType'] . "Correct";
     $setStatement =  "SET " . $totalString . " = (SELECT " . $totalString . " FROM quizStats" . $whereStatement . ") + 1";
 
@@ -40,7 +40,7 @@ if(isset($_SESSION['UserId'])){
 }
    
 
-header("Location: /initial.php");
+header("Location: /initial.php?" . $sql);
 exit();
 
 ?>
