@@ -39,7 +39,8 @@
     }
     else if(!isset($_SESSION["questionType"])){
         //weird error
-        echo 'Weird error';
+
+        echo 'Weird error: ' . $_SESSION["question"];
         //header("Location: index.php");
     }
     else{
