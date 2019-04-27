@@ -18,9 +18,9 @@
 
 <?php
     echo'
-        <div>
-            <button type="button" class="btn btn-primary btn-floating col-md-3 center-block"> Video Context </button>
-            <button type="button" class="btn btn-primary btn-floating col-md-3 center-block"> Text Context </button>
+        <div class="align-middle">
+            <button type="button" class="btn btn-primary btn-floating col-md-3 center"> Video Context </button>
+            <button type="button" class="btn btn-primary btn-floating col-md-3 center"> Text Context </button>
         </div>
     ';
 
