@@ -34,7 +34,8 @@
     else if(!isset($_SESSION["question"])){
         $_SESSION["questionType"] = "random";
         $_SESSION["question"] = 1;
-        header("Location: initial.php");
+        echo 'oh yeah';
+        //header("Location: initial.php");
     }
     else if(!isset($_SESSION["questionType"])){
         //weird error
