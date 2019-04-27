@@ -115,7 +115,7 @@
                 if($result){
                     $row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC);
                     echo '
-                        <h3> Amrev Progress: ' . $row["questionNumber"]  .'
+                        <h3> Math Progress: ' . $row["questionNumber"]  .'
                     ';
                 } 
             
