@@ -3,7 +3,13 @@
 include_once "../dbh.inc.php";
 session_start();
 
+
+
+
 if(isset($_POST['correct'])){
+
+    echo 'Correct answer, type: ' . $_SESSION['tempQuestionType'];
+
     if($_SESSION['question'] % 2 == 0){
         $_SESSION['question']++;
     }
@@ -15,6 +21,8 @@ if(isset($_POST['correct'])){
 }
 else {
     $_SESSION['question']++;
+
+    echo 'inCorrect answer, type: ' . $_SESSION['tempQuestionType'];
     
     /*
     //update the sql database
@@ -50,7 +58,7 @@ else {
 }
 
 
-header("Location: /initial.php");
-exit();
+//header("Location: /initial.php");
+//exit();
 
 ?>
