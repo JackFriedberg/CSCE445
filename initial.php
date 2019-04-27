@@ -6,7 +6,8 @@
     $_SESSION["quizType"] = "amrev";
 
     if(!isset($_SESSION["quizType"])){
-        header("Location: index.php");
+        echo 'no quiType';
+        //header("Location: index.php");
     }
 ?>
 
@@ -37,7 +38,8 @@
     }
     else if(!isset($_SESSION["questionType"]) || !isset($_SESSION["quizType"])){
         //weird error
-        header("Location: index.php");
+        echo 'Weird error';
+        //header("Location: index.php");
     }
     else{
 
