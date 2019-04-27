@@ -213,15 +213,15 @@
             form.appendChild(form.children[Math.random() * i | 0]);
         }
 
-        setVideo(){
+        function setVideo(){
             $_SESSION['questionType'] = "video";
             window.location.href = "initial.php";
         }
-        setText(){
+        function setText(){
             $_SESSION['questionType'] = "text";
             window.location.href = "initial.php";
         }
-        setRandom(){
+        function setRandom(){
             $_SESSION['questionType'] = "random";
             window.location.href = "initial.php";
         }
