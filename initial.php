@@ -18,9 +18,14 @@
     if(!isset($_SESSION["question"])){
         header("Location: index.php");
     }
-    else if($_SESSION["question"] == 0){
+    else if($_SESSION["question"] == 0 && !isset($_SESSION['UserId'])){
+        $_SESSION["questionType"] = "test";
         $_SESSION["question"] = 1;
+        header("Location: initial.php");
+    }
+    else if($_SESSION["question"] == 0){
         $_SESSION["questionType"] = "random";
+        $_SESSION["question"] = 1;
         header("Location: initial.php");
     }
     else{
