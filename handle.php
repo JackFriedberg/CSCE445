@@ -45,7 +45,7 @@ if(isset($_SESSION['UserId'])){
     $correctString = $_SESSION['tempQuestionType'] . "Correct";
     $setStatement =  "SET " . $totalString . " = (SELECT " . $totalString . " FROM quizStats" . $whereStatement . ") + 1";
     if($correctness){ //adds correct question counter to edit request
-        $setStatement = $setStatement . ", " . $correctString . " = (SELECT " . $correctString . " FROM quizStats" . $whereStatement . ") + 1"
+        $setStatement = $setStatement . ", " . $correctString . " = (SELECT " . $correctString . " FROM quizStats" . $whereStatement . ") + 1";
     }
 
     //puts the SQL query together and sends query
