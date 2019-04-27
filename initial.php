@@ -15,6 +15,15 @@
 
 
     <?php
+    if(!isset($_SESSION["question"])){
+        header("Location: index.php");
+    }
+    else if($_SESSION["question"] == 0){
+        $_SESSION["question"] = 1;
+        $_SESSION["questionType"] = "random";
+    }
+    else{
+
         $sql = "SELECT * FROM amrev_questions WHERE qIndex = " . strval($_SESSION["question"]);
         $questions = sqlsrv_query($conn, $sql);
         $sql = "SELECT * FROM amrev_options WHERE qIndex = " . strval($_SESSION["question"]);
@@ -100,9 +109,11 @@
 
         
 
-        echo '<body style="height:100%; margin:0; padding:0"> 
+        echo '
+            <body style="height:100%; margin:0; padding:0"> 
                 <div class="container">
                     <div class="jumbotron text-center">
+                        <h1>' . $_SESSION["questionType"] . '</h1>
                         <h1>' . $questionText . '</h1>
                     </div>
                     <div class="row align-items-center justify-content-center">
@@ -115,55 +126,56 @@
                             </div>
                         </form>
                     </div>
-                    <div id="historicalContainer" class="row" style="max-height:100%">';
+                    <div id="historicalContainer" class="row" style="max-height:100%">
+        ';
         for($i = 1; $i < $counter; $i++){
-            echo '
-                    <button type="button" class="btn btn-primary btn-floating col-md-3 center-block" data-toggle="modal" data-target="#contextModal'. $i .'">Click for context # ' . strval($i) . '</button>
-                        <blockquote class="blockquote">
-                            <div id="contextModal'. $i .'" class="modal fade" role="dialog">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-body">
-                                            <p>' . $contextEmbedArray[$i - 1] . '</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+        echo '
+                        <button type="button" class="btn btn-primary btn-floating col-md-3 center-block" data-toggle="modal" data-target="#contextModal'. $i .'">Click for context # ' . strval($i) . '</button>
+                            <blockquote class="blockquote">
+                                <div id="contextModal'. $i .'" class="modal fade" role="dialog">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <p>' . $contextEmbedArray[$i - 1] . '</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </blockquote>
-                    </button>
-            ';
+                            </blockquote>
+                        </button>
+        ';
         }
         
-        echo    '</div>';
+        echo        '</div>';
 
         if(isset($_SESSION['UserId'])){
             echo '
-                <div class="container">
-                    <hr class="my-2">
-                    <hr class="my-2">
-                    <div class="jumbotron text-center">
-                        <form action="/myAccount.php" method="POST">
-                            <button type="submit" class="btn btn-dark">My Account<i class="fas fas fa-sign-in-alt pl-1"></i></button>
-                        </form>
-                        <form action="/logout.php" method="POST">
-                            <button type="submit" class="btn btn-dark">Logout<i class="fas fas fa-sign-in-alt pl-1"></i></button>
-                        </form>    
-                    </div>
-                    <hr class="my-2">
-                    <hr class="my-2">
-                </div>';
+                    <div class="container">
+                        <hr class="my-2">
+                        <hr class="my-2">
+                        <div class="jumbotron text-center">
+                            <form action="/myAccount.php" method="POST">
+                                <button type="submit" class="btn btn-dark">My Account<i class="fas fas fa-sign-in-alt pl-1"></i></button>
+                            </form>
+                            <form action="/logout.php" method="POST">
+                                <button type="submit" class="btn btn-dark">Logout<i class="fas fas fa-sign-in-alt pl-1"></i></button>
+                            </form>    
+                        </div>
+                        <hr class="my-2">
+                        <hr class="my-2">
+                    </div>';
         }
 
         echo '
-            </div>
-        </body>
+                </div>
+            </body>
         ';
-        ?>
-        
-                
+    }
+    ?>
+                        
         
 
     <script>
@@ -172,5 +184,4 @@
             form.appendChild(form.children[Math.random() * i | 0]);
         }
     </script>
-
 </html>
