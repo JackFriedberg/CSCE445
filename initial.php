@@ -115,8 +115,7 @@
                             </div>
                         </form>
                     </div>
-                </div>
-                <div id="historicalContainer" class="row" style="max-height:100%">';
+                    <div id="historicalContainer" class="row" style="max-height:100%">';
         for($i = 1; $i < $counter; $i++){
             echo '
                     <button type="button" class="btn btn-primary btn-floating col-md-3 center-block" data-toggle="modal" data-target="#contextModal'. $i .'">Click for context # ' . strval($i) . '</button>
@@ -158,7 +157,10 @@
                 </div>';
         }
 
-        echo '</body>';
+        echo '
+            </div>
+        </body>
+        ';
         ?>
         
                 
