@@ -6,8 +6,7 @@
     $_SESSION['quizType'] = "amrev";
 
     if(!isset($_SESSION['quizType'])){
-        echo 'no quiType';
-        //header("Location: index.php");
+        header("Location: index.php");
     }
 ?>
 
@@ -36,14 +35,21 @@
     }
     else if(!isset($_SESSION['questionType'])){
         //weird error
-        echo 'Weird error: ' . $_SESSION['question'];
-        //header("Location: index.php");
+        header("Location: index.php");
     }
     else{
 
-        //set session variable to this
-        $_SESSION['tempQuestionType'] = "text";
-
+        if( strval($_SESSION['questionType']) == "random"){
+            if(rand(0,1) == 0){
+                $_SESSION['tempQuestionType'] = "text";
+            }
+            else{
+                $_SESSION['tempQuestionType'] = "video";
+            }
+        }
+        else {
+            $_SESSION['tempQuestionType'] = $_SESSION['questionType'];
+        }
 
 
         //picks what table to get questions/options/etc from
