@@ -85,6 +85,10 @@
     }
     
 
+    $amrevProgress = 0;
+    $mathProgress = 0;
+    $funProgress = 0;
+    
 
     $sql_Amrev = "SELECT * FROM quizProgress WHERE username LIKE "."'". $_SESSION['UserId'] ."'". " AND  QuizType LIKE 'AmRev'";
     $amRev_result = sqlsrv_query($conn,$sql_Amrev);
@@ -121,7 +125,7 @@
     $mathTotalQuestions = 10;
     $funTotalQuestions = 10;
 
-    $amrevPercent = $amRevProgress/$amRevTotalQuestions * 100;
+    $amrevPercent = $amrevProgress/$amRevTotalQuestions * 100;
     $mathPercent = $mathProgress/$mathTotalQuestions * 100;
     $funPercent = $funProgress/$funTotalQuestions * 100;
 ?>

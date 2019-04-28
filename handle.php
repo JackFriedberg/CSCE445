@@ -56,10 +56,6 @@ if(isset($_SESSION['UserId'])){
     //updates where user is in quiz
     $sql = "UPDATE QuizProgress SET questionNumber = " . $_SESSION['question'] . $whereStatement;
     $questions = sqlsrv_query($conn, $sql);
-
-
-
-
 }
 
 header("Location: /initial.php");
