@@ -185,8 +185,11 @@
                 <div style="height:100%; width:95%; display:inline-block; float:left" id="chartContainer">
                 </div>
                 <div cclass= "align-middle" style="height:100%; width:5%;display:inline-block; float:left">
-                    <button onclick="expandStats()"><i class="fas fa-angle-double-right"></i></button>
+                    <button onclick="expandMathStats()"><i class="fas fa-angle-double-right"></i></button>
                 </div>
+            </div>
+            <div class="container" style="width: 0%; display:inline-block; float:left ">
+                some text
             </div>
         </div>
 
@@ -236,8 +239,13 @@
         }
     </script>
     <script>
-    function expandStats(){
-            document.getElementById("mathJumbo").style.width = "90%";
+    function expandMathStats(){
+
+        var mathJumbo = document.getElementById("mathJumbo");
+        mathJumbo.style.width = "90%";
+        mathJumbo.childNodes[0].style.width = "40%";
+        mathJumbo.childNodes[1].style.width = "20%";
+        mathJumbo.childNodes[2].style.width = "40%";
        }
     </script>
 
