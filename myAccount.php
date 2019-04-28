@@ -228,6 +228,9 @@
                 legend : {
                     fontColor: "white",
                 },
+                title:{
+                    fontColor: "white",
+                },
             });
             chart.render();
         }
