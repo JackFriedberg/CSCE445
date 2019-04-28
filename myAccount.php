@@ -182,14 +182,17 @@
                 </div>
             </div>
             <div class="container" style="width: 30%; display:inline-block; float:left " id="mathTotal">
-                <div style="height:100%; width:95%; display:inline-block; float:left" id="chartContainer">
+                <div style="height:100%; width:95%; display:inline-block; float:left" id="totalChartContainer">
                 </div>
                 <div cclass= "align-middle" style="height:100%; width:5%;display:inline-block; float:left">
                     <button onclick="expandMathStats()"><i class="fas fa-angle-double-right"></i></button>
                 </div>
             </div>
-            <div class="container" style="width: 0%;display:inline-block; float:left " id="mathBreakout">
-                some text
+            <div class="container" style="width: 0%;display:inline-block; float:left; visibility: hidden;" id="mathBreakout">
+                <div style="height:100%; width:50%; display:inline-block; float:left" id="textChartContainer">
+                </div>
+                <div style="height:100%; width:50%; display:inline-block; float:left" id="videoChartContainer">
+                </div>
             </div>
         </div>
 
@@ -210,7 +213,7 @@
     <script>
         window.onload = function () {
             //for loop here 
-            var chart = new CanvasJS.Chart("chartContainer", {
+            var chart = new CanvasJS.Chart("totalChartContainer", {
                 backgroundColor: "transparent",
                 animationEnabled: true,
                 exportEnabled: false,
@@ -237,16 +240,77 @@
             });
             chart.render();
         }
-    </script>
-    <script>
-    function expandMathStats(){
 
-        document.getElementById("mathJumbo").style.width = "90%";
-        document.getElementById("mathHeader").style.width = "40%";
-        document.getElementById("mathTotal").style.width = "20%";
-        document.getElementById("mathBreakout").style.width = "40%";
+        function expandMathStats(){
+
+            document.getElementById("mathJumbo").style.width = "90%";
+            document.getElementById("mathHeader").style.width = "40%";
+            document.getElementById("mathTotal").style.width = "20%";
+            document.getElementById("mathBreakout").style.width = "40%";
+            document.getElementById("mathBreakout").style.visibility = "visible";
+            breakoutCharts();
+        }   
+
+
+        function breakoutCharts () {
+            //for loop here 
+            var textChart = new CanvasJS.Chart("totalChartContainer", {
+                backgroundColor: "transparent",
+                animationEnabled: true,
+                exportEnabled: false,
+                title:{
+                    text: "Text Based Question Performace",
+                    fontColor: "white",
+                    fontSize: 16,
+                    fontWeight: "normal"
+                },
+                data: [{
+                    type: "pie",
+                    showInLegend: "true",
+                    legendText: "{label}",
+                    indexLabelFontSize: 12,
+                    indexLabelFontColor: "white",
+                    indexLabelPlacement: "inside",
+                    indexLabel: "#percent%",
+
+                    dataPoints: <?php echo json_encode($amrevTextData, JSON_NUMERIC_CHECK); ?>
+                }],
+                legend : {
+                    fontColor: "white",
+                }
+            });
+            textChart.render();
+
+            var videoChart = new CanvasJS.Chart("totalChartContainer", {
+                backgroundColor: "transparent",
+                animationEnabled: true,
+                exportEnabled: false,
+                title:{
+                    text: "Video Based Question Performace",
+                    fontColor: "white",
+                    fontSize: 16,
+                    fontWeight: "normal"
+                },
+                data: [{
+                    type: "pie",
+                    showInLegend: "true",
+                    legendText: "{label}",
+                    indexLabelFontSize: 12,
+                    indexLabelFontColor: "white",
+                    indexLabelPlacement: "inside",
+                    indexLabel: "#percent%",
+
+                    dataPoints: <?php echo json_encode($amrevVideoData, JSON_NUMERIC_CHECK); ?>
+                }],
+                legend : {
+                    fontColor: "white",
+                }
+            });
+            videoChart.render();
         }
-    </script>
 
+
+
+    </script>
 </html>
 
