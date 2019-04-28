@@ -182,16 +182,16 @@
                 </div>
             </div>
             <div class="container" style="width: 30%; display:inline-block; float:left " id="mathTotal">
-                <div style="height:100%; width:95%; display:inline-block; float:left" id="totalChartContainer">
+                <div style="height:100%; width:95%; display:inline-block; float:left" id="mathTotalChartContainer">
                 </div>
                 <div cclass= "align-middle" style="height:100%; width:5%;display:inline-block; float:left">
                     <button onclick="expandMathStats()"><i class="fas fa-angle-double-right"></i></button>
                 </div>
             </div>
             <div class="container" style="width: 0%;display:inline-block; float:left; visibility: hidden;" id="mathBreakout">
-                <div style="height:100%; width:50%; display:inline-block; float:left" id="textChartContainer">
+                <div style="height:100%; width:50%; display:inline-block; float:left" id="mathTextChartContainer">
                 </div>
-                <div style="height:100%; width:50%; display:inline-block; float:left" id="videoChartContainer">
+                <div style="height:100%; width:50%; display:inline-block; float:left" id="mathVideoChartContainer">
                 </div>
             </div>
         </div>
@@ -213,7 +213,7 @@
     <script>
         window.onload = function () {
             //for loop here 
-            var chart = new CanvasJS.Chart("totalChartContainer", {
+            var chart = new CanvasJS.Chart("mathTotalChartContainer", {
                 backgroundColor: "transparent",
                 animationEnabled: true,
                 exportEnabled: false,
@@ -232,7 +232,7 @@
                     indexLabelPlacement: "inside",
                     indexLabel: "#percent%",
 
-                    dataPoints: <?php echo json_encode($amrevTotalData, JSON_NUMERIC_CHECK); ?>
+                    dataPoints: <?php echo json_encode($mathTotalData, JSON_NUMERIC_CHECK); ?>
                 }],
                 legend : {
                     fontColor: "white",
@@ -256,15 +256,15 @@
                 document.getElementById("mathTotal").style.width = "20%";
                 document.getElementById("mathBreakout").style.width = "40%";
                 document.getElementById("mathBreakout").style.visibility = "visible";
-                breakoutCharts();
+                breakoutMathCharts();
             }
 
         }   
 
 
-        function breakoutCharts () {
+        function breakoutMathCharts () {
             //for loop here 
-            var textChart = new CanvasJS.Chart("textChartContainer", {
+            var textChart = new CanvasJS.Chart("mathTextChartContainer", {
                 backgroundColor: "transparent",
                 animationEnabled: true,
                 exportEnabled: false,
@@ -291,7 +291,7 @@
             });
             textChart.render();
 
-            var videoChart = new CanvasJS.Chart("videoChartContainer", {
+            var videoChart = new CanvasJS.Chart("mathVideoChartContainer", {
                 backgroundColor: "transparent",
                 animationEnabled: true,
                 exportEnabled: false,
@@ -318,9 +318,6 @@
             });
             videoChart.render();
         }
-
-
-
     </script>
 </html>
 
