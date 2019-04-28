@@ -131,7 +131,10 @@
                 background-size: cover;
             }
             .jumbotron {
-                background-color: blue;
+                background-image: url("https://t4.ftcdn.net/jpg/01/08/25/95/240_F_108259589_cRwIo0e1RmYE4HIp2217gXXyJByB9ozb.jpg");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
             }
         </style>
     </head>
