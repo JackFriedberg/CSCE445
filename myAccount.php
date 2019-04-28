@@ -78,7 +78,7 @@
         <p> Total Incorrect: ' . ($amrevQuizTotal - $amrevQuizCorrect) . '</p>
     ';
     
-    /*
+    
     echo '
         <h3> Math </h3>
         <p> Text Correct: ' .  $mathTextCorrect . '</p>
@@ -88,7 +88,7 @@
         <p> Total Correct: ' .  $mathQuizCorrect . '</p>
         <p> Total Incorrect: ' . ($mathQuizTotal - $mathQuizCorrect) . '</p>
     ';
-    */
+    
     
     /*
     echo '
