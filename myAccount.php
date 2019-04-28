@@ -96,9 +96,6 @@
         $row = sqlsrv_fetch_array($amRev_result, SQLSRV_FETCH_ASSOC);
         $amrevProgress =  intval($row['questionNumber']);
     }
-    else{
-        $amrevProgress = 0;
-    }
 
     $sql_Math = "SELECT * FROM quizProgress WHERE username LIKE "."'". $_SESSION['UserId'] ."'". " AND  QuizType LIKE 'math'";
     $math_result = sqlsrv_query($conn,$sql_Math);
@@ -106,18 +103,12 @@
         $row = sqlsrv_fetch_array($math_result, SQLSRV_FETCH_ASSOC);
         $mathProgress =  intval($row['questionNumber']);
     }
-    else {
-        $mathProgress = 0;
-    }
 
     $sql_Fun = "SELECT * FROM quizProgress WHERE username LIKE "."'". $_SESSION['UserId'] ."'". " AND  QuizType LIKE 'fun'";
     $fun_result = sqlsrv_query($conn,$sql_Fun);
     if($fun_result){
         $row = sqlsrv_fetch_array($fun_result, SQLSRV_FETCH_ASSOC);
         $funProgress =  intval($row['questionNumber']);
-    }
-    else {
-        $funProgress = 0;
     }
 
     //set these manually
