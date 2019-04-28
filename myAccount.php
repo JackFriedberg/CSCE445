@@ -90,16 +90,17 @@
     ';
     
     
-    
-    echo '
-        <h3> Fun </h3>
-        <p> Text Correct: ' .  $funTextCorrect . '</p>
-        <p> Text Incorrect: ' . ($funTextTotal - $funTextCorrect) . '</p>
-        <p> Video Correct: ' .  $funVideoCorrect . '</p>
-        <p> Video Incorrect: ' . ($funVideoTotal - $funVideoCorrect) . '</p>
-        <p> Total Correct: ' .  $funQuizCorrect . '</p>
-        <p> Total Incorrect: ' . ($funQuizTotal - $funQuizCorrect) . '</p>
-    ';
+    if(!empty($funQuizTotal) ||  $funQuizTotal > 0){
+        echo '
+            <h3> Fun </h3>
+            <p> Text Correct: ' .  $funTextCorrect . '</p>
+            <p> Text Incorrect: ' . ($funTextTotal - $funTextCorrect) . '</p>
+            <p> Video Correct: ' .  $funVideoCorrect . '</p>
+            <p> Video Incorrect: ' . ($funVideoTotal - $funVideoCorrect) . '</p>
+            <p> Total Correct: ' .  $funQuizCorrect . '</p>
+            <p> Total Incorrect: ' . ($funQuizTotal - $funQuizCorrect) . '</p>
+        ';
+    }
     
 
 
