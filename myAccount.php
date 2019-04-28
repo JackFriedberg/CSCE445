@@ -188,7 +188,7 @@
                     <button onclick="expandMathStats()"><i class="fas fa-angle-double-right"></i></button>
                 </div>
             </div>
-            <div class="container" style="width: 0%; display:inline-block; float:left ">
+            <div class="container" style="width: 0%;height:100%;display:inline-block; float:left ">
                 some text
             </div>
         </div>
