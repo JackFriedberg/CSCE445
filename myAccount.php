@@ -120,10 +120,19 @@
     }
 
 
+    $amRevProgress = 5;
+    $mathProgress = 6;
+    $funProgress = 7;
 
-    $amrevPercent = 50;
-    $mathPercent = 60;
-    $funPercent = 70;
+    $amRevTotalQuestions = 10;
+    $mathTotalQuestions = 10;
+    $funTotalQuestions = 10;
+
+
+
+    $amrevPercent = $amRevProgress/$amRevTotalQuestions * 100;
+    $mathPercent = $mathProgress/$mathTotalQuestions * 100;
+    $funPercent = $funProgress/$funTotalQuestions * 100;
 
 
     
