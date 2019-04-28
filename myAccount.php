@@ -131,10 +131,7 @@
                 background-size: cover;
             }
             .jumbotron {
-                background-image: url("https://t4.ftcdn.net/jpg/01/08/25/95/240_F_108259589_cRwIo0e1RmYE4HIp2217gXXyJByB9ozb.jpg");
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
+                background-color: blue;
             }
         </style>
     </head>
@@ -168,7 +165,7 @@
         </div>
 -->
         <div class="container" style="width: 50%; border-style: solid;border-width: 5px;">
-            <div class="jumbotron text-center light-blue lighten-3 white-text mx-2 mb-5">
+            <div class="jumbotron text-center light-blue lighten-3 white-text mx-2 ">
                 <div style="width: 50%; float:left">
                     <h1>Math: Trigonometry</h1>
                     <button type="submit" class="btn btn-dark btn-rounded">Start<i class="fas fas fa-play pl-1"></i></button>
