@@ -236,6 +236,7 @@
         }
 
        function expandStats(){
+            document.getElementsById("mathJumbo").style.width = 90%;
        }
 });
 
