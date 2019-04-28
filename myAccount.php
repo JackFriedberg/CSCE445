@@ -225,6 +225,9 @@
 
                     dataPoints: <?php echo json_encode($amrevTotalData, JSON_NUMERIC_CHECK); ?>
                 }]
+                legend : {
+                    fontColor: "white",
+                },
             });
             chart.render();
         }
