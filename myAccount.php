@@ -14,73 +14,93 @@
     $overallVideoCorrect = 0;
     $overallTextTotal = 0;
     $overallTextCorrect = 0;
-    $universalTotal = 0;
-    $universalCorrect = 0;
+    $overallTotal = 0;
+    $overallCorrect = 0;
     
     if(sqlsrv_has_rows($result)){                
         while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)){
 
             $quizType= strval($row["quiztype"]);
             
-            $textTotal = intval($row["texttotal"]);
-            $textCorrect = intval($row["textCorrect"]);
-            $textPercentage = $textCorrect / $textTotal * 100;
+            ${$quizType. "TextTotal"} = intval($row["texttotal"]);
+            ${$quizType. "TextCorrect"} = intval($row["textCorrect"]);
+            ${$quizType. "VideoTotal"} = intval($row["videototal"]);
+            ${$quizType. "VideoCorrect"} = intval($row["videoCorrect"]);
+            ${$quizType. "QuizTotal"} = $textTotal + $videoTotal;
+            ${$quizType. "QuizCorrect"} = $textCorrect + $videoCorrect;
 
-            $videoTotal = intval($row["videototal"]);
-            $videoCorrect = intval($row["videoCorrect"]);
-            $videoPercentage = $videoCorrect / $videoTotal * 100;
-        
-            $overallTotal = $textTotal + $videoTotal;
-            $overallCorrect = $textCorrect + $videoCorrect;
-            $overallPercentage = $overallCorrect / $overallTotal * 100;
-
-            $overallVideoTotal += $videoTotal;
-            $overallVideoCorrect += $videoCorrect;
-            $overallTextTotal += $textTotal;
-            $overallTextCorrect += $textCorrect;
-            $universalTotal += $overallTotal;
-            $universalCorrect += $overallCorrect;
-
-
-            echo '
-                <h3> ' . $quizType .' Quiz </h3>
-                <p> Total questions answered: ' . $overallTotal . '</p>
-                <p> Total questions correct: ' . $overallCorrect . '</p>
-                <p> Total question percentage: ' . $overallPercentage .'%</p>
-                <br>
-                <p> Text questions answered: ' . $textTotal . '</p>
-                <p> Text questions correct: ' . $textCorrect . '</p>
-                <p> Text question percentage: ' . $textPercentage .'%</p>
-                <br>
-                <p> Video questions answered: ' . $videoTotal . '</p>
-                <p> Video questions correct: ' . $videoCorrect . '</p>
-                <p> Video question percentage: ' . $videoPercentage .'%</p>
-                <br> </br>
-            ';
-    
+            $overallVideoTotal += ${$quizType. "VideoTotal"};
+            $overallVideoCorrect +=  ${$quizType. "VideoCorrect"};
+            $overallTextTotal +=  ${$quizType. "TextTotal"};
+            $overallTextCorrect +=  ${$quizType. "TextCorrect"};
+            $universalTotal += ${$quizType. "QuizTotal"};
+            $universalCorrect += ${$quizType. "QuizCorrect"};
         }
     }
     
 
-    $universalPercentage = $universalCorrect/$universalTotal * 100;
-    $overallVideoPercentage = $overallVideoCorrect/$overallVideoTotal * 100;
-    $overallTextPercentage = $overallTextCorrect/$overallTextTotal * 100;
+
+
+
+    //Amrev chart arrays
+    $amrevTextData = array(
+        array("label" => "Correct", "y"=> $amrevTextCorrect),
+        array("label" => "Incorrect", "y"=>($amrevTextTotal - $amrevTextCorrect))
+    );
+    $amrevVideoData = array();
+    $amrevTotalData = array();
+
+    //Math chart arrays
+    $mathTextData = array();
+    $mathVideoData = array();
+    $mathTotalData = array();
+
+    //Fun chart arrays
+    $funTextData = array();
+    $funVideoData = array();
+    $funTotalData = array();
+
+    //Overall chart arrays
+    $funTextData = array();
+    $funVideoData = array();
+    $funTotalData = array();
+
+
+
 
     echo '
-        <h3> All Quizes </h3>
-        <p> Questions answered: ' .  $universalTotal . '</p>
-        <p> Questions correct: ' . $universalCorrect . '</p>
-        <p> Question percentage: ' . $universalPercentage .'%</p>
-        <br>
-        <p> Text questions answered: ' . $overallTextTotal . '</p>
-        <p> Text questions correct: ' . $overallTextCorrect . '</p>
-        <p> Text question percentage: ' . $overallTextPercentage .'%</p>
-        <br>
-        <p> Video questions answered: ' . $overallVideoTotal . '</p>
-        <p> Video questions correct: ' . $overallVideoCorrect . '</p>
-        <p> Video question percentage: ' . $overallVideoPercentage .'%</p>
-        <br>
+        <h3> Amrev </h3>
+        <p> Text Correct: ' .  $amrevTextCorrect . '</p>
+        <p> Text Incorrect: ' . ($amrevTextTotal - $amrevTextCorrect) . '</p>
+        <p> Video Correct: ' .  $amrevVideoCorrect . '</p>
+        <p> Video Incorrect: ' . ($amrevVideoTotal - $amrevVideoCorrect) . '</p>
+        <p> Total Correct: ' .  $amrevQuizCorrect . '</p>
+        <p> Total Incorrect: ' . ($amrevQuizTotal - $amrevQuizCorrect) . '</p>
     ';
+    
+    /*
+    echo '
+        <h3> Math </h3>
+        <p> Text Correct: ' .  $mathTextCorrect . '</p>
+        <p> Text Incorrect: ' . ($mathTextTotal - $mathTextCorrect) . '</p>
+        <p> Video Correct: ' .  $mathVideoCorrect . '</p>
+        <p> Video Incorrect: ' . ($mathVideoTotal - $mathVideoCorrect) . '</p>
+        <p> Total Correct: ' .  $mathQuizCorrect . '</p>
+        <p> Total Incorrect: ' . ($mathQuizTotal - $mathQuizCorrect) . '</p>
+    ';
+    */
+    
+    /*
+    echo '
+        <h3> Fun </h3>
+        <p> Text Correct: ' .  $funTextCorrect . '</p>
+        <p> Text Incorrect: ' . ($funTextTotal - $funTextCorrect) . '</p>
+        <p> Video Correct: ' .  $funVideoCorrect . '</p>
+        <p> Video Incorrect: ' . ($funVideoTotal - $funVideoCorrect) . '</p>
+        <p> Total Correct: ' .  $funQuizCorrect . '</p>
+        <p> Total Incorrect: ' . ($funQuizTotal - $funQuizCorrect) . '</p>
+    ';
+    */
 
 
 
