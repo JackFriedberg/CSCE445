@@ -167,8 +167,8 @@
             </div>
         </div>
 -->
-        <div class="jumbotron" style="height: 25%; width: 50%; border-style: solid;border-width: 5px; overflow:hidden;">
-            <div class="container" style="width: 50%; display:inline-block; float:left >
+        <div class="jumbotron mx-2 mb-5" style="height: 25%; width: 50%; border-style: solid;border-width: 5px; overflow:hidden;">
+            <div class="container" style="width: 50%; display:inline-block; float:left" >
                     <h1>Math: Trigonometry</h1>
                     <button type="submit" class="btn btn-dark btn-rounded">Start<i class="fas fas fa-play pl-1"></i></button>
             </div>
