@@ -172,12 +172,12 @@
                         </div>
                     </div>
                     <form action="/initial.php" method="POST">
-                        <button type="submit" class="btn btn-dark btn-rounded" style="display:inline; float:left; width:20%">Start<i class="fas fas fa-play pl-1"></i></button>
+                        <button type="submit" class="btn btn-dark btn-rounded" style="display:inline; width:20%">Start<i class="fas fas fa-play pl-1"></i></button>
                     </form>
                 </div>
             </div>
-            <div class="container" style="width: 30%; display:inline-block; float:left " id="amrevTotal">
-                <div style="height:100%; width:95%; display:inline; float:left" id="amrevTotalChartContainer">
+            <div class="container" style="width: 30%; display:inline-block;" id="amrevTotal">
+                <div style="height:100%; width:95%; display:inline;" id="amrevTotalChartContainer">
                 </div>
                 <div class= "align-middle" style="height:100%; width:5%;display:inline-block; float:left">
                     <button onclick="expandAmrevStats()"><i id="amrevIcon" class="fas fa-angle-double-right"></i></button>
