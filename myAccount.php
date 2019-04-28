@@ -182,9 +182,9 @@
                 </div>
             </div>
             <div class="container" style="width: 30%; display:inline-block; float:left ">
-                <div style="height:100%; width:100%; display:inline-block; float:left" id="chartContainer">
+                <div style="height:100%; width:95%; display:inline-block; float:left" id="chartContainer">
                 </div>
-                <div style="height:100%; display:inline-block; float:left">
+                <div style="height:100%; width:5%;display:inline-block; float:left">
                     <button type="submit" class="btn btn-rounded"><i class="fas fa-angle-double-right"></i></button>
                 </div>
             </div>
@@ -216,10 +216,12 @@
                 },
                 data: [{
                     type: "pie",
-                    indexLabelFontSize: 10,
+                    showInLegend: "true",
+                    indexLabelFontSize: 12,
                     indexLabelFontColor: "white",
                     indexLabelPlacement: "inside",
-                    indexLabel: "{label} - #percent%",
+                    indexLabel: "#percent%",
+
                     dataPoints: <?php echo json_encode($amrevTotalData, JSON_NUMERIC_CHECK); ?>
                 }]
             });
