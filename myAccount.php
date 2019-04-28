@@ -78,16 +78,17 @@
         <p> Total Incorrect: ' . ($amrevQuizTotal - $amrevQuizCorrect) . '</p>
     ';
     
-    
-    echo '
-        <h3> Math </h3>
-        <p> Text Correct: ' .  $mathTextCorrect . '</p>
-        <p> Text Incorrect: ' . ($mathTextTotal - $mathTextCorrect) . '</p>
-        <p> Video Correct: ' .  $mathVideoCorrect . '</p>
-        <p> Video Incorrect: ' . ($mathVideoTotal - $mathVideoCorrect) . '</p>
-        <p> Total Correct: ' .  $mathQuizCorrect . '</p>
-        <p> Total Incorrect: ' . ($mathQuizTotal - $mathQuizCorrect) . '</p>
-    ';
+    if(!empty($mathQuizTotal) ||  $mathQuizTotal > 0){
+        echo '
+            <h3> Math </h3>
+            <p> Text Correct: ' .  $mathTextCorrect . '</p>
+            <p> Text Incorrect: ' . ($mathTextTotal - $mathTextCorrect) . '</p>
+            <p> Video Correct: ' .  $mathVideoCorrect . '</p>
+            <p> Video Incorrect: ' . ($mathVideoTotal - $mathVideoCorrect) . '</p>
+            <p> Total Correct: ' .  $mathQuizCorrect . '</p>
+            <p> Total Incorrect: ' . ($mathQuizTotal - $mathQuizCorrect) . '</p>
+        ';
+    }
     
     
     if(!empty($funQuizTotal) ||  $funQuizTotal > 0){
