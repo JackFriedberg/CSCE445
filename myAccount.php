@@ -173,6 +173,7 @@
                 <button type="submit" class="btn btn-dark btn-rounded">Start<i class="fas fas fa-play pl-1"></i></button>
                 <hr class="my-2">
             </div>
+            <div id="chartContainer" style="height: 100%;"></div>
         </div>
 
         <div class="container" style="width: 50%;">
@@ -182,26 +183,22 @@
                 <hr class="my-2">
             </div>
         </div>
-
-
-        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
-
-        
     </body>
 
 
     <script>
         window.onload = function () {
+            //for loop here 
             var chart = new CanvasJS.Chart("chartContainer", {
                 backgroundColor: "transparent",
                 animationEnabled: true,
                 exportEnabled: true,
                 title:{
-                    text: "Total number of questions with text context right vs total number of questions with video context right"
+                    text: ""
                 },
                 data: [{
                     type: "pie",
-                    showInLegend: "true",
+                    showInLegend: "false",
                     legendText: "{label}",
                     indexLabelFontSize: 16,
                     indexLabel: "{label} - #percent%",
@@ -210,6 +207,7 @@
             });
             chart.render();
         }
+
     </script>
 </html>
 
