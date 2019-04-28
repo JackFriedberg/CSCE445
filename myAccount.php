@@ -169,20 +169,24 @@
 -->
         <div class="jumbotron mx-auto mb-5" style="height: 25%; width: 50%; overflow:hidden;">
             <div class="container" style="width: 70%; display:inline-block; float:left" >
-                    <div>
-                        <h1>Math: Trigonometry</h1>
-                    </div>
-                    <div>
-                        <div class="progress" style="display:inline-block; float:left; width:75%; margin: auto">
-                            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                                70%
-                            </div>
+                <div>
+                    <h1>Math: Trigonometry</h1>
+                </div>
+                <div>
+                    <div class="progress" style="display:inline-block; float:left; width:75%; margin: auto">
+                        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                            70%
                         </div>
-                        <button type="submit" class="btn btn-dark btn-rounded" style="display:inline-block; float:left; width:20%">Start<i class="fas fas fa-play pl-1"></i></button>
                     </div>
+                    <button type="submit" class="btn btn-dark btn-rounded" style="display:inline-block; float:left; width:20%">Start<i class="fas fas fa-play pl-1"></i></button>
+                </div>
             </div>
             <div class="container" style="width: 30%; display:inline-block; float:left ">
-                <div style="height:100%; width:100%" id="chartContainer"></div>
+                <div style="height:100%; width:90%" id="chartContainer">
+                </div>
+                <div style="height:100%; width:90%">
+                    <button type="submit" class="btn btn-rounded"><i class="fas fa-angle-double-right"></i></button>
+                </div>
             </div>
         </div>
 
