@@ -167,7 +167,7 @@
             </div>
         </div>
 -->
-        <div class="container" style="max-height: 500px; width: 50%;">
+        <div class="container" style="width: 50%;">
             <div class="jumbotron text-center light-blue lighten-3 white-text mx-2 mb-5">
                 <div style="width: 50%; float:left">
                     <h1>Math: Trigonometry</h1>
