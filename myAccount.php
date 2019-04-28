@@ -213,7 +213,8 @@
                 exportEnabled: false,
                 title:{
                     text: "Quiz Performace to Date",
-                    fontColor: "white"
+                    fontColor: "white",
+                    fontSize: 16
                 },
                 data: [{
                     type: "pie",
