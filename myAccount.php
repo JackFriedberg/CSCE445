@@ -185,7 +185,7 @@
                 <div style="height:100%; width:95%; display:inline-block; float:left" id="mathTotalChartContainer">
                 </div>
                 <div cclass= "align-middle" style="height:100%; width:5%;display:inline-block; float:left">
-                    <button onclick="expandMathStats()"><i class="fas fa-angle-double-right"></i></button>
+                    <button onclick="expandMathStats()"><i id="mathIcon" class="fas fa-angle-double-right"></i></button>
                 </div>
             </div>
             <div class="container" style="width: 0%;display:inline-block; float:left; visibility: hidden;" id="mathBreakout">
@@ -249,6 +249,8 @@
                 document.getElementById("mathTotal").style.width = "30%";
                 document.getElementById("mathBreakout").style.width = "0%";
                 document.getElementById("mathBreakout").style.visibility = "hidden";
+                document.getElementById("mathIcon").classList.remove('fa-angle-double-left');
+                document.getElementById("mathIcon").classList.add('fa-angle-double-right');
             }
             else{
                 document.getElementById("mathJumbo").style.width = "90%";
@@ -256,6 +258,8 @@
                 document.getElementById("mathTotal").style.width = "20%";
                 document.getElementById("mathBreakout").style.width = "40%";
                 document.getElementById("mathBreakout").style.visibility = "visible";
+                document.getElementById("mathIcon").classList.remove('fa-angle-double-right');
+                document.getElementById("mathIcon").classList.add('fa-angle-double-left');
                 breakoutMathCharts();
             }
 
