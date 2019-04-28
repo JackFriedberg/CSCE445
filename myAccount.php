@@ -212,8 +212,8 @@
                 animationEnabled: true,
                 exportEnabled: false,
                 title:{
-                    text: "Quiz Performace to Date"
-                    fontColor: "white",
+                    text: "Quiz Performace to Date",
+                    fontColor: "white"
                 },
                 data: [{
                     type: "pie",
