@@ -115,6 +115,16 @@
         $mathProgress = 0;
     }
 
+    $sql_Fun = "SELECT * FROM quizProgress WHERE username LIKE "."'". $_SESSION['UserId'] ."'". " AND  QuizType LIKE 'fun'";
+    $fun_result = sqlsrv_query($conn,$sql_Fun);
+    if($fun_result){
+        $row = sqlsrv_fetch_array($fun_result, SQLSRV_FETCH_ASSOC);
+        $funProgress =  intval($row['questionNumber']);
+    }
+    else {
+        $funProgress = 0;
+    }
+
     
 
     
@@ -182,8 +192,8 @@
                 </div>
                 <div>
                     <div class="progress" style="display:inline-block; float:left; width:75%; margin: auto">
-                        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                            70%
+                        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="<?php echo $mathProgress; ?>" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                            <?php echo $mathProgress . '%';?>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-dark btn-rounded" style="display:inline-block; float:left; width:20%">Start<i class="fas fas fa-play pl-1"></i></button>
