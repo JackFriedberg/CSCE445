@@ -90,7 +90,7 @@
     ';
     
     
-    /*
+    
     echo '
         <h3> Fun </h3>
         <p> Text Correct: ' .  $funTextCorrect . '</p>
@@ -100,7 +100,7 @@
         <p> Total Correct: ' .  $funQuizCorrect . '</p>
         <p> Total Incorrect: ' . ($funQuizTotal - $funQuizCorrect) . '</p>
     ';
-    */
+    
 
 
 
