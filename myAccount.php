@@ -41,7 +41,7 @@
             $universalTotal += $overallTotal;
             $universalCorrect += $overallCorrect;
 
-/*
+
             echo '
                 <h3> ' . $quizType .' Quiz </h3>
                 <p> Total questions answered: ' . $overallTotal . '</p>
@@ -57,7 +57,7 @@
                 <p> Video question percentage: ' . $videoPercentage .'%</p>
                 <br> </br>
             ';
-    */
+    
         }
     }
     
@@ -65,7 +65,7 @@
     $universalPercentage = $universalCorrect/$universalTotal * 100;
     $overallVideoPercentage = $overallVideoCorrect/$overallVideoTotal * 100;
     $overallTextPercentage = $overallTextCorrect/$overallTextTotal * 100;
-/*
+
     echo '
         <h3> All Quizes </h3>
         <p> Questions answered: ' .  $universalTotal . '</p>
@@ -83,7 +83,7 @@
     ';
 
 
-*/
+
 
     $sql_Amrev = "SELECT * FROM quizProgress WHERE username LIKE "."'". $_SESSION['UserId'] ."'". " AND  QuizType LIKE 'AmRev'";
     $amRev_result = sqlsrv_query($conn,$sql_Amrev);
