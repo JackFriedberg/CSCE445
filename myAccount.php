@@ -218,7 +218,7 @@
                 animationEnabled: true,
                 exportEnabled: false,
                 title:{
-                    text: "Quiz Performace to Date",
+                    text: "Overall Quiz Performace",
                     fontColor: "white",
                     fontSize: 16,
                     fontWeight: "normal"
