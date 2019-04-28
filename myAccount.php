@@ -26,8 +26,8 @@
             ${$quizType. "TextCorrect"} = intval($row["textCorrect"]);
             ${$quizType. "VideoTotal"} = intval($row["videototal"]);
             ${$quizType. "VideoCorrect"} = intval($row["videoCorrect"]);
-            ${$quizType. "QuizTotal"} = $textTotal + $videoTotal;
-            ${$quizType. "QuizCorrect"} = $textCorrect + $videoCorrect;
+            ${$quizType. "QuizTotal"} =  ${$quizType. "TextTotal"} + ${$quizType. "VideoTotal"};
+            ${$quizType. "QuizCorrect"} = ${$quizType. "TextCorrect"} + ${$quizType. "VideoCorrect"};
 
             $overallVideoTotal += ${$quizType. "VideoTotal"};
             $overallVideoCorrect +=  ${$quizType. "VideoCorrect"};
