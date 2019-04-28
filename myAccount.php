@@ -165,11 +165,11 @@
         </div>
 -->
         <div class="jumbotron" style="width: 50%; border-style: solid;border-width: 5px;">
-            <div class="container" style="width: 50%; display:inline-block ">
+            <div class="container" style="width: 50%; display:inline-block; float:left ">
                     <h1>Math: Trigonometry</h1>
                     <button type="submit" class="btn btn-dark btn-rounded">Start<i class="fas fas fa-play pl-1"></i></button>
             </div>
-            <div class="container" style="width: 50%; display:inline-block ">
+            <div class="container" style="width: 50%; display:inline-block; float:left ">
                 <div id="chartContainer"></div>
             </div>
         </div>
