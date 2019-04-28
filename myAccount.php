@@ -243,12 +243,22 @@
 
         function expandMathStats(){
 
-            document.getElementById("mathJumbo").style.width = "90%";
-            document.getElementById("mathHeader").style.width = "40%";
-            document.getElementById("mathTotal").style.width = "20%";
-            document.getElementById("mathBreakout").style.width = "40%";
-            document.getElementById("mathBreakout").style.visibility = "visible";
-            breakoutCharts();
+            if(document.getElementById("mathBreakout").style.visibility == "visible"){
+                document.getElementById("mathJumbo").style.width = "50%";
+                document.getElementById("mathHeader").style.width = "70%";
+                document.getElementById("mathTotal").style.width = "30%";
+                document.getElementById("mathBreakout").style.width = "0%";
+                document.getElementById("mathBreakout").style.visibility = "hidden";
+            }
+            else{
+                document.getElementById("mathJumbo").style.width = "90%";
+                document.getElementById("mathHeader").style.width = "40%";
+                document.getElementById("mathTotal").style.width = "20%";
+                document.getElementById("mathBreakout").style.width = "40%";
+                document.getElementById("mathBreakout").style.visibility = "visible";
+                breakoutCharts();
+            }
+
         }   
 
 
