@@ -7,9 +7,6 @@
 
     $username = strval($_SESSION['UserId']);
 
-
-    // --------------------- QUIZ STATISTICS QUERIES -------------------------- //
-
     $sql = "SELECT * FROM quizStats WHERE username LIKE "."'". $username ."'"; 
     $result = sqlsrv_query($conn,$sql);
     
@@ -44,7 +41,7 @@
             $universalTotal += $overallTotal;
             $universalCorrect += $overallCorrect;
 
-
+/*
             echo '
                 <h3> ' . $quizType .' Quiz </h3>
                 <p> Total questions answered: ' . $overallTotal . '</p>
@@ -62,14 +59,31 @@
             ';
         }
     }
+    */
 
     $universalPercentage = $universalCorrect/$universalTotal * 100;
     $overallVideoPercentage = $overallVideoCorrect/$overallVideoTotal * 100;
     $overallTextPercentage = $overallTextCorrect/$overallTextTotal * 100;
+/*
+    echo '
+        <h3> All Quizes </h3>
+        <p> Questions answered: ' .  $universalTotal . '</p>
+        <p> Questions correct: ' . $universalCorrect . '</p>
+        <p> Question percentage: ' . $universalPercentage .'%</p>
+        <br>
+        <p> Text questions answered: ' . $overallTextTotal . '</p>
+        <p> Text questions correct: ' . $overallTextCorrect . '</p>
+        <p> Text question percentage: ' . $overallTextPercentage .'%</p>
+        <br>
+        <p> Video questions answered: ' . $overallVideoTotal . '</p>
+        <p> Video questions correct: ' . $overallVideoCorrect . '</p>
+        <p> Video question percentage: ' . $overallVideoPercentage .'%</p>
+        <br>
+    ';
 
 
+*/
 
-    // --------------------- QUIZ PROGRESS QUERIES -------------------------- //
     $sql_Amrev = "SELECT * FROM quizProgress WHERE username LIKE "."'". $_SESSION['UserId'] ."'". " AND  QuizType LIKE 'AmRev'";
     $amRev_result = sqlsrv_query($conn,$sql_Amrev);
     if($amRev_result){
@@ -84,7 +98,7 @@
         echo '<h3> Math Progress: ' . $row['questionNumber']  .'</h3>';
     }
 
-
+    
 ?>
 
 <html>
