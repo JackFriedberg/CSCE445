@@ -167,8 +167,8 @@
             </div>
         </div>
 -->
-        <div class="jumbotron mx-auto mb-5" style="height: 25%; width: 70%; overflow:hidden;">
-            <div class="container" style="width: 50%; display:inline-block; float:left" >
+        <div class="jumbotron mx-auto mb-5" style="height: 25%; width: 50%; overflow:hidden;">
+            <div class="container" style="width: 70%; display:inline-block; float:left" >
                     <div>
                         <h1>Math: Trigonometry</h1>
                     </div>
@@ -212,8 +212,6 @@
                 },
                 data: [{
                     type: "pie",
-                    showInLegend: "false",
-                    legendText: "{label}",
                     indexLabelFontSize: 16,
                     indexLabel: "{label} - #percent%",
                     dataPoints: <?php echo json_encode($amrevTotalData, JSON_NUMERIC_CHECK); ?>
