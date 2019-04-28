@@ -167,7 +167,7 @@
             </div>
         </div>
 -->
-        <div class="jumbotron mx-auto mb-5" style="height: 25%; width: 50%; overflow:hidden;">
+        <div class="jumbotron mx-auto mb-5" style="height: 25%; width: 70%; overflow:hidden;">
             <div class="container" style="width: 50%; display:inline-block; float:left" >
                     <div>
                         <h1>Math: Trigonometry</h1>
@@ -181,7 +181,7 @@
                         <button type="submit" class="btn btn-dark btn-rounded" style="display:inline-block; float:left; width:20%">Start<i class="fas fas fa-play pl-1"></i></button>
                     </div>
             </div>
-            <div class="container" style="width: 50%; display:inline-block; float:left ">
+            <div class="container" style="width: 30%; display:inline-block; float:left ">
                 <div style="height:100%; width:100%" id="chartContainer"></div>
             </div>
         </div>
