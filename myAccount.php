@@ -213,6 +213,7 @@
                 exportEnabled: false,
                 title:{
                     text: "Quiz Performace to Date"
+                    fontColor: "white",
                 },
                 data: [{
                     type: "pie",
@@ -226,9 +227,6 @@
                     dataPoints: <?php echo json_encode($amrevTotalData, JSON_NUMERIC_CHECK); ?>
                 }],
                 legend : {
-                    fontColor: "white",
-                },
-                title:{
                     fontColor: "white",
                 }
             });
