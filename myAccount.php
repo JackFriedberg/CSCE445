@@ -119,12 +119,8 @@
         $funProgress = 0;
     }
 
-
-    $amRevProgress = 5;
-    $mathProgress = 6;
-    $funProgress = 7;
-
-    $amRevTotalQuestions = 10;
+    //set these
+    $amRevTotalQuestions = 38;
     $mathTotalQuestions = 10;
     $funTotalQuestions = 10;
 
@@ -133,11 +129,9 @@
     $amrevPercent = $amRevProgress/$amRevTotalQuestions * 100;
     $mathPercent = $mathProgress/$mathTotalQuestions * 100;
     $funPercent = $funProgress/$funTotalQuestions * 100;
-
-
-    
 ?>
 
+                <!-- START HTML CODE -->
 <html>
     <head>
         <title>My Account</title>
@@ -182,7 +176,6 @@
             </ul>
         </div>
 
-        <!--   Start Divs for quizzes -->
        <div class="jumbotron mx-auto mb-5" style="height: 25%; width: 50%; overflow:hidden;" id="amrevJumbo">
             <div class="container" style="width: 70%; display:inline-block; float:left" id="amrevHeader" >
                 <div>
@@ -277,9 +270,9 @@
     </body>
 
 
+                <!-- BEGIN JAVASCRIPT WORK -->
     <script>
         window.onload = function () {
-            
             var chart = new CanvasJS.Chart("amrevTotalChartContainer", {
                 backgroundColor: "transparent",
                 animationEnabled: true,
@@ -605,8 +598,6 @@
             });
             videoChart.render();
         }
-
-
     </script>
 </html>
 
