@@ -188,7 +188,7 @@
                     <button onclick="expandMathStats()"><i class="fas fa-angle-double-right"></i></button>
                 </div>
             </div>
-            <div class="container" style="width: 0%;height:100%;display:inline-block; float:left ">
+            <div class="container" style="width: 0%;display:inline-block; float:left ">
                 some text
             </div>
         </div>
@@ -243,9 +243,10 @@
 
         var mathJumbo = document.getElementById("mathJumbo");
         mathJumbo.style.width = "90%";
-        mathJumbo.childNodes[0].style.width = "40%";
-        mathJumbo.childNodes[1].style.width = "20%";
-        mathJumbo.childNodes[2].style.width = "40%";
+        var containers = mathJumbo.getElementsByClass("container");
+        containers[0].style.width = "40%";
+        containers[1].style.width = "20%";
+        containers[2].style.width = "40%";
        }
     </script>
 
