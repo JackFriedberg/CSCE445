@@ -272,7 +272,35 @@
 
     <script>
         window.onload = function () {
-            //for loop here 
+            
+            var chart = new CanvasJS.Chart("amrevTotalChartContainer", {
+                backgroundColor: "transparent",
+                animationEnabled: true,
+                exportEnabled: false,
+                title:{
+                    text: "Overall Quiz Performace",
+                    fontColor: "white",
+                    fontSize: 16,
+                    fontWeight: "normal"
+                },
+                data: [{
+                    type: "pie",
+                    showInLegend: "true",
+                    legendText: "{label}",
+                    indexLabelFontSize: 12,
+                    indexLabelFontColor: "white",
+                    indexLabelPlacement: "inside",
+                    indexLabel: "#percent%",
+
+                    dataPoints: <?php echo json_encode($amrevTotalData, JSON_NUMERIC_CHECK); ?>
+                }],
+                legend : {
+                    fontColor: "white",
+                }
+            });
+            chart.render();
+            
+             
             var chart = new CanvasJS.Chart("mathTotalChartContainer", {
                 backgroundColor: "transparent",
                 animationEnabled: true,
@@ -299,10 +327,61 @@
                 }
             });
             chart.render();
+
+            var chart = new CanvasJS.Chart("funTotalChartContainer", {
+                backgroundColor: "transparent",
+                animationEnabled: true,
+                exportEnabled: false,
+                title:{
+                    text: "Overall Quiz Performace",
+                    fontColor: "white",
+                    fontSize: 16,
+                    fontWeight: "normal"
+                },
+                data: [{
+                    type: "pie",
+                    showInLegend: "true",
+                    legendText: "{label}",
+                    indexLabelFontSize: 12,
+                    indexLabelFontColor: "white",
+                    indexLabelPlacement: "inside",
+                    indexLabel: "#percent%",
+
+                    dataPoints: <?php echo json_encode($funTotalData, JSON_NUMERIC_CHECK); ?>
+                }],
+                legend : {
+                    fontColor: "white",
+                }
+            });
+            chart.render();
+
+
+
+        }
+
+        function expandAmrevStats(){
+            if(document.getElementById("mathBreakout").style.visibility == "visible"){
+                document.getElementById("mathJumbo").style.width = "50%";
+                document.getElementById("mathHeader").style.width = "70%";
+                document.getElementById("mathTotal").style.width = "30%";
+                document.getElementById("mathBreakout").style.width = "0%";
+                document.getElementById("mathBreakout").style.visibility = "hidden";
+                document.getElementById("mathIcon").classList.remove('fa-angle-double-left');
+                document.getElementById("mathIcon").classList.add('fa-angle-double-right');
+            }
+            else{
+                document.getElementById("amrevJumbo").style.width = "90%";
+                document.getElementById("amrevHeader").style.width = "40%";
+                document.getElementById("amrevTotal").style.width = "20%";
+                document.getElementById("amrevBreakout").style.width = "40%";
+                document.getElementById("amrevBreakout").style.visibility = "visible";
+                document.getElementById("amrevIcon").classList.remove('fa-angle-double-right');
+                document.getElementById("amrevIcon").classList.add('fa-angle-double-left');
+                breakoutAmrevCharts();
+            }
         }
 
         function expandMathStats(){
-
             if(document.getElementById("mathBreakout").style.visibility == "visible"){
                 document.getElementById("mathJumbo").style.width = "50%";
                 document.getElementById("mathHeader").style.width = "70%";
@@ -322,8 +401,29 @@
                 document.getElementById("mathIcon").classList.add('fa-angle-double-left');
                 breakoutMathCharts();
             }
+        }
 
-        }   
+        function expandFunStats(){
+            if(document.getElementById("funBreakout").style.visibility == "visible"){
+                document.getElementById("funJumbo").style.width = "50%";
+                document.getElementById("funHeader").style.width = "70%";
+                document.getElementById("funTotal").style.width = "30%";
+                document.getElementById("funBreakout").style.width = "0%";
+                document.getElementById("funBreakout").style.visibility = "hidden";
+                document.getElementById("funIcon").classList.remove('fa-angle-double-left');
+                document.getElementById("funIcon").classList.add('fa-angle-double-right');
+            }
+            else{
+                document.getElementById("funJumbo").style.width = "90%";
+                document.getElementById("funHeader").style.width = "40%";
+                document.getElementById("funTotal").style.width = "20%";
+                document.getElementById("funBreakout").style.width = "40%";
+                document.getElementById("funBreakout").style.visibility = "visible";
+                document.getElementById("funIcon").classList.remove('fa-angle-double-right');
+                document.getElementById("funIcon").classList.add('fa-angle-double-left');
+                breakoutFunCharts();
+            }
+        }
 
 
         function breakoutMathCharts () {
