@@ -119,11 +119,17 @@
         $funProgress = 0;
     }
 
-    
+
+
+    $amrevPercent = 50;
+    $mathPercent = 60;
+    $funPercent = 70;
+
 
     
 ?>
 
+<?php echo $amrevPercent;?>
 
 <html>
     <head>
@@ -173,12 +179,12 @@
        <div class="jumbotron mx-auto mb-5" style="height: 25%; width: 50%; overflow:hidden;" id="amrevJumbo">
             <div class="container" style="width: 70%; display:inline-block; float:left" id="amrevHeader" >
                 <div>
-                    <h1>History: The American Revolution</h1>
+                    <h1>History: American Revolution</h1>
                 </div>
                 <div>
                     <div class="progress" style="display:inline-block; float:left; width:75%; margin: auto">
-                        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                            70%
+                        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="<?php echo $amrevPercent;?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $amrevPercent;?> %">
+                        <?php echo $amrevPercent . "%";?>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-dark btn-rounded" style="display:inline-block; float:left; width:20%">Start<i class="fas fas fa-play pl-1"></i></button>
