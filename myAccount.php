@@ -57,9 +57,10 @@
                 <p> Video question percentage: ' . $videoPercentage .'%</p>
                 <br> </br>
             ';
+    */
         }
     }
-    */
+    
 
     $universalPercentage = $universalCorrect/$universalTotal * 100;
     $overallVideoPercentage = $overallVideoCorrect/$overallVideoTotal * 100;
