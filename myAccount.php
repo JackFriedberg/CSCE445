@@ -169,8 +169,17 @@
 -->
         <div class="jumbotron mx-auto mb-5" style="height: 25%; width: 50%; overflow:hidden;">
             <div class="container" style="width: 50%; display:inline-block; float:left" >
-                    <h1>Math: Trigonometry</h1>
-                    <button type="submit" class="btn btn-dark btn-rounded">Start<i class="fas fas fa-play pl-1"></i></button>
+                    <div>
+                        <h1>Math: Trigonometry</h1>
+                    </div>
+                    <div>
+                        <div class="progress" style>
+                            <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                                70%
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-dark btn-rounded">Start<i class="fas fas fa-play pl-1"></i></button>
+                    </div>
             </div>
             <div class="container" style="width: 50%; display:inline-block; float:left ">
                 <div style="height:100%; width:100%" id="chartContainer"></div>
