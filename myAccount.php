@@ -181,7 +181,34 @@
                 <hr class="my-2">
             </div>
         </div>
+
+
+        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+
         
     </body>
+
+
+    <script>
+        window.onload = function () {
+            var chart = new CanvasJS.Chart("chartContainer", {
+                backgroundColor: "transparent",
+                animationEnabled: true,
+                exportEnabled: true,
+                title:{
+                    text: "Total number of questions with text context right vs total number of questions with video context right"
+                },
+                data: [{
+                    type: "pie",
+                    showInLegend: "true",
+                    legendText: "{label}",
+                    indexLabelFontSize: 16,
+                    indexLabel: "{label} - #percent%",
+                    dataPoints: <?php echo json_encode($amrevTotalData, JSON_NUMERIC_CHECK); ?>
+                }]
+            });
+            chart.render();
+        }
+    </script>
 </html>
 
