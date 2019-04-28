@@ -167,13 +167,13 @@
             </div>
         </div>
 -->
-        <div class="container" style="width: 50%;">
+        <div class="container" style="width: 50%; border-style: solid;border-width: 5px;">
             <div class="jumbotron text-center light-blue lighten-3 white-text mx-2 mb-5">
                 <div style="width: 50%; float:left">
                     <h1>Math: Trigonometry</h1>
                     <button type="submit" class="btn btn-dark btn-rounded">Start<i class="fas fas fa-play pl-1"></i></button>
                 </div>
-                <!-- <div id="chartContainer" style="height:100%; width: 50%; float:left"></div> -->
+                <!-- <div id="chartContainer" style="width: 50%; float:left"></div> -->
             </div>
         </div>
 
