@@ -116,9 +116,15 @@
     $mathTotalQuestions = 10;
     $funTotalQuestions = 10;
 
-    $amrevPercent = bcdiv($amrevProgress,$amRevTotalQuestions,0) * 100;
-    $mathPercent = bcdiv($mathProgress,$mathTotalQuestions,0) * 100;
-    $funPercent = bcdiv($funProgress,$funTotalQuestions,0) * 100;
+    //calculate the percentages
+    $amrevPercent = $amrevProgress/$amRevTotalQuestions * 100;
+    $mathPercent = $mathProgress/$mathTotalQuestions * 100;
+    $funPercent = $funProgress/$funTotalQuestions * 100;
+
+    //round the calculation to one decimal
+    $amrevPercent = floor($amrevPercent * 10) / 10;
+    $mathPercent = floor($mathPercent * 10) / 10;
+    $funPercent = floor($funPercent * 10) / 10;
 ?>
 
                 <!-- START HTML CODE -->
