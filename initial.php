@@ -165,7 +165,7 @@
         ';
         for($i = 1; $i < $counter; $i++){
         echo '
-                      <div class = "row align-items=center justify-content-center">
+                      <center>
                         <button type="button" class="btn btn-primary btn-floating col-md-3 center-block" data-toggle="modal" data-target="#contextModal'. $i .'">Click for context # ' . strval($i) . '</button>
                             <blockquote class="blockquote">
                                 <div id="contextModal'. $i .'" class="modal fade" role="dialog">
@@ -182,7 +182,7 @@
                                 </div>
                             </blockquote>
                         </button>
-                      </div>
+                      </center>
         ';
         }
         echo        '</div>';
