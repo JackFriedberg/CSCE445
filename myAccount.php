@@ -38,12 +38,6 @@
         }
     }
     
-    //Overall chart arrays
-    $funTextData = array();
-    $funVideoData = array();
-    $funTotalData = array();
-
-
 
     if(!empty($amrevQuizTotal) ||  $amrevQuizTotal > 0){
         $amrevTextData = array(
@@ -360,14 +354,14 @@
         }
 
         function expandAmrevStats(){
-            if(document.getElementById("mathBreakout").style.visibility == "visible"){
-                document.getElementById("mathJumbo").style.width = "50%";
-                document.getElementById("mathHeader").style.width = "70%";
-                document.getElementById("mathTotal").style.width = "30%";
-                document.getElementById("mathBreakout").style.width = "0%";
-                document.getElementById("mathBreakout").style.visibility = "hidden";
-                document.getElementById("mathIcon").classList.remove('fa-angle-double-left');
-                document.getElementById("mathIcon").classList.add('fa-angle-double-right');
+            if(document.getElementById("amrevBreakout").style.visibility == "visible"){
+                document.getElementById("amrevJumbo").style.width = "50%";
+                document.getElementById("amrevHeader").style.width = "70%";
+                document.getElementById("amrevTotal").style.width = "30%";
+                document.getElementById("amrevBreakout").style.width = "0%";
+                document.getElementById("amrevBreakout").style.visibility = "hidden";
+                document.getElementById("amrevIcon").classList.remove('fa-angle-double-left');
+                document.getElementById("amrevIcon").classList.add('fa-angle-double-right');
             }
             else{
                 document.getElementById("amrevJumbo").style.width = "90%";
@@ -426,9 +420,9 @@
         }
 
 
-        function breakoutMathCharts () {
+        function breakoutAmrevCharts () {
             //for loop here 
-            var textChart = new CanvasJS.Chart("mathTextChartContainer", {
+            var textChart = new CanvasJS.Chart("amrevTextChartContainer", {
                 backgroundColor: "transparent",
                 animationEnabled: true,
                 exportEnabled: false,
@@ -455,7 +449,7 @@
             });
             textChart.render();
 
-            var videoChart = new CanvasJS.Chart("mathVideoChartContainer", {
+            var videoChart = new CanvasJS.Chart("amrevVideoChartContainer", {
                 backgroundColor: "transparent",
                 animationEnabled: true,
                 exportEnabled: false,
@@ -482,6 +476,124 @@
             });
             videoChart.render();
         }
+        
+        
+        function breakoutMathCharts () {
+            //for loop here 
+            var textChart = new CanvasJS.Chart("mathTextChartContainer", {
+                backgroundColor: "transparent",
+                animationEnabled: true,
+                exportEnabled: false,
+                title:{
+                    text: "Text Based Question Performace",
+                    fontColor: "white",
+                    fontSize: 16,
+                    fontWeight: "normal"
+                },
+                data: [{
+                    type: "pie",
+                    showInLegend: "true",
+                    legendText: "{label}",
+                    indexLabelFontSize: 12,
+                    indexLabelFontColor: "white",
+                    indexLabelPlacement: "inside",
+                    indexLabel: "#percent%",
+
+                    dataPoints: <?php echo json_encode($mathTextData, JSON_NUMERIC_CHECK); ?>
+                }],
+                legend : {
+                    fontColor: "white",
+                }
+            });
+            textChart.render();
+
+            var videoChart = new CanvasJS.Chart("mathVideoChartContainer", {
+                backgroundColor: "transparent",
+                animationEnabled: true,
+                exportEnabled: false,
+                title:{
+                    text: "Video Based Question Performace",
+                    fontColor: "white",
+                    fontSize: 16,
+                    fontWeight: "normal"
+                },
+                data: [{
+                    type: "pie",
+                    showInLegend: "true",
+                    legendText: "{label}",
+                    indexLabelFontSize: 12,
+                    indexLabelFontColor: "white",
+                    indexLabelPlacement: "inside",
+                    indexLabel: "#percent%",
+
+                    dataPoints: <?php echo json_encode($mathVideoData, JSON_NUMERIC_CHECK); ?>
+                }],
+                legend : {
+                    fontColor: "white",
+                }
+            });
+            videoChart.render();
+        }
+
+
+        function breakoutFunCharts () {
+            //for loop here 
+            var textChart = new CanvasJS.Chart("funTextChartContainer", {
+                backgroundColor: "transparent",
+                animationEnabled: true,
+                exportEnabled: false,
+                title:{
+                    text: "Text Based Question Performace",
+                    fontColor: "white",
+                    fontSize: 16,
+                    fontWeight: "normal"
+                },
+                data: [{
+                    type: "pie",
+                    showInLegend: "true",
+                    legendText: "{label}",
+                    indexLabelFontSize: 12,
+                    indexLabelFontColor: "white",
+                    indexLabelPlacement: "inside",
+                    indexLabel: "#percent%",
+
+                    dataPoints: <?php echo json_encode($funTextData, JSON_NUMERIC_CHECK); ?>
+                }],
+                legend : {
+                    fontColor: "white",
+                }
+            });
+            textChart.render();
+
+            var videoChart = new CanvasJS.Chart("funVideoChartContainer", {
+                backgroundColor: "transparent",
+                animationEnabled: true,
+                exportEnabled: false,
+                title:{
+                    text: "Video Based Question Performace",
+                    fontColor: "white",
+                    fontSize: 16,
+                    fontWeight: "normal"
+                },
+                data: [{
+                    type: "pie",
+                    showInLegend: "true",
+                    legendText: "{label}",
+                    indexLabelFontSize: 12,
+                    indexLabelFontColor: "white",
+                    indexLabelPlacement: "inside",
+                    indexLabel: "#percent%",
+
+                    dataPoints: <?php echo json_encode($funVideoData, JSON_NUMERIC_CHECK); ?>
+                }],
+                legend : {
+                    fontColor: "white",
+                }
+            });
+            videoChart.render();
+        }
+
+
     </script>
 </html>
 
