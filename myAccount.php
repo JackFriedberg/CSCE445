@@ -217,7 +217,7 @@
                 data: [{
                     type: "pie",
                     indexLabelFontSize: 10,
-                    indexLabelFontColor: white,
+                    indexLabelFontColor: "white",
                     indexLabelPlacement: "inside",
                     indexLabel: "{label} - #percent%",
                     dataPoints: <?php echo json_encode($amrevTotalData, JSON_NUMERIC_CHECK); ?>
