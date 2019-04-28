@@ -173,7 +173,7 @@
                         <h1>Math: Trigonometry</h1>
                     </div>
                     <div>
-                        <div class="progress" style="display:inline-block; float:left; width:75%; margin-right: 2px;">
+                        <div class="progress" style="display:inline-block; float:left; width:75%; margin-right: 2px; margin-top:auto; margin-bottom: auto">
                             <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
                                 70%
                             </div>
