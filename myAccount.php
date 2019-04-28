@@ -181,7 +181,7 @@
                 </div>
                 <div>
                     <div class="progress" style="display:inline-block; float:left; width:75%; margin: auto">
-                        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="<?php echo $amrevPercent;?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $amrevPercent;?> %">
+                        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="<?php echo $amrevPercent;?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $amrevPercent;?>%">
                             <?php echo $amrevPercent . "%";?>
                         </div>
                     </div>
