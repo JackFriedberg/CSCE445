@@ -54,15 +54,12 @@ body {
 }
 
 #wrapper {
-  width: 1800px;
   overflow: auto;
   margin: 30px;
 }
 #SignIn {
   float: left;
-  width: 700px;
 }
 
 #SignUp {
-  width: 700px;
 }
