@@ -217,6 +217,7 @@
                 data: [{
                     type: "pie",
                     showInLegend: "true",
+                    legendText: "{label}",
                     indexLabelFontSize: 12,
                     indexLabelFontColor: "white",
                     indexLabelPlacement: "inside",
