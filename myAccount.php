@@ -139,9 +139,6 @@
                 background-repeat: no-repeat;
                 background-size: cover;
             }
-            .space {
-                padding: 3px;
-            }
         </style>
     </head>
         
@@ -164,25 +161,25 @@
         </div>
 
        <div class="jumbotron mx-auto mb-5" style="height: 25%; width: 60%; overflow:hidden;" id="amrevJumbo">
-            <div class="container" style="width: 70%; display:inline-block; text-align: center" id="amrevHeader" >
+            <div class="container" style="width: 70%; display:inline-block; text-align: center; float:left" id="amrevHeader" >
                 <div>
                     <h1>History: American Revolution</h1>
                 </div>
                 <div>
-                    <div class="progress" style="display:inline-block; float:left; width:75%; margin: auto">
+                    <div class="progress" style="padding: 3px 0px 3px 3px; display:inline-block; float:left; width:75%; margin: auto">
                         <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="<?php echo $amrevPercent;?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $amrevPercent;?>%">
                             <?php echo $amrevPercent . "%";?>
                         </div>
                     </div>
                     <form action="/initial.php" method="POST">
-                        <button type="submit" class="btn btn-dark btn-rounded" style="display:inline-block; padding: 0px 2px 0px 2px float:left; width:20%">Start<i class="fas fas fa-play pl-1"></i></button>
+                        <button type="submit" class="btn btn-dark btn-rounded" style="padding: 0px 3px 0px 3px; display:inline-block; float:left; width:20%">Start<i class="fas fas fa-play pl-1"></i></button>
                     </form>
                 </div>
             </div>
             <div class="container" style="width: 30%; display:inline-block; float:left " id="amrevTotal">
                 <div style="height:100%; width:95%; display:inline-block; float:left" id="amrevTotalChartContainer">
                 </div>
-                <div class= "align-middle" style="height:100%; width:5%;display:inline-block; float:left">
+                <div cclass= "align-middle" style="height:100%; width:5%; display:inline-block; float:left;">
                     <button onclick="expandAmrevStats()"><i id="amrevIcon" class="fas fa-angle-double-right"></i></button>
                 </div>
             </div>
@@ -195,8 +192,8 @@
         </div>
 
 
-        <div class="jumbotron mx-auto mb-5" style="height: 25%; width: 60%; overflow:hidden;" id="mathJumbo">
-            <div class="container" style="width: 75%; display:inline-block; text-align: center" id="mathHeader" >
+        <div class="jumbotron mx-auto mb-5" style="height: 25%; width: 50%; overflow:hidden;" id="mathJumbo">
+            <div class="container" style="width: 70%; display:inline-block; float:left" id="mathHeader" >
                 <div>
                     <h1>Math: Trigonometry</h1>
                 </div>
@@ -226,8 +223,8 @@
 
 
 
-        <div class="jumbotron mx-auto mb-5" style="height: 25%; width: 60%; overflow:hidden;" id="funJumbo">
-            <div class="container" style="width: 75%; display:inline-block; text-align: center" id="funHeader" >
+        <div class="jumbotron mx-auto mb-5" style="height: 25%; width: 50%; overflow:hidden;" id="funJumbo">
+            <div class="container" style="width: 70%; display:inline-block; float:left" id="funHeader" >
                 <div>
                     <h1>Basketball: Current News</h1>
                 </div>
@@ -566,3 +563,4 @@
         }
     </script>
 </html>
+
