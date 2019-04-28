@@ -185,7 +185,13 @@
                 <div style="height:100%; width:95%; display:inline-block; float:left" id="chartContainer">
                 </div>
                 <div cclass= "align-middle" style="height:100%; width:5%;display:inline-block; float:left">
-                    <button type="submit" class="btn btn-rounded"><i class="fas fa-angle-double-right"></i></button>
+                    <button type="submit" class="popper" data-toggle="popover"><i class="fas fa-angle-double-right"></i></button>
+                    <div class="popper-content hide">
+                        <div style="height:100%; width:95%; display:inline-block; float:left" id="chartContainer">
+                        </div>
+                        <div style="height:100%; width:95%; display:inline-block; float:left" id="chartContainer">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
