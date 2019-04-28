@@ -163,8 +163,8 @@
             </ul>
         </div>
 
-       <div class="jumbotron mx-auto mb-5" style="height: 30%; width: 60%; overflow:hidden;" id="amrevJumbo">
-            <div class="container" style="width: 80%; display:inline-block; text-align: center" id="amrevHeader" >
+       <div class="jumbotron mx-auto mb-5" style="height: 25%; width: 60%; overflow:hidden;" id="amrevJumbo">
+            <div class="container" style="width: 70%; display:inline-block; text-align: center" id="amrevHeader" >
                 <div>
                     <h1>History: American Revolution</h1>
                 </div>
@@ -175,7 +175,7 @@
                         </div>
                     </div>
                     <form action="/initial.php" method="POST">
-                        <button type="submit" class="btn btn-dark btn-rounded" style="display:inline-block; float:left; width:20%">Start<i class="fas fas fa-play pl-1"></i></button>
+                        <button type="submit" class="btn btn-dark btn-rounded" style="display:inline-block; padding: 0px 2px 0px 2px float:left; width:20%">Start<i class="fas fas fa-play pl-1"></i></button>
                     </form>
                 </div>
             </div>
@@ -195,8 +195,8 @@
         </div>
 
 
-        <div class="jumbotron mx-auto mb-5" style="height: 30%; width: 60%; overflow:hidden;" id="mathJumbo">
-            <div class="container" style="width: 80%; display:inline-block; text-align: center" id="mathHeader" >
+        <div class="jumbotron mx-auto mb-5" style="height: 25%; width: 60%; overflow:hidden;" id="mathJumbo">
+            <div class="container" style="width: 75%; display:inline-block; text-align: center" id="mathHeader" >
                 <div>
                     <h1>Math: Trigonometry</h1>
                 </div>
@@ -226,8 +226,8 @@
 
 
 
-        <div class="jumbotron mx-auto mb-5" style="height: 30%; width: 60%; overflow:hidden;" id="funJumbo">
-            <div class="container" style="width: 80%; display:inline-block; text-align: center" id="funHeader" >
+        <div class="jumbotron mx-auto mb-5" style="height: 25%; width: 60%; overflow:hidden;" id="funJumbo">
+            <div class="container" style="width: 75%; display:inline-block; text-align: center" id="funHeader" >
                 <div>
                     <h1>Basketball: Current News</h1>
                 </div>
