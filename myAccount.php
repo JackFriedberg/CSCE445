@@ -234,7 +234,6 @@
             });
             chart.render();
         }
-});
 
 
     </script>
