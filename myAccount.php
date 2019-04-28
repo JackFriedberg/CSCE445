@@ -169,11 +169,13 @@
 
         <div class="container" style="width: 50%;">
             <div class="jumbotron text-center light-blue lighten-3 white-text mx-2 mb-5">
-                <h1>Math: Trigonometry</h1>
-                <button type="submit" class="btn btn-dark btn-rounded">Start<i class="fas fas fa-play pl-1"></i></button>
-                <hr class="my-2">
+                <div style="width: 25%; float:left">
+                    <h1>Math: Trigonometry</h1>
+                    <button type="submit" class="btn btn-dark btn-rounded">Start<i class="fas fas fa-play pl-1"></i></button>
+                    <hr class="my-2">
+                </div>
+                <div id="chartContainer" style="width: 25%; float:left"></div>
             </div>
-            <div id="chartContainer"></div>
         </div>
 
         <div class="container" style="width: 50%;">
@@ -195,7 +197,7 @@
             var chart = new CanvasJS.Chart("chartContainer", {
                 backgroundColor: "transparent",
                 animationEnabled: true,
-                exportEnabled: true,
+                exportEnabled: false,
                 title:{
                     text: ""
                 },
