@@ -182,9 +182,9 @@
                 </div>
             </div>
             <div class="container" style="width: 30%; display:inline-block; float:left ">
-                <div style="height:100%; width:90%" id="chartContainer">
+                <div style="height:100%; width:90%; display:inline-block; float:left" id="chartContainer">
                 </div>
-                <div style="height:100%; width:90%">
+                <div style="height:100%; width:10%; display:inline-block; float:left">
                     <button type="submit" class="btn btn-rounded"><i class="fas fa-angle-double-right"></i></button>
                 </div>
             </div>
