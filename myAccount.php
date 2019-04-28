@@ -176,15 +176,36 @@
         </div>
 
         <!--   Start Divs for quizzes -->
-<!--        
-        <div class="container" style="max-height: 30%; width: 50%;">
-            <div class="jumbotron text-center light-blue lighten-3 white-text mx-2 mb-5">
-                <h1>History: American Revolution</h1>
-                <button type="submit" class="btn btn-dark btn-rounded">Start<i class="fas fas fa-play pl-1"></i></button>
-                <hr class="my-2">
+       <div class="jumbotron mx-auto mb-5" style="height: 25%; width: 50%; overflow:hidden;" id="amrevJumbo">
+            <div class="container" style="width: 70%; display:inline-block; float:left" id="amrevHeader" >
+                <div>
+                    <h1>History: The American Revolution</h1>
+                </div>
+                <div>
+                    <div class="progress" style="display:inline-block; float:left; width:75%; margin: auto">
+                        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                            70%
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-dark btn-rounded" style="display:inline-block; float:left; width:20%">Start<i class="fas fas fa-play pl-1"></i></button>
+                </div>
+            </div>
+            <div class="container" style="width: 30%; display:inline-block; float:left " id="amrevTotal">
+                <div style="height:100%; width:95%; display:inline-block; float:left" id="amrevTotalChartContainer">
+                </div>
+                <div cclass= "align-middle" style="height:100%; width:5%;display:inline-block; float:left">
+                    <button onclick="expandAmrevStats()"><i id="amrevIcon" class="fas fa-angle-double-right"></i></button>
+                </div>
+            </div>
+            <div class="container" style="width: 0%;display:inline-block; float:left; visibility: hidden;" id="amrevBreakout">
+                <div style="height:100%; width:50%; display:inline-block; float:left" id="amrevTextChartContainer">
+                </div>
+                <div style="height:100%; width:50%; display:inline-block; float:left" id="amrevVideoChartContainer">
+                </div>
             </div>
         </div>
--->
+
+
         <div class="jumbotron mx-auto mb-5" style="height: 25%; width: 50%; overflow:hidden;" id="mathJumbo">
             <div class="container" style="width: 70%; display:inline-block; float:left" id="mathHeader" >
                 <div>
@@ -192,8 +213,8 @@
                 </div>
                 <div>
                     <div class="progress" style="display:inline-block; float:left; width:75%; margin: auto">
-                        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="<?php echo $mathProgress; ?>" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                            <?php echo $mathProgress . '%';?>
+                        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                            70%
                         </div>
                     </div>
                     <button type="submit" class="btn btn-dark btn-rounded" style="display:inline-block; float:left; width:20%">Start<i class="fas fas fa-play pl-1"></i></button>
@@ -213,6 +234,8 @@
                 </div>
             </div>
         </div>
+
+
 
         <div class="jumbotron mx-auto mb-5" style="height: 25%; width: 50%; overflow:hidden;" id="funJumbo">
             <div class="container" style="width: 70%; display:inline-block; float:left" id="funHeader" >
