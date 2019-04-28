@@ -234,12 +234,12 @@
             });
             chart.render();
         }
-
-        function expandStats(){
+    </script>
+    <script>
+    function expandStats(){
             document.getElementsById("mathJumbo").style.width = 90%;
        }
-
-
     </script>
+
 </html>
 
