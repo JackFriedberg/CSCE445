@@ -38,28 +38,6 @@
         }
     }
     
-
-
-
-
-    //Amrev chart arrays
-    $amrevTextData = array(
-        array("label" => "Correct", "y"=> $amrevTextCorrect),
-        array("label" => "Incorrect", "y"=>($amrevTextTotal - $amrevTextCorrect))
-    );
-    $amrevVideoData = array();
-    $amrevTotalData = array();
-
-    //Math chart arrays
-    $mathTextData = array();
-    $mathVideoData = array();
-    $mathTotalData = array();
-
-    //Fun chart arrays
-    $funTextData = array();
-    $funVideoData = array();
-    $funTotalData = array();
-
     //Overall chart arrays
     $funTextData = array();
     $funVideoData = array();
@@ -67,40 +45,50 @@
 
 
 
-
-    echo '
-        <h3> Amrev </h3>
-        <p> Text Correct: ' .  $amrevTextCorrect . '</p>
-        <p> Text Incorrect: ' . ($amrevTextTotal - $amrevTextCorrect) . '</p>
-        <p> Video Correct: ' .  $amrevVideoCorrect . '</p>
-        <p> Video Incorrect: ' . ($amrevVideoTotal - $amrevVideoCorrect) . '</p>
-        <p> Total Correct: ' .  $amrevQuizCorrect . '</p>
-        <p> Total Incorrect: ' . ($amrevQuizTotal - $amrevQuizCorrect) . '</p>
-    ';
+    if(!empty($amrevQuizTotal) ||  $amrevQuizTotal > 0){
+        $amrevTextData = array(
+            array("label" => "Correct", "y"=> $amrevTextCorrect),
+            array("label" => "Incorrect", "y"=>($amrevTextTotal - $amrevTextCorrect))
+        );
+        $amrevVideoData = array(
+            array("label" => "Correct", "y"=> $amrevVideoCorrect),
+            array("label" => "Incorrect", "y"=>($amrevVideoTotal - $amrevVideoCorrect))
+        );
+        $amrevTotalData = array(
+            array("label" => "Correct", "y"=> $amrevQuizCorrect),
+            array("label" => "Incorrect", "y"=>($amrevQuizTotal - $amrevQuizCorrect))
+        );
+    }
     
     if(!empty($mathQuizTotal) ||  $mathQuizTotal > 0){
-        echo '
-            <h3> Math </h3>
-            <p> Text Correct: ' .  $mathTextCorrect . '</p>
-            <p> Text Incorrect: ' . ($mathTextTotal - $mathTextCorrect) . '</p>
-            <p> Video Correct: ' .  $mathVideoCorrect . '</p>
-            <p> Video Incorrect: ' . ($mathVideoTotal - $mathVideoCorrect) . '</p>
-            <p> Total Correct: ' .  $mathQuizCorrect . '</p>
-            <p> Total Incorrect: ' . ($mathQuizTotal - $mathQuizCorrect) . '</p>
-        ';
+        $mathTextData = array(
+            array("label" => "Correct", "y"=> $mathTextCorrect),
+            array("label" => "Incorrect", "y"=>($mathTextTotal - $mathTextCorrect))
+        );
+        $mathVideoData = array(
+            array("label" => "Correct", "y"=> $mathVideoCorrect),
+            array("label" => "Incorrect", "y"=>($mathVideoTotal - $mathVideoCorrect))
+        );
+        $mathTotalData = array(
+            array("label" => "Correct", "y"=> $mathQuizCorrect),
+            array("label" => "Incorrect", "y"=>($mathQuizTotal - $mathQuizCorrect))
+        );
     }
     
     
     if(!empty($funQuizTotal) ||  $funQuizTotal > 0){
-        echo '
-            <h3> Fun </h3>
-            <p> Text Correct: ' .  $funTextCorrect . '</p>
-            <p> Text Incorrect: ' . ($funTextTotal - $funTextCorrect) . '</p>
-            <p> Video Correct: ' .  $funVideoCorrect . '</p>
-            <p> Video Incorrect: ' . ($funVideoTotal - $funVideoCorrect) . '</p>
-            <p> Total Correct: ' .  $funQuizCorrect . '</p>
-            <p> Total Incorrect: ' . ($funQuizTotal - $funQuizCorrect) . '</p>
-        ';
+        $funTextData = array(
+            array("label" => "Correct", "y"=> $funTextCorrect),
+            array("label" => "Incorrect", "y"=>($funTextTotal - $funTextCorrect))
+        );
+        $funVideoData = array(
+            array("label" => "Correct", "y"=> $funVideoCorrect),
+            array("label" => "Incorrect", "y"=>($funVideoTotal - $funVideoCorrect))
+        );
+        $funTotalData = array(
+            array("label" => "Correct", "y"=> $funQuizCorrect),
+            array("label" => "Incorrect", "y"=>($funQuizTotal - $funQuizCorrect))
+        );
     }
     
 
@@ -111,21 +99,20 @@
     $amRev_result = sqlsrv_query($conn,$sql_Amrev);
     if($amRev_result){
         $row = sqlsrv_fetch_array($amRev_result, SQLSRV_FETCH_ASSOC);
-        echo '<h3> Amrev Progress: ' . $row['questionNumber']  .'</h3>';
+        //echo '<h3> Amrev Progress: ' . $row['questionNumber']  .'</h3>';
     }
 
     $sql_Math = "SELECT * FROM quizProgress WHERE username LIKE "."'". $_SESSION['UserId'] ."'". " AND  QuizType LIKE 'math'";
     $math_result = sqlsrv_query($conn,$sql_Math);
     if($math_result){
         $row = sqlsrv_fetch_array($math_result, SQLSRV_FETCH_ASSOC);
-        echo '<h3> Math Progress: ' . $row['questionNumber']  .'</h3>';
+        //echo '<h3> Math Progress: ' . $row['questionNumber']  .'</h3>';
     }
 
     
 ?>
 
 
-<!--
 <html>
     <head>
         <title>My Account</title>
@@ -198,5 +185,3 @@
     </body>
 </html>
 
-
--->
