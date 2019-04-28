@@ -214,7 +214,8 @@
                 title:{
                     text: "Quiz Performace to Date",
                     fontColor: "white",
-                    fontSize: 16
+                    fontSize: 16,
+                    fontWeight: normal
                 },
                 data: [{
                     type: "pie",
