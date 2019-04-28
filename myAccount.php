@@ -173,7 +173,7 @@
                     <h1>Math: Trigonometry</h1>
                     <button type="submit" class="btn btn-dark btn-rounded">Start<i class="fas fas fa-play pl-1"></i></button>
                 </div>
-                <div id="chartContainer" style="height:100%; width: 50%; float:left"></div>
+                <!-- <div id="chartContainer" style="height:100%; width: 50%; float:left"></div> -->
             </div>
         </div>
 
