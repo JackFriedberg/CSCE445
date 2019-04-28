@@ -212,7 +212,7 @@
                 animationEnabled: true,
                 exportEnabled: false,
                 title:{
-                    text: ""
+                    text: "Quiz Performace to Date"
                 },
                 data: [{
                     type: "pie",
