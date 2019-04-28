@@ -171,13 +171,15 @@
                             <?php echo $amrevPercent . "%";?>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-dark btn-rounded" style="display:inline-block; float:left; width:20%">Start<i class="fas fas fa-play pl-1"></i></button>
+                    <form action="/initial.php" method="POST">
+                        <button type="submit" class="btn btn-dark btn-rounded" style="display:inline; float:left; width:20%">Start<i class="fas fas fa-play pl-1"></i></button>
+                    </form>
                 </div>
             </div>
             <div class="container" style="width: 30%; display:inline-block; float:left " id="amrevTotal">
-                <div style="height:100%; width:95%; display:inline-block; float:left" id="amrevTotalChartContainer">
+                <div style="height:100%; width:95%; display:inline; float:left" id="amrevTotalChartContainer">
                 </div>
-                <div cclass= "align-middle" style="height:100%; width:5%;display:inline-block; float:left">
+                <div class= "align-middle" style="height:100%; width:5%;display:inline-block; float:left">
                     <button onclick="expandAmrevStats()"><i id="amrevIcon" class="fas fa-angle-double-right"></i></button>
                 </div>
             </div>
@@ -224,7 +226,7 @@
         <div class="jumbotron mx-auto mb-5" style="height: 25%; width: 50%; overflow:hidden;" id="funJumbo">
             <div class="container" style="width: 70%; display:inline-block; float:left" id="funHeader" >
                 <div>
-                    <h1>Swag: Fun Topics</h1>
+                    <h1>Basketball: Current News</h1>
                 </div>
                 <div>
                     <div class="progress" style="display:inline-block; float:left; width:75%; margin: auto">
