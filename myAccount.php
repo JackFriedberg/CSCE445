@@ -139,6 +139,9 @@
                 background-repeat: no-repeat;
                 background-size: cover;
             }
+            .space {
+                padding: 3px;
+            }
         </style>
     </head>
         
@@ -160,8 +163,8 @@
             </ul>
         </div>
 
-       <div class="jumbotron mx-auto mb-5" style="height: 25%; width: 50%; overflow:hidden;" id="amrevJumbo">
-            <div class="container" style="width: 70%; display:inline-block; float:left" id="amrevHeader" >
+       <div class="jumbotron mx-auto mb-5" style="height: 30%; width: 60%; overflow:hidden;" id="amrevJumbo">
+            <div class="container" style="width: 80%; display:inline-block; text-align: center" id="amrevHeader" >
                 <div>
                     <h1>History: American Revolution</h1>
                 </div>
@@ -172,12 +175,12 @@
                         </div>
                     </div>
                     <form action="/initial.php" method="POST">
-                        <button type="submit" class="btn btn-dark btn-rounded" style="display:inline; width:20%">Start<i class="fas fas fa-play pl-1"></i></button>
+                        <button type="submit" class="btn btn-dark btn-rounded" style="display:inline-block; float:left; width:20%">Start<i class="fas fas fa-play pl-1"></i></button>
                     </form>
                 </div>
             </div>
-            <div class="container" style="width: 30%; display:inline-block;" id="amrevTotal">
-                <div style="height:100%; width:95%; display:inline;" id="amrevTotalChartContainer">
+            <div class="container" style="width: 30%; display:inline-block; float:left " id="amrevTotal">
+                <div style="height:100%; width:95%; display:inline-block; float:left" id="amrevTotalChartContainer">
                 </div>
                 <div class= "align-middle" style="height:100%; width:5%;display:inline-block; float:left">
                     <button onclick="expandAmrevStats()"><i id="amrevIcon" class="fas fa-angle-double-right"></i></button>
@@ -192,8 +195,8 @@
         </div>
 
 
-        <div class="jumbotron mx-auto mb-5" style="height: 25%; width: 50%; overflow:hidden;" id="mathJumbo">
-            <div class="container" style="width: 70%; display:inline-block; float:left" id="mathHeader" >
+        <div class="jumbotron mx-auto mb-5" style="height: 30%; width: 60%; overflow:hidden;" id="mathJumbo">
+            <div class="container" style="width: 80%; display:inline-block; text-align: center" id="mathHeader" >
                 <div>
                     <h1>Math: Trigonometry</h1>
                 </div>
@@ -223,8 +226,8 @@
 
 
 
-        <div class="jumbotron mx-auto mb-5" style="height: 25%; width: 50%; overflow:hidden;" id="funJumbo">
-            <div class="container" style="width: 70%; display:inline-block; float:left" id="funHeader" >
+        <div class="jumbotron mx-auto mb-5" style="height: 30%; width: 60%; overflow:hidden;" id="funJumbo">
+            <div class="container" style="width: 80%; display:inline-block; text-align: center" id="funHeader" >
                 <div>
                     <h1>Basketball: Current News</h1>
                 </div>
