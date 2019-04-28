@@ -129,7 +129,7 @@
     
 ?>
 
-<?php echo $mathPercent;?>
+<?php echo $funPercent;?>
 
 <html>
     <head>
@@ -244,8 +244,8 @@
                 </div>
                 <div>
                     <div class="progress" style="display:inline-block; float:left; width:75%; margin: auto">
-                        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                            70%
+                        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="<?php echo $funPercent;?>" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo $funPercent;?>%">
+                            <?php echo $funPercent . "%";?>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-dark btn-rounded" style="display:inline-block; float:left; width:20%">Start<i class="fas fas fa-play pl-1"></i></button>
