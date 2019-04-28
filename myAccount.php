@@ -254,7 +254,7 @@
 
         function breakoutCharts () {
             //for loop here 
-            var textChart = new CanvasJS.Chart("totalChartContainer", {
+            var textChart = new CanvasJS.Chart("textChartContainer", {
                 backgroundColor: "transparent",
                 animationEnabled: true,
                 exportEnabled: false,
@@ -281,7 +281,7 @@
             });
             textChart.render();
 
-            var videoChart = new CanvasJS.Chart("totalChartContainer", {
+            var videoChart = new CanvasJS.Chart("videoChartContainer", {
                 backgroundColor: "transparent",
                 animationEnabled: true,
                 exportEnabled: false,
