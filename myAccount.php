@@ -173,12 +173,12 @@
                         <h1>Math: Trigonometry</h1>
                     </div>
                     <div>
-                        <div class="progress" style>
-                            <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                        <div class="progress" style="display:inline-block; float:left;">
+                            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
                                 70%
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-dark btn-rounded">Start<i class="fas fas fa-play pl-1"></i></button>
+                        <button type="submit" class="btn btn-dark btn-rounded" style="display:inline-block; float:left;">Start<i class="fas fas fa-play pl-1"></i></button>
                     </div>
             </div>
             <div class="container" style="width: 50%; display:inline-block; float:left ">
