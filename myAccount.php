@@ -167,7 +167,7 @@
             </div>
         </div>
 -->
-        <div class="jumbotron mx-auto mb-5" style="height: 25%; width: 50%; overflow:hidden;">
+        <div class="jumbotron mx-auto mb-5" style="height: 25%; width: 50%; overflow:hidden;" id="mathJumbo">
             <div class="container" style="width: 70%; display:inline-block; float:left" >
                 <div>
                     <h1>Math: Trigonometry</h1>
@@ -235,13 +235,8 @@
             chart.render();
         }
 
-        $('.popper').popover({
-    placement: 'bottom',
-    container: 'body',
-    html: true,
-    content: function () {
-        return $(this).next('.popper-content').html();
-    }
+       function expandStats(){
+       }
 });
 
 
