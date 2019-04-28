@@ -237,7 +237,7 @@
     </script>
     <script>
     function expandStats(){
-            document.getElementsById("mathJumbo").style.width = 90%;
+            document.getElementsById("mathJumbo").style.width = "90%";
        }
     </script>
 
