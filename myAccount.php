@@ -168,7 +168,7 @@
         </div>
 -->
         <div class="jumbotron mx-auto mb-5" style="height: 25%; width: 50%; overflow:hidden;" id="mathJumbo">
-            <div class="container" style="width: 70%; display:inline-block; float:left" >
+            <div class="container" style="width: 70%; display:inline-block; float:left" id="mathHeader" >
                 <div>
                     <h1>Math: Trigonometry</h1>
                 </div>
@@ -181,14 +181,14 @@
                     <button type="submit" class="btn btn-dark btn-rounded" style="display:inline-block; float:left; width:20%">Start<i class="fas fas fa-play pl-1"></i></button>
                 </div>
             </div>
-            <div class="container" style="width: 30%; display:inline-block; float:left ">
+            <div class="container" style="width: 30%; display:inline-block; float:left " id="mathTotal">
                 <div style="height:100%; width:95%; display:inline-block; float:left" id="chartContainer">
                 </div>
                 <div cclass= "align-middle" style="height:100%; width:5%;display:inline-block; float:left">
                     <button onclick="expandMathStats()"><i class="fas fa-angle-double-right"></i></button>
                 </div>
             </div>
-            <div class="container" style="width: 0%;display:inline-block; float:left ">
+            <div class="container" style="width: 0%;display:inline-block; float:left " id="mathBreakout">
                 some text
             </div>
         </div>
@@ -241,13 +241,11 @@
     <script>
     function expandMathStats(){
 
-        var mathJumbo = document.getElementById("mathJumbo");
-        mathJumbo.style.width = "90%";
-        var containers = mathJumbo.getElementsByClass("container");
-        containers[0].style.width = "40%";
-        containers[1].style.width = "20%";
-        containers[2].style.width = "40%";
-       }
+        document.getElementById("mathJumbo").style.width = "90%";
+        document.getElementById("mathHeader").style.width = "40%";
+        document.getElementById("mathTotal").style.width = "20%";
+        document.getElementById("mathBreakout").style.width = "40%";
+        }
     </script>
 
 </html>
