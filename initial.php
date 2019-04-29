@@ -31,12 +31,12 @@
                 <div class = "jumbotron text-center">
                     <h1> "Select what type of context you want" </h1>
                 </div>
-                <div style="height:100%" class="row align-items-center justify-content-center">
+                <div class="row align-items-center justify-content-center">
                     <form action="handle.php" method="post">
-                        <div id="buttonDiv" class="btn-group-vertical" style="margin:0 auto">
-                            <button type="submit" class="btn btn-primary center" name="video"> Video Context </button>
-                            <button type="submit" class="btn btn-primary center" name="text"> Text Context </button>
-                            <button type="submit" class="btn btn-primary center" name="random"> Randomized Context </button>
+                        <div id="menuDiv" class="btn-group-vertical" style="margin:0 auto">
+                            <button type="submit" class="btn btn-secondary btn-lg btn-block" name="video"> Video Context </button>
+                            <button type="submit" class="btn btn-secondary btn-lg btn-block" name="text"> Text Context </button>
+                            <button type="submit" class="btn btn-secondary btn-lg btn-block" name="random"> Randomized Context </button>
                         </div>
                     </form>
                 </div>
