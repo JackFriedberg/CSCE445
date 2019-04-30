@@ -2,9 +2,7 @@
     include_once "../dbh.inc.php";
     session_start();
 
-    if(isset($_GET['quizType'])){
-        $_SESSION['quizType'] = $_GET['quizType'];
-    }
+    $_SESSION['quizType'] = $_GET['quizType'];
 
     if(!isset($_SESSION['quizType'])){
         header("Location: myAccount.php?invalidQuiz");
