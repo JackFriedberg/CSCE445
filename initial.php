@@ -2,7 +2,8 @@
     include_once "../dbh.inc.php";
     session_start();
 
-    $_SESSION['quizType'] = $_GET['quizType'];
+    if(!empty($_GET['quizType']))
+        $_SESSION['quizType'] = $_GET['quizType'];
 
     if(!isset($_SESSION['quizType'])){
         header("Location: index.php?invalidQuiz");
