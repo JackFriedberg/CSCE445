@@ -10,7 +10,7 @@
     }
 
     if(!empty($_GET['answer']))
-        $validate = $_GET['quizType'];
+        $validate = $_GET['answer'];
 ?>
 
 <html>
