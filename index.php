@@ -88,7 +88,9 @@
                         <div class="card-body">
                             <h4 class="card-title">Mathematics</h4>
                             <p class="card-text">Take the quiz on Trig and learn all the basics you need to start your college career!</p>
-                            <button type="submit" class="btn btn-outline-info btn-rounded waves-effect">Start Quiz<i class="fas fas fa-play pl-1"></i></button>
+                            <form action="index.php" method="post">
+                                <button type="submit" class="btn btn-outline-info btn-rounded waves-effect">Start Quiz<i class="fas fas fa-play pl-1"></i></button>
+                            </form>
                         </div>
                     </div>
 
@@ -99,7 +101,8 @@
                                 <h4 class="card-title">History</h4>
                                 <p class="card-text">Want to learn more about America's past? Go through the journey with the American Revolution quiz and learn everything in a timeline fashion.</p>
                                 <form action="initial.php?quizType=amRev" method="post">
-                                <button type="submit" class="btn btn-outline-info btn-rounded waves-effect">Start Quiz<i class="fas fas fa-play pl-1"></i></button>
+                                    <button type="submit" class="btn btn-outline-info btn-rounded waves-effect">Start Quiz<i class="fas fas fa-play pl-1"></i></button>
+                                </form>
                             </div>
                         </div>
                     </form>
@@ -109,7 +112,9 @@
                         <div class="card-body">
                             <h4 class="card-title">Basketball: C</h4>
                             <p class="card-text">Stay up to date with current Basketball news! Who you got? Houston in 6</p>
-                            <button type="submit" class="btn btn-outline-info btn-rounded waves-effect">Start Quiz<i class="fas fas fa-play pl-1"></i></button>
+                            <form action="index.php" method="post">
+                                <button type="submit" class="btn btn-outline-info btn-rounded waves-effect">Start Quiz<i class="fas fas fa-play pl-1"></i></button>
+                            </form>
                         </div>
                     </div>
                 </div>
