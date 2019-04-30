@@ -19,7 +19,7 @@
 
 
     <?php
-    if(!isset($_SESSION['question'])){
+    if(!isset($_SESSION['question']) || $_SESSION['question'] == 0 ){
         if(isset($_SESSION['UserId'])){
             //show menu
             echo'

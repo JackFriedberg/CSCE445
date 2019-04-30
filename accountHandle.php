@@ -5,10 +5,19 @@ session_start();
 
 
 if(isset($_POST['amRev'])){
-
-    
     $_SESSION['quizType'] = "amrev";
-    header("Location: /initial.php");
+    
+    echo '
+        <form method ="GET">
+            <input type="search" name="progress" id="progress">
+        </form>
+    ';
+
+
+    echo 'Question Progress: '. $_GET['progress'] .' 
+    ';
+
+    //header("Location: /initial.php");
 }
 else {
     header("Location: /myAccount.php?NotReady");

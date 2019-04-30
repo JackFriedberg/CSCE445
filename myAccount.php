@@ -183,7 +183,7 @@
                             <?php echo $amrevPercent . "%";?>
                         </div>
                     </div>
-                    <form action="accountHandle.php" method="post">
+                    <form action="accountHandle.php?progress=<?php echo $amrevProgress;?>" method="post">
                         <button type="submit" name ="amRev" class="btn btn-dark btn-rounded" style="display:inline-block; float:left; width:20%">Start<i class="fas fas fa-play pl-1"></i></button>
                     </form>
                 </div>
@@ -215,7 +215,7 @@
                             <?php echo $mathPercent . "%";?>
                         </div>
                     </div>
-                    <form action="accountHandle.php" method="post">
+                    <form action="accountHandle.php?<?php echo $mathProgress;?>" method="post">
                         <button type="submit" name ="math" class="btn btn-dark btn-rounded" style="display:inline-block; float:left; width:20%">Start<i class="fas fas fa-play pl-1"></i></button>
                     </form>    
                 </div>
@@ -248,7 +248,7 @@
                             <?php echo $funPercent . "%";?>
                         </div>
                     </div>
-                    <form action="accountHandle.php" method="post">
+                    <form action="accountHandle.php?<?php echo $funProgress;?>" method="post">
                         <button type="submit" name ="fun" class="btn btn-dark btn-rounded" style="display:inline-block; float:left; width:20%">Start<i class="fas fas fa-play pl-1"></i></button>
                     </form>
                 </div>
