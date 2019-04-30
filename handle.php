@@ -2,6 +2,28 @@
 
 include_once "../dbh.inc.php";
 session_start();
+$corrrectness = false;
+
+
+if(isset($_POST['video'])){
+    $_SESSION['questionType'] = "video";
+    if(!isset($_SESSION['question']) || $_SESSION['question'] == 0 )
+        $_SESSION['question'] = 1;
+    header("Location: /initial.php");
+}
+if(isset($_POST['text'])){
+    $_SESSION['questionType'] = "text";
+    if(!isset($_SESSION['question']) || $_SESSION['question'] == 0 )
+        $_SESSION['question'] = 1;
+    header("Location: /initial.php");
+}
+if(isset($_POST['random'])){
+    $_SESSION['questionType'] = "random";
+    if(!isset($_SESSION['question']) || $_SESSION['question'] == 0 )
+        $_SESSION['question'] = 1;
+    header("Location: /initial.php");
+}
+
 
 if(isset($_POST['correct'])){
     if($_SESSION['question'] % 2 == 0){
@@ -11,14 +33,40 @@ if(isset($_POST['correct'])){
         $_SESSION['question']++;
         $_SESSION['question']++;
     }
+    $correctness = true;
 }
-
 else {
     $_SESSION['question']++;
 }
 
 
-header("Location: /initial.php");
-exit();
+//stores new quiz stats
+if(isset($_SESSION['UserId'])){
 
+    $whereStatement = " WHERE username LIKE "."'". $_SESSION['UserId'] ."'". "AND  QuizType LIKE "."'". $_SESSION['quizType'] ."'" ;
+    $totalString = $_SESSION['tempQuestionType'] . "total";
+    $correctString = $_SESSION['tempQuestionType'] . "Correct";
+    $setStatement =  "SET " . $totalString . " = (SELECT " . $totalString . " FROM quizStats" . $whereStatement . ") + 1";
+
+    if($correctness){ //adds correct question counter to edit request
+        $setStatement = $setStatement . ", " . $correctString . " = (SELECT " . $correctString . " FROM quizStats" . $whereStatement . ") + 1";
+    }
+
+    //puts the SQL query together and sends query to update correct/total count
+    $sql = "UPDATE QuizStats " . $setStatement . $whereStatement;
+    $questions = sqlsrv_query($conn, $sql);
+
+    //updates where user is in quiz
+    $sql = "UPDATE QuizProgress SET questionNumber = " . $_SESSION['question'] . $whereStatement;
+    $questions = sqlsrv_query($conn, $sql);
+}
+
+if($correctness){
+    header("Location: /initial.php?answer=correct");
+}
+else{
+    header("Location: /initial.php?answer=incorrect");
+}
+
+exit();
 ?>

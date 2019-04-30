@@ -1,9 +1,6 @@
 <?php
     include_once "../dbh.inc.php";
     session_start();
-    
-    $_SESSION['question'] = 1; /*sets session variable to 1 for when quiz starts*/
-
     if(isset($_SESSION['UserId'])){
         header("Location: myAccount.php");
     }
@@ -91,11 +88,13 @@
                         <div class="card-body">
                             <h4 class="card-title">Mathematics</h4>
                             <p class="card-text">Take the quiz on Trig and learn all the basics you need to start your college career!</p>
-                            <button type="submit" class="btn btn-outline-info btn-rounded waves-effect">Start Quiz<i class="fas fas fa-play pl-1"></i></button>
+                            <form action="index.php" method="post">
+                                <button type="submit" class="btn btn-outline-info btn-rounded waves-effect">Start Quiz<i class="fas fas fa-play pl-1"></i></button>
+                            </form>
                         </div>
                     </div>
 
-                    <form action="/initial.php" method="POST">
+                    <form action="/initial.php?quizType=amRev" method="POST">
                         <div class="card mb-4" style="max-width:310px">
                             <img class="card-img-top img-fluid" src="https://mdbootstrap.com/img/Photos/Slides/img%20(70).jpg" alt="Card image cap">
                             <div class="card-body">
@@ -109,9 +108,11 @@
                     <div class="card mb-4" style="max-width:310px">
                         <img class="card-img-top img-fluid" src="https://mdbootstrap.com/img/Photos/Others/photo6.jpg" alt="Card image cap">
                         <div class="card-body">
-                            <h4 class="card-title">Topic 3</h4>
-                            <p class="card-text">Swag</p>
-                            <button type="submit" class="btn btn-outline-info btn-rounded waves-effect">Start Quiz<i class="fas fas fa-play pl-1"></i></button>
+                            <h4 class="card-title">Basketball</h4>
+                            <p class="card-text">Stay up to date with current Basketball news! Who you got? Houston in 6</p>
+                            <form action="index.php" method="post">
+                                <button type="submit" class="btn btn-outline-info btn-rounded waves-effect">Start Quiz<i class="fas fas fa-play pl-1"></i></button>
+                            </form>
                         </div>
                     </div>
                 </div>

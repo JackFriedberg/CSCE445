@@ -3,7 +3,10 @@
     session_start();
     if(!isset($_SESSION['UserId']))
         header("Location: Index.php");
+
+
     $username = strval($_SESSION['UserId']);
+
     $sql = "SELECT * FROM quizStats WHERE username LIKE "."'". $username ."'"; 
     $result = sqlsrv_query($conn,$sql);
     
@@ -16,6 +19,7 @@
     
     if(sqlsrv_has_rows($result)){                
         while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)){
+
             $quizType= strval($row["quiztype"]);
             
             ${$quizType. "TextTotal"} = intval($row["texttotal"]);
@@ -24,6 +28,7 @@
             ${$quizType. "VideoCorrect"} = intval($row["videoCorrect"]);
             ${$quizType. "QuizTotal"} =  ${$quizType. "TextTotal"} + ${$quizType. "VideoTotal"};
             ${$quizType. "QuizCorrect"} = ${$quizType. "TextCorrect"} + ${$quizType. "VideoCorrect"};
+
             $overallVideoTotal += ${$quizType. "VideoTotal"};
             $overallVideoCorrect +=  ${$quizType. "VideoCorrect"};
             $overallTextTotal +=  ${$quizType. "TextTotal"};
@@ -79,36 +84,43 @@
         );
     }
     
+
     $amrevProgress = 0;
     $mathProgress = 0;
     $funProgress = 0;
     
+
     $sql_Amrev = "SELECT * FROM quizProgress WHERE username LIKE "."'". $_SESSION['UserId'] ."'". " AND  QuizType LIKE 'AmRev'";
     $amRev_result = sqlsrv_query($conn,$sql_Amrev);
     if($amRev_result){
         $row = sqlsrv_fetch_array($amRev_result, SQLSRV_FETCH_ASSOC);
         $amrevProgress =  intval($row['questionNumber']);
     }
+
     $sql_Math = "SELECT * FROM quizProgress WHERE username LIKE "."'". $_SESSION['UserId'] ."'". " AND  QuizType LIKE 'math'";
     $math_result = sqlsrv_query($conn,$sql_Math);
     if($math_result){
         $row = sqlsrv_fetch_array($math_result, SQLSRV_FETCH_ASSOC);
         $mathProgress =  intval($row['questionNumber']);
     }
+
     $sql_Fun = "SELECT * FROM quizProgress WHERE username LIKE "."'". $_SESSION['UserId'] ."'". " AND  QuizType LIKE 'fun'";
     $fun_result = sqlsrv_query($conn,$sql_Fun);
     if($fun_result){
         $row = sqlsrv_fetch_array($fun_result, SQLSRV_FETCH_ASSOC);
         $funProgress =  intval($row['questionNumber']);
     }
+
     //set these manually
     $amRevTotalQuestions = 38;
     $mathTotalQuestions = 10;
     $funTotalQuestions = 10;
+
     //calculate the percentages
     $amrevPercent = $amrevProgress/$amRevTotalQuestions * 100;
     $mathPercent = $mathProgress/$mathTotalQuestions * 100;
     $funPercent = $funProgress/$funTotalQuestions * 100;
+
     //round the calculation to one decimal
     $amrevPercent = floor($amrevPercent * 10) / 10;
     $mathPercent = floor($mathPercent * 10) / 10;
@@ -171,7 +183,9 @@
                             <?php echo $amrevPercent . "%";?>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-dark btn-rounded" style="display:inline-block; float:left; width:20%">Start<i class="fas fas fa-play pl-1"></i></button>
+                    <form action="accountHandle.php?progress=<?php echo $amrevProgress;?>" method="post">
+                        <button type="submit" name ="amRev" class="btn btn-dark btn-rounded" style="display:inline-block; float:left; width:20%">Start<i class="fas fas fa-play pl-1"></i></button>
+                    </form>
                 </div>
             </div>
             <div class="container" style="width: 30%; display:inline-block; float:left " id="amrevTotal">
@@ -201,7 +215,9 @@
                             <?php echo $mathPercent . "%";?>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-dark btn-rounded" style="display:inline-block; float:left; width:20%">Start<i class="fas fas fa-play pl-1"></i></button>
+                    <form action="accountHandle.php?<?php echo $mathProgress;?>" method="post">
+                        <button type="submit" name ="math" class="btn btn-dark btn-rounded" style="display:inline-block; float:left; width:20%">Start<i class="fas fas fa-play pl-1"></i></button>
+                    </form>    
                 </div>
             </div>
             <div class="container" style="width: 30%; display:inline-block; float:left " id="mathTotal">
@@ -232,7 +248,9 @@
                             <?php echo $funPercent . "%";?>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-dark btn-rounded" style="display:inline-block; float:left; width:20%">Start<i class="fas fas fa-play pl-1"></i></button>
+                    <form action="accountHandle.php?<?php echo $funProgress;?>" method="post">
+                        <button type="submit" name ="fun" class="btn btn-dark btn-rounded" style="display:inline-block; float:left; width:20%">Start<i class="fas fas fa-play pl-1"></i></button>
+                    </form>
                 </div>
             </div>
             <div class="container" style="width: 30%; display:inline-block; float:left " id="funTotal">
@@ -275,6 +293,7 @@
                     indexLabelFontColor: "white",
                     indexLabelPlacement: "inside",
                     indexLabel: "#percent%",
+
                     dataPoints: <?php echo json_encode($amrevTotalData, JSON_NUMERIC_CHECK); ?>
                 }],
                 legend : {
@@ -302,6 +321,7 @@
                     indexLabelFontColor: "white",
                     indexLabelPlacement: "inside",
                     indexLabel: "#percent%",
+
                     dataPoints: <?php echo json_encode($mathTotalData, JSON_NUMERIC_CHECK); ?>
                 }],
                 legend : {
@@ -309,6 +329,7 @@
                 }
             });
             chart.render();
+
             var chart = new CanvasJS.Chart("funTotalChartContainer", {
                 backgroundColor: "transparent",
                 animationEnabled: true,
@@ -327,6 +348,7 @@
                     indexLabelFontColor: "white",
                     indexLabelPlacement: "inside",
                     indexLabel: "#percent%",
+
                     dataPoints: <?php echo json_encode($funTotalData, JSON_NUMERIC_CHECK); ?>
                 }],
                 legend : {
@@ -334,7 +356,11 @@
                 }
             });
             chart.render();
+
+
+
         }
+
         function expandAmrevStats(){
             if(document.getElementById("amrevBreakout").style.visibility == "visible"){
                 document.getElementById("amrevJumbo").style.width = "50%";
@@ -356,6 +382,7 @@
                 breakoutAmrevCharts();
             }
         }
+
         function expandMathStats(){
             if(document.getElementById("mathBreakout").style.visibility == "visible"){
                 document.getElementById("mathJumbo").style.width = "50%";
@@ -377,6 +404,7 @@
                 breakoutMathCharts();
             }
         }
+
         function expandFunStats(){
             if(document.getElementById("funBreakout").style.visibility == "visible"){
                 document.getElementById("funJumbo").style.width = "50%";
@@ -398,6 +426,8 @@
                 breakoutFunCharts();
             }
         }
+
+
         function breakoutAmrevCharts () {
             //for loop here 
             var textChart = new CanvasJS.Chart("amrevTextChartContainer", {
@@ -418,6 +448,7 @@
                     indexLabelFontColor: "white",
                     indexLabelPlacement: "inside",
                     indexLabel: "#percent%",
+
                     dataPoints: <?php echo json_encode($amrevTextData, JSON_NUMERIC_CHECK); ?>
                 }],
                 legend : {
@@ -425,6 +456,7 @@
                 }
             });
             textChart.render();
+
             var videoChart = new CanvasJS.Chart("amrevVideoChartContainer", {
                 backgroundColor: "transparent",
                 animationEnabled: true,
@@ -443,6 +475,7 @@
                     indexLabelFontColor: "white",
                     indexLabelPlacement: "inside",
                     indexLabel: "#percent%",
+
                     dataPoints: <?php echo json_encode($amrevVideoData, JSON_NUMERIC_CHECK); ?>
                 }],
                 legend : {
@@ -473,6 +506,7 @@
                     indexLabelFontColor: "white",
                     indexLabelPlacement: "inside",
                     indexLabel: "#percent%",
+
                     dataPoints: <?php echo json_encode($mathTextData, JSON_NUMERIC_CHECK); ?>
                 }],
                 legend : {
@@ -480,6 +514,7 @@
                 }
             });
             textChart.render();
+
             var videoChart = new CanvasJS.Chart("mathVideoChartContainer", {
                 backgroundColor: "transparent",
                 animationEnabled: true,
@@ -498,6 +533,7 @@
                     indexLabelFontColor: "white",
                     indexLabelPlacement: "inside",
                     indexLabel: "#percent%",
+
                     dataPoints: <?php echo json_encode($mathVideoData, JSON_NUMERIC_CHECK); ?>
                 }],
                 legend : {
@@ -506,6 +542,8 @@
             });
             videoChart.render();
         }
+
+
         function breakoutFunCharts () {
             //for loop here 
             var textChart = new CanvasJS.Chart("funTextChartContainer", {
@@ -526,6 +564,7 @@
                     indexLabelFontColor: "white",
                     indexLabelPlacement: "inside",
                     indexLabel: "#percent%",
+
                     dataPoints: <?php echo json_encode($funTextData, JSON_NUMERIC_CHECK); ?>
                 }],
                 legend : {
@@ -533,6 +572,7 @@
                 }
             });
             textChart.render();
+
             var videoChart = new CanvasJS.Chart("funVideoChartContainer", {
                 backgroundColor: "transparent",
                 animationEnabled: true,
@@ -551,6 +591,7 @@
                     indexLabelFontColor: "white",
                     indexLabelPlacement: "inside",
                     indexLabel: "#percent%",
+
                     dataPoints: <?php echo json_encode($funVideoData, JSON_NUMERIC_CHECK); ?>
                 }],
                 legend : {
@@ -561,3 +602,4 @@
         }
     </script>
 </html>
+
