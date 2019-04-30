@@ -2,15 +2,16 @@
 
 include_once "../dbh.inc.php";
 session_start();
-$corrrectness = false;
 
 
 if(isset($_POST['amRev'])){
 
-    echo 'Amrev';
+    
+    $_SESSION['quizType'] = "amrev";
+    header("Location: /initial.php");
 }
 else {
-    echo 'Not done yet!';
+    header("Location: /myAccount.php?NotReady");
 }
 
 ?>

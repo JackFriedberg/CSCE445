@@ -2,11 +2,8 @@
     include_once "../dbh.inc.php";
     session_start();
 
-    //FIXME - make this non-constant
-    $_SESSION['quizType'] = "amrev";
-
     if(!isset($_SESSION['quizType'])){
-        header("Location: index.php");
+        header("Location: myAccount.php?invalidQuiz");
     }
 ?>
 
