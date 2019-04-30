@@ -108,7 +108,7 @@
                     <div class="card mb-4" style="max-width:310px">
                         <img class="card-img-top img-fluid" src="https://mdbootstrap.com/img/Photos/Others/photo6.jpg" alt="Card image cap">
                         <div class="card-body">
-                            <h4 class="card-title">Basketball: C</h4>
+                            <h4 class="card-title">Basketball</h4>
                             <p class="card-text">Stay up to date with current Basketball news! Who you got? Houston in 6</p>
                             <form action="index.php" method="post">
                                 <button type="submit" class="btn btn-outline-info btn-rounded waves-effect">Start Quiz<i class="fas fas fa-play pl-1"></i></button>
