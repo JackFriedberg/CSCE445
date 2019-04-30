@@ -205,6 +205,7 @@
         if($validate == "correct"){
             echo '
                     <div class="alert alert-success alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
                         <strong>Correct!</strong> Good Job!
                     </div>
                 ';
@@ -212,6 +213,7 @@
         if($validate == "incorrect"){
             echo '
                     <div class="alert alert-danger alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
                         <strong>Incorrect!</strong> Try this one.
                     </div>
             ';
