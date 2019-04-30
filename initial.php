@@ -3,7 +3,7 @@
     session_start();
 
     $validate;
-    
+
     if(!empty($_GET['quizType']))
         $_SESSION['quizType'] = $_GET['quizType'];
 
@@ -207,17 +207,16 @@
                     <div class="alert alert-success alert-dismissable">
                         <strong>Correct!</strong> Good Job!
                     </div>
-                '
+                ';
         }
         if($validate == "incorrect"){
             echo '
                     <div class="alert alert-danger alert-dismissable">
                         <strong>Incorrect!</strong> Try this one.
                     </div>
-            '
+            ';
         }
         
-        ';
         if(isset($_SESSION['UserId'])){ //add buttons to return to MyAccount or Logout if the user is logged in 
             echo '
                     <div class="container">
@@ -230,6 +229,20 @@
                             <form action="/logout.php" method="POST">
                                 <button type="submit" class="btn btn-dark">Logout<i class="fas fas fa-sign-in-alt pl-1"></i></button>
                             </form>    
+                        </div>
+                        <hr class="my-2">
+                        <hr class="my-2">
+                    </div>';
+        }
+        else {
+            echo '
+                    <div class="container">
+                        <hr class="my-2">
+                        <hr class="my-2">
+                        <div class="jumbotron text-center">
+                            <form action="index.php" method="POST">
+                                <button type="submit" class="btn btn-dark"Home Page<i class="fas fas fa-sign-in-alt pl-1"></i></button>
+                            </form> 
                         </div>
                         <hr class="my-2">
                         <hr class="my-2">
