@@ -2,6 +2,8 @@
     include_once "../dbh.inc.php";
     session_start();
 
+    $validate;
+    
     if(!empty($_GET['quizType']))
         $_SESSION['quizType'] = $_GET['quizType'];
 
