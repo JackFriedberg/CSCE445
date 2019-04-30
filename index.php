@@ -67,7 +67,7 @@
                                         <input type="email" name="Email" class="form-control mb-2" placeholder="Email">    
                                         <input type="text" name="Username" class="form-control mb-2" placeholder="Username">    
                                         <input type="password" name="UserPwd" class="form-control mb-2" placeholder="Password">    
-                                        <button type="submit" name="login-submit" class="btn btn-mb btn-primary btn-block mb-2">Sign-In</button>
+                                        <button type="submit" name="login-submit" class="btn btn-mb btn-primary btn-block mb-2">Sign-Up</button>
                                     </form>
                                 </div>
                             </div>
