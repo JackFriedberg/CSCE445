@@ -4,7 +4,7 @@
     //FIXME - make this non-constant
     $_SESSION['quizType'] = "amrev";
     if(!isset($_SESSION['quizType'])){
-        header("Location: index.php");
+        header("Location: index.php?QuizType");
     }
 ?>
 
@@ -48,7 +48,7 @@
     }
     else if(!isset($_SESSION['questionType'])){
         //weird error
-        header("Location: index.php");
+        header("Location: index.php?QuestionType");
     }
     else{
         if( strval($_SESSION['questionType']) == "random"){
