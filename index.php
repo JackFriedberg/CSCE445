@@ -64,9 +64,10 @@
                                 </div>
                                 <div class="col-md-8">
                                     <form class="form-signin" action="/signup.php" method="POST" >
-                                        <input type="email" name="Email" class="form-control mb-2" placeholder="Email">    
-                                        <input type="text" name="Username" class="form-control mb-2" placeholder="Username">    
-                                        <input type="password" name="UserPwd" class="form-control mb-2" placeholder="Password">    
+                                        <input type="email" name="UserEmail" class="form-control mb-2" placeholder="Email">    
+                                        <input type="text" name="UserUid" class="form-control mb-2" placeholder="Username">    
+                                        <input type="password" name="UserPwd" class="form-control mb-2" placeholder="Password">
+                                        <input type="password" name="UserPwd2" class="form-control mb-2" placeholder="Password Repeat">
                                         <button type="submit" name="signup-submit" class="btn btn-mb btn-primary btn-block mb-2">Sign-Up</button>
                                     </form>
                                 </div>
