@@ -5,7 +5,12 @@ session_start();
 $corrrectness = false;
 
 
-if(isset($_POST['video'])){
+if(isset($_POST['amRev'])){
 
+    echo 'Amrev';
+}
+else {
+    echo 'Not done yet!';
+}
 
 ?>
