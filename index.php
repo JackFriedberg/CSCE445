@@ -94,15 +94,13 @@
                         </div>
                     </div>
 
-                    <form action="/initial.php" method="POST">
+                    <form action="/initial.php?quizType=amRev" method="POST">
                         <div class="card mb-4" style="max-width:310px">
                             <img class="card-img-top img-fluid" src="https://mdbootstrap.com/img/Photos/Slides/img%20(70).jpg" alt="Card image cap">
                             <div class="card-body">
                                 <h4 class="card-title">History</h4>
                                 <p class="card-text">Want to learn more about America's past? Go through the journey with the American Revolution quiz and learn everything in a timeline fashion.</p>
-                                <form action="initial.php?quizType=amRev" method="post">
-                                    <button type="submit" class="btn btn-outline-info btn-rounded waves-effect">Start Quiz<i class="fas fas fa-play pl-1"></i></button>
-                                </form>
+                                <button type="submit" class="btn btn-outline-info btn-rounded waves-effect">Start Quiz<i class="fas fas fa-play pl-1"></i></button>
                             </div>
                         </div>
                     </form>
