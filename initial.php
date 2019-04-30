@@ -46,8 +46,22 @@
         }
     }
     else if(!isset($_SESSION['questionType'])){
-        //weird error
-        header("Location: index.php");
+        echo'
+            <body style="height:100%; margin:0; padding:0"> 
+                <div class="container">
+                <div class = "jumbotron text-center">
+                    <h1> "Select what type of context you want" </h1>
+                </div>
+                <div class="row align-items-center justify-content-center">
+                    <form action="handle.php" method="post">
+                        <div id="menuDiv" class="btn-group-vertical" style="margin:0 auto">
+                            <button type="submit" class="btn btn-secondary btn-lg btn-block" name="video"> Video Context </button>
+                            <button type="submit" class="btn btn-secondary btn-lg btn-block" name="text"> Text Context </button>
+                            <button type="submit" class="btn btn-secondary btn-lg btn-block" name="random"> Randomized Context </button>
+                        </div>
+                    </form>
+                </div>
+            ';
     }
     else{
 

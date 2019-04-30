@@ -7,17 +7,20 @@ $corrrectness = false;
 
 if(isset($_POST['video'])){
     $_SESSION['questionType'] = "video";
-    $_SESSION['question'] = 1;
+    if(!isset($_SESSION['question']) || $_SESSION['question'] == 0 )
+        $_SESSION['question'] = 1;
     header("Location: /initial.php");
 }
 if(isset($_POST['text'])){
     $_SESSION['questionType'] = "text";
-    $_SESSION['question'] = 1;
+    if(!isset($_SESSION['question']) || $_SESSION['question'] == 0 )
+        $_SESSION['question'] = 1;
     header("Location: /initial.php");
 }
 if(isset($_POST['random'])){
     $_SESSION['questionType'] = "random";
-    $_SESSION['question'] = 1;
+    if(!isset($_SESSION['question']) || $_SESSION['question'] == 0 )
+        $_SESSION['question'] = 1;
     header("Location: /initial.php");
 }
 
