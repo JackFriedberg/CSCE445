@@ -61,6 +61,12 @@ if(isset($_SESSION['UserId'])){
     $questions = sqlsrv_query($conn, $sql);
 }
 
-header("Location: /initial.php");
+if($correctness){
+    header("Location: /initial.php?answer=correct");
+}
+else{
+    header("Location: /initial.php?answer=incorrect");
+}
+
 exit();
 ?>
