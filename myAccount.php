@@ -240,7 +240,7 @@
         <div class="jumbotron mx-auto mb-5" style="height: 25%; width: 50%; overflow:hidden;" id="funJumbo">
             <div class="container" style="width: 70%; display:inline-block; float:left" id="funHeader" >
                 <div>
-                    <h1>Swag: Fun Topics</h1>
+                    <h1>Basketball: Current Trends</h1>
                 </div>
                 <div>
                     <div class="progress" style="display:inline-block; float:left; width:75%; margin: auto">
