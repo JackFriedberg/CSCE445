@@ -5,7 +5,7 @@
     $_SESSION['quizType'] = $_GET['quizType'];
 
     if(!isset($_SESSION['quizType'])){
-        header("Location: myAccount.php?invalidQuiz");
+        header("Location: index.php?invalidQuiz");
     }
 
 ?>
