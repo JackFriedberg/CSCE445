@@ -9,6 +9,8 @@
         header("Location: index.php?invalidQuiz");
     }
 
+    if(!empty($_GET['answer']))
+        $validate = $_GET['quizType'];
 ?>
 
 <html>
@@ -198,6 +200,22 @@
         ';
         }
         echo        '</div>';
+        if($validate == "correct"){
+            echo '
+                    <div class="alert alert-success alert-dismissable">
+                        <strong>Correct!</strong> Good Job!
+                    </div>
+                '
+        }
+        if($validate == "incorrect"){
+            echo '
+                    <div class="alert alert-danger alert-dismissable">
+                        <strong>Incorrect!</strong> Try this one.
+                    </div>
+            '
+        }
+        
+        ';
         if(isset($_SESSION['UserId'])){ //add buttons to return to MyAccount or Logout if the user is logged in 
             echo '
                     <div class="container">
