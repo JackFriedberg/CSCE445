@@ -183,7 +183,9 @@
                             <?php echo $amrevPercent . "%";?>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-dark btn-rounded" style="display:inline-block; float:left; width:20%">Start<i class="fas fas fa-play pl-1"></i></button>
+                    <form action="accountHandle.php" method="post">
+                        <button type="submit" name ="amRev" class="btn btn-dark btn-rounded" style="display:inline-block; float:left; width:20%">Start<i class="fas fas fa-play pl-1"></i></button>
+                    </form>
                 </div>
             </div>
             <div class="container" style="width: 30%; display:inline-block; float:left " id="amrevTotal">
