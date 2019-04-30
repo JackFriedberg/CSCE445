@@ -159,7 +159,6 @@
             <body style="height:100%; margin:0; padding:0"> 
                 <div class="container">
                     <div class="jumbotron text-center">
-                        <h1>' . $_SESSION['questionType'] . '</h1>
                         <h1>' . $questionText . '</h1>
                     </div>
                     <div class="row align-items-center justify-content-center">
